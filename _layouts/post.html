@@ -1,0 +1,10 @@
+--- 
+layout: default 
+---
+
+{{ page.title }}
+{{ page.date | date_to_string }} {{ content }}
+Related Posts
+{% for post in site.related_posts limit:3 %}
+{{ post.title }} {{ post.date | date_to_string }}
+{% endfor %}

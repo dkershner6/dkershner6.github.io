@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: post
 title: When to use Azure Functions in an App Service Plan for Cost Reasons
 ---
 
