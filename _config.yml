@@ -5,7 +5,8 @@ github:
   owner_name:     Derek Kershner
   is_project_page: true
 
-linkedIn:         https://www.linkedin.com/in/derek-kershner-54b3392/
+header-links:
+  linkedIn:         https://www.linkedin.com/in/derek-kershner-54b3392/
 
 theme:            jekyll-theme-slate
 
