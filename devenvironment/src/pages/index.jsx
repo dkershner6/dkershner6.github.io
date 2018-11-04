@@ -178,7 +178,7 @@ const Index = () => (
           <BigTitle>
             I'm Derek Kershner.
           </BigTitle>
-          <Subtitle>A partner in eFormed Partners specializing in Serverless Software Development using Azure, .Net Core 2.0 , and ReactJS</Subtitle>
+          <Subtitle>A partner in eFormed Partners specializing in Serverless Software Development using Azure, .Net Core 2.0, and ReactJS</Subtitle>
         </Hero>
       </Content>
       <DividerMiddle
@@ -286,7 +286,8 @@ const Index = () => (
           <ContactText>
             Find me on other platforms:{' '}
             <a href="https://www.linkedin.com/in/derek-kershner-54b3392">LinkedIn</a> &{' '}
-            <a href="https://github.com/dkershner6">GitHub</a>
+            <a href="https://github.com/dkershner6">GitHub</a>&{' '}
+            Or read my <a href="https://blog.dkershner.com">blog</a>
           </ContactText>
         </Inner>
         <Footer>
