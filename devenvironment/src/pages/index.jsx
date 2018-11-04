@@ -8,7 +8,7 @@ import root from 'window-or-global'
 import ReactGA from 'react-ga';
 if (typeof window !== 'undefined') {
   ReactGA.initialize('UA-10014066-1');
-  ReactGA.pageview('/');
+  ReactGA.pageview(window.location.pathname + window.location.search);
 }
 
 
