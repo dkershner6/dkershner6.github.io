@@ -1,7 +1,7 @@
 ---
 title: Azure Functions v2 Consumption vs App Service Plan vs Kubernetes - Where to Host for optimal cost and performance?
 category: "Azure Functions"
-cover: kubernetes.png
+cover: servers.jpg
 author: Derek Kershner
 ---
 
@@ -41,6 +41,21 @@ Across 6 different Function apps, each running variable amount of instances, som
 
 ## Conclusion
 
-As far as I can tell, with the increased performance of .Net Core under its belt, there is no scenario that beats the consumption model of Azure functions. This was a much closer comparison with .Net Framework, but thanks to both general improvements in Functions themselves and the new framework, it is no longer even close.  Even if a theoretical D1 v3 VM existed for Kubernetes to use, it would still need to auto scale 2 nodes on occasion, and would cost a theoretical $41 even if it didn't.
+<table width="100%">
+<th>
+<td align="center">Monthly Cost</td><td align="center">Single-Thread Long</td><td align="center">Multi-thread</td><td align="center">Quick</td>
+</th>
+<tr>
+<td>App Service</td><td align="center">$109.50</td><td align="center">1.45min</td><td align="center">11.42s</td><td align="center">2.01ms</td>
+</tr>
+<td>Kubernetes</td><td align="center">$76.08</td><td align="center">1.05min</td><td align="center">8.36s</td><td align="center">1.49ms</td>
+</tr>
+<tr>
+<td>Consumption</td><td align="center">$30.06</td><td align="center">1.70min</td><td align="center">16.42s</td><td align="center">3.35ms</td>
+</tr>
+</table>
+<br />
+
+**As far as I can tell, with the increased performance of .Net Core under its belt, there is no scenario that beats the consumption model of Azure functions with regards to cost.** This was a much closer comparison with .Net Framework, but thanks to both general improvements in Functions themselves and the new framework, it is no longer even close.  Even if a theoretical D1 v3 VM existed for Kubernetes to use, it would still need to auto scale to 2 nodes on occasion, and would cost a theoretical $41 even if it didn't.
 
 Now, consumption functions are certainly not without their shortcomings and limits, and the performance is spikier and generally slower, but it also has the ability to scale without any custom rules or intervention on your part.

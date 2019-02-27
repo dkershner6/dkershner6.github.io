@@ -1,7 +1,7 @@
 ---
 title: When to use Azure Functions v1 in an App Service Plan for Cost Reasons
 category: "Azure Functions"
-cover: costassumptions.jpg
+cover: leaves.jpg
 author: Derek Kershner
 ---
 

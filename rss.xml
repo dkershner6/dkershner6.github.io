@@ -1,4 +1,98 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Small-Scale Serverless]]></title><description><![CDATA[Small-Scale Serverless - Serverless for Start-ups and Shopify Stores.]]></description><link>https://blog.dkershner.com</link><generator>RSS for Node</generator><lastBuildDate>Wed, 27 Feb 2019 16:41:40 GMT</lastBuildDate><item><title><![CDATA[Azure Functions v2 Consumption vs App Service Plan vs Kubernetes - Where to Host for optimal cost and performance?]]></title><description><![CDATA[Note This comparison applies to functions on v2 (.Net Core). There is a large difference in performance between the two, and these…]]></description><link>https://blog.dkershner.com/azure-functions-consumption-vs-app-service-vs-kubernetes/</link><guid isPermaLink="false">https://blog.dkershner.com/azure-functions-consumption-vs-app-service-vs-kubernetes/</guid><pubDate>Tue, 26 Feb 2019 00:00:00 GMT</pubDate><content:encoded>&lt;h3&gt;Note&lt;/h3&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Small-Scale Serverless]]></title><description><![CDATA[Small-Scale Serverless - Serverless for Start-ups and Shopify Stores.]]></description><link>https://blog.dkershner.com</link><generator>RSS for Node</generator><lastBuildDate>Wed, 27 Feb 2019 19:12:20 GMT</lastBuildDate><item><title><![CDATA[Consumption Azure Functions Limits & How to Overcome them]]></title><description><![CDATA[Limits? In serverless? If you travel to pages like the  scale and hosting , you may, rightly, be under the impression that azure functions…]]></description><link>https://blog.dkershner.com/azure-function-limits-how-to-overcome/</link><guid isPermaLink="false">https://blog.dkershner.com/azure-function-limits-how-to-overcome/</guid><pubDate>Wed, 27 Feb 2019 00:00:00 GMT</pubDate><content:encoded>&lt;h3&gt;Limits? In serverless?&lt;/h3&gt;
+&lt;p&gt;If you travel to pages like the &lt;a href=&quot;https://docs.microsoft.com/en-us/azure/azure-functions/functions-scale#understanding-scaling-behaviors&quot;&gt;scale and hosting&lt;/a&gt;, you may, rightly, be under the impression that azure functions can scale pretty massively.  (At time of writing) 200 instances?  Multi-messages per instance? I can do 1000 things at once!&lt;/p&gt;
+&lt;p&gt;While this is technically true, you better be doing 1000 Hello World’s, because Azure Functions running on the consumption model reside in the &lt;a href=&quot;https://github.com/projectkudu/kudu/wiki/Azure-Web-App-sandbox#per-sandbox-per-appper-site-numerical-limits&quot;&gt;Azure Sandbox&lt;/a&gt;.  You will note that the documentation here is much more hidden, but there are some &lt;a href=&quot;https://www.troyhunt.com/breaking-azure-functions-with-too-many-connections/&quot;&gt;other bloggers&lt;/a&gt; who have hit limits as well. The Azure Sandbox is where Free and Shared App Services run, and also consumption functions. Because of this grouping, the limits are smaller than you might think when reading Azure marketing jargon. This is not an Azure-specific issue, as AWS has similar limits (although a bit easier to find).&lt;/p&gt;
+&lt;p&gt;
+  &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/27bdb4a9cb306c53353570350f433baa/05d04/limitstable.jpg&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+  
+  &lt;span
+    class=&quot;gatsby-resp-image-wrapper&quot;
+    style=&quot;position: relative; display: block;  max-width: 738px; margin-left: auto; margin-right: auto;&quot;
+  &gt;
+    &lt;span
+      class=&quot;gatsby-resp-image-background-image&quot;
+      style=&quot;padding-bottom: 67.07317073170731%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAANABQDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAQAF/8QAFAEBAAAAAAAAAAAAAAAAAAAAAP/aAAwDAQACEAMQAAAB3USmP//EABQQAQAAAAAAAAAAAAAAAAAAACD/2gAIAQEAAQUCX//EABQRAQAAAAAAAAAAAAAAAAAAABD/2gAIAQMBAT8BP//EABQRAQAAAAAAAAAAAAAAAAAAABD/2gAIAQIBAT8BP//EABQQAQAAAAAAAAAAAAAAAAAAACD/2gAIAQEABj8CX//EABgQAAMBAQAAAAAAAAAAAAAAAAEQEQAh/9oACAEBAAE/IeIGhzf/2gAMAwEAAgADAAAAEBMP/8QAFBEBAAAAAAAAAAAAAAAAAAAAEP/aAAgBAwEBPxA//8QAFBEBAAAAAAAAAAAAAAAAAAAAEP/aAAgBAgEBPxA//8QAGhABAAMBAQEAAAAAAAAAAAAAAQARITFRgf/aAAgBAQABPxChOcc+wrJWDfsDHYAMn//Z&apos;); background-size: cover; display: block;&quot;
+    &gt;
+      &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        style=&quot;width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px transparent;&quot;
+        alt=&quot;Limits Table&quot;
+        title=&quot;&quot;
+        src=&quot;/static/27bdb4a9cb306c53353570350f433baa/05d04/limitstable.jpg&quot;
+        srcset=&quot;/static/27bdb4a9cb306c53353570350f433baa/f03e8/limitstable.jpg 200w,
+/static/27bdb4a9cb306c53353570350f433baa/0532f/limitstable.jpg 400w,
+/static/27bdb4a9cb306c53353570350f433baa/05d04/limitstable.jpg 738w&quot;
+        sizes=&quot;(max-width: 738px) 100vw, 738px&quot;
+      /&gt;
+    &lt;/span&gt;
+  &lt;/span&gt;
+  
+  &lt;/a&gt;
+    &lt;/p&gt;
+&lt;p&gt;There are 5 limits, but really only 2 to worry about, as you are likely to hit them before others: Connections and Threads. The connections limit is in the process of being lifted to 600, and all of my apps appear to be operating with the higher limit, but you may still be experiencing the lower limit at time of writing. Before the connection limit change, I never hit the thread limit. After the change, I have never hit the connection limit, only threads.&lt;/p&gt;
+&lt;h3&gt;What Happens When a Limit is hit?&lt;/h3&gt;
+&lt;p&gt;First off, the Azure functions host itself reserves some of the limit for itself. This makes sense so that the whole system doesn’t go down, but you should realize that your actualy limit will be 250 connections or 400 threads.&lt;/p&gt;
+&lt;p&gt;
+  &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/bb74a65c2cef524ff35bcdc88334dae0/5ddae/threadslimit.jpg&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+  
+  &lt;span
+    class=&quot;gatsby-resp-image-wrapper&quot;
+    style=&quot;position: relative; display: block;  max-width: 800px; margin-left: auto; margin-right: auto;&quot;
+  &gt;
+    &lt;span
+      class=&quot;gatsby-resp-image-background-image&quot;
+      style=&quot;padding-bottom: 37.8319783197832%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAIABQDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAX/xAAUAQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIQAxAAAAG+AD//xAAUEAEAAAAAAAAAAAAAAAAAAAAQ/9oACAEBAAEFAn//xAAUEQEAAAAAAAAAAAAAAAAAAAAQ/9oACAEDAQE/AT//xAAUEQEAAAAAAAAAAAAAAAAAAAAQ/9oACAECAQE/AT//xAAUEAEAAAAAAAAAAAAAAAAAAAAQ/9oACAEBAAY/An//xAAUEAEAAAAAAAAAAAAAAAAAAAAQ/9oACAEBAAE/IX//2gAMAwEAAgADAAAAEAPP/8QAFBEBAAAAAAAAAAAAAAAAAAAAEP/aAAgBAwEBPxA//8QAFBEBAAAAAAAAAAAAAAAAAAAAEP/aAAgBAgEBPxA//8QAGRAAAQUAAAAAAAAAAAAAAAAAAAEQEWFx/9oACAEBAAE/EEojW//Z&apos;); background-size: cover; display: block;&quot;
+    &gt;
+      &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        style=&quot;width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px transparent;&quot;
+        alt=&quot;Thread Limit Hit&quot;
+        title=&quot;&quot;
+        src=&quot;/static/bb74a65c2cef524ff35bcdc88334dae0/78f2b/threadslimit.jpg&quot;
+        srcset=&quot;/static/bb74a65c2cef524ff35bcdc88334dae0/dce19/threadslimit.jpg 200w,
+/static/bb74a65c2cef524ff35bcdc88334dae0/c1413/threadslimit.jpg 400w,
+/static/bb74a65c2cef524ff35bcdc88334dae0/78f2b/threadslimit.jpg 800w,
+/static/bb74a65c2cef524ff35bcdc88334dae0/ab4c4/threadslimit.jpg 1200w,
+/static/bb74a65c2cef524ff35bcdc88334dae0/bc99b/threadslimit.jpg 1600w,
+/static/bb74a65c2cef524ff35bcdc88334dae0/5ddae/threadslimit.jpg 1845w&quot;
+        sizes=&quot;(max-width: 800px) 100vw, 800px&quot;
+      /&gt;
+    &lt;/span&gt;
+  &lt;/span&gt;
+  
+  &lt;/a&gt;
+    &lt;/p&gt;
+&lt;p&gt;Ideally, the function host shuts down, it realizes what happened, and it boots back up in a few seconds. No harm done, and you probably didn’t even notice unless you have a health monitor.&lt;/p&gt;
+&lt;p&gt;As you can see from my beatiful artwork, in practice, this happens some of the time, and the rest generates an outage that can last up to several hours, with no warning (unless you yourself create one). If you visit a function during this time, you will get the response “The function host is not running”. If you visit the portal during this time, you will get the feared red box informing you Host Thresholds Exceeded: [Threads]. Typically, you will need to restart to resolve this.&lt;/p&gt;
+&lt;h3&gt;How to Overcome&lt;/h3&gt;
+&lt;h4&gt;Connection-Specific&lt;/h4&gt;
+&lt;p&gt;There are some general design principles to follow when writing in C# that may not be altogether obvious from the way the interfaces are written. &lt;a href=&quot;https://docs.microsoft.com/en-us/azure/azure-functions/manage-connections&quot;&gt;Azure documentation itself&lt;/a&gt; actually has some great guidance here, and they go into lots of detail, but I will quickly touch on here:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Static Clients: Create one static HttpClient (and Azure Storage Clients) on instance-load and use it for every call. This is not totally obvious, given the fact that HttpClient is disposable, so it is tempting to use it in a using statement. &lt;a href=&quot;https://docs.microsoft.com/en-us/azure/architecture/antipatterns/improper-instantiation/&quot;&gt;DO NOT DO THIS&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;Pooled connections for Sql/Entity Framework: This is commonplace in the connection string, and is the default functionality, so it is much less common to run into issues.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4&gt;General Design Principles&lt;/h4&gt;
+&lt;p&gt;Over the course of using consumption functions frequently over the past few years, here are some general design principles I follow to avoid problems, some more obvious than others:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Fail your functions quickly: While it may be tempting to have a long timeout and allow the function to retry many times, I have generally found it better to just fail and have it retry the pattern later. This saves on cost, but also causes less resources to be in use at any given time.&lt;/li&gt;
+&lt;li&gt;Where possible, use fast storage solutions: This is more of a general design principle, but I have solved the functions limits issues with a Redis cache or Blob storage as many times as I have with these other methods.&lt;/li&gt;
+&lt;li&gt;CreateIfNotExists: This keyword should be familiar to anyone who has used the AzureStorage SDK. A lot of Azure’s examples use this method very frequently as well as a failsafe, but be careful not to use it in a loop, especially an async one, as it creates another call to the storage account in each loop (it has no memory that it just called this a moment ago).&lt;/li&gt;
+&lt;li&gt;Be careful of Queue functions: While convenient, and extremely powerful, nothing can bust through these limits like an Azure Storage or Service Bus Queue triggered function. The default behavior is to grab up to 32 messages at once for concurrent processing PER INSTANCE.  This is great for getting a lot accomplished in a very short time, but not so great when you have 15 instances running and can only do 400 things at once (15 * 32 = 480). If you have something that controls how quickly the queue is loaded, you are probably fine with the default functionality. I do not recommend using the InitialVisibility to achieve this, however, as it tends to create more problems than it fixes (initial visibility of a week and such). More typically, you can &lt;a href=&quot;https://docs.microsoft.com/en-us/azure/azure-functions/functions-bindings-storage-queue#host-json&quot;&gt;change the default behavior in the appropriate section of host.json&lt;/a&gt; to something more manageable. In extreme cases, or in cases where you are up against an API request limit, use a timer function that runs frequently and pulls a set number of queue messages manually.&lt;/li&gt;
+&lt;li&gt;Horizontally scale, in a different way: Do not be afraid to create a whole bunch of function apps. If they don’t do anything, they are free, and setting them up is a fairly painless process using the resource explorer to set application settings using JSON. Do not be afraid to have a function app with only one function, separate the concerns down to a miniscule level, it is far better to have a nearly idle function app then to hit the limits. For queue or timer functions, make sure they are unique to a function app, as only one app will create a singleton lock on the queue or timer. For Http functions (API/Website), don’t be afraid to split them up and use a traffic manager. Even with the additional cost, &lt;a href=&quot;/azure-functions-consumption-vs-app-service-vs-kubernetes&quot;&gt;you are still likely going to find it cheaper than using a different hosted option&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;Segment Durable Functions into their own function app: These functions are particularly chatty with Azure Storage, and you want to keep them from clogging up your non-durable counterparts.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;In general, Azure Functions are very scalable, once you have a few tools under your belt to help it actually have a smooth experience while scaling.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Azure Functions v2 Consumption vs App Service Plan vs Kubernetes - Where to Host for optimal cost and performance?]]></title><description><![CDATA[Note This comparison applies to functions on v2 (.Net Core). There is a large difference in performance between the two, and these…]]></description><link>https://blog.dkershner.com/azure-functions-consumption-vs-app-service-vs-kubernetes/</link><guid isPermaLink="false">https://blog.dkershner.com/azure-functions-consumption-vs-app-service-vs-kubernetes/</guid><pubDate>Tue, 26 Feb 2019 00:00:00 GMT</pubDate><content:encoded>&lt;h3&gt;Note&lt;/h3&gt;
 &lt;p&gt;This comparison applies to functions on v2 (.Net Core). There is a large difference in performance between the two, and these conclusions should not be held over to v1. I do have a &lt;a href=&quot;/when-to-use-app-service-plan/&quot;&gt;similar-ish comparison for v1&lt;/a&gt;.&lt;/p&gt;
 &lt;hr&gt;
 &lt;h3&gt;Some Background&lt;/h3&gt;
@@ -16,7 +110,21 @@
 &lt;h3&gt;Consumption (Windows)&lt;/h3&gt;
 &lt;p&gt;Across 6 different Function apps, each running variable amount of instances, some cold starts, all cause the performance of the app to be decidedly more spiky here. The long running task runs in &lt;strong&gt;1.7min&lt;/strong&gt;. The multi-threaded task ran in &lt;strong&gt;16.42s&lt;/strong&gt;. The rapid task ran in &lt;strong&gt;3.35ms&lt;/strong&gt;. Over the course of the month, (this was easy to calculate thanks to that new billing tool), the execution time has cost $28.90 and the executions have cost $0.96. There is a little file IO as well mixed in, and best I can approximate is that it costs $0.20.  This is a total cost of &lt;strong&gt;$30.06&lt;/strong&gt; for the month.&lt;/p&gt;
 &lt;h2&gt;Conclusion&lt;/h2&gt;
-&lt;p&gt;As far as I can tell, with the increased performance of .Net Core under its belt, there is no scenario that beats the consumption model of Azure functions. This was a much closer comparison with .Net Framework, but thanks to both general improvements in Functions themselves and the new framework, it is no longer even close.  Even if a theoretical D1 v3 VM existed for Kubernetes to use, it would still need to auto scale 2 nodes on occasion, and would cost a theoretical $41 even if it didn’t.&lt;/p&gt;
+&lt;table width=&quot;100%&quot;&gt;
+&lt;th&gt;
+&lt;td align=&quot;center&quot;&gt;Monthly Cost&lt;/td&gt;&lt;td align=&quot;center&quot;&gt;Single-Thread Long&lt;/td&gt;&lt;td align=&quot;center&quot;&gt;Multi-thread&lt;/td&gt;&lt;td align=&quot;center&quot;&gt;Quick&lt;/td&gt;
+&lt;/th&gt;
+&lt;tr&gt;
+&lt;td&gt;App Service&lt;/td&gt;&lt;td align=&quot;center&quot;&gt;$109.50&lt;/td&gt;&lt;td align=&quot;center&quot;&gt;1.45min&lt;/td&gt;&lt;td align=&quot;center&quot;&gt;11.42s&lt;/td&gt;&lt;td align=&quot;center&quot;&gt;2.01ms&lt;/td&gt;
+&lt;/tr&gt;
+&lt;td&gt;Kubernetes&lt;/td&gt;&lt;td align=&quot;center&quot;&gt;$76.08&lt;/td&gt;&lt;td align=&quot;center&quot;&gt;1.05min&lt;/td&gt;&lt;td align=&quot;center&quot;&gt;8.36s&lt;/td&gt;&lt;td align=&quot;center&quot;&gt;1.49ms&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Consumption&lt;/td&gt;&lt;td align=&quot;center&quot;&gt;$30.06&lt;/td&gt;&lt;td align=&quot;center&quot;&gt;1.70min&lt;/td&gt;&lt;td align=&quot;center&quot;&gt;16.42s&lt;/td&gt;&lt;td align=&quot;center&quot;&gt;3.35ms&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/table&gt;
+&lt;br /&gt;
+&lt;p&gt;&lt;strong&gt;As far as I can tell, with the increased performance of .Net Core under its belt, there is no scenario that beats the consumption model of Azure functions with regards to cost.&lt;/strong&gt; This was a much closer comparison with .Net Framework, but thanks to both general improvements in Functions themselves and the new framework, it is no longer even close.  Even if a theoretical D1 v3 VM existed for Kubernetes to use, it would still need to auto scale to 2 nodes on occasion, and would cost a theoretical $41 even if it didn’t.&lt;/p&gt;
 &lt;p&gt;Now, consumption functions are certainly not without their shortcomings and limits, and the performance is spikier and generally slower, but it also has the ability to scale without any custom rules or intervention on your part.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[When to use Azure Functions v1 in an App Service Plan for Cost Reasons]]></title><description><![CDATA[Update: 2/26/19 I have moved all of my functions to Azure Functions v2 (.Net Core) and have a  new comparison  for those functions. Common…]]></description><link>https://blog.dkershner.com/when-to-use-app-service-plan/</link><guid isPermaLink="false">https://blog.dkershner.com/when-to-use-app-service-plan/</guid><pubDate>Fri, 24 Aug 2018 00:00:00 GMT</pubDate><content:encoded>&lt;h3&gt;Update: 2/26/19&lt;/h3&gt;
 &lt;p&gt;I have moved all of my functions to Azure Functions v2 (.Net Core) and have a &lt;a href=&quot;/azure-functions-consumption-vs-app-service-vs-kubernetes&quot;&gt;new comparison&lt;/a&gt; for those functions.&lt;/p&gt;
 &lt;hr&gt;
