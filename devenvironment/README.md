@@ -1,137 +1,136 @@
-![](https://i.imgur.com/hWB1XRO.png)
+# HeroBlog
 
-# Gatsby Starter Portfolio: Cara
+A [GatsbyJS](https://www.gatsbyjs.org/) blog starter. <br /><br />
 
-A portfolio starter for [Gatsby](https://www.gatsbyjs.org/). The target audience are designers and photographers.
+[![GitHub tag](https://img.shields.io/github/tag/greglobinski/gatsby-starter-hero-blog.svg)](https://github.com/greglobinski/gatsby-starter-personal-blog)
+[![GitHub stars](https://img.shields.io/github/stars/greglobinski/gatsby-starter-hero-blog.svg)](https://github.com/greglobinski/gatsby-starter-personal-blog/stargazers)
+[![GitHub license](https://img.shields.io/github/license/greglobinski/gatsby-starter-hero-blog.svg)](https://github.com/greglobinski/gatsby-starter-personal-blog/blob/master/LICENSE)
+[![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
+![GitHub contributors](https://img.shields.io/github/contributors/greglobinski/gatsby-starter-hero-blog.svg)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
+[![Twitter](https://img.shields.io/twitter/url/https/github.com/greglobinski/gatsby-starter-hero-blog.svg?style=social)](https://twitter.com/intent/tweet?text=Wow:&url=https%3A%2F%2Fgithub.com%2Fgreglobinski%2Fgatsby-starter-hero-blog)
 
-[Demo Website](https://portfolio-cara.netlify.com/)
+  <br />
 
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/LeKoArts/gatsby-starter-portfolio-cara) [![Edit gatsby-starter-portfolio-cara](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/LeKoArts/gatsby-starter-portfolio-cara/tree/master/)
+![](static/screens/gatsby-starter-hero-blog.gif) <br />
 
-- TailwindCSS & Emotion
-- React Spring
-- Playful & Colorful One-Page website with Parallax effect
+  <br />
 
-Based on [gatsby-tailwind-demo](https://github.com/jlengstorf/gatsby-tailwind-demo).
+See the starter in action » [demo website](https://gatsby-starter-hero-blog.greglobinski.com/) <br />For more information visit » [dev.greglobinski.com/gatsby-starter-hero-blog](https://dev.greglobinski.com/gatsby-starter-hero-blog/)
 
-## Why?
+## Description
 
-If you want to quickly bootstrap a design/photography portfolio or use it as a foundation for your personal site the *gatsby-starter-portfolio* are a perfect fit for you! The project's goal is to offer minimalistic and fast websites. 
+A ready to use, easy to customize 'like theme' starter with a 'Hero' section on the home page.
 
-I hope you like my starters and create something awesome! To see some of my work you can visit my [website](https://www.lekoarts.de) or support me on [Patreon](https://www.patreon.com/lekoarts) to get some neat rewards (4K images, project files, tutorial insights). Every pledge on Patreon helps me creating more free starters!
+The starter was initially built for Gatsby v1. Now, thanks to [@mohsenkhanpour](https://github.com/mohsenkhanpour) it's [upgraded](https://github.com/greglobinski/gatsby-starter-hero-blog/issues/32) to Gatsby v2. Thank you Mohsen :)
 
-Also check out the other *gatsby-starter-portfolio*:
-- [gatsby-starter-portfolio-emma](https://github.com/LeKoArts/gatsby-starter-portfolio-emma)
-- [gatsby-starter-portfolio-emilia](https://github.com/LeKoArts/gatsby-starter-portfolio-emilia)
-- [gatsby-starter-portfolio-bella](https://github.com/LeKoArts/gatsby-starter-portfolio-bella)
+The original version of the starter is preserved as the branch `gatsby-v1`.
 
-Check out the [Gatsby Starter Portfolio Overview](https://gatsby-starter-portfolio.netlify.com/)!
+## Features:
 
-## Features
+- Easy editable content in **Markdown** files (posts, pages and parts)
+- **CSS** with `styled-jsx` and `PostCSS`
+- **SEO** (sitemap generation, robot.txt, meta and OpenGraph Tags)
+- **Social** sharing (Twitter, Facebook, Google, LinkedIn)
+- **Comments** (Facebook)
+- **Images** lazy loading and `webp` support (gatsby-image)
+- Post **categories** (category based post list)
+- Full text **searching** (Algolia)
+- **Contact** form (Netlify form handling)
+- Form elements and validation with `ant-design`
+- **RSS** feed
+- 100% **PWA** (manifest.webmanifest, offline support, favicons)
+- Google **Analytics**
+- App **favicons** generator (node script)
+- Easy customizable base **styles** via `theme` object generated from `yaml` file (fonts, colors, sizes)
+- React **v.16.3** (gatsby-plugin-react-next)
+- **Components** lazy loading (social sharing)
+- **ESLint** (google config)
+- **Prettier** code styling
+- Webpack `BundleAnalyzerPlugin`
+- **Gravatar** image (optional) instead local Avatar/Logo image
 
-- Gatsby v2.0.0
-- [React Spring](https://github.com/drcmda/react-spring) (Used for Parallax effect)
-- [TailwindCSS](https://tailwindcss.com/) & [Emotion](https://emotion.sh/) for styling
-    - Use the full power of TailwindCSS while generating small styles (as unused data gets deleted)
-- SEO
-    - Schema.org JSONLD
-    - OpenGraph Tags
-    - Twitter Tags
-- [Typefaces](https://github.com/KyleAMathews/typefaces) for quicker font loading
-- Offline Support
-- WebApp Manifest Support
-- Responsive images
-    - The right image size for every screen size
-    - Traced SVG Loading (Lazy-Loading)
-    - WebP Support
+## Prerequisites
 
-**Please note:** The parallax effect can be quite heavy for some older CPUs and the site uses some newer CSS features which will result in incompatibility with older browsers.
+If you do not have Gatsby Cli installed yet, do it first.
 
-## Getting Started
-
-Check your development environment! You'll need [Node.js](https://nodejs.org/en/), the [Gatsby CLI](https://www.gatsbyjs.org/docs/) and [node-gyp](https://github.com/nodejs/node-gyp#installation) installed. The official Gatsby website also lists two articles regarding this topic:
-- [Gatsby on Windows](https://www.gatsbyjs.org/docs/gatsby-on-windows/)
-- [Check your development environment](https://www.gatsbyjs.org/tutorial/part-zero/)
-
-To copy and install this starter run this command (with "project-name" being the name of your folder you wish to install it in):
-
-```
-gatsby new project-name https://github.com/LeKoArts/gatsby-starter-portfolio-cara
-cd project-name
-npm run dev
+```text
+npm install --global gatsby-cli
 ```
 
-### Adding new features/plugins
+More information on [GatsbyJS.org](https://www.gatsbyjs.org/tutorial/part-one)
 
-You can add other features by having a look at the official [plugins page](https://www.gatsbyjs.org/docs/plugins/)
+## Getting started
 
-### Building your site
+Install the starter using Gatsby Cli `gatsby new` command.
 
-```
-npm run build
-```
-Copy the content of the ``public`` folder to your webhost or use a website like Netlify which automates that for you.
-
-Make sure to use the right build command in your build settings e.g. if you use Netlify!
-Per default Netlify sets it to `gatsby build` but you have to use `yarn run build` to run postcss before building the Gatsby site.
-
-## Configuration
-
-You have multiple options to configure this project.
-
-1) Use the `config/website.js` to configure data passed to the SEO component and other parts of the Gatsby site:
-
-```JS
-module.exports = {
-  pathPrefix: '/', // Prefix for all links. If you deploy your site to example.com/portfolio your pathPrefix should be "/portfolio"
-
-  siteTitle: 'Cara - Gatsby Starter Portfolio', // Navigation and Site Title
-  siteTitleAlt: 'Cara', // Alternative Site title for SEO
-  siteUrl: 'https://portfolio-cara.netlify.com', // Domain of your site. No trailing slash!
-  siteLanguage: 'en', // Language Tag on <html> element
-  siteLogo: '/logos/logo-1024.png', // Used for SEO and manifest
-  siteDescription: 'Playful & Colorful One-Page website with Parallax effect',
-
-  // siteFBAppID: '123456789', // Facebook App ID - Optional
-  userTwitter: '@cara', // Twitter Username
-  ogSiteName: 'cara', // Facebook Site Name
-  ogLanguage: 'en_US', // Facebook Language
-
-  // Manifest and Progress color
-  themeColor: tailwind.colors.orange,
-  backgroundColor: tailwind.colors.blue,
-};
+```text
+gatsby new [NEW_SITE_DIRECTORY_FOR_YOUR_BLOG] https://github.com/greglobinski/gatsby-starter-hero-blog.git
 ```
 
-2) Use the `tailwind.js` file to configure TailwindCSS. Their [documentation](https://tailwindcss.com/docs/configuration) explains it step-by-setp.
+Go into the newly created directory and run
 
-3) Modify the files in the `src/styles` directory.
-
-4) You can also place the icons somewhere else on the page, modify their animation and hide them on smaller screens:
-
-```JSX
-  <SVG icon="triangle" className={hidden} width={48} stroke={colors.orange} left="10%" top="20%" />
-  <SVG icon="hexa" width={48} stroke={colors.red} left="60%" top="70%" />
-  <SVG icon="box" width={6} fill={colors['grey-darker']} left="60%" top="15%" />
+```text
+gatsby develop
 ```
 
-- For `icon` you have the options: `triangle, circle, arrowUp, upDown, box, hexa`
-- If you want the SVG to be hidden on mobile view, add `className={hidden}` to the SVG component
-- You can define the width via the TailwindCSS width [option](https://tailwindcss.com/docs/width)
-- The colors get defined via the TailwindCSS color [option](https://tailwindcss.com/docs/colors)
-    - Please note that you will either have to define the color in `stroke` **or** `fill` depending on the icon. For referance have a look at the currently used SVGs
-- The options `left` and `top` position the icon relatively to its parent container
-- You can also wrap the SVGs with `<UpDown />` or `<UpDownWide />` to animate them
+to hot-serve your website on http://localhost:8000 or
 
-### Typography
-
-Instead of relying on Google's CDN to host its fonts this site self-hosts the fonts and therefore profits from increased performance. The installed fonts can be found in `src/pages/index.jsx`:
-
-```JSX
-import 'typeface-cantata-one';
-import 'typeface-open-sans';
+```text
+gatsby build
 ```
 
-This starter uses [typefaces](https://github.com/KyleAMathews/typefaces) by Kyle Mathews. Have a look at the repository if you want to install & use other fonts.
+to create static site ready to host (/public).
 
-You'll also need to configure `fonts` in `tailwind.js` to reflect the changes. You then can use the fonts with `font-sans` and `font-serif`.
+##### External services
+
+The starter uses external services for some functions: comments, searching, analytics. To use them you have to secure some access data. All services are free to use or have generous free tiers big enough for a personal blog.
+
+Create an `.env` file like below in the root folder. Change `...` placeholders with real data.
+<br />By default, your `.env` file will be ignored by git. Remove `.env` from `.gitignore` in order to be able to push the file to your repository.
+
+```text
+GOOGLE_ANALYTICS_ID=...
+ALGOLIA_APP_ID=...
+ALGOLIA_SEARCH_ONLY_API_KEY=...
+ALGOLIA_ADMIN_API_KEY=...
+ALGOLIA_INDEX_NAME=...
+FB_APP_ID=...
+```
+
+### Instructions & tutorials
+
+- [How to install, setup and add new content to a Blog starter](https://dev.greglobinski.com/install-blog-starter/)
+- [Setup Algolia account for your GatsbyJS blog](https://dev.greglobinski.com/setup-algolia-account/)
+- More articles at [Front-end web development with Greg](https://dev.greglobinski.com/)
+
+## Windows users
+
+You should take a look at this: [Gatsby on Windows](https://www.gatsbyjs.org/docs/gatsby-on-windows/)
+
+## Authors
+
+- Greg Lobinski [@greglobinski](https://github.com/greglobinski)
+
+See also the list of [contributors](https://github.com/greglobinski/gatsby-starter-personal-blog/graphs/contributors) who participated in this project.
+
+## Contributing
+
+- Fork the repo
+- Create your feature branch (git checkout -b feature/fooBar)
+- Commit your changes (git commit -am 'Add some fooBar')
+- Push to the branch (git push origin feature/fooBar)
+- Create a new Pull Request
+
+## Licence
+
+MIT License
+
+Copyright (c) 2017 gatsbyjs <br />Copyright (c) 2018 greg lobinski
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
