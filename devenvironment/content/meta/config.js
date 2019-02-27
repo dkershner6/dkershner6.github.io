@@ -1,7 +1,7 @@
 module.exports = {
-  siteTitle: "Serverless at Any Cost", // <title>
-  shortSiteTitle: "Serverless at Any Cost", // <title> ending for posts and pages
-  siteDescription: "Serverless at Any Cost",
+  siteTitle: "Small-Scale Serverless", // <title>
+  shortSiteTitle: "Small-Scale Serverless", // <title> ending for posts and pages
+  siteDescription: "Small-Scale Serverless - Serverless for Start-ups and Shopify Stores.",
   siteUrl: "https://blog.dkershner.com",
   // pathPrefix: "",
   siteImage: "preview.jpg",
@@ -12,12 +12,12 @@ module.exports = {
   authorTwitterAccount: "@dkershner",
 
   /* info */
-  headerTitle: "Serverless at Any Cost",
-  headerSubTitle: "A partner in eFormed Partners specializing in Serverless Software Development using Azure, .Net Core 2.0, and React",
+  headerTitle: "Small-Scale Serverless",
+  headerSubTitle: "Start-up and Shopify Serverless Software Development using Azure, .Net Core, & React",
 
   /* manifest.json */
-  manifestName: "Serverless at Any Cost",
-  manifestShortName: "AzureCost", // max 12 characters
+  manifestName: "Small-Scale Serverless",
+  manifestShortName: "Serverless", // max 12 characters
   manifestStartUrl: "/index.html",
   manifestBackgroundColor: "white",
   manifestThemeColor: "#666",
