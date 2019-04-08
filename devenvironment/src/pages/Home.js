@@ -1,5 +1,6 @@
 import React from 'react';
 import { Button } from 'react-bootstrap';
+import { LinkContainer } from 'react-router-bootstrap';
 import HelmetHead from '../components/Seo';
 
 const Home = () => {
@@ -16,9 +17,9 @@ const Home = () => {
         <h4>Software Engineer, DevOps & Cloud Architect</h4>
         <h5>.Net Core, Kubernetes, Azure DevOps, & ReactJS</h5>
         <br />
-        <Button href='/blog' size='lg'>
-          Read the Blog
-        </Button>
+        <LinkContainer to='/blog'>
+          <Button size='lg'>Read the Blog</Button>
+        </LinkContainer>
       </section>
 
       <style jsx>
