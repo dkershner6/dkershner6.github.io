@@ -1,9 +1,11 @@
 import React from 'react';
 import { Button } from 'react-bootstrap';
+import HelmetHead from '../components/Seo';
 
 const Home = () => {
   return (
     <React.Fragment>
+      <HelmetHead title='DKershner.com' />
       <section className='hero'>
         <h1 className='display-3'>
           <strong>

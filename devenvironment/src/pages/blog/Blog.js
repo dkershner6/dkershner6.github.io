@@ -3,10 +3,12 @@ import { Link } from 'react-router-dom';
 import { Container, Row, Jumbotron } from 'react-bootstrap';
 import { LinkContainer } from 'react-router-bootstrap';
 import posts from './Posts';
+import HelmetHead from '../../components/Seo';
 
 const Blog = () => {
   return (
     <Container>
+      <HelmetHead title='Blog | DKershner.com' />
       <Row>
         <div className='page-header' style={{ padding: 40 }}>
           <h1>Blog Posts</h1>

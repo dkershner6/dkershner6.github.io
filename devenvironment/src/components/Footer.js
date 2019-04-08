@@ -16,7 +16,9 @@ const Footer = () => {
               <a href='https://github.com/stereobooster/react-snap'>
                 React-Snap
               </a>{' '}
-              to make it static and performant, and{' '}
+              to make it static and performant,{' '}
+              <a href='https://github.com/nfl/react-helmet'>React Helmet</a> for
+              SEO, and{' '}
               <a href='https://react-bootstrap.github.io/'>React Bootstrap</a>{' '}
               to skin it. It's hosted on GitHub Pages, feel free to have a look
               at the{' '}

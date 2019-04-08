@@ -1,6 +1,7 @@
 import React from 'react';
 import { Container, Jumbotron } from 'react-bootstrap';
 import posts from './Posts';
+import HelmetHead from '../../components/Seo';
 
 import Error from '../../Error';
 
@@ -38,6 +39,7 @@ class Post extends React.Component {
     }
     return (
       <Container>
+        <HelmetHead title={`${post.title} | DKershner.com`} />
         <div className='page-header' style={{ padding: 40 }}>
           <h1>{post.title}</h1>
           <h5>{post.subtitle}</h5>
