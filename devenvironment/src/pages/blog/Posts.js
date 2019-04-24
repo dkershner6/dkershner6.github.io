@@ -6,6 +6,8 @@ const posts = [
     handle: 'azure-functions-limits-how-to-overcome',
     date: '2019-02-27',
     author: 'Derek Kershner',
+    image: 'gate.jpg',
+    categories: ['Azure Functions']
   },
   {
     title: 'Azure Functions: Consumption vs App Service Plan vs Kubernetes',
@@ -13,6 +15,8 @@ const posts = [
     handle: 'azure-functions-consumption-vs-app-service-vs-kubernetes',
     date: '2019-02-26',
     author: 'Derek Kershner',
+    image: 'servers.jpg',
+    categories: ['Azure Functions']
   },
   {
     title: 'Azure Functions: When to use App Service Plan',
@@ -21,6 +25,8 @@ const posts = [
     handle: 'when-to-use-app-service-plan',
     date: '2018-08-24',
     author: 'Derek Kershner',
+    image: 'leaves.jpg',
+    categories: ['Azure Functions']
   },
 ];
 

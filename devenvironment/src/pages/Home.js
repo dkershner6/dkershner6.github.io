@@ -8,7 +8,7 @@ const Home = () => {
     <React.Fragment>
       <HelmetHead title='DKershner.com' />
       <section className='hero'>
-        <h1 className='display-3'>
+        <h1>
           <strong>
             <span class='text-primary'>{'>'}</span>DKershner.com
             <span class='text-primary'>{'<'}</span>

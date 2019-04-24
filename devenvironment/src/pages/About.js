@@ -20,24 +20,26 @@ const About = () => {
           written in React provides the User Interface for all of the apps.
         </h6>
       </Jumbotron>
-      <Card bg='info' text='white'>
+      <Card text='white'>
         <Card.Header>
           <h3> Find me on other platforms:</h3>
         </Card.Header>
         <Card.Body>
-          <p>
+          <Row>
+          <Col>
             <Button href='https://www.linkedin.com/in/derek-kershner-54b3392'>
               LinkedIn
             </Button>
-          </p>
-          <p>
+            </Col>
+            <Col>
             <Button href='https://github.com/dkershner6'>GitHub</Button>
-          </p>
-          <p>
+            </Col>
+            <Col>
             <Button href='https://app.pluralsight.com/profile/dkershner'>
-              See what I am currently learning on Pluralsight
+              Pluralsight
             </Button>
-          </p>
+            </Col>
+            </Row>
         </Card.Body>
       </Card>
     </Container>
