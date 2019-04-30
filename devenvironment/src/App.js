@@ -27,6 +27,7 @@ class App extends Component {
           <Route exact path='/about' component={About} />
           <Route exact path='/portfolio' component={Portfolio} />
           <Route exact path='/blog' component={Blog} />
+          <Route path='/blog/category/:category' component={Blog} />
           <Route path='/blog/:handle' component={Post} />
           <Route component={Error} status={404} />
         </Switch>
