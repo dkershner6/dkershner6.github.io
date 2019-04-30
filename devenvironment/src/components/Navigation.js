@@ -1,7 +1,6 @@
 import React from 'react';
 import { Nav, Navbar } from 'react-bootstrap';
 import { LinkContainer } from 'react-router-bootstrap';
-import { NavHashLink as NavLink } from 'react-router-hash-link';
 
 const Navigation = () => {
   return (
@@ -12,18 +11,10 @@ const Navigation = () => {
       <Navbar.Toggle aria-controls='responsive-navbar-nav' />
       <Navbar.Collapse id='responsive-navbar-nav'>
         <Nav className='mr-auto'>
-          <LinkContainer to='/'>
-            <Nav.Link>Home</Nav.Link>
-          </LinkContainer>
-          <NavLink to='/#about'>
-            <Nav.Link>About</Nav.Link>
-          </NavLink>
-          <NavLink to='/#portfolio'>
-            <Nav.Link>Portfolio</Nav.Link>
-          </NavLink>
-          <LinkContainer to='/blog'>
-            <Nav.Link>Blog</Nav.Link>
-          </LinkContainer>
+          <Nav.Link href='/'>Home</Nav.Link>
+          <Nav.Link href='/#about'>About</Nav.Link>
+          <Nav.Link href='/#portfolio'>Portfolio</Nav.Link>
+          <Nav.Link href='/blog'>Blog</Nav.Link>
         </Nav>
       </Navbar.Collapse>
     </Navbar>
