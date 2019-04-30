@@ -1,45 +1,62 @@
 import React from 'react';
-import { Container, Jumbotron } from 'react-bootstrap';
-import HelmetHead from '../components/Seo';
+import { Container, Button } from 'react-bootstrap';
+import LazyHero from 'react-lazy-hero';
+import { LinkContainer } from 'react-router-bootstrap';
 
 const Portfolio = () => {
   return (
-    <Container>
-      <HelmetHead title='Portfolio | DKershner.com' />
-      <div className='page-header' style={{ padding: 40 }}>
-        <h1>Portfolio</h1>
+    <React.Fragment>
+      {/*<HelmetHead title='Portfolio | DKershner.com' />*/}
+      <div id='portfolio' className='page-header' style={{ padding: 40 }}>
+        <h1 align='center'>Portfolio</h1>
       </div>
-      <Jumbotron>
+      <LazyHero
+        imageSrc='/babywise.jpg'
+        color='#000000'
+        opacity={0.7}
+        minHeight='100vh'
+        isFixed={true}
+        isCentered={true}
+        transitionDuration={600}
+      >
         <br />
-        <h2> Babywise.life</h2>
+        <LinkContainer to='https://babywise.life'>
+          <Button size='lg' variant='outline-info'>
+            Babywise.life
+          </Button>
+        </LinkContainer>
         <br />
-        <p>
-          <a href='https://babywise.life'>
-            <img width='100%' src='/babywise.jpg' />
-          </a>
-        </p>
         <br />
-        <p>
-          Created several apps supporting the massive data behind this website
-          including a search engine and gift registry.
-        </p>
-      </Jumbotron>
-      <Jumbotron>
-        <h2>Babyearth.com</h2>
+        <Container>
+          Created several apps, both Shopify and Enterprise, supporting the
+          massive data behind this website, including a search engine and gift
+          registry.
+        </Container>
+      </LazyHero>
+
+      <LazyHero
+        imageSrc='/babyearth.jpg'
+        color='#001100'
+        opacity={0.6}
+        minHeight='100vh'
+        isFixed={true}
+        isCentered={true}
+        transitionDuration={600}
+      >
+        <LinkContainer to='https://babyearth.com'>
+          <Button size='lg' variant='outline-success'>
+            Babyearth.com
+          </Button>
+        </LinkContainer>
         <br />
-        <p>
-          <a href='https://babyearth.com'>
-            <img width='100%' src='/babyearth.jpg' />
-          </a>
-        </p>
         <br />
         <p>
           Created and maintained the entire backend infrastructure for the site,
           as well as numerous apps to aid on the front end, including several
           small React apps.
         </p>
-      </Jumbotron>
-    </Container>
+      </LazyHero>
+    </React.Fragment>
   );
 };
 

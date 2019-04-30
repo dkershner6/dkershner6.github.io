@@ -2,12 +2,24 @@ import React from 'react';
 import { Button } from 'react-bootstrap';
 import { LinkContainer } from 'react-router-bootstrap';
 import HelmetHead from '../components/Seo';
+import LazyHero from 'react-lazy-hero';
+
+import About from './About';
+import Portfolio from './Portfolio';
 
 const Home = () => {
   return (
     <React.Fragment>
       <HelmetHead title='DKershner.com' />
-      <section className='hero'>
+      <LazyHero
+        imageSrc='/hero-background.jpg'
+        color='#000000'
+        opacity={0.2}
+        minHeight='100vh'
+        parallaxOffset={0.5}
+        isCentered={true}
+        transitionDuration={600}
+      >
         <h1 className='display-3'>
           <strong>
             <span class='text-primary'>{'>'}</span>DKershner.com
@@ -18,33 +30,13 @@ const Home = () => {
         <h5>.Net Core, Kubernetes, Azure DevOps, & ReactJS</h5>
         <br />
         <LinkContainer to='/blog'>
-          <Button size='lg'>Read the Blog</Button>
+          <Button size='lg' variant='primary'>
+            Read the Blog
+          </Button>
         </LinkContainer>
-      </section>
-
-      <style jsx>
-        {`
-          body {
-            height: 98%;
-            background: url('/hero-background.jpg') no-repeat center center
-              fixed;
-            background-color: #2b3e50;
-            -webkit-background-size: cover;
-            -moz-background-size: cover;
-            background-size: cover;
-            -o-background-size: cover;
-          }
-
-          .hero {
-            align-items: center;
-            display: flex;
-            flex-flow: column nowrap;
-            justify-content: center;
-            min-height: 100vh;
-            height: 100px;
-          }
-        `}
-      </style>
+      </LazyHero>
+      <About />
+      <Portfolio />
     </React.Fragment>
   );
 };
