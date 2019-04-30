@@ -16,14 +16,10 @@ const Navigation = () => {
             <Nav.Link>Home</Nav.Link>
           </LinkContainer>
           <NavLink to='/#about'>
-            <LinkContainer to='/#about'>
-              <Nav.Link>About</Nav.Link>
-            </LinkContainer>
+            <Nav.Link>About</Nav.Link>
           </NavLink>
           <NavLink to='/#portfolio'>
-            <LinkContainer to='/#portfolio'>
-              <Nav.Link>Portfolio</Nav.Link>
-            </LinkContainer>
+            <Nav.Link>Portfolio</Nav.Link>
           </NavLink>
           <LinkContainer to='/blog'>
             <Nav.Link>Blog</Nav.Link>
