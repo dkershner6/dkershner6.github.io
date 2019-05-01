@@ -19,15 +19,15 @@ const About = () => {
             <li>
               Kubernetes has proven itself a valuable ally for the reliability
               sought for business critical applications. At time of writing, we
-              have 70+ pods deployed in 2 clusters.
+              have 70+ pods deployed in 2 clusters. The pods consist of
+              everything from ASP.Net Core to Redis.
             </li>
             <li>
               From the start of serverless technology's existence, I have whole
               heartedly embraced the cutting edge of the technology. In this
               effort, Azure Functions V2 (.Net Core 2.0) are one of the primary
-              vehicles for our software. This, combined with static serverless
-              websites primarily written in React provides the User Interface
-              for all of the apps.
+              vehicles for our software and provide the data processing and
+              simple APIs.
             </li>
             <li>
               ASP.Net Core in combination with Entity Framework Core make a

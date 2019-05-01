@@ -20,14 +20,15 @@ const Home = () => {
         isCentered={true}
         transitionDuration={600}
       >
-        <h1 className='display-3'>
+        <h1>
           <strong>
             <span class='text-primary'>{'>'}</span>DKershner.com
             <span class='text-primary'>{'<'}</span>
           </strong>
         </h1>
-        <h4>Software Engineer, DevOps & Cloud Architect</h4>
-        <h5>.Net Core, Kubernetes, Azure DevOps, & ReactJS</h5>
+        <h4>Full-stack Software Engineer, DevOps & Cloud Architect</h4>
+        <h5>.Net Core, Kubernetes, Azure DevOps, Webpack</h5>
+        <h6>C#, Bash, Powershell, Kubectl, Docker, React, Javascript</h6>
         <br />
         <LinkContainer to='/blog'>
           <Button size='lg' variant='primary'>
