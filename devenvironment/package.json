@@ -20,7 +20,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "postbuild": "react-snap"
+    "postbuild": "react-snap && npm run sitemap",
+    "sitemap": "node sitemap-builder.js"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -32,6 +33,9 @@
     "not op_mini all"
   ],
   "devDependencies": {
-    "react-snap": "^1.23.0"
+    "fs": "0.0.1-security",
+    "react-snap": "^1.23.0",
+    "util": "^0.12.0",
+    "xmlbuilder": "^12.0.1"
   }
 }
