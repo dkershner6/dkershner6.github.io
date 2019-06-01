@@ -1,27 +1,27 @@
-import React from 'react';
-import { Container, Button } from 'react-bootstrap';
-import LazyHero from 'react-lazy-hero';
-import { LinkContainer } from 'react-router-bootstrap';
+import React from "react";
+import { Container, Button } from "react-bootstrap";
+import LazyHero from "react-lazy-hero";
+import { LinkContainer } from "react-router-bootstrap";
 
 const Portfolio = () => {
   return (
     <React.Fragment>
       {/*<HelmetHead title='Portfolio | DKershner.com' />*/}
-      <div id='portfolio' className='page-header' style={{ padding: 40 }}>
-        <h1 align='center'>Portfolio</h1>
+      <div id="portfolio" className="page-header" style={{ padding: 40 }}>
+        <h1 className="text-center">Portfolio</h1>
       </div>
       <LazyHero
-        imageSrc='/babywise.jpg'
-        color='#000000'
+        imageSrc="/babywise.jpg"
+        color="#000000"
         opacity={0.7}
-        minHeight='100vh'
+        minHeight="100vh"
         isFixed={true}
         isCentered={true}
         transitionDuration={600}
       >
         <br />
-        <LinkContainer to='https://babywise.life'>
-          <Button size='lg' variant='outline-info'>
+        <LinkContainer to="https://babywise.life">
+          <Button size="lg" variant="outline-info">
             Babywise.life
           </Button>
         </LinkContainer>
@@ -35,16 +35,16 @@ const Portfolio = () => {
       </LazyHero>
 
       <LazyHero
-        imageSrc='/babyearth.jpg'
-        color='#001100'
+        imageSrc="/babyearth.jpg"
+        color="#001100"
         opacity={0.6}
-        minHeight='100vh'
+        minHeight="100vh"
         isFixed={true}
         isCentered={true}
         transitionDuration={600}
       >
-        <LinkContainer to='https://babyearth.com'>
-          <Button size='lg' variant='outline-success'>
+        <LinkContainer to="https://babyearth.com">
+          <Button size="lg" variant="outline-success">
             Babyearth.com
           </Button>
         </LinkContainer>

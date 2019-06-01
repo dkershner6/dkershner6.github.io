@@ -1,19 +1,19 @@
-import React from 'react';
-import { Container, Jumbotron, Button } from 'react-bootstrap';
+import React from "react";
+import { Container, Jumbotron, Button } from "react-bootstrap";
 
 const About = () => {
   return (
     <React.Fragment>
       {/*<HelmetHead title='About | DKershner.com' />*/}
       <div
-        id='about'
-        className='page-header'
-        style={{ padding: 40, margin: 'auto' }}
+        id="about"
+        className="page-header"
+        style={{ padding: 40, margin: "auto" }}
       >
-        <h1 align='center'>About</h1>
+        <h1 className="text-center">About</h1>
       </div>
       <Jumbotron>
-        <h2 align='center'>Full-Stack Cloud Native</h2>
+        <h2 className="text-center">Full-Stack Cloud Native</h2>
         <Container>
           <ul>
             <li>
@@ -37,7 +37,8 @@ const About = () => {
             <li>
               React combined into ASP.Net Core (or deployed separately for
               simple sites like this one) gives all the interactivity to the
-              interface one could desire.
+              interface one could desire. I have found layering TypeScript over
+              React makes the code much, much less error prone.
             </li>
             <li>
               Azure DevOps has saved me countless hours of deployments by
@@ -47,23 +48,23 @@ const About = () => {
           </ul>
         </Container>
         <hr />
-        <h3 align='center'> Find me on other platforms:</h3>
+        <h3 className="text-center"> Find me on other platforms:</h3>
 
-        <p align='center'>
+        <p className="text-center">
           <Button
-            variant='outline-info'
-            href='https://www.linkedin.com/in/derek-kershner-54b3392'
+            variant="outline-info"
+            href="https://www.linkedin.com/in/derek-kershner-54b3392"
           >
             LinkedIn
           </Button>
 
-          <Button variant='outline-info' href='https://github.com/dkershner6'>
+          <Button variant="outline-info" href="https://github.com/dkershner6">
             GitHub
           </Button>
 
           <Button
-            variant='outline-info'
-            href='https://app.pluralsight.com/profile/dkershner'
+            variant="outline-info"
+            href="https://app.pluralsight.com/profile/dkershner"
           >
             Pluralsight
           </Button>

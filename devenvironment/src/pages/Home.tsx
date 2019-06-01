@@ -22,12 +22,12 @@ const Home = () => {
       >
         <h1>
           <strong>
-            <span class="text-primary">{">"}</span>DKershner.com
-            <span class="text-primary">{"<"}</span>
+            <span className="text-primary">{">"}</span>DKershner.com
+            <span className="text-primary">{"<"}</span>
           </strong>
         </h1>
         <h4>Full-stack Software Engineer, DevOps & Cloud Architect</h4>
-        <h5>.Net Core, Kubernetes, Azure DevOps, React</h5>
+        <h5>.Net Core, Kubernetes, Azure DevOps, TypeScript React</h5>
         <br />
         <LinkContainer to="/blog">
           <Button size="lg" variant="primary">

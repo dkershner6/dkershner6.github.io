@@ -5,7 +5,7 @@ import HelmetHead from "../../components/Seo";
 
 import Error from "../../Error";
 
-class Post extends React.Component {
+class Post extends React.Component<any> {
   state = {
     content: "Loading..."
   };
