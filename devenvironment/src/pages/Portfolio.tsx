@@ -28,9 +28,11 @@ const Portfolio = () => {
         <br />
         <br />
         <Container>
-          Created several apps, both Shopify and Enterprise, supporting the
-          massive data behind this website, including a search engine and gift
-          registry.
+          <p className="mt-5 text-white">
+            Created several apps, both Shopify and Enterprise, supporting the
+            massive data behind this website, including a search engine and gift
+            registry.
+          </p>
         </Container>
       </LazyHero>
 
@@ -48,9 +50,7 @@ const Portfolio = () => {
             Babyearth.com
           </Button>
         </LinkContainer>
-        <br />
-        <br />
-        <p>
+        <p className="mt-5 text-white">
           Created and maintained the entire backend infrastructure for the site,
           as well as numerous apps to aid on the front end, including several
           small React apps.
