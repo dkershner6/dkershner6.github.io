@@ -17,6 +17,7 @@ class App extends Component {
       <Router>
         <Navigation />
         <AppRouter />
+
         <Footer />
       </Router>
     );

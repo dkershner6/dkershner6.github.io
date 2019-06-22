@@ -21,7 +21,7 @@ const Portfolio = () => {
       >
         <br />
         <LinkContainer to="https://babywise.life">
-          <Button size="lg" variant="outline-info">
+          <Button size="lg" variant="info">
             Babywise.life
           </Button>
         </LinkContainer>
@@ -44,7 +44,7 @@ const Portfolio = () => {
         transitionDuration={600}
       >
         <LinkContainer to="https://babyearth.com">
-          <Button size="lg" variant="outline-success">
+          <Button size="lg" variant="success">
             Babyearth.com
           </Button>
         </LinkContainer>

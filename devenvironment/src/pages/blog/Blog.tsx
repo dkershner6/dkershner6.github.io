@@ -65,7 +65,7 @@ const PostContainer = props => {
     <LinkContainer to={`/blog/${props.post.handle}`}>
       <LazyHero
         imageSrc={`/posts/images/${props.post.image}`}
-        color="#000000"
+        color="#FFFFFF"
         opacity={0.6}
         minHeight="50vh"
         isCentered={true}

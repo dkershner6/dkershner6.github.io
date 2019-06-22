@@ -4,8 +4,13 @@ import posts from "./Posts";
 import HelmetHead from "../../components/Seo";
 
 import Error from "../../Error";
+import BaseProps from "../../interface/BaseProps";
 
-class Post extends React.Component<any> {
+interface MatchParams {
+  handle: string;
+}
+
+class Post extends React.Component<BaseProps<MatchParams>> {
   state = {
     content: "Loading..."
   };
