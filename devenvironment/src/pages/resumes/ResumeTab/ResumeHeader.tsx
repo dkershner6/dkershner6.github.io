@@ -11,7 +11,8 @@ const ResumeHeader = (props: ResumeHeaderProps) => {
       <Col>
         <h1 className="display-3">Derek Kershner</h1>
         <h6>
-          Censored to avoid spambots. If you'd like to contact me, please use{" "}
+          Contact information censored to avoid spambots. If you'd like to
+          contact me, please use{" "}
           <a
             target="_blank"
             href="https://www.linkedin.com/in/derek-kershner-54b3392"
