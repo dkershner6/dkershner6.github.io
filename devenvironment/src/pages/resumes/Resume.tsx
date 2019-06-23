@@ -13,6 +13,12 @@ import HelmetHead from "../../components/Seo";
 import BaseProps from "../../interface/BaseProps";
 import CoverLetterTab from "./CoverLetterTab";
 import ResumeTab from "./ResumeTab";
+import makeRange from "../../utils/MakeRange";
+
+const urlParams = new URLSearchParams(window.location.search);
+const format = urlParams.get("format");
+
+const spaces = makeRange(0, 31);
 
 interface MatchParams {
   company: string;
@@ -24,34 +30,43 @@ export default class Resume extends React.Component<BaseProps<MatchParams>> {
   };
   render() {
     const { company } = this.props.match.params;
-    return (
-      <Container className="mt-5">
-        <HelmetHead title={`Resume for ${company} | DKershner.com`} />
-        <Row className="justify-content-center">
-          <Col xs="auto">
-            <ButtonGroup>
-              <Button
-                variant={
-                  this.state.activeTab === "cover" ? "primary" : "secondary"
-                }
-                onClick={() => this.setState({ activeTab: "cover" })}
-              >
-                Cover Letter
-              </Button>
-              <Button
-                variant={
-                  this.state.activeTab === "resume" ? "primary" : "secondary"
-                }
-                onClick={() => this.setState({ activeTab: "resume" })}
-              >
-                Resume
-              </Button>
-            </ButtonGroup>
-          </Col>
-        </Row>
-        <TabChooser company={company} activeTab={this.state.activeTab} />
-      </Container>
-    );
+
+    if (format === "print") {
+      return (
+        <Container className="mt-5">
+          <TabChooser company={company} activeTab={"resume"} />
+        </Container>
+      );
+    } else {
+      return (
+        <Container className="mt-5">
+          <HelmetHead title={`Resume for ${company} | DKershner.com`} />
+          <Row className="justify-content-center">
+            <Col xs="auto">
+              <ButtonGroup>
+                <Button
+                  variant={
+                    this.state.activeTab === "cover" ? "primary" : "secondary"
+                  }
+                  onClick={() => this.setState({ activeTab: "cover" })}
+                >
+                  Cover Letter
+                </Button>
+                <Button
+                  variant={
+                    this.state.activeTab === "resume" ? "primary" : "secondary"
+                  }
+                  onClick={() => this.setState({ activeTab: "resume" })}
+                >
+                  Resume
+                </Button>
+              </ButtonGroup>
+            </Col>
+          </Row>
+          <TabChooser company={company} activeTab={this.state.activeTab} />
+        </Container>
+      );
+    }
   }
 }
 

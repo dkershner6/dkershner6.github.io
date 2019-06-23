@@ -14,10 +14,17 @@ import Skills from "./ResumeTab/Skills";
 import Experience from "./ResumeTab/Experience";
 import Education from "./ResumeTab/Education";
 import References from "./ResumeTab/References";
+import makeRange from "../../utils/MakeRange";
+
+const urlParams = new URLSearchParams(window.location.search);
+const format = urlParams.get("format");
 
 interface ResumeTabProps {
   company: string;
+  noHeader?: boolean;
 }
+
+const spaces = makeRange(0, 11);
 
 const ResumeTab = (props: ResumeTabProps) => {
   return (
@@ -25,6 +32,7 @@ const ResumeTab = (props: ResumeTabProps) => {
       <ResumeHeader {...props} />
       <Objective {...props} />
       <Skills {...props} />
+      {format === "print" && spaces.map((space, index) => <br key={index} />)}
       <Experience {...props} />
       <Education {...props} />
       <References {...props} />

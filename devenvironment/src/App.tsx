@@ -7,20 +7,31 @@ import Navigation from "./components/Navigation";
 import Footer from "./components/Footer";
 import AppRouter from "./components/Router";
 
+const urlParams = new URLSearchParams(window.location.search);
+const format = urlParams.get("format");
+
 class App extends Component {
   componentDidMount() {
     ReactGA.initialize("UA-10014066-1");
     ReactGA.pageview(window.location.pathname + window.location.search);
   }
   render() {
-    return (
-      <Router>
-        <Navigation />
-        <AppRouter />
+    if (format === "print") {
+      return (
+        <Router>
+          <AppRouter />
+        </Router>
+      );
+    } else {
+      return (
+        <Router>
+          <Navigation />
+          <AppRouter />
 
-        <Footer />
-      </Router>
-    );
+          <Footer />
+        </Router>
+      );
+    }
   }
 }
 

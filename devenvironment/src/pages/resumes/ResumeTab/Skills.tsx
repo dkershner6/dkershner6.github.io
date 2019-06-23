@@ -7,7 +7,7 @@ const Skills = props => {
   return (
     <Row className="mt-3">
       <Col>
-        <Card>
+        <Card border="secondary">
           <Card.Header>
             <h3>Skills & Framework Familiarity</h3>
           </Card.Header>
@@ -21,8 +21,8 @@ const Skills = props => {
               </Col>
             </Row>
             <Row>
-              <Col sm="12" md="6" lg="4" xl="3">
-                <Card border="primary">
+              <Col className="mt-2" xs="12" md="6">
+                <Card border="secondary">
                   <Card.Header>Front-End</Card.Header>
                   <ListGroup className="list-group-flush">
                     <ListGroupItem
@@ -66,8 +66,8 @@ const Skills = props => {
                   </ListGroup>
                 </Card>
               </Col>
-              <Col sm="12" md="6" lg="4" xl="3">
-                <Card border="success">
+              <Col className="mt-2" xs="12" md="6">
+                <Card border="secondary">
                   <Card.Header>Back-End</Card.Header>
                   <ListGroup className="list-group-flush">
                     <ListGroupItem
@@ -76,7 +76,7 @@ const Skills = props => {
                       target="_blank"
                     >
                       <Row>
-                        <Col>ASP.Net Core/C#:</Col>{" "}
+                        <Col>ASP.Net Core / C#:</Col>{" "}
                         <Col className="align-self-center">
                           <SkillDisplay filled={5} />
                         </Col>
@@ -109,8 +109,8 @@ const Skills = props => {
                   </ListGroup>
                 </Card>
               </Col>
-              <Col sm="12" md="6" lg="4" xl="3">
-                <Card border="info">
+              <Col className="mt-2" xs="12" md="6">
+                <Card border="secondary">
                   <Card.Header>Clouds</Card.Header>
                   <ListGroup className="list-group-flush">
                     <ListGroupItem
@@ -156,7 +156,7 @@ const Skills = props => {
                   </ListGroup>
                 </Card>
               </Col>
-              <Col sm="12" md="6" lg="4" xl="3">
+              <Col className="mt-2" xs="12" md="6">
                 <Card border="secondary">
                   <Card.Header>
                     <strong>Deployment</strong>/DevOps
@@ -186,25 +186,13 @@ const Skills = props => {
                         </Col>
                       </Row>
                     </ListGroupItem>
-                    <ListGroupItem
-                      action
-                      href="https://aws.amazon.com/"
-                      target="_blank"
-                    >
-                      <Row>
-                        <Col>AWS:</Col>
-                        <Col className="align-self-center">
-                          <SkillDisplay filled={2} />
-                        </Col>
-                      </Row>
-                    </ListGroupItem>
                   </ListGroup>
                 </Card>
               </Col>
             </Row>
             <Row className="mt-3">
               <Col>
-                <Card>
+                <Card border="secondary">
                   <Card.Header>Other Skills</Card.Header>
                   <Card.Body>
                     <Row className="mt-1">
@@ -223,7 +211,7 @@ const Skills = props => {
                     </Row>
                     <Row className="mt-1">
                       <Col className="mt-1 text-center" md="6" lg="3">
-                        SQL / RDBMS
+                        Entity Framework / SQL / RDBMS
                       </Col>
                       <Col className="mt-1 text-center" md="6" lg="3">
                         NoSQL / JSON

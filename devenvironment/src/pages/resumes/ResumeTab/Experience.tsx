@@ -5,14 +5,14 @@ const Experience = props => {
   return (
     <Row className="mt-3">
       <Col>
-        <Card>
+        <Card border="secondary">
           <Card.Header>
             <h3>Experience</h3>
           </Card.Header>
           <Card.Body>
             <Row>
               <Col>
-                <Card>
+                <Card border="secondary">
                   <Card.Header>
                     <h4>Owner - Kershner Endeavors LLC</h4>
                   </Card.Header>
@@ -32,7 +32,9 @@ const Experience = props => {
                       </a>{" "}
                       as well, a group of e-commerce professionals who incubate
                       small businesses with enterprise level marketplace
-                      software.
+                      software. As part of this group, worked on several
+                      business plans, met with investors, and successfully
+                      funded startups.
                     </ListGroupItem>
                     <ListGroupItem>
                       <p>Primary responsibilies:</p>
@@ -62,7 +64,7 @@ const Experience = props => {
                 </Card>
               </Col>
               <Col>
-                <Card>
+                <Card border="secondary">
                   <Card.Header>
                     <h4>Director of Business Analytics - Altrec, Inc.</h4>
                   </Card.Header>

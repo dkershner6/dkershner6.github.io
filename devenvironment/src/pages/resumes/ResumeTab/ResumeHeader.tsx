@@ -9,13 +9,19 @@ const ResumeHeader = (props: ResumeHeaderProps) => {
   return (
     <Row>
       <Col>
-        <h1 className="text-primary">Derek Kershner</h1>
+        <h1 className="display-3">Derek Kershner</h1>
         <h6>
-          Censored online to avoid spammers | censored@dkershner.com |
-          cen-sor-ed!!
+          Censored to avoid spambots. If you'd like to contact me, please use{" "}
+          <a
+            target="_blank"
+            href="https://www.linkedin.com/in/derek-kershner-54b3392"
+          >
+            LinkedIn
+          </a>
+          .
         </h6>
         <p>
-          Interactive version available at{" "}
+          Interactive version of this document available at{" "}
           <a href={`https://dkershner.com/r/${props.company}`}>
             https://dkershner.com/r/{props.company}
           </a>

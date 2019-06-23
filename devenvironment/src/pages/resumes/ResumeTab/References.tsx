@@ -5,7 +5,7 @@ const References = props => {
   return (
     <Row className="mt-3">
       <Col>
-        <Card>
+        <Card border="secondary">
           <Card.Header>
             <h3>References</h3>
           </Card.Header>
