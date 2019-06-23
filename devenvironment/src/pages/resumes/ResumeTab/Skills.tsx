@@ -21,7 +21,7 @@ const Skills = props => {
               </Col>
             </Row>
             <Row>
-              <Col>
+              <Col sm="12" md="6" lg="4" xl="3">
                 <Card border="primary">
                   <Card.Header>Front-End</Card.Header>
                   <ListGroup className="list-group-flush">
@@ -60,7 +60,7 @@ const Skills = props => {
                   </ListGroup>
                 </Card>
               </Col>
-              <Col>
+              <Col sm="12" md="6" lg="4" xl="3">
                 <Card border="success">
                   <Card.Header>Back-End</Card.Header>
                   <ListGroup className="list-group-flush">
@@ -94,7 +94,7 @@ const Skills = props => {
                   </ListGroup>
                 </Card>
               </Col>
-              <Col>
+              <Col sm="12" md="6" lg="4" xl="3">
                 <Card border="info">
                   <Card.Header>Clouds</Card.Header>
                   <ListGroup className="list-group-flush">
@@ -132,7 +132,7 @@ const Skills = props => {
                   </ListGroup>
                 </Card>
               </Col>
-              <Col>
+              <Col sm="12" md="6" lg="4" xl="3">
                 <Card border="secondary">
                   <Card.Header>
                     <strong>Deployment</strong>/DevOps
@@ -175,38 +175,44 @@ const Skills = props => {
                   <Card.Header>Other Skills</Card.Header>
                   <Card.Body>
                     <Row className="mt-1">
-                      <Col className="text-center">
+                      <Col className="mt-1 text-center" md="6" lg="3">
                         Application Design / Microservices
                       </Col>
-                      <Col className="text-center">Serverless Functions</Col>
-                      <Col className="text-center">
+                      <Col className="mt-1 text-center" md="6" lg="3">
+                        Serverless Functions
+                      </Col>
+                      <Col className="mt-1 text-center" md="6" lg="3">
                         <strong>RESTful APIs - Build / Consume</strong>
                       </Col>
-                      <Col className="text-center">
+                      <Col className="mt-1 text-center" md="6" lg="3">
                         <strong>Project Planning & Management / Agile</strong>
                       </Col>
                     </Row>
                     <Row className="mt-1">
-                      <Col className="text-center">SQL / RDBMS</Col>
-                      <Col className="text-center">NoSQL / JSON</Col>
-                      <Col className="text-center">
+                      <Col className="mt-1 text-center" md="6" lg="3">
+                        SQL / RDBMS
+                      </Col>
+                      <Col className="mt-1 text-center" md="6" lg="3">
+                        NoSQL / JSON
+                      </Col>
+                      <Col className="mt-1 text-center" md="6" lg="3">
                         Continuous Integration / Continuous Deployment
                       </Col>
-                      <Col className="text-center">
+                      <Col className="mt-1 text-center" md="6" lg="3">
                         Search Engine Optimization
                       </Col>
                     </Row>
                     <Row className="mt-1">
-                      <Col className="text-center">
+                      <Col className="mt-1 text-center" md="6" lg="3">
                         Data Analysis / Big Data
                       </Col>
-                      <Col className="text-center">
+                      <Col className="mt-1 text-center" md="6" lg="3">
                         <strong>User Interface Design</strong>
                       </Col>
-                      <Col className="text-center">
+                      <Col className="mt-1 text-center" md="6" lg="3">
                         <strong>Git / Version Control</strong>
                       </Col>
-                      <Col className="text-center">
+                      <Col className="mt-1 text-center" md="6" lg="3">
                         <strong>Server Administration</strong>
                       </Col>
                     </Row>
