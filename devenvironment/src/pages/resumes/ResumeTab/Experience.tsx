@@ -27,7 +27,9 @@ const Experience = props => {
                     </ListGroupItem>
                     <ListGroupItem>
                       A principal partner in{" "}
-                      <a href="https://eformedpartners.com">eFormed Partners</a>{" "}
+                      <a href="https://eformedpartners.com" target="_blank">
+                        eFormed Partners
+                      </a>{" "}
                       as well, a group of e-commerce professionals who incubate
                       small businesses with enterprise level marketplace
                       software.
@@ -48,7 +50,10 @@ const Experience = props => {
                     </ListGroupItem>
                     <ListGroupItem>
                       Testimonials can be found on my{" "}
-                      <a href="https://www.linkedin.com/in/derek-kershner-54b3392/">
+                      <a
+                        href="https://www.linkedin.com/in/derek-kershner-54b3392/"
+                        target="_blank"
+                      >
                         LinkedIn
                       </a>{" "}
                       under recommendations.
@@ -88,7 +93,10 @@ const Experience = props => {
                     <ListGroupItem>
                       Won awards for major business impact. Several
                       recommendations can be found on my{" "}
-                      <a href="https://www.linkedin.com/in/derek-kershner-54b3392/">
+                      <a
+                        href="https://www.linkedin.com/in/derek-kershner-54b3392/"
+                        target="_blank"
+                      >
                         LinkedIn
                       </a>
                       .

@@ -11,7 +11,10 @@ const References = props => {
           </Card.Header>
           <ListGroup className="list-group-flush">
             <ListGroupItem>
-              <a href="https://www.linkedin.com/in/delraydavis/">
+              <a
+                href="https://www.linkedin.com/in/delraydavis/"
+                target="_blank"
+              >
                 DelRay Davis
               </a>{" "}
               - DMS Engineer at Inseego

@@ -25,7 +25,11 @@ const Skills = props => {
                 <Card border="primary">
                   <Card.Header>Front-End</Card.Header>
                   <ListGroup className="list-group-flush">
-                    <ListGroupItem action href="https://reactjs.org/">
+                    <ListGroupItem
+                      action
+                      href="https://reactjs.org/"
+                      target="_blank"
+                    >
                       <Row>
                         <Col>React / JS:</Col>{" "}
                         <Col className="align-self-center">
@@ -36,6 +40,7 @@ const Skills = props => {
                     <ListGroupItem
                       action
                       href="https://www.typescriptlang.org/"
+                      target="_blank"
                     >
                       <Row>
                         <Col>
@@ -49,6 +54,7 @@ const Skills = props => {
                     <ListGroupItem
                       action
                       href="https://shopify.github.io/liquid/"
+                      target="_blank"
                     >
                       <Row>
                         <Col>Shopify / Liquid:</Col>{" "}
@@ -67,6 +73,7 @@ const Skills = props => {
                     <ListGroupItem
                       action
                       href="https://dotnet.microsoft.com/apps/aspnet"
+                      target="_blank"
                     >
                       <Row>
                         <Col>ASP.Net Core/C#:</Col>{" "}
@@ -75,7 +82,11 @@ const Skills = props => {
                         </Col>
                       </Row>
                     </ListGroupItem>
-                    <ListGroupItem action href="https://nodejs.org/en/">
+                    <ListGroupItem
+                      action
+                      href="https://nodejs.org/en/"
+                      target="_blank"
+                    >
                       <Row>
                         <Col>Node / JS:</Col>{" "}
                         <Col className="align-self-center">
@@ -83,7 +94,11 @@ const Skills = props => {
                         </Col>
                       </Row>
                     </ListGroupItem>
-                    <ListGroupItem action href="https://www.python.org/">
+                    <ListGroupItem
+                      action
+                      href="https://www.python.org/"
+                      target="_blank"
+                    >
                       <Row>
                         <Col>Flask / Python:</Col>{" "}
                         <Col className="align-self-center">
@@ -101,6 +116,7 @@ const Skills = props => {
                     <ListGroupItem
                       action
                       href="https://azure.microsoft.com/en-us/"
+                      target="_blank"
                     >
                       <Row>
                         <Col>Azure:</Col>{" "}
@@ -109,7 +125,11 @@ const Skills = props => {
                         </Col>
                       </Row>
                     </ListGroupItem>
-                    <ListGroupItem action href="https://cloud.google.com/">
+                    <ListGroupItem
+                      action
+                      href="https://cloud.google.com/"
+                      target="_blank"
+                    >
                       <Row>
                         <Col>
                           <strong>Google</strong>:
@@ -119,7 +139,11 @@ const Skills = props => {
                         </Col>
                       </Row>
                     </ListGroupItem>
-                    <ListGroupItem action href="https://aws.amazon.com/">
+                    <ListGroupItem
+                      action
+                      href="https://aws.amazon.com/"
+                      target="_blank"
+                    >
                       <Row>
                         <Col>
                           <strong>AWS</strong>:
@@ -141,6 +165,7 @@ const Skills = props => {
                     <ListGroupItem
                       action
                       href="https://azure.microsoft.com/en-us/services/devops/"
+                      target="_blank"
                     >
                       <Row>
                         <Col>Azure DevOps / VSTS:</Col>
@@ -149,7 +174,11 @@ const Skills = props => {
                         </Col>
                       </Row>
                     </ListGroupItem>
-                    <ListGroupItem action href="https://kubernetes.io/">
+                    <ListGroupItem
+                      action
+                      href="https://kubernetes.io/"
+                      target="_blank"
+                    >
                       <Row>
                         <Col>Kubernetes / Docker:</Col>
                         <Col className="align-self-center">
@@ -157,7 +186,11 @@ const Skills = props => {
                         </Col>
                       </Row>
                     </ListGroupItem>
-                    <ListGroupItem action href="https://aws.amazon.com/">
+                    <ListGroupItem
+                      action
+                      href="https://aws.amazon.com/"
+                      target="_blank"
+                    >
                       <Row>
                         <Col>AWS:</Col>
                         <Col className="align-self-center">

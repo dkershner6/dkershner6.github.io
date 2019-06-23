@@ -16,7 +16,10 @@ const CoverLetterTab = props => {
           I think you will find my skillset and experience to be quite
           well-rounded and a solid match for many of the job requirements you
           have laid out in the{" "}
-          <a href="https://inseego.catsone.com/careers/61616-San-Diego/jobs/12120830-Senior-Web-Developer-Eugene-OR-San-Diego-CA-or-Remote/">
+          <a
+            href="https://inseego.catsone.com/careers/61616-San-Diego/jobs/12120830-Senior-Web-Developer-Eugene-OR-San-Diego-CA-or-Remote/"
+            target="_blank"
+          >
             Senior Web Developer contract position
           </a>
           :
@@ -42,7 +45,10 @@ const CoverLetterTab = props => {
             <li>
               I love to learn new things, and spend my free time watching
               courses on{" "}
-              <a href="https://app.pluralsight.com/profile/dkershner">
+              <a
+                href="https://app.pluralsight.com/profile/dkershner"
+                target="_blank"
+              >
                 Pluralsight
               </a>
               .
@@ -52,7 +58,10 @@ const CoverLetterTab = props => {
         <p>
           If you want more information than I have provided in either my resume
           or this cover letter, please see my{" "}
-          <a href="https://www.linkedin.com/in/derek-kershner-54b3392/">
+          <a
+            href="https://www.linkedin.com/in/derek-kershner-54b3392/"
+            target="_blank"
+          >
             LinkedIn
           </a>
           . You may also ask DelRay Davis, a current employee of yours, as he
