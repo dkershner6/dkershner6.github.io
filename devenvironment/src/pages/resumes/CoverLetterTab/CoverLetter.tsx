@@ -12,7 +12,7 @@ const CoverLetterTab = props => {
           to utilize it to experience something new. I have always been
           interested in the Internet of Things, so Inseego is a great fit.
         </p>
-        <p>
+        <div>
           I think you will find my skillset and experience to be quite
           well-rounded and a solid match for many of the job requirements you
           have laid out in the{" "}
@@ -54,7 +54,7 @@ const CoverLetterTab = props => {
               .
             </li>
           </ul>
-        </p>
+        </div>
         <p>
           If you want more information than I have provided in either my resume
           or this cover letter, please see my{" "}

@@ -7,14 +7,15 @@ import LazyHero from "react-lazy-hero";
 import posts from "./Posts";
 import HelmetHead from "../../components/Seo";
 
-const uniqueCategories = [
+const uniqueCategories = ["Azure Functions"];
+/*const uniqueCategories = [
   ...new Set(
     posts
       .map(post => post.categories)
       .flat()
       .sort()
   )
-];
+];*/
 
 const Blog = props => {
   if (props.match.params.category !== undefined) {
