@@ -30,7 +30,7 @@ const CoverLetterTab = props => {
               years.
             </li>
             <li>
-              I am a ployglot programmer able to be productive in several
+              I am a polyglot programmer able to be productive in several
               languages.
             </li>
             <li>
