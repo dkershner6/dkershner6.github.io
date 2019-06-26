@@ -1,5 +1,5 @@
 import React from "react";
-import { Container, Button } from "react-bootstrap";
+import { Container, Button, Jumbotron } from "react-bootstrap";
 import LazyHero from "react-lazy-hero";
 import { LinkContainer } from "react-router-bootstrap";
 
@@ -9,6 +9,10 @@ const Portfolio = () => {
       {/*<HelmetHead title='Portfolio | DKershner.com' />*/}
       <div id="portfolio" className="page-header" style={{ padding: 40 }}>
         <h1 className="text-center">Portfolio</h1>
+        <p className="text-center">
+          Most of the applications I develop are behind authentication, as they
+          are line of business applications, but here are a few examples:
+        </p>
       </div>
       <LazyHero
         imageSrc="/babywise.jpg"
@@ -55,7 +59,7 @@ const Portfolio = () => {
           as well as numerous apps to aid on the front end, including several
           small React apps.
         </p>
-      </LazyHero>
+      </LazyHero>      
     </React.Fragment>
   );
 };
