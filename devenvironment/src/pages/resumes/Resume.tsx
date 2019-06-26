@@ -14,6 +14,7 @@ import BaseProps from "../../interface/BaseProps";
 import CoverLetterTab from "./CoverLetterTab";
 import ResumeTab from "./ResumeTab";
 import makeRange from "../../utils/MakeRange";
+import properCase from "../../utils/ProperCase";
 
 const urlParams = new URLSearchParams(window.location.search);
 const format = urlParams.get("format");
@@ -28,6 +29,7 @@ export default class Resume extends React.Component<BaseProps<MatchParams>> {
   state = {
     activeTab: "cover"
   };
+
   render() {
     const { company } = this.props.match.params;
 
@@ -40,7 +42,9 @@ export default class Resume extends React.Component<BaseProps<MatchParams>> {
     } else {
       return (
         <Container className="mt-5">
-          <HelmetHead title={`Resume for ${company} | DKershner.com`} />
+          <HelmetHead
+            title={`Resume for ${properCase(company)} | DKershner.com`}
+          />
           <Row className="justify-content-center">
             <Col xs="auto">
               <ButtonGroup>

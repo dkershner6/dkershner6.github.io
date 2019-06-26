@@ -11,7 +11,7 @@ const Experience = props => {
           </Card.Header>
           <Card.Body>
             <Row>
-              <Col>
+              <Col className="mt-2" md="12" lg="6">
                 <Card border="secondary">
                   <Card.Header>
                     <h4>Owner - Kershner Endeavors LLC</h4>
@@ -63,7 +63,7 @@ const Experience = props => {
                   </ListGroup>
                 </Card>
               </Col>
-              <Col>
+              <Col className="mt-2" md="12" lg="6">
                 <Card border="secondary">
                   <Card.Header>
                     <h4>Director of Business Analytics - Altrec, Inc.</h4>

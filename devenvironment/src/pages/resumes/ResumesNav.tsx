@@ -1,9 +1,9 @@
 import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
 
-const resumesList = ["inseego"];
+const resumesList = ["inseego", "kollective"];
 
-const Resumes = props => {
+const ResumesNav = props => {
   return (
     <Container className="mt-5">
       <Row>
@@ -27,4 +27,4 @@ const Resumes = props => {
   );
 };
 
-export default Resumes;
+export default ResumesNav;

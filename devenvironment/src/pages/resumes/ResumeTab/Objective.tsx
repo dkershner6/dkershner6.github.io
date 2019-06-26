@@ -10,12 +10,7 @@ const Objective = props => {
             <h3>Objective</h3>
           </Card.Header>
           <Card.Body>
-            <p>
-              Experienced Full-Stack Software Developer, DevOps Practitioner,
-              and Cloud Architect with an unending thirst for learning, is
-              seeking new challenges and experiences to broaden his depth of
-              knowledge.
-            </p>
+            <p>{props.resume.objective}</p>
           </Card.Body>
         </Card>
       </Col>

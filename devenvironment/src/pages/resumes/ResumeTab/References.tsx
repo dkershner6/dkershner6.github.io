@@ -2,6 +2,7 @@ import React from "react";
 import { Row, Col, Card, ListGroup, ListGroupItem } from "react-bootstrap";
 
 const References = props => {
+  const { resume } = props;
   return (
     <Row className="mt-3">
       <Col>
@@ -10,17 +11,17 @@ const References = props => {
             <h3>References</h3>
           </Card.Header>
           <ListGroup className="list-group-flush">
+            {resume.references.map((reference, index) => (
+              <ListGroupItem key={index}>
+                <a href={reference.link} target="_blank">
+                  {reference.name}
+                </a>{" "}
+                - {reference.description}
+              </ListGroupItem>
+            ))}
             <ListGroupItem>
-              <a
-                href="https://www.linkedin.com/in/delraydavis/"
-                target="_blank"
-              >
-                DelRay Davis
-              </a>{" "}
-              - DMS Engineer at Inseego
-            </ListGroupItem>
-            <ListGroupItem>
-              More references available upon request.
+              {resume.references.length > 0 ? "More r" : "R"}eferences available
+              upon request.
             </ListGroupItem>
           </ListGroup>
         </Card>

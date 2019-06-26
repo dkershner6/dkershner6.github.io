@@ -7,7 +7,7 @@ import Portfolio from "../pages/Portfolio";
 import Blog from "../pages/blog/Blog";
 import Post from "../pages/blog/Post";
 import Error from "../Error";
-import Resumes from "../pages/resumes/Resumes";
+import ResumesNav from "../pages/resumes/ResumesNav";
 import Resume from "../pages/resumes/Resume";
 
 const AppRouter = () => (
@@ -18,7 +18,7 @@ const AppRouter = () => (
     <Route exact path="/blog" component={Blog} />
     <Route path="/blog/category/:category" component={Blog} />
     <Route path="/blog/:handle" component={Post} />
-    <Route exact path="/r" component={Resumes} />
+    <Route exact path="/r" component={ResumesNav} />
     <Route path="/r/:company" component={Resume} />
     <Route component={Error} status={404} />
   </Switch>
