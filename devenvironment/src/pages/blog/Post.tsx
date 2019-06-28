@@ -4,7 +4,7 @@ import posts from "./Posts";
 import HelmetHead from "../../components/Seo";
 
 import Error from "../../Error";
-import BaseProps from "../../interface/BaseProps";
+import BaseProps from "../../interfaces/BaseProps";
 
 interface MatchParams {
   handle: string;

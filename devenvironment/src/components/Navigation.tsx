@@ -1,5 +1,5 @@
 import React from "react";
-import { Nav, Navbar } from "react-bootstrap";
+import { Nav, Navbar, NavDropdown } from "react-bootstrap";
 import { LinkContainer } from "react-router-bootstrap";
 
 const Navigation = () => {
@@ -13,7 +13,11 @@ const Navigation = () => {
         <Nav className="mr-auto">
           <Nav.Link href="/">Home</Nav.Link>
           <Nav.Link href="/#about">About</Nav.Link>
-          <Nav.Link href="/#portfolio">Portfolio</Nav.Link>
+          <NavDropdown id="portfolio" title="Portfolio">
+            <NavDropdown.Item href="/portfolio/enterpriseMarketplace">
+              Enterprise Marketplace
+            </NavDropdown.Item>
+          </NavDropdown>
           <Nav.Link href="/blog">Blog</Nav.Link>
         </Nav>
       </Navbar.Collapse>

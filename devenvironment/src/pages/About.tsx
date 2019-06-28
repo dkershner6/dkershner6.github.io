@@ -1,20 +1,15 @@
 import React from "react";
-import { Container, Jumbotron, Button } from "react-bootstrap";
+import { Container, Row, Col, Jumbotron, Button } from "react-bootstrap";
 
 const About = () => {
   return (
     <React.Fragment>
       {/*<HelmetHead title='About | DKershner.com' />*/}
-      <div
-        id="about"
-        className="page-header"
-        style={{ padding: 40, margin: "auto" }}
-      >
-        <h1 className="text-center">About</h1>
-      </div>
-      <Jumbotron>
-        <h2 className="text-center">Full-Stack Cloud Native</h2>
-        <Container>
+      <Jumbotron fluid className="bg-dark text-light">
+        <Container className="mt-5">
+          <h2 id="about" className="text-center">
+            Full-Stack Cloud Native
+          </h2>
           <ul>
             <li>
               Kubernetes has proven itself a valuable ally for the reliability
@@ -47,28 +42,44 @@ const About = () => {
             </li>
           </ul>
         </Container>
-        <hr />
-        <h3 className="text-center"> Find me on other platforms:</h3>
+      </Jumbotron>
+      <Jumbotron className="bg-secondary">
+        <Container className="mt-3">
+          <Row className="mt-3 text-center">
+            <Col>
+              <h3 className="text-center">Portfolio</h3>
+              <Button
+                variant="outline-primary"
+                href="/portfolio/enterpriseMarketplace"
+              >
+                Enterprise Marketplace
+              </Button>
+            </Col>
+            <Col>
+              <h3 className="text-center">Social / Learning</h3>
+              <Button
+                variant="outline-info"
+                href="https://www.linkedin.com/in/derek-kershner-54b3392"
+              >
+                LinkedIn
+              </Button>
 
-        <p className="text-center">
-          <Button
-            variant="outline-info"
-            href="https://www.linkedin.com/in/derek-kershner-54b3392"
-          >
-            LinkedIn
-          </Button>
+              <Button
+                variant="outline-info"
+                href="https://github.com/dkershner6"
+              >
+                GitHub
+              </Button>
 
-          <Button variant="outline-info" href="https://github.com/dkershner6">
-            GitHub
-          </Button>
-
-          <Button
-            variant="outline-info"
-            href="https://app.pluralsight.com/profile/dkershner"
-          >
-            Pluralsight
-          </Button>
-        </p>
+              <Button
+                variant="outline-info"
+                href="https://app.pluralsight.com/profile/dkershner"
+              >
+                Pluralsight
+              </Button>
+            </Col>
+          </Row>
+        </Container>
       </Jumbotron>
     </React.Fragment>
   );

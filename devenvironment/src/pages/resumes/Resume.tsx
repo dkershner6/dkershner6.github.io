@@ -10,7 +10,7 @@ import {
 } from "react-bootstrap";
 import HelmetHead from "../../components/Seo";
 
-import BaseProps from "../../interface/BaseProps";
+import BaseProps from "../../interfaces/BaseProps";
 import CoverLetterTab from "./CoverLetterTab";
 import ResumeTab from "./ResumeTab";
 import makeRange from "../../utils/MakeRange";

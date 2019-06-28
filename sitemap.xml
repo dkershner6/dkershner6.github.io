@@ -25,6 +25,10 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://dkershner.com/portfolio/enterpriseMarketplace</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://dkershner.com/blog/when-to-use-app-service-plan</loc>
     <priority>0.5</priority>
   </url>

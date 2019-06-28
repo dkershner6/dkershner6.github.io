@@ -5,14 +5,13 @@ import HelmetHead from "../components/Seo";
 import LazyHero from "react-lazy-hero";
 
 import About from "./About";
-import Portfolio from "./Portfolio";
 
 const Home = () => {
   return (
     <React.Fragment>
       <HelmetHead title="DKershner.com" />
       <LazyHero
-        imageSrc="/hero-background.jpg"
+        imageSrc="/images/hero-background.jpg"
         color="#000000"
         opacity={0.2}
         minHeight="100vh"
@@ -41,7 +40,6 @@ const Home = () => {
         </LinkContainer>
       </LazyHero>
       <About />
-      <Portfolio />
     </React.Fragment>
   );
 };
