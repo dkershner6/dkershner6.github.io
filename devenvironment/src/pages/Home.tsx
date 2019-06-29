@@ -24,20 +24,17 @@ const Home = () => {
         <h1>
           <strong>
             <span className="display-4 text-primary">{">"}</span>
-            <span className="display-4 text-white">DKershner.com</span>
+            <span className="display-4 text-white">Derek Kershner</span>
             <span className="display-4 text-primary">{"<"}</span>
           </strong>
         </h1>
         <h4 className="text-white">
           Full-stack Software Engineer, DevOps, & Cloud Architect
         </h4>
-        <h5 className="text-white">
-          .Net Core, Kubernetes, Azure DevOps, TypeScript React
-        </h5>
         <br />
-        <LinkContainer to="/blog">
+        <LinkContainer to="/portfolio">
           <Button size="lg" variant="primary">
-            Read the Blog
+            See Portfolio
           </Button>
         </LinkContainer>
       </LazyHero>

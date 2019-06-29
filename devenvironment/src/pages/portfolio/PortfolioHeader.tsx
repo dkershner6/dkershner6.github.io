@@ -12,7 +12,7 @@ const PortfolioHeader = (props: PortfolioProps) => {
       imageSrc={project.imageSrc}
       color={project.heroTint}
       opacity={0.6}
-      minHeight={menu ? "400px" : "800px"}
+      minHeight={menu ? "500px" : "900px"}
       isFixed={true}
       isCentered={true}
       transitionDuration={600}

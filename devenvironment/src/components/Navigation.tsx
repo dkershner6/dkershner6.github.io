@@ -6,7 +6,7 @@ const Navigation = () => {
   return (
     <Navbar bg="dark" variant="dark" collapseOnSelect expand="lg">
       <LinkContainer to="/">
-        <Navbar.Brand>DKershner.com</Navbar.Brand>
+        <Navbar.Brand>Derek Kershner</Navbar.Brand>
       </LinkContainer>
       <Navbar.Toggle id="navbar-toggle" aria-controls="responsive-navbar-nav" />
       <Navbar.Collapse id="navbar-collapse">
