@@ -8,13 +8,13 @@ import {
   ButtonGroup,
   Button
 } from "react-bootstrap";
-import HelmetHead from "../../components/Seo";
+import HelmetHead from "../components/Seo";
 
-import BaseProps from "../../interfaces/BaseProps";
-import CoverLetterTab from "./CoverLetterTab";
-import ResumeTab from "./ResumeTab";
-import makeRange from "../../utils/MakeRange";
-import properCase from "../../utils/ProperCase";
+import BaseProps from "../interfaces/BaseProps";
+import CoverLetterTab from "./resumes/CoverLetterTab";
+import ResumeTab from "./resumes/ResumeTab";
+import makeRange from "../utils/MakeRange";
+import properCase from "../utils/ProperCase";
 
 const urlParams = new URLSearchParams(window.location.search);
 const format = urlParams.get("format");

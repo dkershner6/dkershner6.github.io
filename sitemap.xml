@@ -17,15 +17,23 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://dkershner.com/portfolio</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://dkershner.com/r/kollective</loc>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://dkershner.com/blog/category/Azure%20Functions</loc>
+    <loc>https://dkershner.com/portfolio/shopifySearchEngine</loc>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dkershner.com/portfolio/enterpriseMarketplace</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dkershner.com/blog/category/Azure%20Functions</loc>
     <priority>0.5</priority>
   </url>
   <url>

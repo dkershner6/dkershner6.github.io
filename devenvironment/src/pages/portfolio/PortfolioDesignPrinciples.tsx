@@ -14,7 +14,7 @@ const PortfolioDesignPrinciples = props => {
           <ListGroup>
             <ListGroupItem>
               Microservices...to a point. Never a monolith, but let scale
-              justify a new application service. I can't necessarily agree with{" "}
+              justify a new application service. I don't necessarily agree with{" "}
               <a href="https://buttercms.com/books/microservices-for-startups/should-you-always-start-with-a-monolith">
                 the argument that monoliths should be the initial design for
                 startup apps

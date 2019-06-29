@@ -4,7 +4,9 @@ import { LinkContainer } from "react-router-bootstrap";
 import HelmetHead from "../components/Seo";
 import LazyHero from "react-lazy-hero";
 
-import About from "./About";
+import About from "./home/About";
+import PortfolioMenu from "./home/PortfolioMenu";
+import Social from "./home/Social";
 
 const Home = () => {
   return (
@@ -21,9 +23,9 @@ const Home = () => {
       >
         <h1>
           <strong>
-            <span className="text-primary">{">"}</span>
-            <span className="text-white">DKershner.com</span>
-            <span className="text-primary">{"<"}</span>
+            <span className="display-2 text-primary">{">"}</span>
+            <span className="display-2 text-white">DKershner.com</span>
+            <span className="display-2 text-primary">{"<"}</span>
           </strong>
         </h1>
         <h4 className="text-white">
@@ -40,6 +42,8 @@ const Home = () => {
         </LinkContainer>
       </LazyHero>
       <About />
+      <PortfolioMenu />
+      <Social />
     </React.Fragment>
   );
 };
