@@ -23,9 +23,9 @@ const Home = () => {
       >
         <h1>
           <strong>
-            <span className="display-2 text-primary">{">"}</span>
-            <span className="display-2 text-white">DKershner.com</span>
-            <span className="display-2 text-primary">{"<"}</span>
+            <span className="display-4 text-primary">{">"}</span>
+            <span className="display-4 text-white">DKershner.com</span>
+            <span className="display-4 text-primary">{"<"}</span>
           </strong>
         </h1>
         <h4 className="text-white">

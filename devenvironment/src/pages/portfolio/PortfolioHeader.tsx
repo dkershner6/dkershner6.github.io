@@ -12,14 +12,14 @@ const PortfolioHeader = (props: PortfolioProps) => {
       imageSrc={project.imageSrc}
       color={project.heroTint}
       opacity={0.6}
-      minHeight={menu ? "400px" : "90vh"}
+      minHeight={menu ? "400px" : "800px"}
       isFixed={true}
       isCentered={true}
       transitionDuration={600}
     >
       <h1
         className={
-          menu ? "text-center text-white" : "display-3 text-center text-white"
+          menu ? "text-center text-white" : "display-4 text-center text-white"
         }
       >
         {project.name}
