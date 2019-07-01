@@ -15,7 +15,13 @@ class PortfolioDesign extends React.Component<
   PortfolioProps,
   PortfolioDesignState
 > {
-  state = { open: {} };
+  state = {
+    open: {
+      data: true,
+      backend: true,
+      frontend: true
+    }
+  };
 
   getOpen = (keyName: string): boolean => {
     const openValue = this.state.open[keyName];

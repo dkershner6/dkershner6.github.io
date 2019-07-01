@@ -1,13 +1,17 @@
 {
   "main.css": "/static/css/main.2748c3d7.chunk.css",
-  "main.js": "/static/js/main.8a57a327.chunk.js",
-  "main.js.map": "/static/js/main.8a57a327.chunk.js.map",
+  "main.js": "/static/js/main.53b682ba.chunk.js",
+  "main.js.map": "/static/js/main.53b682ba.chunk.js.map",
   "runtime~main.js": "/static/js/runtime~main.a8a9905a.js",
   "runtime~main.js.map": "/static/js/runtime~main.a8a9905a.js.map",
-  "static/js/2.e726ecf7.chunk.js": "/static/js/2.e726ecf7.chunk.js",
-  "static/js/2.e726ecf7.chunk.js.map": "/static/js/2.e726ecf7.chunk.js.map",
+  "static/js/2.242ad0bd.chunk.js": "/static/js/2.242ad0bd.chunk.js",
+  "static/js/2.242ad0bd.chunk.js.map": "/static/js/2.242ad0bd.chunk.js.map",
   "index.html": "/index.html",
-  "precache-manifest.253f25ed4d289630a10be7bc22faed38.js": "/precache-manifest.253f25ed4d289630a10be7bc22faed38.js",
+  "precache-manifest.962e5a28cde6991c69e08430ba2eb46b.js": "/precache-manifest.962e5a28cde6991c69e08430ba2eb46b.js",
   "service-worker.js": "/service-worker.js",
-  "static/css/main.2748c3d7.chunk.css.map": "/static/css/main.2748c3d7.chunk.css.map"
+  "static/css/main.2748c3d7.chunk.css.map": "/static/css/main.2748c3d7.chunk.css.map",
+  "static/media/azure-functions-consumption-vs-app-service-vs-kubernetes.md": "/static/media/azure-functions-consumption-vs-app-service-vs-kubernetes.1b0b2d44.md",
+  "static/media/azure-functions-limits-how-to-overcome.md": "/static/media/azure-functions-limits-how-to-overcome.91f7b463.md",
+  "static/media/serilog-gotchas.md": "/static/media/serilog-gotchas.af705e3f.md",
+  "static/media/when-to-use-app-service-plan.md": "/static/media/when-to-use-app-service-plan.75ff3ae3.md"
 }

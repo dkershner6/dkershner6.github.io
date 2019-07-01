@@ -1,5 +1,6 @@
 import React from "react";
-import { Container, Jumbotron } from "react-bootstrap";
+import { Container, Row, Col, Jumbotron } from "react-bootstrap";
+import ReactMarkdown from "react-markdown";
 import posts from "./Posts";
 import HelmetHead from "../../components/Seo";
 
@@ -12,6 +13,7 @@ interface MatchParams {
 
 class Post extends React.Component<BaseProps<MatchParams>> {
   state = {
+    post: {},
     content: "Loading..."
   };
 
@@ -21,13 +23,13 @@ class Post extends React.Component<BaseProps<MatchParams>> {
 
   getContent = async () => {
     try {
-      var response = await fetch(
-        `/posts/${this.props.match.params.handle}.html`
-      );
-      var data = await response.text();
+      let post = this.getPostData(this.props.match.params.handle);
+      let response = await fetch(post.content);
+      let data = await response.text();
 
       this.setState({
-        content: data
+        post: post,
+        content: data.replace(/\\\$/g, "$") // Prettier problems.
       });
     } catch {
       console.error("Error in fetching article, please reload.");
@@ -45,18 +47,26 @@ class Post extends React.Component<BaseProps<MatchParams>> {
       return <Error />;
     }
     return (
-      <Container>
+      <React.Fragment>
         <HelmetHead title={`${post.title} | DKershner.com`} />
-        <div className="page-header" style={{ padding: 40 }}>
-          <h1>{post.title}</h1>
-          <h5>{post.subtitle}</h5>
-          <h6>
-            {post.date}
-            {post.author !== undefined ? ` by ${post.author}` : ""}
-          </h6>
-        </div>
-        <Jumbotron dangerouslySetInnerHTML={{ __html: this.state.content }} />
-      </Container>
+        <Jumbotron fluid className="bg-primary text-light">
+          <Container>
+            <h1>{post.title}</h1>
+            <h5>{post.subtitle}</h5>
+            <h6>
+              {post.date}
+              {post.author !== undefined ? ` by ${post.author}` : ""}
+            </h6>
+          </Container>
+        </Jumbotron>
+        <Container className="mt-5">
+          <Row>
+            <Col>
+              <ReactMarkdown source={this.state.content} />
+            </Col>
+          </Row>
+        </Container>
+      </React.Fragment>
     );
   }
 }

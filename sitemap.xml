@@ -25,6 +25,10 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://dkershner.com/blog/serilog-gotchas</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://dkershner.com/portfolio/shopifySearchEngine</loc>
     <priority>0.5</priority>
   </url>
