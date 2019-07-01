@@ -7,13 +7,15 @@ import { projects } from "../portfolio/Projects";
 const PortfolioMenu = props => {
   return (
     <React.Fragment>
-      <Row className="mt-3 text-center">
-        <Col>
-          <h3 className="display-4 text-center">
-            <a href="/portfolio">Portfolio</a>
-          </h3>
-        </Col>
-      </Row>
+      <Container>
+        <Row className="mt-3 text-center">
+          <Col>
+            <h3 className="display-4">
+              <a href="/portfolio">Portfolio</a>
+            </h3>
+          </Col>
+        </Row>
+      </Container>
       {projects.map((project, index) => (
         <PortfolioHeader key={index} project={project} menu={true} />
       ))}
