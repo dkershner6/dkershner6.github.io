@@ -2,6 +2,7 @@ import React from "react";
 import { Container, Row, Col, Button } from "react-bootstrap";
 import LazyHero from "react-lazy-hero";
 import Arrow from "react-arrow";
+import { Link as ScrollLink } from "react-scroll";
 
 import PortfolioProps from "../../interfaces/PortfolioProps";
 
@@ -62,18 +63,20 @@ const PortfolioHeaderButton = (props: PortfolioProps) => {
     );
   } else {
     return (
-      <Button variant={project.bootstrapVariant} href="#design">
-        <Arrow
-          direction="down"
-          shaftWidth={25}
-          shaftLength={25}
-          headWidth={50}
-          headLength={25}
-          fill="white"
-          stroke="white"
-          strokeWidth={1}
-        />
-      </Button>
+      <ScrollLink to="design" smooth={true}>
+        <Button variant={project.bootstrapVariant}>
+          <Arrow
+            direction="down"
+            shaftWidth={25}
+            shaftLength={25}
+            headWidth={50}
+            headLength={25}
+            fill="white"
+            stroke="white"
+            strokeWidth={1}
+          />
+        </Button>
+      </ScrollLink>
     );
   }
 };

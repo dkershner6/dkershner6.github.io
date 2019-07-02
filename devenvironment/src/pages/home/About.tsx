@@ -1,8 +1,6 @@
 import React from "react";
 import { Container, Row, Col, Jumbotron, Button } from "react-bootstrap";
 
-import PortfolioSocial from "./PortfolioMenu";
-
 const About = () => {
   return (
     <React.Fragment>

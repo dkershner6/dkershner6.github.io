@@ -39,7 +39,7 @@ class PortfolioDesign extends React.Component<
     this.setState({ open: tempOpen });
   };
 
-  render() {
+  render(): JSX.Element {
     const { project } = this.props;
     return (
       <Container className="mt-5">

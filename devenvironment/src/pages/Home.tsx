@@ -1,8 +1,8 @@
 import React from "react";
 import { Button } from "react-bootstrap";
-import { LinkContainer } from "react-router-bootstrap";
 import HelmetHead from "../components/Seo";
 import LazyHero from "react-lazy-hero";
+import { Link as ScrollLink } from "react-scroll";
 
 import About from "./home/About";
 import PortfolioMenu from "./home/PortfolioMenu";
@@ -32,11 +32,11 @@ const Home = () => {
           Full-stack Software Engineer, DevOps, & Cloud Architect
         </h4>
         <br />
-        <LinkContainer to="/portfolio">
+        <ScrollLink to="portfolio" smooth={true}>
           <Button size="lg" variant="primary">
             See Portfolio
           </Button>
-        </LinkContainer>
+        </ScrollLink>
       </LazyHero>
       <About />
       <PortfolioMenu />

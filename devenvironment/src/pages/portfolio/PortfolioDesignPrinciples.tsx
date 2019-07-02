@@ -3,11 +3,11 @@ import { Row, Col, Card, ListGroup, ListGroupItem } from "react-bootstrap";
 
 const PortfolioDesignPrinciples = props => {
   return (
-    <Row className="mt-3">
+    <Row id="design" className="mt-3">
       <Col>
         <Card bg="info">
           <Card.Header>
-            <h2 id="design" className="text-light">
+            <h2 className="text-light">
               General Application Design Principles
             </h2>
           </Card.Header>

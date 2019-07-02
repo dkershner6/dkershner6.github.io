@@ -1,5 +1,3 @@
 import { RouteComponentProps } from "react-router";
 
-interface BaseProps<P> extends RouteComponentProps<P> {}
-
-export default BaseProps;
+export default interface BaseProps<P> extends RouteComponentProps<P> {}

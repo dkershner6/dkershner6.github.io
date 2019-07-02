@@ -12,6 +12,7 @@
     "@types/react-helmet": "^5.0.8",
     "@types/react-router-bootstrap": "^0.24.5",
     "@types/react-router-dom": "^4.3.3",
+    "@types/react-scroll": "^1.5.4",
     "bootstrap": "^4.3.1",
     "react": "^16.8.6",
     "react-arrow": "^2.0.4",
@@ -25,6 +26,7 @@
     "react-router-bootstrap": "^0.25.0",
     "react-router-dom": "^5.0.0",
     "react-scripts": "2.1.8",
+    "react-scroll": "^1.7.12",
     "styled-components": "^4.2.0",
     "typescript": "^3.5.1"
   },
@@ -37,7 +39,19 @@
     "sitemap": "node sitemap-builder.js"
   },
   "eslintConfig": {
-    "extends": "react-app"
+    "extends": [
+      "react-app",
+      "plugin:@typescript-eslint/recommended",
+      "prettier/@typescript-eslint",
+      "plugin:prettier/recommended",
+      "plugin:react/recommended"
+    ],
+    "rules": {
+      "@typescript-eslint/explicit-member-accessibility": "off",
+      "@typescript-eslint/explicit-function-return-type": "off",
+      "@typescript-eslint/no-empty-interface": "off",
+      "react/no-unescaped-entities": "off"
+    }
   },
   "browserslist": [
     ">0.2%",
@@ -46,7 +60,13 @@
     "not op_mini all"
   ],
   "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^1.11.0",
+    "@typescript-eslint/parser": "^1.11.0",
+    "eslint-config-prettier": "^6.0.0",
+    "eslint-plugin-prettier": "^3.1.0",
+    "eslint-plugin-react": "^7.14.2",
     "fs": "0.0.1-security",
+    "prettier": "^1.18.2",
     "react-snap": "^1.23.0",
     "util": "^0.12.0",
     "xmlbuilder": "^12.0.1"

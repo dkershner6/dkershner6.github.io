@@ -23,8 +23,8 @@ export default class Project {
     | "outline-info"
     | "outline-dark"
     | "outline-light";
-  specification: Array<string>;
-  data: Array<ProjectSection>;
-  backend: Array<ProjectSection>;
-  frontend: Array<ProjectSection>;
+  specification: string[];
+  data: ProjectSection[];
+  backend: ProjectSection[];
+  frontend: ProjectSection[];
 }

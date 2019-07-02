@@ -1,10 +1,14 @@
-import React from 'react';
-import { Helmet } from 'react-helmet';
+import React from "react";
+import { Helmet } from "react-helmet";
 
-const HelmetHead = props => {
+interface HelmetHeadProps {
+  title: string;
+}
+
+const HelmetHead = (props: HelmetHeadProps) => {
   return (
     <Helmet>
-      <title>{props.title || 'DKershner.com'}</title>
+      <title>{props.title || "DKershner.com"}</title>
     </Helmet>
   );
 };
