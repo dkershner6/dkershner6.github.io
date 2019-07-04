@@ -1,4 +1,5 @@
 import Project from "../../../classes/Project";
+import { createAttributeFromTechnology } from "../../../classes/ProjectAttribute";
 
 const enterpriseMarketplaceProject: Project = {
   id: "enterpriseMarketplace",
@@ -17,11 +18,7 @@ const enterpriseMarketplaceProject: Project = {
       id: "persistence",
       name: "Persistence",
       attributes: [
-        {
-          name: "Technology",
-          value: "Azure SQL",
-          link: "https://azure.microsoft.com/en-us/services/sql-database/"
-        },
+        createAttributeFromTechnology("azureSql"),
         {
           name: "Function",
           value: "House all of the data for the app"
@@ -43,11 +40,7 @@ const enterpriseMarketplaceProject: Project = {
           value: "Azure Monitor, Log Analytics, Application Insights",
           link: "https://azure.microsoft.com/"
         },
-        {
-          name: "Cache",
-          value: "Redis",
-          link: "https://redis.io/"
-        },
+        createAttributeFromTechnology("redis"),
         {
           name: "Queue Messaging",
           value: "Azure Storage Queues",
@@ -62,16 +55,9 @@ const enterpriseMarketplaceProject: Project = {
       id: "api",
       name: "API",
       attributes: [
-        {
-          name: "Technology",
-          value: "ASP.Net Core / Entity Framework Core",
-          link: "https://dotnet.microsoft.com/apps/aspnet"
-        },
-        {
-          name: "Deployment",
-          value: "Docker/Kubernetes",
-          link: "https://kubernetes.io"
-        },
+        createAttributeFromTechnology("aspNetCore"),
+        createAttributeFromTechnology("efcore"),
+        createAttributeFromTechnology("kubernetes"),
         {
           name: "Function",
           value:
@@ -88,16 +74,8 @@ const enterpriseMarketplaceProject: Project = {
       id: "logistics",
       name: "Logistics",
       attributes: [
-        {
-          name: "Technology",
-          value: "Azure Functions",
-          link: "https://azure.microsoft.com/en-us/services/functions/"
-        },
-        {
-          name: "Deployment",
-          value: "Docker/Kubernetes",
-          link: "https://kubernetes.io"
-        },
+        createAttributeFromTechnology("azureFunctions"),
+        createAttributeFromTechnology("kubernetes"),
         {
           name: "Function",
           value:
@@ -112,16 +90,8 @@ const enterpriseMarketplaceProject: Project = {
       id: "sellers",
       name: "Sellers",
       attributes: [
-        {
-          name: "Technology",
-          value: "Azure Functions",
-          link: "https://azure.microsoft.com/en-us/services/functions/"
-        },
-        {
-          name: "Deployment",
-          value: "Docker/Kubernetes",
-          link: "https://kubernetes.io"
-        },
+        createAttributeFromTechnology("azureFunctions"),
+        createAttributeFromTechnology("kubernetes"),
         {
           name: "Function",
           value:
@@ -137,11 +107,7 @@ const enterpriseMarketplaceProject: Project = {
       id: "sellersEdi",
       name: "Sellers EDI",
       attributes: [
-        {
-          name: "Technology",
-          value: "Azure Logic Apps",
-          link: "https://azure.microsoft.com/en-us/services/logic-apps/"
-        },
+        createAttributeFromTechnology("azureLogicApps"),
         {
           name: "Deployment",
           value: "Serverless (Consumption)",
@@ -160,16 +126,8 @@ const enterpriseMarketplaceProject: Project = {
       id: "marketplace",
       name: "Marketplace",
       attributes: [
-        {
-          name: "Technology",
-          value: "Azure Functions",
-          link: "https://azure.microsoft.com/en-us/services/functions/"
-        },
-        {
-          name: "Deployment",
-          value: "Docker/Kubernetes",
-          link: "https://kubernetes.io"
-        },
+        createAttributeFromTechnology("azureFunctions"),
+        createAttributeFromTechnology("kubernetes"),
         {
           name: "Function",
           value:
@@ -184,16 +142,8 @@ const enterpriseMarketplaceProject: Project = {
       id: "marketplaceChannels",
       name: "Marketplace Channels",
       attributes: [
-        {
-          name: "Technology",
-          value: "Azure Functions",
-          link: "https://azure.microsoft.com/en-us/services/functions/"
-        },
-        {
-          name: "Deployment",
-          value: "Docker/Kubernetes",
-          link: "https://kubernetes.io"
-        },
+        createAttributeFromTechnology("azureFunctions"),
+        createAttributeFromTechnology("kubernetes"),
         {
           name: "Note",
           value:
@@ -221,21 +171,8 @@ const enterpriseMarketplaceProject: Project = {
       id: "ui",
       name: "Admin UI",
       attributes: [
-        {
-          name: "Technology",
-          value: "React",
-          link: "https://reactjs.org/"
-        },
-        {
-          name: "Sub-Technology",
-          value: "TypeScript",
-          link: "https://www.typescriptlang.org/"
-        },
-        {
-          name: "Deployment",
-          value: "Docker/Kubernetes",
-          link: "https://kubernetes.io"
-        },
+        createAttributeFromTechnology("react"),
+        createAttributeFromTechnology("kubernetes"),
         {
           name: "Authorization",
           value: "Google Firebase",

@@ -24,6 +24,7 @@ export default class Project {
     | "outline-dark"
     | "outline-light";
   specification: string[];
+  liveExampleService?: { id: string; name: string };
   data: ProjectSection[];
   backend: ProjectSection[];
   frontend: ProjectSection[];

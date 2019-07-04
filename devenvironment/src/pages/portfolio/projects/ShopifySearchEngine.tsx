@@ -1,4 +1,5 @@
 import Project from "../../../classes/Project";
+import { createAttributeFromTechnology } from "../../../classes/ProjectAttribute";
 
 const shopifySearchEngineProject: Project = {
   id: "shopifySearchEngine",
@@ -13,16 +14,13 @@ const shopifySearchEngineProject: Project = {
     "Custom fields used in searching and more page types returned than Shopify's default.",
     'Custom weighting of fields and "Boosting" of certain result sets based on criteria.'
   ],
+  liveExampleService: { id: "appproxy", name: "Shopify Application Proxy" },
   data: [
     {
       id: "persistence",
       name: "Persistence",
       attributes: [
-        {
-          name: "Technology",
-          value: "Azure Blob / Table Storage",
-          link: "https://azure.microsoft.com/en-us/services/storage/blobs/"
-        },
+        createAttributeFromTechnology("azureStorage"),
         {
           name: "Function",
           value: "House the data to be indexed as well as other app data"
@@ -38,11 +36,7 @@ const shopifySearchEngineProject: Project = {
       id: "searchEngine",
       name: "Search Engine",
       attributes: [
-        {
-          name: "Technology",
-          value: "Azure Search",
-          link: "https://azure.microsoft.com/en-us/services/search/"
-        },
+        createAttributeFromTechnology("azureSearch"),
         {
           name: "Function",
           value: "Properly index the site data for rapid searching"
@@ -57,16 +51,8 @@ const shopifySearchEngineProject: Project = {
       id: "cache",
       name: "Cache",
       attributes: [
-        {
-          name: "Technology",
-          value: "Redis",
-          link: "https://redis.io/"
-        },
-        {
-          name: "Deployment",
-          value: "Docker/Kubernetes",
-          link: "https://kubernetes.io"
-        },
+        createAttributeFromTechnology("redis"),
+        createAttributeFromTechnology("kubernetes"),
         {
           name: "Function",
           value:
@@ -102,16 +88,8 @@ const shopifySearchEngineProject: Project = {
       id: "api",
       name: "API",
       attributes: [
-        {
-          name: "Technology",
-          value: "ASP.Net Core",
-          link: "https://dotnet.microsoft.com/apps/aspnet"
-        },
-        {
-          name: "Deployment",
-          value: "Docker/Kubernetes",
-          link: "https://kubernetes.io"
-        },
+        createAttributeFromTechnology("aspNetCore"),
+        createAttributeFromTechnology("kubernetes"),
         {
           name: "Function",
           value:
@@ -129,16 +107,8 @@ const shopifySearchEngineProject: Project = {
       id: "changedetector",
       name: "Change Detector",
       attributes: [
-        {
-          name: "Technology",
-          value: "Azure Functions",
-          link: "https://azure.microsoft.com/en-us/services/functions/"
-        },
-        {
-          name: "Deployment",
-          value: "Docker/Kubernetes",
-          link: "https://kubernetes.io"
-        },
+        createAttributeFromTechnology("azureFunctions"),
+        createAttributeFromTechnology("kubernetes"),
         {
           name: "Function",
           value:
@@ -154,16 +124,8 @@ const shopifySearchEngineProject: Project = {
       id: "indexer",
       name: "Indexer",
       attributes: [
-        {
-          name: "Technology",
-          value: "Azure Functions",
-          link: "https://azure.microsoft.com/en-us/services/functions/"
-        },
-        {
-          name: "Deployment",
-          value: "Docker/Kubernetes",
-          link: "https://kubernetes.io"
-        },
+        createAttributeFromTechnology("azureFunctions"),
+        createAttributeFromTechnology("kubernetes"),
         {
           name: "Function",
           value:
@@ -180,21 +142,8 @@ const shopifySearchEngineProject: Project = {
       id: "ui",
       name: "Shopify Admin UI",
       attributes: [
-        {
-          name: "Technology",
-          value: "React",
-          link: "https://reactjs.org/"
-        },
-        {
-          name: "Sub-Technology",
-          value: "TypeScript",
-          link: "https://www.typescriptlang.org/"
-        },
-        {
-          name: "Deployment",
-          value: "Docker/Kubernetes",
-          link: "https://kubernetes.io"
-        },
+        createAttributeFromTechnology("react"),
+        createAttributeFromTechnology("kubernetes"),
         {
           name: "Function",
           value:
@@ -210,25 +159,18 @@ const shopifySearchEngineProject: Project = {
       id: "appproxy",
       name: "Shopify Application Proxy",
       attributes: [
-        {
-          name: "Technology",
-          value: "React",
-          link: "https://reactjs.org/"
-        },
-        {
-          name: "Sub-Technology",
-          value: "ASP.Net Core",
-          link: "https://dotnet.microsoft.com/apps/aspnet"
-        },
-        {
-          name: "Deployment",
-          value: "Docker/Kubernetes",
-          link: "https://kubernetes.io"
-        },
+        createAttributeFromTechnology("react"),
+        createAttributeFromTechnology("aspNetCore"),
+        createAttributeFromTechnology("kubernetes"),
         {
           name: "Example",
           value: "Babyearth.com",
           link: "https://www.babyearth.com/apps/search/?query=test"
+        },
+        {
+          name: "Example",
+          value: "Babywise.life",
+          link: "https://babywise.life/apps/search/?query=test"
         },
         {
           name: "Function",

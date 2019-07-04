@@ -1,6 +1,7 @@
 import React from "react";
-import { Container, Row, Col } from "react-bootstrap";
+import { Container, Row, Col, Jumbotron, Button } from "react-bootstrap";
 import Arrow from "react-arrow";
+import { Link as ScrollLink } from "react-scroll";
 
 import PortfolioDesignPrinciples from "./PortfolioDesignPrinciples";
 import PortfoilioDesignSection from "./PortfolioDesignSection";
@@ -44,16 +45,34 @@ class PortfolioDesign extends React.Component<
     return (
       <Container className="mt-5">
         <PortfolioDesignPrinciples />
-        <Row className="mt-4 text-center">
-          <Col>
-            <h2>Application Design</h2>
-          </Col>
-        </Row>
-        <Row className="text-center">
-          <Col>
-            <p className="text-muted">Click headers to expand/collapse</p>
-          </Col>
-        </Row>
+
+        <Jumbotron className="mt-4 bg-info text-light">
+          <Row className="text-center">
+            <Col>
+              <h2 className="display-4">Application Design</h2>
+            </Col>
+          </Row>
+          <Row className="text-center">
+            <Col>
+              <p>Click headers to expand/collapse</p>
+            </Col>
+          </Row>
+          {project.liveExampleService !== undefined && (
+            <Row className="text-center">
+              <Col>
+                <ScrollLink
+                  to={project.liveExampleService.id}
+                  smooth={true}
+                  onClick={() => this.toggleOpen(project.liveExampleService.id)}
+                >
+                  <Button>
+                    See Live Examples in {project.liveExampleService.name}
+                  </Button>
+                </ScrollLink>
+              </Col>
+            </Row>
+          )}
+        </Jumbotron>
         <PortfoilioDesignSection
           {...this.props}
           sectionId="data"

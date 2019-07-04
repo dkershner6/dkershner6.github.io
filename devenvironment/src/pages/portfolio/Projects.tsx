@@ -1,9 +1,10 @@
 import Project from "../../classes/Project";
+import Technology from "../../classes/Technology";
 
 import enterpriseMarketplaceProject from "./projects/EnterpriseMarketplace";
 import shopifySearchEngineProject from "./projects/ShopifySearchEngine";
 
-export const projects: Project[] = [
+const projects: Project[] = [
   enterpriseMarketplaceProject,
   shopifySearchEngineProject
 ];
@@ -17,4 +18,7 @@ const getProject = projectId => {
   }
 };
 
+const getProjectsWithTechnology = (technology: Technology) => {};
+
 export default getProject;
+export { projects, getProjectsWithTechnology };

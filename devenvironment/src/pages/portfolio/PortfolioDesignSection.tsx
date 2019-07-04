@@ -10,6 +10,8 @@ import {
 } from "react-bootstrap";
 
 import PortfolioDesignSectionProps from "../../interfaces/PortfolioDesignProps";
+import TechnologyBadge from "../../components/TechnologyBadge";
+import { getTechnologiesFromAttributes } from "../../classes/ProjectAttribute";
 
 const PortfolioDesignSection = (props: PortfolioDesignSectionProps) => {
   const {
@@ -22,7 +24,7 @@ const PortfolioDesignSection = (props: PortfolioDesignSectionProps) => {
     toggleOpen
   } = props;
   return (
-    <Row className="mt-3">
+    <Row id={props.sectionId} className="mt-3">
       <Col>
         <Card bg={headerBg} text={headerText}>
           <Card.Header
@@ -41,12 +43,26 @@ const PortfolioDesignSection = (props: PortfolioDesignSectionProps) => {
                     xs="12"
                     xl={project[sectionId].length > 1 ? "6" : "12"}
                   >
-                    <Card bg="secondary" text="dark">
+                    <Card id={dataSection.id} bg="secondary" text="dark">
                       <Card.Header
                         style={{ cursor: "pointer" }}
                         onClick={() => toggleOpen(dataSection.id)}
                       >
-                        <h4>{dataSection.name}</h4>
+                        <Row>
+                          <Col>
+                            <h4>{dataSection.name}</h4>
+                          </Col>
+                          <Col>
+                            {getTechnologiesFromAttributes(
+                              dataSection.attributes
+                            ).map((technology, iindex) => (
+                              <TechnologyBadge
+                                key={iindex}
+                                technology={technology}
+                              />
+                            ))}
+                          </Col>
+                        </Row>
                       </Card.Header>
                       <Collapse in={getOpen(dataSection.id)}>
                         <ListGroup>
@@ -60,7 +76,13 @@ const PortfolioDesignSection = (props: PortfolioDesignSectionProps) => {
                               >
                                 <Row>
                                   <Col xs="12" md="3">
-                                    <strong>
+                                    <strong
+                                      className={
+                                        dataSectionAttribute.name === "Example"
+                                          ? "text-primary"
+                                          : ""
+                                      }
+                                    >
                                       {dataSectionAttribute.name}:
                                     </strong>
                                   </Col>

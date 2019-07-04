@@ -10,6 +10,7 @@ import Post from "../pages/blog/Post";
 import Error from "../Error";
 import ResumesNav from "../pages/resumes/ResumesNav";
 import Resume from "../pages/Resume";
+import TechnologyPage from "../pages/TechnologyPage";
 
 const AppRouter = () => (
   <Switch>
@@ -22,6 +23,15 @@ const AppRouter = () => (
     <Route path="/blog/:handle" component={Post} />
     <Route exact path="/r" component={ResumesNav} />
     <Route path="/r/:company" component={Resume} />
+    {/*<Route
+      exact
+      path="/technologies/:technologyType"
+      component={TechnologyPage}
+    />*/}
+    <Route
+      path="/technologies/:technologyType/:technologyId"
+      component={TechnologyPage}
+    />
     <Route component={Error} status={404} />
   </Switch>
 );
