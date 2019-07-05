@@ -53,6 +53,7 @@ const shopifySearchEngineProject: Project = {
       attributes: [
         createAttributeFromTechnology("redis"),
         createAttributeFromTechnology("kubernetes"),
+        createAttributeFromTechnology("azureDevops"),
         {
           name: "Function",
           value:
@@ -90,6 +91,7 @@ const shopifySearchEngineProject: Project = {
       attributes: [
         createAttributeFromTechnology("aspNetCore"),
         createAttributeFromTechnology("kubernetes"),
+        createAttributeFromTechnology("azureDevops"),
         {
           name: "Function",
           value:
@@ -109,6 +111,7 @@ const shopifySearchEngineProject: Project = {
       attributes: [
         createAttributeFromTechnology("azureFunctions"),
         createAttributeFromTechnology("kubernetes"),
+        createAttributeFromTechnology("azureDevops"),
         {
           name: "Function",
           value:
@@ -126,6 +129,7 @@ const shopifySearchEngineProject: Project = {
       attributes: [
         createAttributeFromTechnology("azureFunctions"),
         createAttributeFromTechnology("kubernetes"),
+        createAttributeFromTechnology("azureDevops"),
         {
           name: "Function",
           value:
@@ -144,6 +148,7 @@ const shopifySearchEngineProject: Project = {
       attributes: [
         createAttributeFromTechnology("react"),
         createAttributeFromTechnology("kubernetes"),
+        createAttributeFromTechnology("azureDevops"),
         {
           name: "Function",
           value:
@@ -162,6 +167,7 @@ const shopifySearchEngineProject: Project = {
         createAttributeFromTechnology("react"),
         createAttributeFromTechnology("aspNetCore"),
         createAttributeFromTechnology("kubernetes"),
+        createAttributeFromTechnology("azureDevops"),
         {
           name: "Example",
           value: "Babyearth.com",

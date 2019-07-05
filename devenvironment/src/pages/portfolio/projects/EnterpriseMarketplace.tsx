@@ -58,6 +58,7 @@ const enterpriseMarketplaceProject: Project = {
         createAttributeFromTechnology("aspNetCore"),
         createAttributeFromTechnology("efcore"),
         createAttributeFromTechnology("kubernetes"),
+        createAttributeFromTechnology("azureDevops"),
         {
           name: "Function",
           value:
@@ -76,6 +77,7 @@ const enterpriseMarketplaceProject: Project = {
       attributes: [
         createAttributeFromTechnology("azureFunctions"),
         createAttributeFromTechnology("kubernetes"),
+        createAttributeFromTechnology("azureDevops"),
         {
           name: "Function",
           value:
@@ -92,6 +94,7 @@ const enterpriseMarketplaceProject: Project = {
       attributes: [
         createAttributeFromTechnology("azureFunctions"),
         createAttributeFromTechnology("kubernetes"),
+        createAttributeFromTechnology("azureDevops"),
         {
           name: "Function",
           value:
@@ -128,6 +131,7 @@ const enterpriseMarketplaceProject: Project = {
       attributes: [
         createAttributeFromTechnology("azureFunctions"),
         createAttributeFromTechnology("kubernetes"),
+        createAttributeFromTechnology("azureDevops"),
         {
           name: "Function",
           value:
@@ -144,6 +148,7 @@ const enterpriseMarketplaceProject: Project = {
       attributes: [
         createAttributeFromTechnology("azureFunctions"),
         createAttributeFromTechnology("kubernetes"),
+        createAttributeFromTechnology("azureDevops"),
         {
           name: "Note",
           value:
@@ -173,6 +178,7 @@ const enterpriseMarketplaceProject: Project = {
       attributes: [
         createAttributeFromTechnology("react"),
         createAttributeFromTechnology("kubernetes"),
+        createAttributeFromTechnology("azureDevops"),
         {
           name: "Authorization",
           value: "Google Firebase",

@@ -19,8 +19,6 @@ import properCase from "../utils/ProperCase";
 const urlParams = new URLSearchParams(window.location.search);
 const format = urlParams.get("format");
 
-const spaces = makeRange(0, 31);
-
 interface MatchParams {
   company: string;
 }

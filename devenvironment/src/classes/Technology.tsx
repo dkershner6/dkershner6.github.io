@@ -2,7 +2,9 @@ import Project from "./Project";
 import ProjectAttribute from "./ProjectAttribute";
 import ProjectSection from "./ProjectSection";
 import { projects } from "../pages/portfolio/Projects";
+import posts from "../pages/blog/Posts";
 import technologies from "../pages/technologies/Technologies";
+import Post from "./Post";
 
 class ProjectSummary {
   id: string;
@@ -33,30 +35,51 @@ export const getTechnologyById = (technologyId: string) => {
 export const getProjectsForTechnology = (
   technology: Technology
 ): ProjectSummary[] => {
+  const searchProjectSection = (
+    projectSectionName: string,
+    project: Project
+  ): number => {
+    let projectSectionUses = 0;
+    project[projectSectionName].forEach((projectSection: ProjectSection) => {
+      let attributes = projectSection.attributes.filter(
+        (attribute: ProjectAttribute) => attribute.value === technology.label
+      );
+
+      if (attributes.length > 0) {
+        projectSectionUses = projectSectionUses + attributes.length;
+      }
+    });
+
+    return projectSectionUses;
+  };
   let returnObj = [];
   projects.forEach((project: Project) => {
     let projectUses = 0;
     if (project[technology.type] !== undefined) {
-      project[technology.type].forEach((projectSection: ProjectSection) => {
-        let attributes = projectSection.attributes.filter(
-          (attribute: ProjectAttribute) => attribute.value === technology.label
-        );
+      projectUses =
+        projectUses + searchProjectSection(technology.type, project);
+    } else {
+      let projectSections = ["backend", "frontend"];
+      projectSections.forEach(
+        projectSection =>
+          (projectUses =
+            projectUses + searchProjectSection(projectSection, project))
+      );
+    }
 
-        if (attributes.length > 0) {
-          projectUses = projectUses + attributes.length;
-        }
+    if (projectUses > 0) {
+      returnObj.push({
+        id: project.id,
+        name: project.name,
+        uses: projectUses
       });
-
-      if (projectUses > 0) {
-        returnObj.push({
-          id: project.id,
-          name: project.name,
-          uses: projectUses
-        });
-      }
     }
   });
   return returnObj;
+};
+
+export const getPostsForTechnology = (technology: Technology): Post[] => {
+  return posts.filter(post => post.technologyIds.includes(technology.id));
 };
 
 export const internalLink = (technology: Technology) => {

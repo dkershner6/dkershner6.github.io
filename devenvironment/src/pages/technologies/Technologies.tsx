@@ -73,6 +73,13 @@ const deploymentTechnologies: Technology[] = [
     type: "deployment",
     familiarity: 4,
     link: "https://kubernetes.io"
+  },
+  {
+    id: "azureDevops",
+    label: "Azure DevOps",
+    type: "deployment",
+    familiarity: 4,
+    link: "https://dev.azure.com"
   }
 ];
 

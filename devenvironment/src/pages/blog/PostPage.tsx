@@ -11,7 +11,7 @@ interface MatchParams {
   handle: string;
 }
 
-class Post extends React.Component<BaseProps<MatchParams>> {
+class PostPage extends React.Component<BaseProps<MatchParams>> {
   state = {
     post: {},
     content: "Loading..."
@@ -71,4 +71,4 @@ class Post extends React.Component<BaseProps<MatchParams>> {
   }
 }
 
-export default Post;
+export default PostPage;

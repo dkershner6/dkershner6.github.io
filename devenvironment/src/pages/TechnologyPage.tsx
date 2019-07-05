@@ -3,12 +3,14 @@ import { Container, Row, Col } from "react-bootstrap";
 import BaseProps from "../interfaces/BaseProps";
 import {
   getTechnologyById,
-  getProjectsForTechnology
+  getProjectsForTechnology,
+  getPostsForTechnology
 } from "../classes/Technology";
 
 import Error from "../Error";
 import SkillDisplay from "../components/SkillDisplay";
 import properCase from "../utils/ProperCase";
+import TechnologyBadge from "../components/TechnologyBadge";
 
 interface MatchParams {
   technologyType: string;
@@ -21,12 +23,18 @@ const TechnologyPage = (props: TechnologyProps) => {
   const { technologyId } = props.match.params;
   const technology = getTechnologyById(technologyId);
   const projects = getProjectsForTechnology(technology);
+  const posts = getPostsForTechnology(technology);
   if (technology !== undefined) {
     return (
       <Container className="mt-5">
         <Row>
           <Col>
             <h1 className="display-3">{technology.label}</h1>
+          </Col>
+        </Row>
+        <Row>
+          <Col>
+            <TechnologyBadge technology={technology} />
           </Col>
         </Row>
         {technology.link !== undefined && (
@@ -84,6 +92,25 @@ const TechnologyPage = (props: TechnologyProps) => {
                         <a href={`/portfolio/${project.id}`}>{project.name}</a>{" "}
                         uses this technology in {project.uses} service
                         {project.uses > 1 && "s"}
+                      </h5>
+                    </li>
+                  ))}
+                </ul>
+              </Col>
+            </Row>
+          </React.Fragment>
+        )}
+        {posts.length > 0 && (
+          <React.Fragment>
+            <Row className="mt-5">
+              <Col>
+                <h4>Posts written about this technology:</h4>
+
+                <ul>
+                  {posts.map((post, index) => (
+                    <li key={index}>
+                      <h5>
+                        <a href={`/blog/${post.handle}`}>{post.title}</a>
                       </h5>
                     </li>
                   ))}

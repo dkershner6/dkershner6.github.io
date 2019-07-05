@@ -1,9 +1,11 @@
-const whenServicePlanContent = require("./posts/when-to-use-app-service-plan.md");
-const howToOvercomeContent = require("./posts/azure-functions-limits-how-to-overcome.md");
-const consumptionVsAppPlanContent = require("./posts/azure-functions-consumption-vs-app-service-vs-kubernetes.md");
-const serilogGotchasContent = require("./posts/serilog-gotchas.md");
+import Post from "../../classes/Post";
 
-const posts = [
+const whenServicePlanContent = require("./posts/when-to-use-app-service-plan.md"); // eslint-disable-line @typescript-eslint/no-var-requires
+const howToOvercomeContent = require("./posts/azure-functions-limits-how-to-overcome.md"); // eslint-disable-line @typescript-eslint/no-var-requires
+const consumptionVsAppPlanContent = require("./posts/azure-functions-consumption-vs-app-service-vs-kubernetes.md"); // eslint-disable-line @typescript-eslint/no-var-requires
+const serilogGotchasContent = require("./posts/serilog-gotchas.md"); // eslint-disable-line @typescript-eslint/no-var-requires
+
+const posts: Post[] = [
   {
     title: "Azure Functions: Serilog Gotchas",
     subtitle:
@@ -12,7 +14,7 @@ const posts = [
     date: "2019-07-01",
     author: "Derek Kershner",
     image: "logs.jpg",
-    categories: ["Azure Functions"],
+    technologyIds: ["azure", "azureFunctions"],
     content: serilogGotchasContent
   },
   {
@@ -23,7 +25,7 @@ const posts = [
     date: "2019-02-27",
     author: "Derek Kershner",
     image: "gate.jpg",
-    categories: ["Azure Functions"],
+    technologyIds: ["azure", "azureFunctions"],
     content: howToOvercomeContent
   },
   {
@@ -33,7 +35,7 @@ const posts = [
     date: "2019-02-26",
     author: "Derek Kershner",
     image: "servers.jpg",
-    categories: ["Azure Functions"],
+    technologyIds: ["azure", "azureFunctions", "kubernetes"],
     content: consumptionVsAppPlanContent
   },
   {
@@ -44,7 +46,7 @@ const posts = [
     date: "2018-08-24",
     author: "Derek Kershner",
     image: "leaves.jpg",
-    categories: ["Azure Functions"],
+    technologyIds: ["azure", "azureFunctions"],
     content: whenServicePlanContent
   }
 ];

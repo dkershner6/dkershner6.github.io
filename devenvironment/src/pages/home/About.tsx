@@ -19,15 +19,12 @@ const About = () => {
               </h2>
             </Col>
           </Row>
-
           <Row>
-            <Col className="align-self-center text-center">
+            <Col className="align-self-center">
               <Row>
-                <Col>
+                <Col className="align-self-center" xs="2" md="1">
                   <h6>Expert</h6>
                 </Col>
-              </Row>
-              <Row>
                 <Col>
                   {technologies
                     .filter(technology => technology.familiarity >= 4)
@@ -40,14 +37,10 @@ const About = () => {
                     ))}
                 </Col>
               </Row>
-            </Col>
-            <Col className="align-self-center text-center">
-              <Row>
-                <Col>
+              <Row className="mt-2">
+                <Col className="align-self-center" xs="2" md="1">
                   <h6>Proficient</h6>
                 </Col>
-              </Row>
-              <Row>
                 <Col>
                   {technologies
                     .filter(technology => technology.familiarity === 3)
@@ -62,7 +55,7 @@ const About = () => {
               </Row>
             </Col>
           </Row>
-          <Row>
+          <Row className="mt-2">
             <Col>
               <ul>
                 <li>
