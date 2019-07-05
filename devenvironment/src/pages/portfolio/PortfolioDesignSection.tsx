@@ -79,7 +79,7 @@ const PortfolioDesignSection = (props: PortfolioDesignSectionProps) => {
                                     <strong
                                       className={
                                         dataSectionAttribute.name === "Example"
-                                          ? "text-primary"
+                                          ? "text-info"
                                           : ""
                                       }
                                     >
@@ -87,7 +87,15 @@ const PortfolioDesignSection = (props: PortfolioDesignSectionProps) => {
                                     </strong>
                                   </Col>
                                   <Col xs="12" md="9">
-                                    {dataSectionAttribute.value}
+                                    <p
+                                      className={
+                                        dataSectionAttribute.name === "Example"
+                                          ? "text-info"
+                                          : ""
+                                      }
+                                    >
+                                      {dataSectionAttribute.value}
+                                    </p>
                                   </Col>
                                 </Row>
                               </ListGroupItem>

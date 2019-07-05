@@ -3,9 +3,9 @@ import { Row, Col, Card, ListGroup, ListGroupItem } from "react-bootstrap";
 
 const PortfolioDesignPrinciples = props => {
   return (
-    <Row id="design" className="mt-3">
+    <Row className="mt-3">
       <Col>
-        <Card bg="info">
+        <Card bg="primary">
           <Card.Header>
             <h2 className="text-light">
               General Application Design Principles

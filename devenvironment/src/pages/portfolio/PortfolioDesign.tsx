@@ -43,13 +43,13 @@ class PortfolioDesign extends React.Component<
   render(): JSX.Element {
     const { project } = this.props;
     return (
-      <Container className="mt-5">
-        <PortfolioDesignPrinciples />
-
-        <Jumbotron className="mt-4 bg-info text-light">
+      <React.Fragment>
+        <Jumbotron className="bg-primary text-light" fluid>
           <Row className="text-center">
             <Col>
-              <h2 className="display-4">Application Design</h2>
+              <h2 id="design" className="display-4">
+                Application Design
+              </h2>
             </Col>
           </Row>
           <Row className="text-center">
@@ -65,7 +65,7 @@ class PortfolioDesign extends React.Component<
                   smooth={true}
                   onClick={() => this.toggleOpen(project.liveExampleService.id)}
                 >
-                  <Button>
+                  <Button variant="info">
                     See Live Examples in {project.liveExampleService.name}
                   </Button>
                 </ScrollLink>
@@ -73,62 +73,65 @@ class PortfolioDesign extends React.Component<
             </Row>
           )}
         </Jumbotron>
-        <PortfoilioDesignSection
-          {...this.props}
-          sectionId="data"
-          sectionName="Data"
-          headerBg="danger"
-          headerText="light"
-          getOpen={this.getOpen}
-          toggleOpen={this.toggleOpen}
-        />
-        <Row className="mt-3 text-center">
-          <Col>
-            <Arrow
-              direction="down"
-              shaftWidth={25}
-              shaftLength={25}
-              headWidth={50}
-              headLength={25}
-              fill={project.heroTint}
-              stroke={project.heroTint}
-              strokeWidth={1}
-            />
-          </Col>
-        </Row>
-        <PortfoilioDesignSection
-          {...this.props}
-          sectionId="backend"
-          sectionName="Back-End"
-          headerBg="warning"
-          headerText="light"
-          getOpen={this.getOpen}
-          toggleOpen={this.toggleOpen}
-        />
-        <Row className="mt-3 text-center">
-          <Col>
-            <Arrow
-              direction="down"
-              shaftWidth={25}
-              shaftLength={25}
-              headWidth={50}
-              headLength={25}
-              fill={project.heroTint}
-              stroke={project.heroTint}
-              strokeWidth={1}
-            />
-          </Col>
-        </Row>
-        <PortfoilioDesignSection
-          {...this.props}
-          sectionId="frontend"
-          sectionName="Front-End"
-          headerBg="success"
-          headerText="light"
-          getOpen={this.getOpen}
-          toggleOpen={this.toggleOpen}
-        />
-      </Container>
+        <Container className="mt-2">
+          <PortfolioDesignPrinciples />
+          <PortfoilioDesignSection
+            {...this.props}
+            sectionId="data"
+            sectionName="Data"
+            headerBg="danger"
+            headerText="light"
+            getOpen={this.getOpen}
+            toggleOpen={this.toggleOpen}
+          />
+          <Row className="mt-3 text-center">
+            <Col>
+              <Arrow
+                direction="down"
+                shaftWidth={25}
+                shaftLength={25}
+                headWidth={50}
+                headLength={25}
+                fill={project.heroTint}
+                stroke={project.heroTint}
+                strokeWidth={1}
+              />
+            </Col>
+          </Row>
+          <PortfoilioDesignSection
+            {...this.props}
+            sectionId="backend"
+            sectionName="Back-End"
+            headerBg="warning"
+            headerText="light"
+            getOpen={this.getOpen}
+            toggleOpen={this.toggleOpen}
+          />
+          <Row className="mt-3 text-center">
+            <Col>
+              <Arrow
+                direction="down"
+                shaftWidth={25}
+                shaftLength={25}
+                headWidth={50}
+                headLength={25}
+                fill={project.heroTint}
+                stroke={project.heroTint}
+                strokeWidth={1}
+              />
+            </Col>
+          </Row>
+          <PortfoilioDesignSection
+            {...this.props}
+            sectionId="frontend"
+            sectionName="Front-End"
+            headerBg="success"
+            headerText="light"
+            getOpen={this.getOpen}
+            toggleOpen={this.toggleOpen}
+          />
+        </Container>
+      </React.Fragment>
     );
   }
 }
