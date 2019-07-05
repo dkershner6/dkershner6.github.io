@@ -22,8 +22,11 @@ const PortfolioDesignPrinciples = props => {
               , but understand the reasons and err in that direction.
             </ListGroupItem>
             <ListGroupItem>
-              Data is generally grouped for the entire app in a single instance
-              for compute cost efficiency.
+              Data is generally grouped for the entire app in a single instance.
+              Data is not combined with other apps, but neither is it split out
+              to a single concern. My reasons for this are the minimum financial
+              and management costs associated with provisioning a database
+              exceed the benefits from reliability gains.
             </ListGroupItem>
             <ListGroupItem>
               Use technologies that minimize ongoing maintenance of the
@@ -39,9 +42,9 @@ const PortfolioDesignPrinciples = props => {
               heavy use of containers.
             </ListGroupItem>
             <ListGroupItem>
-              Continuous Integration & Deployment is used in all cases, but will
-              not be listed as such. In nearly all cases, the flow is from
-              GitHub to Azure DevOps/VSTS to the deployment target.
+              Continuous Integration & Deployment is used in all cases. In
+              nearly all cases, the flow is from GitHub to Azure DevOps/VSTS to
+              the deployment target.
             </ListGroupItem>
           </ListGroup>
         </Card>
