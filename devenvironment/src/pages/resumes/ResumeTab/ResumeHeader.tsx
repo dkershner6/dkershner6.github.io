@@ -15,6 +15,7 @@ const ResumeHeader = (props: ResumeHeaderProps) => {
           contact me, please use{" "}
           <a
             target="_blank"
+            rel="noopener noreferrer"
             href="https://www.linkedin.com/in/derek-kershner-54b3392"
           >
             LinkedIn

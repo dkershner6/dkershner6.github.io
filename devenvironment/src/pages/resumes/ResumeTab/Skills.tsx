@@ -4,7 +4,7 @@ import { Row, Col, Card, ListGroup, ListGroupItem } from "react-bootstrap";
 import SkillDisplay from "../../../components/SkillDisplay";
 
 const Skills = props => {
-  const { resume } = props;
+  const { resume, format } = props;
   return (
     <Row className="mt-3">
       <Col>
@@ -36,9 +36,9 @@ const Skills = props => {
                       {skill.subSkills.map((subSkill, iindex) => (
                         <ListGroupItem
                           key={iindex}
-                          action
-                          href={subSkill.link}
-                          target="_blank"
+                          action={format === "print"}
+                          href={format !== "print" ? subSkill.link : ""}
+                          target={format !== "print" ? "_blank" : ""}
                         >
                           <Row>
                             <Col>

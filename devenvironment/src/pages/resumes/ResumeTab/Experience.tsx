@@ -27,7 +27,11 @@ const Experience = props => {
                     </ListGroupItem>
                     <ListGroupItem>
                       A principal partner in{" "}
-                      <a href="https://eformedpartners.com" target="_blank">
+                      <a
+                        href="https://eformedpartners.com"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
                         eFormed Partners
                       </a>{" "}
                       as well, a group of e-commerce professionals who incubate
@@ -50,17 +54,18 @@ const Experience = props => {
                         <li>Automate deployment into the cloud (CI/CD).</li>
                       </ul>
                     </ListGroupItem>
-                    <ListGroupItem>
-                      Testimonials can be found on my{" "}
-                      <a
-                        href="https://www.linkedin.com/in/derek-kershner-54b3392/"
-                        target="_blank"
-                      >
-                        LinkedIn
-                      </a>{" "}
-                      under recommendations.
-                    </ListGroupItem>
                   </ListGroup>
+                  <Card.Footer>
+                    Testimonials can be found on my{" "}
+                    <a
+                      href="https://www.linkedin.com/in/derek-kershner-54b3392/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      LinkedIn
+                    </a>{" "}
+                    under recommendations.
+                  </Card.Footer>
                 </Card>
               </Col>
               <Col className="mt-2" md="12" lg="6">
@@ -92,18 +97,19 @@ const Experience = props => {
                         </li>
                       </ul>
                     </ListGroupItem>
-                    <ListGroupItem>
-                      Won awards for major business impact. Several
-                      recommendations can be found on my{" "}
-                      <a
-                        href="https://www.linkedin.com/in/derek-kershner-54b3392/"
-                        target="_blank"
-                      >
-                        LinkedIn
-                      </a>
-                      .
-                    </ListGroupItem>
                   </ListGroup>
+                  <Card.Footer>
+                    Won awards for major business impact. Several
+                    recommendations can be found on my{" "}
+                    <a
+                      href="https://www.linkedin.com/in/derek-kershner-54b3392/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      LinkedIn
+                    </a>
+                    .
+                  </Card.Footer>
                 </Card>
               </Col>
             </Row>

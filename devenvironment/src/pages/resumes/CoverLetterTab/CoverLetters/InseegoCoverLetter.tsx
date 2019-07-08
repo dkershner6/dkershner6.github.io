@@ -57,6 +57,7 @@ const InseegoCoverLetter = props => {
         <a
           href="https://www.linkedin.com/in/derek-kershner-54b3392/"
           target="_blank"
+          rel="noopener noreferrer"
         >
           LinkedIn
         </a>

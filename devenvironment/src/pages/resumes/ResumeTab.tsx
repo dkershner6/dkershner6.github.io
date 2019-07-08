@@ -43,7 +43,7 @@ const ResumeTab = (props: ResumeTabProps) => {
       <Container className="mt-5">
         <ResumeHeader {...props} />
         <Objective {...props} resume={resume} />
-        <Skills {...props} resume={resume} />
+        <Skills {...props} resume={resume} format={format} />
         {format === "print" &&
           resume.spaces.map((space, index) => <br key={index} />)}
         <Experience {...props} />

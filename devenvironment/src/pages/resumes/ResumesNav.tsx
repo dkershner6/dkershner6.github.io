@@ -1,7 +1,7 @@
 import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
 
-const resumesList = ["inseego", "kollective"];
+const resumesList = ["inseego", "kollective", "g5"];
 
 const ResumesNav = props => {
   return (
