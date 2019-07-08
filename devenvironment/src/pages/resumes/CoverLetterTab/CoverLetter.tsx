@@ -4,6 +4,7 @@ import { Row, Col } from "react-bootstrap";
 import InseegoCoverLetter from "./CoverLetters/InseegoCoverLetter";
 import KollectiveCoverLetter from "./CoverLetters/KollectiveCoverLetter";
 import G5CoverLetter from "./CoverLetters/G5CoverLetter";
+import DevotedHealthCoverLetter from "./CoverLetters/DevotedHealthCoverLetter";
 
 interface CoverLetterProps {
   company: string;
@@ -38,6 +39,8 @@ const GetCoverLetter = (props: GetCoverLetterProps) => {
     return <KollectiveCoverLetter />;
   } else if (company === "g5") {
     return <G5CoverLetter />;
+  } else if (company === "devotedHealth") {
+    return <DevotedHealthCoverLetter />;
   } else {
     return null;
   }
