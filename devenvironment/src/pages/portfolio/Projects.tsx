@@ -1,12 +1,14 @@
-import Project from "../../classes/Project";
-import Technology from "../../classes/Technology";
+import Project from '../../classes/Project';
+import Technology from '../../classes/Technology';
 
-import enterpriseMarketplaceProject from "./projects/EnterpriseMarketplace";
-import shopifySearchEngineProject from "./projects/ShopifySearchEngine";
+import enterpriseMarketplaceProject from './projects/EnterpriseMarketplace';
+import shopifySearchEngineProject from './projects/ShopifySearchEngine';
+import codeChallengesProject from './projects/CodeChallenges';
 
 const projects: Project[] = [
+  codeChallengesProject,
   enterpriseMarketplaceProject,
-  shopifySearchEngineProject
+  shopifySearchEngineProject,
 ];
 
 const getProject = projectId => {

@@ -45,11 +45,15 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://dkershner.com/blog/technology/kubernetes</loc>
+    <loc>https://dkershner.com/portfolio/codeChallenges</loc>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dkershner.com/technologies/data/azureSql</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dkershner.com/blog/technology/kubernetes</loc>
     <priority>0.5</priority>
   </url>
   <url>
