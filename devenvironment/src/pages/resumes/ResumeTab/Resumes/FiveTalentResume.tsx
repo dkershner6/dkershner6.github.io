@@ -1,8 +1,8 @@
 import makeRange from "../../../../utils/MakeRange";
 import Resume from "../../../../classes/Resume";
 
-const devotedHealthResume: Resume = {
-  company: "devotedHealth",
+const fiveTalentResume: Resume = {
+  company: "fiveTalent",
   objective:
     "Experienced Full-Stack Software Developer, DevOps Practitioner, and Cloud Architect with an unending thirst for learning, is seeking new challenges and experiences to broaden his depth of knowledge.",
   skills: [
@@ -28,16 +28,19 @@ const devotedHealthResume: Resume = {
       subSkills: [
         {
           name: "ASP.Net Core / C#",
+          bolded: true,
           score: 5,
           link: "https://dotnet.microsoft.com/apps/aspnet"
         },
         {
           name: "Node / JS",
-          score: 4,
+          bolded: true,
+          score: 3,
           link: "https://nodejs.org/en/"
         },
         {
           name: "Flask / Python",
+          bolded: true,
           score: 3,
           link: "https://www.python.org/"
         }
@@ -53,6 +56,7 @@ const devotedHealthResume: Resume = {
         },
         {
           name: "Google",
+          bolded: false,
           score: 3,
           link: "https://cloud.google.com/"
         },
@@ -66,6 +70,7 @@ const devotedHealthResume: Resume = {
     },
     {
       name: "Deployment / DevOps",
+      bolded: true,
       subSkills: [
         {
           name: "Azure DevOps / VSTS",
@@ -93,18 +98,19 @@ const devotedHealthResume: Resume = {
     },
     {
       name: "Project Planning & Management / Agile",
-      bolded: false
+      bolded: true
     },
     {
       name: "Entity Framework / SQL / RDBMS",
-      bolded: false
+      bolded: true
     },
     {
       name: "NoSQL / JSON",
-      bolded: false
+      bolded: true
     },
     {
-      name: "Continuous Integration / Continuous Deployment",
+      name:
+        "Continuous Integration / Continuous Deployment / Infrastructure as Code",
       bolded: false
     },
     {
@@ -113,7 +119,7 @@ const devotedHealthResume: Resume = {
     },
     {
       name: "Data Analysis / Big Data",
-      bolded: false
+      bolded: true
     },
     {
       name: "User Interface Design",
@@ -129,7 +135,13 @@ const devotedHealthResume: Resume = {
     }
   ],
   spaces: makeRange(0, 11),
-  references: []
+  references: [
+    {
+      name: "Meg Chun",
+      link: "https://www.linkedin.com/in/meg-chun-91750427/",
+      description: "Brand Marketing Manager at KIALOA Paddles"
+    }
+  ]
 };
 
-export default devotedHealthResume;
+export default fiveTalentResume;

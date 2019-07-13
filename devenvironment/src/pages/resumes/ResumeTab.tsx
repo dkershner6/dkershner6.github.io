@@ -16,17 +16,18 @@ import Education from "./ResumeTab/Education";
 import References from "./ResumeTab/References";
 
 import getResume from "./ResumeTab/Resumes/GetResume";
+import Resume from "../../classes/Resume";
 
 const urlParams = new URLSearchParams(window.location.search);
 const format = urlParams.get("format");
 
-interface ResumeTabProps {
+export interface ResumeTabProps {
   company: string;
   noHeader?: boolean;
 }
 
 const ResumeTab = (props: ResumeTabProps) => {
-  const resume = getResume(props.company);
+  const resume: Resume = getResume(props.company);
 
   if (resume === undefined) {
     return (

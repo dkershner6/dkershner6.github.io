@@ -1,7 +1,8 @@
 import React from "react";
 import { Row, Col, Card, ListGroup, ListGroupItem } from "react-bootstrap";
+import { ResumeTabProps } from "../ResumeTab";
 
-const Education = props => {
+const Education = (props: ResumeTabProps) => {
   return (
     <Row className="mt-3">
       <Col>

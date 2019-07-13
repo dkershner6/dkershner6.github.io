@@ -1,11 +1,9 @@
 import React from "react";
 import { Row, Col } from "react-bootstrap";
 
-interface ResumeHeaderProps {
-  company: string;
-}
+import { ResumeTabProps } from "../ResumeTab";
 
-const ResumeHeader = (props: ResumeHeaderProps) => {
+const ResumeHeader = (props: ResumeTabProps) => {
   return (
     <Row>
       <Col>

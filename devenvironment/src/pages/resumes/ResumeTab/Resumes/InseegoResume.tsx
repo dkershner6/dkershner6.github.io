@@ -1,6 +1,7 @@
 import makeRange from "../../../../utils/MakeRange";
+import Resume from "../../../../classes/Resume";
 
-const inseegoResume = {
+const inseegoResume: Resume = {
   company: "inseego",
   objective:
     "Experienced Full-Stack Software Developer, DevOps Practitioner, and Cloud Architect with an unending thirst for learning, is seeking new challenges and experiences to broaden his depth of knowledge.",

@@ -1,7 +1,14 @@
 import React from "react";
 import { Row, Col, Card } from "react-bootstrap";
 
-const Objective = props => {
+import Resume from "../../../classes/Resume";
+import { ResumeTabProps } from "../ResumeTab";
+
+interface ObjectiveProps extends ResumeTabProps {
+  resume: Resume;
+}
+
+const Objective = (props: ObjectiveProps) => {
   return (
     <Row className="mt-3">
       <Col>

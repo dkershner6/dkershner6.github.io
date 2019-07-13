@@ -1,6 +1,7 @@
 import makeRange from "../../../../utils/MakeRange";
+import Resume from "../../../../classes/Resume";
 
-const g5Resume = {
+const g5Resume: Resume = {
   company: "g5",
   objective:
     "Data Analyst turned Software Developer with an unending thirst for learning, is seeking new challenges and experiences to broaden his depth of knowledge.",

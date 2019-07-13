@@ -3,7 +3,15 @@ import { Row, Col, Card, ListGroup, ListGroupItem } from "react-bootstrap";
 
 import SkillDisplay from "../../../components/SkillDisplay";
 
-const Skills = props => {
+import Resume from "../../../classes/Resume";
+import { ResumeTabProps } from "../ResumeTab";
+
+interface SkillsProps extends ResumeTabProps {
+  resume: Resume;
+  format: string;
+}
+
+const Skills = (props: SkillsProps) => {
   const { resume, format } = props;
   return (
     <Row className="mt-3">

@@ -25,6 +25,10 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://dkershner.com/r/fiveTalent</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://dkershner.com/r/kollective</loc>
     <priority>0.5</priority>
   </url>
@@ -57,11 +61,11 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://dkershner.com/technologies/backend/efcore</loc>
+    <loc>https://dkershner.com/technologies/frontend/react</loc>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://dkershner.com/technologies/frontend/react</loc>
+    <loc>https://dkershner.com/technologies/backend/efcore</loc>
     <priority>0.5</priority>
   </url>
   <url>

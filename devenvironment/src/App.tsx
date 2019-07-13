@@ -16,7 +16,7 @@ class App extends Component {
     ReactGA.pageview(window.location.pathname + window.location.search);
   }
   render() {
-    if (format === "print") {
+    if (format === "print" || format === "printCover") {
       return (
         <Router>
           <AppRouter />

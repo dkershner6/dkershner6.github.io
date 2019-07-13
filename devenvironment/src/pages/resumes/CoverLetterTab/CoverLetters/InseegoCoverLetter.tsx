@@ -16,6 +16,7 @@ const InseegoCoverLetter = props => {
         <a
           href="https://inseego.catsone.com/careers/61616-San-Diego/jobs/12120830-Senior-Web-Developer-Eugene-OR-San-Diego-CA-or-Remote/"
           target="_blank"
+          rel="noopener noreferrer"
         >
           Senior Web Developer contract position
         </a>
@@ -44,6 +45,7 @@ const InseegoCoverLetter = props => {
             <a
               href="https://app.pluralsight.com/profile/dkershner"
               target="_blank"
+              rel="noopener noreferrer"
             >
               Pluralsight
             </a>

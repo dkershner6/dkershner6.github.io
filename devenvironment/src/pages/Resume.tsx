@@ -37,6 +37,12 @@ export default class Resume extends React.Component<BaseProps<MatchParams>> {
           <TabChooser company={company} activeTab={"resume"} />
         </Container>
       );
+    } else if (format === "printCover") {
+      return (
+        <Container className="mt-5">
+          <TabChooser company={company} activeTab={"cover"} />
+        </Container>
+      );
     } else {
       return (
         <Container className="mt-5">

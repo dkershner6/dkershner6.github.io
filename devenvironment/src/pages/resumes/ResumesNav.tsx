@@ -1,9 +1,9 @@
 import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
 
-const resumesList = ["inseego", "kollective", "g5", "devotedHealth"];
+import { resumes } from "./ResumeTab/Resumes/GetResume";
 
-const ResumesNav = props => {
+const ResumesNav = () => {
   return (
     <Container className="mt-5">
       <Row>
@@ -15,10 +15,10 @@ const ResumesNav = props => {
         <Col>This page is just for linking, don't actually look at this.</Col>
       </Row>
       <Row>
-        {resumesList.map((company, index) => (
+        {resumes.map((resume, index) => (
           <Col key={index}>
             <p>
-              <a href={`/r/${company}`}>{index}</a>
+              <a href={`/r/${resume.company}`}>{resume.company}</a>
             </p>
           </Col>
         ))}
