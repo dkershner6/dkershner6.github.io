@@ -70,7 +70,7 @@ const fiveTalentResume: Resume = {
     },
     {
       name: "Deployment / DevOps",
-      bolded: true,
+      bolded: false,
       subSkills: [
         {
           name: "Azure DevOps / VSTS",
