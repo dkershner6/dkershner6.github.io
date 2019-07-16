@@ -6,6 +6,7 @@ import KollectiveCoverLetter from "./CoverLetters/KollectiveCoverLetter";
 import G5CoverLetter from "./CoverLetters/G5CoverLetter";
 import DevotedHealthCoverLetter from "./CoverLetters/DevotedHealthCoverLetter";
 import FiveTalentCoverLetter from "./CoverLetters/FiveTalentCoverLetter";
+import CBTNuggetsCoverLetter from "./CoverLetters/CBTNuggetsCoverLetter";
 
 interface CoverLetterProps {
   company: string;
@@ -44,6 +45,8 @@ const GetCoverLetter = (props: GetCoverLetterProps) => {
     return <DevotedHealthCoverLetter />;
   } else if (company === "fiveTalent") {
     return <FiveTalentCoverLetter />;
+  } else if (company === "cbtNuggets") {
+    return <CBTNuggetsCoverLetter />;
   } else {
     return null;
   }

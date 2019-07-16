@@ -5,13 +5,15 @@ import kollectiveResume from "./KollectiveResume";
 import g5Resume from "./G5Resume";
 import devotedHealthResume from "./DevotedHealthResume";
 import fiveTalentResume from "./FiveTalentResume";
+import cbtNuggetsResume from "./CBTNuggetsResume";
 
 export const resumes: Resume[] = [
   inseegoResume,
   kollectiveResume,
   g5Resume,
   devotedHealthResume,
-  fiveTalentResume
+  fiveTalentResume,
+  cbtNuggetsResume
 ];
 
 const getResume = (company: string) => {
