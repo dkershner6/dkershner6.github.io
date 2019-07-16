@@ -160,7 +160,7 @@ const cbtNuggetsResume: Resume = {
       bolded: true
     }
   ],
-  spaces: makeRange(0, 11),
+  spaces: makeRange(0, 8),
   references: []
 };
 
