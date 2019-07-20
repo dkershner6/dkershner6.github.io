@@ -43,6 +43,16 @@ export default class Resume extends React.Component<BaseProps<MatchParams>> {
           <TabChooser company={company} activeTab={"cover"} />
         </Container>
       );
+    } else if (format === "printCombined") {
+      return (
+        <Container className="mt-5">
+          <TabChooser company={company} activeTab={"cover"} />
+          {makeRange(0, 15).map((number, index) => (
+            <br key={index} />
+          ))}
+          <TabChooser company={company} activeTab={"resume"} />
+        </Container>
+      );
     } else {
       return (
         <Container className="mt-5">

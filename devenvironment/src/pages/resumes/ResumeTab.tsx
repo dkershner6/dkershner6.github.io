@@ -45,8 +45,9 @@ const ResumeTab = (props: ResumeTabProps) => {
         <ResumeHeader {...props} />
         <Objective {...props} resume={resume} />
         <Skills {...props} resume={resume} format={format} />
-        {format === "print" &&
-          resume.spaces.map((space, index) => <br key={index} />)}
+        {format === "print" ||
+          (format === "printCombined" &&
+            resume.spaces.map((space, index) => <br key={index} />))}
         <Experience {...props} />
         <Education {...props} />
         <References {...props} resume={resume} />
