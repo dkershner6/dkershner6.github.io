@@ -15,9 +15,6 @@ import ResumeTab from './ResumeTab';
 import makeRange from '../../utils/MakeRange';
 import properCase from '../../utils/ProperCase';
 
-const urlParams = new URLSearchParams(window.location.search);
-const format = urlParams.get('format');
-
 interface ResumeProps {
   company: string;
 }
@@ -29,6 +26,11 @@ export default class Resume extends React.Component<ResumeProps> {
 
   render() {
     const { company } = this.props;
+    const urlParams =
+      typeof window !== 'undefined'
+        ? new URLSearchParams(window.location.search)
+        : undefined;
+    const format = urlParams === undefined ? '' : urlParams.get('format');
 
     if (format === 'print') {
       return (

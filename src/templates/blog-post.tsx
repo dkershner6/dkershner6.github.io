@@ -1,10 +1,15 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import { kebabCase } from 'lodash'
-import Helmet from 'react-helmet'
-import { graphql, Link } from 'gatsby'
-import Layout from '../components/Layout'
-import Content, { HTMLContent } from '../components/Content'
+import React from 'react';
+import { Container, Row, Col } from 'react-bootstrap';
+import LazyHero from 'react-lazy-hero';
+import PropTypes from 'prop-types';
+import { kebabCase } from 'lodash';
+import Helmet from 'react-helmet';
+import { graphql, Link } from 'gatsby';
+import Layout from '../components/Layout';
+import Content, { HTMLContent } from '../components/Content';
+import TechnologyBadge from '../components/TechnologyBadge';
+
+import { getTechnologyById } from '../classes/Technology';
 
 export const BlogPostTemplate = ({
   content,
@@ -13,38 +18,55 @@ export const BlogPostTemplate = ({
   tags,
   title,
   helmet,
+  featuredimage,
 }) => {
-  const PostContent = contentComponent || Content
+  const PostContent = contentComponent || Content;
 
   return (
-    <section className="section">
-      {helmet || ''}
-      <div className="container content">
-        <div className="columns">
-          <div className="column is-10 is-offset-1">
-            <h1 className="title is-size-2 has-text-weight-bold is-bold-light">
-              {title}
-            </h1>
+    <React.Fragment>
+      <LazyHero
+        imageSrc={featuredimage.publicURL}
+        color='#FFFFFF'
+        opacity={0.8}
+        minHeight='25vh'
+        parallaxOffset={0.5}
+        isCentered={true}
+        transitionDuration={600}
+      >
+        <Row>
+          <Col>
+            <h1>{title}</h1>
+          </Col>
+        </Row>
+        <Row>
+          <Col>
             <p>{description}</p>
+          </Col>
+        </Row>
+        <Row>
+          <Col>
+            {tags && tags.length
+              ? tags.map(tag => (
+                  <Link key={tag} to={`/technologies/${tag}/`}>
+                    <TechnologyBadge technology={getTechnologyById(tag)} />
+                  </Link>
+                ))
+              : null}
+          </Col>
+        </Row>
+      </LazyHero>
+      <Container className='mt-5'>
+        {helmet || ''}
+
+        <Row className='mt-5'>
+          <Col>
             <PostContent content={content} />
-            {tags && tags.length ? (
-              <div style={{ marginTop: `4rem` }}>
-                <h4>Tags</h4>
-                <ul className="taglist">
-                  {tags.map(tag => (
-                    <li key={tag + `tag`}>
-                      <Link to={`/tags/${kebabCase(tag)}/`}>{tag}</Link>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ) : null}
-          </div>
-        </div>
-      </div>
-    </section>
-  )
-}
+          </Col>
+        </Row>
+      </Container>
+    </React.Fragment>
+  );
+};
 
 BlogPostTemplate.propTypes = {
   content: PropTypes.node.isRequired,
@@ -52,10 +74,10 @@ BlogPostTemplate.propTypes = {
   description: PropTypes.string,
   title: PropTypes.string,
   helmet: PropTypes.object,
-}
+};
 
 const BlogPost = ({ data }) => {
-  const { markdownRemark: post } = data
+  const { markdownRemark: post } = data;
 
   return (
     <Layout>
@@ -64,28 +86,29 @@ const BlogPost = ({ data }) => {
         contentComponent={HTMLContent}
         description={post.frontmatter.description}
         helmet={
-          <Helmet titleTemplate="%s | Blog">
+          <Helmet titleTemplate='%s | Blog'>
             <title>{`${post.frontmatter.title}`}</title>
             <meta
-              name="description"
+              name='description'
               content={`${post.frontmatter.description}`}
             />
           </Helmet>
         }
         tags={post.frontmatter.tags}
         title={post.frontmatter.title}
+        featuredimage={post.frontmatter.featuredimage}
       />
     </Layout>
-  )
-}
+  );
+};
 
 BlogPost.propTypes = {
   data: PropTypes.shape({
     markdownRemark: PropTypes.object,
   }),
-}
+};
 
-export default BlogPost
+export default BlogPost;
 
 export const pageQuery = graphql`
   query BlogPostByID($id: String!) {
@@ -97,7 +120,15 @@ export const pageQuery = graphql`
         title
         description
         tags
+        featuredimage {
+          childImageSharp {
+            fluid(maxWidth: 120, quality: 100) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+          publicURL
+        }
       }
     }
   }
-`
+`;

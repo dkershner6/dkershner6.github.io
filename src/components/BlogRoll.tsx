@@ -1,11 +1,11 @@
-import React from "react";
-import { Row, Col } from "react-bootstrap";
-import PropTypes from "prop-types";
-import { Link, graphql, StaticQuery } from "gatsby";
-import PreviewCompatibleImage from "./PreviewCompatibleImage";
+import React from 'react';
+import { Row, Col } from 'react-bootstrap';
+import PropTypes from 'prop-types';
+import { Link, graphql, StaticQuery } from 'gatsby';
+import PreviewCompatibleImage from './PreviewCompatibleImage';
 
-import TechnologyBadge from "./TechnologyBadge";
-import { getTechnologyById } from "../classes/Technology";
+import TechnologyBadge from './TechnologyBadge';
+import { getTechnologyById } from '../classes/Technology';
 
 class BlogRoll extends React.Component {
   render() {
@@ -13,20 +13,20 @@ class BlogRoll extends React.Component {
     const { edges: posts } = data.allMarkdownRemark;
 
     return (
-      <Row>
+      <Row className='mt-3'>
         {posts &&
           posts.map(({ node: post }) => (
-            <Col key={post.id} xs="12" lg="6" className="mt-3">
+            <Col key={post.id} xs='12' lg='6' className='mt-3'>
               <Row>
-                <Col xs="6">
+                <Col xs='6'>
                   <PreviewCompatibleImage
                     imageInfo={{
                       image: post.frontmatter.featuredimage,
-                      alt: `featured image thumbnail for post ${post.title}`
+                      alt: `featured image thumbnail for post ${post.title}`,
                     }}
                   />
                 </Col>
-                <Col xs="6">
+                <Col xs='6'>
                   <Link to={post.fields.slug}>
                     <h4>{post.frontmatter.title}</h4>
                   </Link>
@@ -39,7 +39,7 @@ class BlogRoll extends React.Component {
                             technology={getTechnologyById(tag)}
                           />
                         ))
-                      : ""}
+                      : ''}
                   </p>
                 </Col>
               </Row>
@@ -53,9 +53,9 @@ class BlogRoll extends React.Component {
 BlogRoll.propTypes = {
   data: PropTypes.shape({
     allMarkdownRemark: PropTypes.shape({
-      edges: PropTypes.array
-    })
-  })
+      edges: PropTypes.array,
+    }),
+  }),
 };
 
 const BlogRollWithQuery = () => (

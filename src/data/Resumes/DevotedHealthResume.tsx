@@ -1,135 +1,135 @@
-import makeRange from "../../../../utils/MakeRange";
-import Resume from "../../../../classes/Resume";
+import makeRange from '../../utils/MakeRange';
+import Resume from '../../classes/Resume';
 
 const devotedHealthResume: Resume = {
-  company: "devotedHealth",
+  company: 'devotedHealth',
   objective:
-    "Experienced Full-Stack Software Developer, DevOps Practitioner, and Cloud Architect with an unending thirst for learning, is seeking new challenges and experiences to broaden his depth of knowledge.",
+    'Experienced Full-Stack Software Developer, DevOps Practitioner, and Cloud Architect with an unending thirst for learning, is seeking new challenges and experiences to broaden his depth of knowledge.',
   skills: [
     {
-      name: "Front-End",
+      name: 'Front-End',
       subSkills: [
         {
-          name: "React / JS",
+          name: 'React / JS',
           bolded: true,
           score: 5,
-          link: "https://reactjs.org/"
+          link: 'https://reactjs.org/',
         },
         {
-          name: "TypeScript / JS",
+          name: 'TypeScript / JS',
           bolded: true,
           score: 5,
-          link: "https://www.typescriptlang.org/"
-        }
-      ]
+          link: 'https://www.typescriptlang.org/',
+        },
+      ],
     },
     {
-      name: "Back-End",
+      name: 'Back-End',
       subSkills: [
         {
-          name: "ASP.Net Core / C#",
+          name: 'ASP.Net Core / C#',
           score: 5,
-          link: "https://dotnet.microsoft.com/apps/aspnet"
+          link: 'https://dotnet.microsoft.com/apps/aspnet',
         },
         {
-          name: "Node / JS",
+          name: 'Node / JS',
           score: 4,
-          link: "https://nodejs.org/en/"
+          link: 'https://nodejs.org/en/',
         },
         {
-          name: "Flask / Python",
+          name: 'Flask / Python',
           score: 3,
-          link: "https://www.python.org/"
-        }
-      ]
+          link: 'https://www.python.org/',
+        },
+      ],
     },
     {
-      name: "Clouds",
+      name: 'Clouds',
       subSkills: [
         {
-          name: "Azure",
+          name: 'Azure',
           score: 5,
-          link: "https://azure.microsoft.com/en-us/"
+          link: 'https://azure.microsoft.com/en-us/',
         },
         {
-          name: "Google",
+          name: 'Google',
           score: 3,
-          link: "https://cloud.google.com/"
+          link: 'https://cloud.google.com/',
         },
         {
-          name: "AWS",
+          name: 'AWS',
           bolded: true,
           score: 2,
-          link: "https://aws.amazon.com/"
-        }
-      ]
+          link: 'https://aws.amazon.com/',
+        },
+      ],
     },
     {
-      name: "Deployment / DevOps",
+      name: 'Deployment / DevOps',
       subSkills: [
         {
-          name: "Azure DevOps / VSTS",
+          name: 'Azure DevOps / VSTS',
           score: 5,
-          link: "https://azure.microsoft.com/en-us/services/devops/"
+          link: 'https://azure.microsoft.com/en-us/services/devops/',
         },
         {
-          name: "Kubernetes / Docker",
+          name: 'Kubernetes / Docker',
           score: 4,
-          link: "https://kubernetes.io/"
-        }
-      ]
-    }
+          link: 'https://kubernetes.io/',
+        },
+      ],
+    },
   ],
   otherSkills: [
     {
-      name: "Application Design / Microservices"
+      name: 'Application Design / Microservices',
     },
     {
-      name: "Serverless Functions"
+      name: 'Serverless Functions',
     },
     {
-      name: "RESTful APIs - Build / Consume",
-      bolded: false
+      name: 'RESTful APIs - Build / Consume',
+      bolded: false,
     },
     {
-      name: "Project Planning & Management / Agile",
-      bolded: false
+      name: 'Project Planning & Management / Agile',
+      bolded: false,
     },
     {
-      name: "Entity Framework / SQL / RDBMS",
-      bolded: false
+      name: 'Entity Framework / SQL / RDBMS',
+      bolded: false,
     },
     {
-      name: "NoSQL / JSON",
-      bolded: false
+      name: 'NoSQL / JSON',
+      bolded: false,
     },
     {
-      name: "Continuous Integration / Continuous Deployment",
-      bolded: false
+      name: 'Continuous Integration / Continuous Deployment',
+      bolded: false,
     },
     {
-      name: "Search Engine Optimization",
-      bolded: false
+      name: 'Search Engine Optimization',
+      bolded: false,
     },
     {
-      name: "Data Analysis / Big Data",
-      bolded: false
+      name: 'Data Analysis / Big Data',
+      bolded: false,
     },
     {
-      name: "User Interface Design",
-      bolded: false
+      name: 'User Interface Design',
+      bolded: false,
     },
     {
-      name: "Git / Version Control",
-      bolded: false
+      name: 'Git / Version Control',
+      bolded: false,
     },
     {
-      name: "Server Administration",
-      bolded: false
-    }
+      name: 'Server Administration',
+      bolded: false,
+    },
   ],
   spaces: makeRange(0, 11),
-  references: []
+  references: [],
 };
 
 export default devotedHealthResume;

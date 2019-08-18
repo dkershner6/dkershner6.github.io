@@ -21,7 +21,7 @@ export const createAttributeFromTechnology = (technologyId: string) => {
     }
 
     attribute.value = technology.label;
-    attribute.link = techInternalLink(technology);
+    attribute.link = `/technologies/${technology.type}/${technology.id}`;
     return attribute;
   } else {
     console.warn(technologyId + ' undefined?');
