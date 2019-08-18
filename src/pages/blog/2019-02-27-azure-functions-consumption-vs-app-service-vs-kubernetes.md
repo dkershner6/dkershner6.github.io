@@ -4,6 +4,7 @@ title: "Azure Functions: Consumption vs App Service Plan vs Kubernetes"
 date: 2019-02-26T15:04:00.000Z
 description: When to choose which for optimal cost
 featuredpost: false
+featuredimage: /img/flavor_wheel.jpg
 tags:
   - azure functions
   - azure
