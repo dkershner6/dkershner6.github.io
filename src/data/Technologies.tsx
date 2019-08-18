@@ -1,141 +1,141 @@
-import Technology from '../../classes/Technology';
+import Technology from "../classes/Technology";
 
 const backendTechnologies: Technology[] = [
   {
-    id: 'aspNetCore',
-    label: 'ASP.NET Core / C#',
-    type: 'backend',
-    language: 'C#',
+    id: "aspNetCore",
+    label: "ASP.NET Core / C#",
+    type: "backend",
+    language: "C#",
     familiarity: 5,
-    link: 'https://dotnet.microsoft.com/apps/aspnet',
+    link: "https://dotnet.microsoft.com/apps/aspnet"
   },
   {
-    id: 'efcore',
-    label: 'Entity Framework Core / C#',
-    type: 'backend',
-    language: 'C#',
+    id: "efcore",
+    label: "Entity Framework Core / C#",
+    type: "backend",
+    language: "C#",
+    familiarity: 5
+  },
+  {
+    id: "azureFunctions",
+    label: "Azure Functions / C#",
+    type: "backend",
+    language: "C#",
     familiarity: 5,
+    link: "https://azure.microsoft.com/en-us/services/functions/"
   },
   {
-    id: 'azureFunctions',
-    label: 'Azure Functions / C#',
-    type: 'backend',
-    language: 'C#',
+    id: "azureLogicApps",
+    label: "Azure Logic Apps",
+    type: "backend",
     familiarity: 5,
-    link: 'https://azure.microsoft.com/en-us/services/functions/',
+    link: "https://azure.microsoft.com/en-us/services/logic-apps/"
   },
   {
-    id: 'azureLogicApps',
-    label: 'Azure Logic Apps',
-    type: 'backend',
-    familiarity: 5,
-    link: 'https://azure.microsoft.com/en-us/services/logic-apps/',
+    id: "node",
+    label: "Node / JS",
+    type: "backend",
+    language: "Typescript",
+    familiarity: 3
   },
   {
-    id: 'node',
-    label: 'Node / JS',
-    type: 'backend',
-    language: 'Typescript',
-    familiarity: 3,
-  },
-  {
-    id: 'flask',
-    label: 'Flask / Python',
-    type: 'backend',
-    language: 'Python',
-    familiarity: 3,
-  },
+    id: "flask",
+    label: "Flask / Python",
+    type: "backend",
+    language: "Python",
+    familiarity: 3
+  }
 ];
 
 const frontendTechnologies: Technology[] = [
   {
-    id: 'react',
-    label: 'React / Typescript JS',
-    type: 'frontend',
-    language: 'Typescript JS',
+    id: "react",
+    label: "React / Typescript JS",
+    type: "frontend",
+    language: "Typescript JS",
     familiarity: 5,
-    link: 'https://reactjs.org/',
+    link: "https://reactjs.org/"
   },
   {
-    id: 'liquid',
-    label: 'Liquid (Shopify)',
-    type: 'frontend',
-    language: 'Liquid',
+    id: "liquid",
+    label: "Liquid (Shopify)",
+    type: "frontend",
+    language: "Liquid",
     familiarity: 4,
-    link: 'https://help.shopify.com/en/themes/liquid',
-  },
+    link: "https://help.shopify.com/en/themes/liquid"
+  }
 ];
 
 const deploymentTechnologies: Technology[] = [
   {
-    id: 'kubernetes',
-    label: 'Kubernetes / Docker',
-    type: 'deployment',
+    id: "kubernetes",
+    label: "Kubernetes / Docker",
+    type: "deployment",
     familiarity: 4,
-    link: 'https://kubernetes.io',
+    link: "https://kubernetes.io"
   },
   {
-    id: 'azureDevops',
-    label: 'Azure DevOps',
-    type: 'deployment',
+    id: "azureDevops",
+    label: "Azure DevOps",
+    type: "deployment",
     familiarity: 4,
-    link: 'https://dev.azure.com',
-  },
+    link: "https://dev.azure.com"
+  }
 ];
 
 const dataTechnologies: Technology[] = [
   {
-    id: 'azureSql',
-    label: 'Azure SQL',
-    type: 'data',
-    language: 'SQL',
+    id: "azureSql",
+    label: "Azure SQL",
+    type: "data",
+    language: "SQL",
     familiarity: 5,
-    link: 'https://azure.microsoft.com/en-us/services/sql-database/',
+    link: "https://azure.microsoft.com/en-us/services/sql-database/"
   },
   {
-    id: 'azureStorage',
-    label: 'Azure Storage Blobs / Tables',
-    type: 'data',
-    language: 'NoSQL',
+    id: "azureStorage",
+    label: "Azure Storage Blobs / Tables",
+    type: "data",
+    language: "NoSQL",
     familiarity: 5,
-    link: 'https://azure.microsoft.com/en-us/services/storage/',
+    link: "https://azure.microsoft.com/en-us/services/storage/"
   },
   {
-    id: 'azureStorageQueues',
-    label: 'Azure Storage Queues',
-    type: 'data',
-    language: 'NoSQL',
+    id: "azureStorageQueues",
+    label: "Azure Storage Queues",
+    type: "data",
+    language: "NoSQL",
     familiarity: 5,
-    link: 'https://azure.microsoft.com/en-us/services/storage/',
+    link: "https://azure.microsoft.com/en-us/services/storage/"
   },
   {
-    id: 'redis',
-    label: 'Redis',
-    type: 'data',
-    language: 'NoSQL',
+    id: "redis",
+    label: "Redis",
+    type: "data",
+    language: "NoSQL",
     familiarity: 4,
-    link: 'https://redis.io/',
+    link: "https://redis.io/"
   },
   {
-    id: 'azureSearch',
-    label: 'Azure Search',
-    type: 'data',
-    language: 'NoSQL',
+    id: "azureSearch",
+    label: "Azure Search",
+    type: "data",
+    language: "NoSQL",
     familiarity: 4,
-    link: 'https://azure.microsoft.com/en-us/services/search/',
-  },
+    link: "https://azure.microsoft.com/en-us/services/search/"
+  }
 ];
 
 const clouds: Technology[] = [
-  { id: 'azure', label: 'Azure', type: 'cloud', familiarity: 5 },
+  { id: "azure", label: "Azure", type: "cloud", familiarity: 5 },
   {
-    id: 'googlefirebase',
-    label: 'Google Firebase',
-    type: 'cloud',
-    familiarity: 4,
+    id: "googlefirebase",
+    label: "Google Firebase",
+    type: "cloud",
+    familiarity: 4
   },
-  { id: 'googlecloud', label: 'Google Cloud', type: 'cloud', familiarity: 3 },
-  { id: 'aws', label: 'AWS', type: 'cloud', familiarity: 2 },
+  { id: "googlecloud", label: "Google Cloud", type: "cloud", familiarity: 3 },
+  { id: "aws", label: "AWS", type: "cloud", familiarity: 2 }
 ];
 
 function sortFamiliarityDescending(a: Technology, b: Technology) {
@@ -153,7 +153,7 @@ const technologies: Technology[] = [
   ...frontendTechnologies,
   ...deploymentTechnologies,
   ...dataTechnologies,
-  ...clouds,
+  ...clouds
 ].sort(sortFamiliarityDescending);
 
 export default technologies;
@@ -162,5 +162,5 @@ export {
   frontendTechnologies,
   deploymentTechnologies,
   dataTechnologies,
-  clouds,
+  clouds
 };
