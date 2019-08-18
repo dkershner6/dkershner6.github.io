@@ -1,15 +1,15 @@
 ---
 templateKey: blog-post
-title: 'Azure Functions: Consumption vs App Service Plan vs Kubernetes'
+title: "Azure Functions: Consumption vs App Service Plan vs Kubernetes"
 date: 2019-02-26T15:04:00.000Z
 description: When to choose which for optimal cost
 featuredpost: false
-featuredimage: /img/flavor_wheel.jpg
 tags:
   - azure functions
   - azure
   - kubernetes
 ---
+
 ### Note
 
 This comparison applies to functions on v2 (.Net Core). There is a large difference in performance between the two, and these conclusions should not be held over to v1. I do have a [similar-ish comparison for v1](/blog/when-to-use-app-service-plan/).
@@ -46,12 +46,11 @@ Across 6 different Function apps, each running variable amount of instances, som
 
 ## Conclusion
 
-| Service | Monthly Cost | Single-Thread Long| Multi-thread | Quick   |
-| ----------------------------------------------------------------------------------------- | -------------------------------- | -------------------------------------- | --------------------------------- | ----------------------------------------------- |
-| App Service                                                                               | \$109.50                         | 1.45min                                | 11.42s                            | 2.01ms                                          |
-| Kubernetes                                                                                | \$76.08                          | 1.05min                                | 8.36s                             | 1.49ms                                          |
-| Consumption                                                                               | \$30.06                          | 1.70min                                | 16.42s                            | 3.35ms                                          |
-
+| Service     | Monthly Cost | Single-Thread Long | Multi-thread | Quick  |
+| ----------- | ------------ | ------------------ | ------------ | ------ |
+| App Service | \$109.50     | 1.45min            | 11.42s       | 2.01ms |
+| Kubernetes  | \$76.08      | 1.05min            | 8.36s        | 1.49ms |
+| Consumption | \$30.06      | 1.70min            | 16.42s       | 3.35ms |
 
 **As far as I can tell, with the increased performance of .Net Core under its belt, there is no scenario that beats the consumption model of Azure functions with regards to cost.** This was a much closer comparison with .Net Framework, but thanks to both general improvements in Functions themselves and the new framework, it is no longer even close. Even if a theoretical D1 v3 VM existed for Kubernetes to use, it would still need to auto scale to 2 nodes on occasion, and would cost a theoretical \$41 even if it didn't.
 
