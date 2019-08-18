@@ -1,27 +1,27 @@
-import React from "react";
-import { Container, Row, Col, Jumbotron } from "react-bootstrap";
+import React from 'react';
+import { Container, Row, Col, Jumbotron } from 'react-bootstrap';
 
-import TechnologyBadge from "./TechnologyBadge";
+import TechnologyBadge from './TechnologyBadge';
 
-import technologies from "../data/Technologies";
+import { technologies } from '../data/technologies';
 
 const About = () => {
   return (
     <React.Fragment>
       {/*<HelmetHead title='About | DKershner.com' />*/}
-      <Jumbotron fluid className="bg-dark text-light">
-        <Container className="mt-5">
+      <Jumbotron fluid className='bg-dark text-light'>
+        <Container className='mt-5'>
           <Row>
             <Col>
-              <h2 id="about" className="display-4 text-center">
+              <h2 id='about' className='display-4 text-center'>
                 Full-Stack Cloud Native
               </h2>
             </Col>
           </Row>
           <Row>
-            <Col className="align-self-center">
+            <Col className='align-self-center'>
               <Row>
-                <Col className="align-self-center" xs="2" md="1">
+                <Col className='align-self-center' xs='2' md='1'>
                   <h6>Expert</h6>
                 </Col>
                 <Col>
@@ -36,8 +36,8 @@ const About = () => {
                     ))}
                 </Col>
               </Row>
-              <Row className="mt-2">
-                <Col className="align-self-center" xs="2" md="1">
+              <Row className='mt-2'>
+                <Col className='align-self-center' xs='2' md='1'>
                   <h6>Proficient</h6>
                 </Col>
                 <Col>
@@ -54,7 +54,7 @@ const About = () => {
               </Row>
             </Col>
           </Row>
-          <Row className="mt-2">
+          <Row className='mt-2'>
             <Col>
               <ul>
                 <li>

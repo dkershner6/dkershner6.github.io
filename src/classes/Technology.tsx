@@ -1,10 +1,10 @@
-import Project from "./Project";
-import ProjectAttribute from "./ProjectAttribute";
-import ProjectSection from "./ProjectSection";
-import { projects } from "../data/Projects";
+import Project from './Project';
+import ProjectAttribute from './ProjectAttribute';
+import ProjectSection from './ProjectSection';
+import { projects } from '../data/Projects';
 //import posts from "../pages/blog/Posts";
-import technologies from "../data/Technologies";
-import Post from "./Post";
+import { technologies } from '../data/technologies';
+import Post from './Post';
 
 class ProjectSummary {
   id: string;
@@ -15,7 +15,7 @@ class ProjectSummary {
 export default class Technology {
   id: string;
   label: string;
-  type: "backend" | "frontend" | "data" | "deployment" | "cloud";
+  type: string;
   language?: string;
   familiarity: number;
   link?: string;
@@ -23,7 +23,7 @@ export default class Technology {
 
 export const getTechnologyById = (technologyId: string) => {
   let tempTechs = technologies.filter(
-    technology => technology.id === technologyId
+    technology => technology.id === technologyId,
   );
   if (tempTechs.length > 0) {
     return tempTechs[0];
@@ -33,16 +33,16 @@ export const getTechnologyById = (technologyId: string) => {
 };
 
 export const getProjectsForTechnology = (
-  technology: Technology
+  technology: Technology,
 ): ProjectSummary[] => {
   const searchProjectSection = (
     projectSectionName: string,
-    project: Project
+    project: Project,
   ): number => {
     let projectSectionUses = 0;
     project[projectSectionName].forEach((projectSection: ProjectSection) => {
       let attributes = projectSection.attributes.filter(
-        (attribute: ProjectAttribute) => attribute.value === technology.label
+        (attribute: ProjectAttribute) => attribute.value === technology.label,
       );
 
       if (attributes.length > 0) {
@@ -59,11 +59,11 @@ export const getProjectsForTechnology = (
       projectUses =
         projectUses + searchProjectSection(technology.type, project);
     } else {
-      let projectSections = ["backend", "frontend"];
+      let projectSections = ['backend', 'frontend'];
       projectSections.forEach(
         projectSection =>
           (projectUses =
-            projectUses + searchProjectSection(projectSection, project))
+            projectUses + searchProjectSection(projectSection, project)),
       );
     }
 
@@ -71,7 +71,7 @@ export const getProjectsForTechnology = (
       returnObj.push({
         id: project.id,
         name: project.name,
-        uses: projectUses
+        uses: projectUses,
       });
     }
   });

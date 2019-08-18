@@ -1,7 +1,8 @@
-const _ = require("lodash"); // eslint-disable-line @typescript-eslint/no-var-requires
-const path = require("path"); // eslint-disable-line @typescript-eslint/no-var-requires
-const { createFilePath } = require("gatsby-source-filesystem"); // eslint-disable-line @typescript-eslint/no-var-requires
-const { fmImagesToRelative } = require("gatsby-remark-relative-images"); // eslint-disable-line @typescript-eslint/no-var-requires
+const _ = require('lodash'); // eslint-disable-line @typescript-eslint/no-var-requires
+const path = require('path'); // eslint-disable-line @typescript-eslint/no-var-requires
+const { createFilePath } = require('gatsby-source-filesystem'); // eslint-disable-line @typescript-eslint/no-var-requires
+const { fmImagesToRelative } = require('gatsby-remark-relative-images'); // eslint-disable-line @typescript-eslint/no-var-requires
+const { technologies } = require('./src/data/technologies'); // eslint-disable-line @typescript-eslint/no-var-requires
 
 exports.createPages = ({ actions, graphql }) => {
   const { createPage } = actions;
@@ -37,36 +38,26 @@ exports.createPages = ({ actions, graphql }) => {
         path: edge.node.fields.slug,
         tags: edge.node.frontmatter.tags,
         component: path.resolve(
-          `src/templates/${String(edge.node.frontmatter.templateKey)}.tsx`
+          `src/templates/${String(edge.node.frontmatter.templateKey)}.tsx`,
         ),
         // additional data can be passed via context
         context: {
-          id
-        }
+          id,
+        },
       });
     });
 
-    // Tag pages:
-    let tags = [];
-    // Iterate through each post, putting all found tags into `tags`
-    posts.forEach(edge => {
-      if (_.get(edge, `node.frontmatter.tags`)) {
-        tags = tags.concat(edge.node.frontmatter.tags);
-      }
-    });
-    // Eliminate duplicate tags
-    tags = _.uniq(tags);
-
-    // Make tag pages
-    tags.forEach(tag => {
-      const tagPath = `/tags/${_.kebabCase(tag)}/`;
+    // Technology pages:
+    technologies.forEach(technology => {
+      const techPath = `/technologies/${technology.type}/${technology.id}`;
+      const techId = technology.id;
 
       createPage({
-        path: tagPath,
-        component: path.resolve(`src/templates/tags.tsx`),
+        path: techPath,
+        component: path.resolve(`src/templates/technologies.tsx`),
         context: {
-          tag
-        }
+          techId,
+        },
       });
     });
   });
@@ -81,7 +72,7 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
     createNodeField({
       name: `slug`,
       node,
-      value
+      value,
     });
   }
 };
