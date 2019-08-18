@@ -4,7 +4,7 @@ module.exports = {
   extends: [
     "plugin:@typescript-eslint/recommended",
     "prettier/@typescript-eslint",
-    "plugin:prettier/recommended",
+    //"plugin:prettier/recommended",
     "plugin:react/recommended"
   ],
   parserOptions: {
@@ -18,7 +18,8 @@ module.exports = {
     "@typescript-eslint/explicit-member-accessibility": "off",
     "@typescript-eslint/explicit-function-return-type": "off",
     "@typescript-eslint/no-empty-interface": "off",
-    "react/no-unescaped-entities": "off"
+    "react/no-unescaped-entities": "off",
+    "react/prop-types": "off"
   },
   settings: {
     react: {
