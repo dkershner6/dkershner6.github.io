@@ -4,7 +4,7 @@ import Helmet from 'react-helmet';
 import { Link, graphql } from 'gatsby';
 import Layout from '../../components/Layout';
 
-import { technologies } from '../../data/technologies';
+import { technologies } from '../../data/Technologies';
 
 const TechnologiesPage = ({
   data: {

@@ -3,7 +3,7 @@ import ProjectAttribute from './ProjectAttribute';
 import ProjectSection from './ProjectSection';
 import { projects } from '../data/Projects';
 //import posts from "../pages/blog/Posts";
-import { technologies } from '../data/technologies-node';
+import technologies from '../data/Technologies';
 import Post from './Post';
 
 class ProjectSummary {

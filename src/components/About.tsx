@@ -3,7 +3,7 @@ import { Container, Row, Col, Jumbotron } from 'react-bootstrap';
 
 import TechnologyBadge from './TechnologyBadge';
 
-import { technologies } from '../data/technologies';
+import { technologies } from '../data/Technologies';
 
 const About = () => {
   return (
