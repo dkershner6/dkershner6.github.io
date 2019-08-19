@@ -11,7 +11,7 @@ tags:
 ---
 ### Update: 2/26/19
 
-I have moved all of my functions to Azure Functions v2 (.Net Core) and have a [new comparison](/blog/azure-functions-consumption-vs-app-service-vs-kubernetes) for those functions.
+I have moved all of my functions to Azure Functions v2 (.Net Core) and have a [new comparison](/blog/2019-02-27-azure-functions-consumption-vs-app-service-vs-kubernetes/) for those functions.
 
 ---
 
