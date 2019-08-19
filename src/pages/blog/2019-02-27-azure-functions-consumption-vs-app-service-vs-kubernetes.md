@@ -13,7 +13,7 @@ tags:
 
 ### Note
 
-This comparison applies to functions on v2 (.Net Core). There is a large difference in performance between the two, and these conclusions should not be held over to v1. I do have a [similar-ish comparison for v1](/blog/when-to-use-app-service-plan/).
+This comparison applies to functions on v2 (.Net Core). There is a large difference in performance between the two, and these conclusions should not be held over to v1. I do have a [similar-ish comparison for v1](/blog/2019-08-18-azure-functions-when-to-use-app-service-plan/).
 
 ---
 
