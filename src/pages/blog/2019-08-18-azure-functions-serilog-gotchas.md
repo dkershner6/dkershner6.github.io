@@ -13,7 +13,7 @@ tags:
 ---
 ### Some Background
 
-Azure Functions have great struggles when it comes to clients not being created statically. They note this in their docs very well, but on occasion you can do this in unknown fashion. The result, when it occurs, is very high connection or thread counts, which can lead to shutdowns as you approach [the limits](/blog/azure-functions-limits-how-to-overcome).
+Azure Functions have great struggles when it comes to clients not being created statically. They note this in their docs very well, but on occasion you can do this in unknown fashion. The result, when it occurs, is very high connection or thread counts, which can lead to shutdowns as you approach [the limits](/blog/2019-08-18-azure-functions-limits-how-to-overcome/).
 
 ### Enter Serilog
 
