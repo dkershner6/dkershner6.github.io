@@ -6,7 +6,7 @@ import Layout from '../components/Layout';
 
 import properCase from '../utils/ProperCase';
 
-import { technologies } from '../data/technologies';
+import { technologies } from '../data/technologies-node';
 import TechnologyBadge from '../components/TechnologyBadge';
 import SkillDisplay from '../components/SkillDisplay';
 

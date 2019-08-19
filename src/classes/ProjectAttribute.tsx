@@ -1,4 +1,4 @@
-import { technologies } from '../data/technologies';
+import { technologies } from '../data/technologies-node';
 import Technology, { internalLink as techInternalLink } from './Technology';
 
 export default class ProjectAttribute {

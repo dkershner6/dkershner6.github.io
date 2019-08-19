@@ -1,4 +1,4 @@
-const backendTechnologies = [
+export const backendTechnologies = [
   {
     id: 'aspNetCore',
     label: 'ASP.NET Core / C#',
@@ -45,7 +45,7 @@ const backendTechnologies = [
   },
 ];
 
-const frontendTechnologies = [
+export const frontendTechnologies = [
   {
     id: 'react',
     label: 'React / Typescript JS',
@@ -64,7 +64,7 @@ const frontendTechnologies = [
   },
 ];
 
-const deploymentTechnologies = [
+export const deploymentTechnologies = [
   {
     id: 'kubernetes',
     label: 'Kubernetes / Docker',
@@ -81,7 +81,7 @@ const deploymentTechnologies = [
   },
 ];
 
-const dataTechnologies = [
+export const dataTechnologies = [
   {
     id: 'azureSql',
     label: 'Azure SQL',
@@ -124,7 +124,7 @@ const dataTechnologies = [
   },
 ];
 
-const clouds = [
+export const clouds = [
   { id: 'azure', label: 'Azure', type: 'cloud', familiarity: 5 },
   {
     id: 'googlefirebase',
@@ -146,16 +146,12 @@ function sortFamiliarityDescending(a, b) {
   }
 }
 
-exports.backendTechnologies = backendTechnologies;
-exports.frontendTechnologies = frontendTechnologies;
-exports.deploymentTechnologies = deploymentTechnologies;
-exports.dataTechnologies = dataTechnologies;
-exports.clouds = clouds;
-
-exports.technologies = [
+export const technologies = [
   ...backendTechnologies,
   ...frontendTechnologies,
   ...deploymentTechnologies,
   ...dataTechnologies,
   ...clouds,
 ].sort(sortFamiliarityDescending);
+
+export default technologies;

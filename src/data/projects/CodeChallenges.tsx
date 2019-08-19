@@ -1,7 +1,7 @@
 import Project from '../../classes/Project';
 
 import CodeChallenge from '../../classes/CodeChallenge';
-import { technologies } from '../technologies';
+import { technologies } from '../technologies-node';
 
 const codeChallengesProject: Project = {
   id: 'codeChallenges',
