@@ -39,7 +39,7 @@ You can also query in information and generate pages that way, so long as it is 
 
 **Verdict: React-Snap**
 
-# **Typescript**
+# Typescript
 
 This section obviously may or may not apply to you, but I like to write larger projects in Typescript, so I figured I would weigh in here.
 
@@ -55,7 +55,7 @@ I am a very firm believer in TypeScript, but at the end of this process, I am no
 
 **Verdict: React-Snap**
 
-# **Content Creation**
+# Content Creation
 
 For React-Snap, you can either manually create content, which is what I was doing, or integrate some outside service manually.
 
@@ -70,7 +70,7 @@ All in all though, the experience was quite lovely and intuitive, including the 
 
 **Verdict: Gatsby (NetlifyCMS)**
 
-# **Overall**
+# Overall
 
 I believe that for projects of any real size, that the heft of Gatsby is likely worth the additional effort that is required, but conversely, it struggles with TypeScript integration and unit testing, two common requirements of larger projects.  That being said, React-Snap was truly seamless and gave me a much clearer and simple experience, and I wouldn't hesitate to use it in a small project.
 
