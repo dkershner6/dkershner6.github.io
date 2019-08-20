@@ -22,7 +22,7 @@ Now, there is something to be said for what you receive once you have Gatsby set
 
 **Verdict: Gatsby**
 
-# **Routing**
+# Routing
 
 I believe that both solutions use react router under the hood, but the way you will interact with them could not be more different.
 
