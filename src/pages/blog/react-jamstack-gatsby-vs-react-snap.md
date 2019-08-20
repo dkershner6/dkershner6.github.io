@@ -49,7 +49,7 @@ Gatsby has the ability to use TypeScript as well, and has a plugin to handle the
 
 * The TypeScript plugin will not actually stop a build for a type error.  You can see this as a good or a bad thing.  You can also create part of the build process that does, but it is not automatic.
 * The actual GraphQL query results use PropTypes by default.  It may or may not be possible to convert them, I did not try.
-  * Unit testing in Gatsby is fairly difficult as is due to the need to mock GraphQL queries for pretty much any component.  Typescript makes this significantly more difficult due to PropTypes being used.  I was unable to get a GraphQL involved unit test to correctly run after several hours.
+  * Unit testing in Gatsby is fairly difficult as is due to the need to mock GraphQL queries for pretty much any component.  Typescript makes this significantly more difficult due to PropTypes being used.  I was unable to get a GraphQL involved unit test to correctly run after several hours. _(Update: I was able to mock GraphQL more directly, kind of like_ [_this post_](https://medium.com/@sgpropguide/setting-up-unit-test-with-gatsbyjs-c56ada703417)_.)_
 
 I am a very firm believer in TypeScript, but at the end of this process, I am not sure it is worth trying to integrate into Gatsby, and likely cost me more time than it saved (first project of any size I can say that about).
 
