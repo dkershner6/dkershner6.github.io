@@ -10,12 +10,11 @@ tags:
   - azure
   - kubernetes
 ---
-
 ### Note
 
 This comparison applies to functions on v2 (.Net Core). There is a large difference in performance between the two, and these conclusions should not be held over to v1. I do have a [similar-ish comparison for v1](/blog/azure-functions-when-to-use-app-service-plan/).
 
----
+- - -
 
 ### Some Background
 
@@ -31,28 +30,30 @@ Since consumption is the hardest to measure, I am going to have the app run in t
 
 ## Testing
 
+---
+
 ### App Service Plan (Windows)
 
 This is actually how I was originally hosting this app, so I know for a fact that it runs well on 1x B2 instance. It uses about 60% of the CPU on a regular basis and can spike up to 80-90%, but nothing that would cause too much concern. Note that I was using the Basic tier, since it is cheaper and my load was fairly predictable, but an S2 would also do the job if you have a bit of a burstier load.
 
-At time of writing, cost of a B2 instance in West US 2 is **\$109.50/month**. On a CPU intensive task (long running) an average duration of **1.45min** was observed. On an active function that performs more than one async task, an average duration of **11.42s** was observed. On a rapid, since task function, an average response of **2.01ms** was observed.
+At time of writing, cost of a B2 instance in West US 2 is **$109.50/month**. On a CPU intensive task (long running) an average duration of **1.45min** was observed. On an active function that performs more than one async task, an average duration of **11.42s** was observed. On a rapid, since task function, an average response of **2.01ms** was observed.
 
 ### Kubernetes (Linux/Docker)
 
-Behind Azure Kubernetes Service is actually just normal VMs that are priced as Ubuntu or CentOS Linux. In addition to the VM, you require one 32GB SSD and some networking items per node. I will approximate this cost at $6/mo, although you may get some for free, depending on how many other VMs you have. For a VM size, we could use the A2 v2, which would be the same as the app service plan's, but since the pricing is close for me, I recommend springing for the D2 v3. At time of writing, one West US 2 D2 v3 VM node costs $70.08/month, making for a total cost of **\$76.08/month**. This VM handled the load of the app with ease, hovering around 25-30% CPU, barely peaking above 50%. The CPU intensive task ran in a brisk **1.05min**. The multi-threaded task ran in **8.36s**. The rapid task ran in **1.49ms**.
+Behind Azure Kubernetes Service is actually just normal VMs that are priced as Ubuntu or CentOS Linux. In addition to the VM, you require one 32GB SSD and some networking items per node. I will approximate this cost at $6/mo, although you may get some for free, depending on how many other VMs you have. For a VM size, we could use the A2 v2, which would be the same as the app service plan's, but since the pricing is close for me, I recommend springing for the D2 v3. At time of writing, one West US 2 D2 v3 VM node costs $70.08/month, making for a total cost of **$76.08/month**. This VM handled the load of the app with ease, hovering around 25-30% CPU, barely peaking above 50%. The CPU intensive task ran in a brisk **1.05min**. The multi-threaded task ran in **8.36s**. The rapid task ran in **1.49ms**.
 
 ### Consumption (Windows)
 
-Across 6 different Function apps, each running variable amount of instances, some cold starts, all cause the performance of the app to be decidedly more spiky here. The long running task runs in **1.7min**. The multi-threaded task ran in **16.42s**. The rapid task ran in **3.35ms**. Over the course of the month, (this was easy to calculate thanks to that new billing tool), the execution time has cost $28.90 and the executions have cost $0.96. There is a little file IO as well mixed in, and best I can approximate is that it costs $0.20.  This is a total cost of **$30.06\*\* for the month.
+Across 6 different Function apps, each running variable amount of instances, some cold starts, all cause the performance of the app to be decidedly more spiky here. The long running task runs in **1.7min**. The multi-threaded task ran in **16.42s**. The rapid task ran in **3.35ms**. Over the course of the month, (this was easy to calculate thanks to that new billing tool), the execution time has cost $28.90 and the executions have cost $0.96. There is a little file IO as well mixed in, and best I can approximate is that it costs $0.20.  This is a total cost of \*\*$30.06\*\* for the month.
 
 ## Conclusion
 
 | Service     | Monthly Cost | Single-Thread Long | Multi-thread | Quick  |
 | ----------- | ------------ | ------------------ | ------------ | ------ |
-| App Service | \$109.50     | 1.45min            | 11.42s       | 2.01ms |
-| Kubernetes  | \$76.08      | 1.05min            | 8.36s        | 1.49ms |
-| Consumption | \$30.06      | 1.70min            | 16.42s       | 3.35ms |
+| App Service | $109.50      | 1.45min            | 11.42s       | 2.01ms |
+| Kubernetes  | $76.08       | 1.05min            | 8.36s        | 1.49ms |
+| Consumption | $30.06       | 1.70min            | 16.42s       | 3.35ms |
 
-**As far as I can tell, with the increased performance of .Net Core under its belt, there is no scenario that beats the consumption model of Azure functions with regards to cost.** This was a much closer comparison with .Net Framework, but thanks to both general improvements in Functions themselves and the new framework, it is no longer even close. Even if a theoretical D1 v3 VM existed for Kubernetes to use, it would still need to auto scale to 2 nodes on occasion, and would cost a theoretical \$41 even if it didn't.
+**As far as I can tell, with the increased performance of .Net Core under its belt, there is no scenario that beats the consumption model of Azure functions with regards to cost.** This was a much closer comparison with .Net Framework, but thanks to both general improvements in Functions themselves and the new framework, it is no longer even close. Even if a theoretical D1 v3 VM existed for Kubernetes to use, it would still need to auto scale to 2 nodes on occasion, and would cost a theoretical $41 even if it didn't.
 
 Now, consumption functions are certainly not without their shortcomings and limits, and the performance is spikier and generally slower, but it also has the ability to scale without any custom rules or intervention on your part.
