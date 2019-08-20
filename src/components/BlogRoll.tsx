@@ -19,12 +19,14 @@ class BlogRoll extends React.Component {
             <Col key={post.id} xs='12' lg='6' className='mt-3'>
               <Row>
                 <Col xs='6'>
-                  <PreviewCompatibleImage
-                    imageInfo={{
-                      image: post.frontmatter.featuredimage,
-                      alt: `featured image thumbnail for post ${post.title}`,
-                    }}
-                  />
+                  <Link to={post.fields.slug}>
+                    <PreviewCompatibleImage
+                      imageInfo={{
+                        image: post.frontmatter.featuredimage,
+                        alt: `featured image thumbnail for post ${post.title}`,
+                      }}
+                    />
+                  </Link>
                 </Col>
                 <Col xs='6'>
                   <Link to={post.fields.slug}>
@@ -36,6 +38,7 @@ class BlogRoll extends React.Component {
                       ? post.frontmatter.tags.map((tag, index) => (
                           <TechnologyBadge
                             key={index}
+                            pageLink
                             technology={getTechnologyById(tag)}
                           />
                         ))
