@@ -36,7 +36,6 @@ export const BlogPostTemplate = ({
         isCentered={true}
         transitionDuration={600}
       >
-        }
         <Row>
           <Col>
             <h1>{title}</h1>
