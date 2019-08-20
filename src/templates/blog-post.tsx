@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { FunctionComponent } from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import LazyHero from 'react-lazy-hero';
-import PropTypes from 'prop-types';
+import PropTypes, { any } from 'prop-types';
 import Helmet from 'react-helmet';
 import { graphql, Link } from 'gatsby';
 import Layout from '../components/Layout';
@@ -9,6 +9,16 @@ import Content, { HTMLContent } from '../components/Content';
 import TechnologyBadge from '../components/TechnologyBadge';
 
 import { getTechnologyById } from '../classes/Technology';
+
+interface BlogPostTemplateProps {
+  content: React.ReactNode;
+  contentComponent: (any) => any;
+  description: string;
+  tags: string[];
+  title: string;
+  helmet: any;
+  featuredimage: any;
+}
 
 export const BlogPostTemplate = ({
   content,
@@ -18,7 +28,7 @@ export const BlogPostTemplate = ({
   title,
   helmet,
   featuredimage,
-}) => {
+}: BlogPostTemplateProps) => {
   const PostContent = contentComponent || Content;
 
   return (
@@ -71,15 +81,15 @@ export const BlogPostTemplate = ({
   );
 };
 
-BlogPostTemplate.propTypes = {
-  content: PropTypes.node.isRequired,
-  contentComponent: PropTypes.func,
-  description: PropTypes.string,
-  title: PropTypes.string,
-  helmet: PropTypes.object,
-};
+interface Data {
+  markdownRemark: any;
+}
 
-const BlogPost = ({ data }) => {
+interface BlogPostProps {
+  data: Data;
+}
+
+const BlogPost = ({ data }: BlogPostProps) => {
   const { markdownRemark: post } = data;
 
   return (
@@ -103,12 +113,6 @@ const BlogPost = ({ data }) => {
       />
     </Layout>
   );
-};
-
-BlogPost.propTypes = {
-  data: PropTypes.shape({
-    markdownRemark: PropTypes.object,
-  }),
 };
 
 export default BlogPost;
