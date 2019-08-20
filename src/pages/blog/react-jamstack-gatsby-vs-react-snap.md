@@ -63,8 +63,8 @@ For Gatsby, Netlify CMS can be integrated out of the box.  This is a massive boo
 
 For the editorial process inside Netlify CMS, I found the overall experience to be very well designed.  The UI is pleasant and fairly easy to work with.  **However, I did not find the experience to live up to my hopes of being able to hand off the tool to a company with no developers on staff.**  This was mostly due to small quibbles:
 
-* If you create a piece of content that contains a boolean, and you want that boolean to be false, you must click the boolean to be true, then back to false, otherwise it throws an error.
-* There is no way to sort the list of content in a given section.  _This one is likely a limitation of using Git to hold content, but worth knowing, and does limit the amount of content one could have._
+* If you create a piece of content that contains a boolean, and you want that boolean to be false, you must click the boolean to be true, then back to false, otherwise it throws an error. _(Update: I found a_ [_github issue_](https://github.com/netlify/netlify-cms/issues/1424) _that suggests you merely need to assign false as the default to fix this)_.
+* There is no way to sort the list of content in a given section.  This one is likely a limitation of using Git to hold content, but worth knowing, and does limit the amount of content one could have.  There is [an open GitHub Issue](https://github.com/netlify/netlify-cms/issues/54) on this topic, and has been open for 3 years at time of writing.
 
 All in all though, the experience was quite lovely and intuitive, including the editorial workflow (which you should definitely turn on).
 
