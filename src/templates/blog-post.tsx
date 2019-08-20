@@ -24,7 +24,11 @@ export const BlogPostTemplate = ({
   return (
     <React.Fragment>
       <LazyHero
-        imageSrc={featuredimage.publicURL}
+        imageSrc={
+          featuredimage !== undefined && featuredimage.publicURL !== undefined
+            ? featuredimage.publicURL
+            : ''
+        }
         color='#FFFFFF'
         opacity={0.8}
         minHeight='25vh'
@@ -32,6 +36,7 @@ export const BlogPostTemplate = ({
         isCentered={true}
         transitionDuration={600}
       >
+        }
         <Row>
           <Col>
             <h1>{title}</h1>
