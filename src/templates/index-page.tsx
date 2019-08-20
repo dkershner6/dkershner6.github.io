@@ -1,28 +1,40 @@
-import React from "react";
-import PropTypes from "prop-types";
-import { Link, graphql } from "gatsby";
-import LazyHero from "react-lazy-hero";
-import { Container, Row, Col, Button } from "react-bootstrap";
-import Arrow from "react-arrow";
-import { Link as ScrollLink } from "react-scroll";
-import HelmetHead from "../components/Seo";
+import React from 'react';
+import { Link, graphql } from 'gatsby';
+import LazyHero from 'react-lazy-hero';
+import { Container, Row, Col, Button } from 'react-bootstrap';
+import Arrow from 'react-arrow';
+import { Link as ScrollLink } from 'react-scroll';
+import HelmetHead from '../components/Seo';
 
-import Layout from "../components/Layout";
+import Layout from '../components/Layout';
+import MarkdownRemarkProps from '../interfaces/MarkdownRemarkProps';
 
-import About from "../components/About";
-import PortfolioMenu from "../components/PortfolioMenu";
-import Social from "../components/Social";
+import About from '../components/About';
+import PortfolioMenu from '../components/PortfolioMenu';
+import Social from '../components/Social';
 
-export const IndexPageTemplate = ({ image, title, heading, subheading }) => (
+interface IndexPageTemplateProps {
+  image: any;
+  title: string;
+  heading: string;
+  subheading: string;
+}
+
+export const IndexPageTemplate = ({
+  image,
+  title,
+  heading,
+  subheading,
+}: IndexPageTemplateProps) => (
   <React.Fragment>
     <HelmetHead title={title} />
     <LazyHero
       imageSrc={
         !!image.childImageSharp ? image.childImageSharp.fluid.src : image
       }
-      color="#000000"
+      color='#000000'
       opacity={0.2}
-      minHeight="100vh"
+      minHeight='100vh'
       parallaxOffset={0.5}
       isCentered={true}
       transitionDuration={600}
@@ -32,30 +44,30 @@ export const IndexPageTemplate = ({ image, title, heading, subheading }) => (
           <Col>
             <h1>
               <strong>
-                <span className="display-4 text-primary">{">"}</span>
-                <span className="display-4 text-white">{heading}</span>
-                <span className="display-4 text-primary">{"<"}</span>
+                <span className='display-4 text-primary'>{'>'}</span>
+                <span className='display-4 text-white'>{heading}</span>
+                <span className='display-4 text-primary'>{'<'}</span>
               </strong>
             </h1>
           </Col>
         </Row>
         <Row>
           <Col>
-            <h4 className="text-white">{subheading}</h4>
+            <h4 className='text-white'>{subheading}</h4>
           </Col>
         </Row>
-        <Row className="mt-4">
+        <Row className='mt-4'>
           <Col>
-            <ScrollLink to="about" smooth={true}>
-              <Button variant="primary">
+            <ScrollLink to='about' smooth={true}>
+              <Button variant='primary'>
                 <Arrow
-                  direction="down"
+                  direction='down'
                   shaftWidth={25}
                   shaftLength={25}
                   headWidth={50}
                   headLength={25}
-                  fill="white"
-                  stroke="white"
+                  fill='white'
+                  stroke='white'
                   strokeWidth={1}
                 />
               </Button>
@@ -70,19 +82,13 @@ export const IndexPageTemplate = ({ image, title, heading, subheading }) => (
   </React.Fragment>
 );
 
-IndexPageTemplate.propTypes = {
-  image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
-  title: PropTypes.string,
-  heading: PropTypes.string,
-  subheading: PropTypes.string,
-  mainpitch: PropTypes.object,
-  description: PropTypes.string,
-  intro: PropTypes.shape({
-    blurbs: PropTypes.array
-  })
-};
+interface IndexPageProps {
+  data: {
+    markdownRemark: MarkdownRemarkProps<IndexPageTemplateProps>;
+  };
+}
 
-const IndexPage = ({ data }) => {
+const IndexPage = ({ data }: IndexPageProps) => {
   const { frontmatter } = data.markdownRemark;
 
   return (
@@ -92,20 +98,9 @@ const IndexPage = ({ data }) => {
         title={frontmatter.title}
         heading={frontmatter.heading}
         subheading={frontmatter.subheading}
-        mainpitch={frontmatter.mainpitch}
-        description={frontmatter.description}
-        intro={frontmatter.intro}
       />
     </Layout>
   );
-};
-
-IndexPage.propTypes = {
-  data: PropTypes.shape({
-    markdownRemark: PropTypes.shape({
-      frontmatter: PropTypes.object
-    })
-  })
 };
 
 export default IndexPage;

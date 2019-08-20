@@ -1,7 +1,6 @@
-import React, { FunctionComponent } from 'react';
+import React from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import LazyHero from 'react-lazy-hero';
-import PropTypes, { any } from 'prop-types';
 import Helmet from 'react-helmet';
 import { graphql, Link } from 'gatsby';
 import Layout from '../components/Layout';
@@ -11,13 +10,13 @@ import TechnologyBadge from '../components/TechnologyBadge';
 import { getTechnologyById } from '../classes/Technology';
 
 interface BlogPostTemplateProps {
-  content: React.ReactNode;
-  contentComponent: (any) => any;
+  content?: React.ReactNode;
+  contentComponent?: (any) => any;
   description: string;
   tags: string[];
   title: string;
-  helmet: any;
-  featuredimage: any;
+  helmet?: any;
+  featuredimage?: any;
 }
 
 export const BlogPostTemplate = ({

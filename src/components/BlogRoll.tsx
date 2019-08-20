@@ -1,13 +1,21 @@
 import React from 'react';
 import { Row, Col } from 'react-bootstrap';
-import PropTypes from 'prop-types';
 import { Link, graphql, StaticQuery } from 'gatsby';
 import PreviewCompatibleImage from './PreviewCompatibleImage';
 
 import TechnologyBadge from './TechnologyBadge';
 import { getTechnologyById } from '../classes/Technology';
 
-class BlogRoll extends React.Component {
+interface BlogRollProps {
+  data: {
+    allMarkdownRemark: {
+      edges: any[];
+    };
+  };
+  count: number;
+}
+
+class BlogRoll extends React.Component<BlogRollProps> {
   render() {
     const { data } = this.props;
     const { edges: posts } = data.allMarkdownRemark;
@@ -52,14 +60,6 @@ class BlogRoll extends React.Component {
     );
   }
 }
-
-BlogRoll.propTypes = {
-  data: PropTypes.shape({
-    allMarkdownRemark: PropTypes.shape({
-      edges: PropTypes.array,
-    }),
-  }),
-};
 
 const BlogRollWithQuery = () => (
   <StaticQuery

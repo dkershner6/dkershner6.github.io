@@ -1,8 +1,14 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { BlogPostTemplate } from '../../templates/blog-post';
 
-const BlogPostPreview = ({ entry, widgetFor }) => (
+interface BlogPostPreviewProps {
+  entry: {
+    getIn: (any) => any;
+  };
+  widgetFor: (any) => any;
+}
+
+const BlogPostPreview = ({ entry, widgetFor }: BlogPostPreviewProps) => (
   <BlogPostTemplate
     content={widgetFor('body')}
     description={entry.getIn(['data', 'description'])}
@@ -11,12 +17,5 @@ const BlogPostPreview = ({ entry, widgetFor }) => (
     featuredimage={entry.getIn(['data', 'featuredimage'])}
   />
 );
-
-BlogPostPreview.propTypes = {
-  entry: PropTypes.shape({
-    getIn: PropTypes.func,
-  }),
-  widgetFor: PropTypes.func,
-};
 
 export default BlogPostPreview;
