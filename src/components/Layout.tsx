@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { FunctionComponent } from 'react';
 import { Helmet } from 'react-helmet';
 import Footer from './Footer';
 import Navigation from './Navigation';
@@ -6,8 +6,13 @@ import '../css/bootstrap.css';
 import useSiteMetadata from './SiteMetadata';
 import { withPrefix } from 'gatsby';
 
-const Layout = ({ children }) => {
-  const { title, description } = useSiteMetadata();
+interface LayoutProps {
+  siteMetadata?: any;
+}
+
+const Layout: FunctionComponent<LayoutProps> = props => {
+  const { siteMetadata, children } = props;
+  const { title, description } = siteMetadata || useSiteMetadata();
   const urlParams =
     typeof window !== 'undefined'
       ? new URLSearchParams(window.location.search)

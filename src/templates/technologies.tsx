@@ -36,7 +36,7 @@ class TagRoute extends React.Component<TagRouteProps> {
     const totalCount = this.props.data.allMarkdownRemark.totalCount;
     let projects = getProjectsForTechnology(technology);
     return (
-      <Layout>
+      <Layout siteMetadata={this.props.data}>
         <Helmet title={`${technology.label} | ${title}`} />
         <Container className='mt-5'>
           <Row>
