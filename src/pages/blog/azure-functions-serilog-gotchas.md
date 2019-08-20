@@ -12,11 +12,11 @@ tags:
   - azureFunctions
 ---
 
-### Some Background
+# Some Background
 
 Azure Functions have great struggles when it comes to clients not being created statically. They note this in their docs very well, but on occasion you can do this in unknown fashion. The result, when it occurs, is very high connection or thread counts, which can lead to shutdowns as you approach [the limits](/blog/azure-functions-limits-how-to-overcome/).
 
-### Enter Serilog
+# Enter Serilog
 
 Serilog is very convenient, and one of the easiest ways to implement custom logging in Azure Functions. The recommended approaches to instantiate Serilog are typically:
 
@@ -25,7 +25,7 @@ Serilog is very convenient, and one of the easiest ways to implement custom logg
 
 [Evan Dontje encountered the the first bullet point](https://evandontje.com/2018/10/09/high-thread-count-in-azure-functions/), and you can read about his experience there. I thought I was being savvy by doing it in a using clause, but after weeks of talks with Azure Support, I found out that I was just as bad off as he was.
 
-### Solution
+# Solution
 
 In order to solve this issue, I used a combination of the two strategies, with a null check.
 
