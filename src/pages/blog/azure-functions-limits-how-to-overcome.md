@@ -12,7 +12,7 @@ tags:
   - azureFunctions
 ---
 
-### Limits? In serverless?
+# Limits? In serverless?
 
 If you travel to pages like the [scale and hosting](https://docs.microsoft.com/en-us/azure/azure-functions/functions-scale#understanding-scaling-behaviors), you may, rightly, be under the impression that azure functions can scale pretty massively. (At time of writing) 200 instances? Multi-messages per instance? I can do 1000 things at once!
 
@@ -22,7 +22,7 @@ While this is technically true, you better be doing 1000 Hello World's, because 
 
 There are 5 limits, but really only 2 to worry about, as you are likely to hit them before others: Connections and Threads. The connections limit is in the process of being lifted to 600, and all of my apps appear to be operating with the higher limit, but you may still be experiencing the lower limit at time of writing. Before the connection limit change, I never hit the thread limit. After the change, I have never hit the connection limit, only threads.
 
-### What Happens When a Limit is hit?
+# What Happens When a Limit is hit?
 
 First off, the Azure functions host itself reserves some of the limit for itself. This makes sense so that the whole system doesn't go down, but you should realize that your actualy limit will be 250 connections or 400 threads.
 
@@ -32,16 +32,16 @@ Ideally, the function host shuts down, it realizes what happened, and it boots b
 
 As you can see from my beatiful artwork, in practice, this happens some of the time, and the rest generates an outage that can last up to several hours, with no warning (unless you yourself create one). If you visit a function during this time, you will get the response "The function host is not running". If you visit the portal during this time, you will get the feared red box informing you Host Thresholds Exceeded: [Threads]. Typically, you will need to restart to resolve this.
 
-### How to Overcome
+# How to Overcome
 
-#### Connection-Specific
+## Connection-Specific
 
 There are some general design principles to follow when writing in C# that may not be altogether obvious from the way the interfaces are written. [Azure documentation itself](https://docs.microsoft.com/en-us/azure/azure-functions/manage-connections) actually has some great guidance here, and they go into lots of detail, but I will quickly touch on here:
 
 - Static Clients: Create one static HttpClient (and Azure Storage Clients) on instance-load and use it for every call. This is not totally obvious, given the fact that HttpClient is disposable, so it is tempting to use it in a using statement. [DO NOT DO THIS](https://docs.microsoft.com/en-us/azure/architecture/antipatterns/improper-instantiation/).
 - Pooled connections for Sql/Entity Framework: This is commonplace in the connection string, and is the default functionality, so it is much less common to run into issues.
 
-#### General Design Principles
+## General Design Principles
 
 Over the course of using consumption functions frequently over the past few years, here are some general design principles I follow to avoid problems, some more obvious than others:
 
@@ -54,6 +54,6 @@ Over the course of using consumption functions frequently over the past few year
 
 In general, Azure Functions are very scalable, once you have a few tools under your belt to help it actually have a smooth experience while scaling.
 
-### Some Specific Examples
+# Some Specific Examples
 
 - [Serilog Gotchas](/blog/azure-functions-serilog-gotchas/)
