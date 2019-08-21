@@ -48,7 +48,7 @@ React-Snap integrates TypeScript the same way any React project does.  It is ver
 Gatsby has the ability to use TypeScript as well, and has a plugin to handle the compilation to JS.  I did not run into many issues, but wanted to list the ones I did encounter here:
 
 * The TypeScript plugin will not actually stop a build for a type error.  You can see this as a good or a bad thing.  You can also create part of the build process that does, but it is not automatic.
-* The actual GraphQL query results use PropTypes by default.  It may or may not be possible to convert them, I did not try. _(Update 2: PropTypes were surprisingly easy to replace with interfaces.)_
+* The actual GraphQL query results use PropTypes by default.  It may or may not be possible to convert them, I did not try. _(Update: PropTypes were surprisingly easy to replace with interfaces.)_
   * Unit testing in Gatsby is fairly difficult as is due to the need to mock GraphQL queries for pretty much any component.  Typescript makes this significantly more difficult due to PropTypes being used.  I was unable to get a GraphQL involved unit test to correctly run after several hours. _(Update: I was able to mock GraphQL more directly, kind of like_ [_this post_](https://medium.com/@sgpropguide/setting-up-unit-test-with-gatsbyjs-c56ada703417)_.)_
 
 I am a very firm believer in TypeScript, but at the end of this process, I am not sure it is worth trying to integrate into Gatsby, and likely cost me more time than it saved (first project of any size I can say that about).
@@ -63,7 +63,7 @@ For Gatsby, Netlify CMS can be integrated out of the box.  This is a massive boo
 
 For the editorial process inside Netlify CMS, I found the overall experience to be very well designed.  The UI is pleasant and fairly easy to work with.  **However, I did not find the experience to live up to my hopes of being able to hand off the tool to a company with no developers on staff.**  This was mostly due to small quibbles:
 
-* If you create a piece of content that contains a boolean, and you want that boolean to be false, you must click the boolean to be true, then back to false, otherwise it throws an error. _(Update: I found a_ [_github issue_](https://github.com/netlify/netlify-cms/issues/1424) _that suggests you merely need to assign false as the default to fix this) (Update 2: Setting the default to false did not fix this)_.
+* If you create a piece of content that contains a boolean, and you want that boolean to be false, you must click the boolean to be true, then back to false, otherwise it throws an error. _(Update: I found a_ [_github issue_](https://github.com/netlify/netlify-cms/issues/1424) _that suggests you merely need to assign false as the default to fix this) (Update 2: Setting the default to false did not fix this) (Update 3: It works, but you need to set it to the string false ('false') not the boolean false)_.
 * There is no way to sort the list of content in a given section.  This one is likely a limitation of using Git to hold content, but worth knowing, and does limit the amount of content one could have.  There is [an open GitHub Issue](https://github.com/netlify/netlify-cms/issues/54) on this topic, and has been open for 3 years at time of writing.
 
 All in all though, the experience was quite lovely and intuitive, including the editorial workflow (which you should definitely turn on).
