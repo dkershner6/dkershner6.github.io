@@ -1,13 +1,12 @@
 import React from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import LazyHero from 'react-lazy-hero';
-import Helmet from 'react-helmet';
 import { graphql, Link } from 'gatsby';
 import Layout from '../components/Layout';
 import Content, { HTMLContent } from '../components/Content';
-import TechnologyBadge from '../components/TechnologyBadge';
+import HelmetHead from '../components/Seo';
 
-import { getTechnologyById } from '../classes/Technology';
+import BlogPostTag from '../components/BlogPostTag';
 
 interface BlogPostTemplateProps {
   content?: React.ReactNode;
@@ -58,18 +57,13 @@ export const BlogPostTemplate = ({
         <Row>
           <Col>
             {tags && tags.length
-              ? tags.map(tag => (
-                  <Link key={tag} to={`/technologies/${tag}/`}>
-                    <TechnologyBadge technology={getTechnologyById(tag)} />
-                  </Link>
-                ))
+              ? tags.map((tag, index) => <BlogPostTag key={index} tag={tag} />)
               : null}
           </Col>
         </Row>
       </LazyHero>
       <Container className='mt-5'>
         {helmet || ''}
-
         <Row className='mt-5'>
           <Col>
             <PostContent content={content} />
@@ -97,15 +91,7 @@ const BlogPost = ({ data }: BlogPostProps) => {
         content={post.html}
         contentComponent={HTMLContent}
         description={post.frontmatter.description}
-        helmet={
-          <Helmet titleTemplate='%s | Blog'>
-            <title>{`${post.frontmatter.title}`}</title>
-            <meta
-              name='description'
-              content={`${post.frontmatter.description}`}
-            />
-          </Helmet>
-        }
+        helmet={<HelmetHead title={post.frontmatter.title} />}
         tags={post.frontmatter.tags}
         title={post.frontmatter.title}
         featuredimage={post.frontmatter.featuredimage}

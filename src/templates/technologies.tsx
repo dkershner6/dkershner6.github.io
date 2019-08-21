@@ -133,8 +133,8 @@ class TagRoute extends React.Component<TagRouteProps> {
 
 export default TagRoute;
 
-export const tagPageQuery = graphql`
-  query TagPage($techId: String) {
+export const techPageQuery = graphql`
+  query TechPage($techId: String) {
     site {
       siteMetadata {
         title

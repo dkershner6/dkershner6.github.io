@@ -1,24 +1,23 @@
 import React from 'react';
 import { graphql } from 'gatsby';
-import BlogListPage from '../../components/BlogListPage';
+import BlogListPage from '../components/BlogListPage';
 
-const BlogIndexPage = props => {
+const TagRoute = props => {
   const { data } = props;
-  return <BlogListPage data={data} />;
+  const tag = props.pageContext.tag;
+  return <BlogListPage data={data} tag={tag} />;
 };
 
-export default BlogIndexPage;
+export default TagRoute;
 
 export const pageQuery = graphql`
-  query AllBlogQuery {
+  query BlogRollTagQuery($tag: String) {
     allMarkdownRemark(
       sort: { order: DESC, fields: [frontmatter___date] }
-      filter: { frontmatter: { templateKey: { eq: "blog-post" } } }
-    ) {
-      group(field: frontmatter___tags) {
-        fieldValue
-        totalCount
+      filter: {
+        frontmatter: { templateKey: { eq: "blog-post" }, tags: { in: [$tag] } }
       }
+    ) {
       nodes {
         excerpt(pruneLength: 400)
         id
