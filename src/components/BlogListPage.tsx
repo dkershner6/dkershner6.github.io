@@ -65,7 +65,10 @@ const BlogListPage = (props: BlogListPageProps) => {
   } else {
     const { tag } = props;
     const technology = getTechnologyById(tag);
-    const displayTag = startCase(tag.toLowerCase());
+    const displayTag =
+      technology === undefined
+        ? startCase(tag.toLowerCase())
+        : technology.label;
     return (
       <React.Fragment>
         <HelmetHead title={`Blog - ${displayTag}`} />
@@ -77,31 +80,29 @@ const BlogListPage = (props: BlogListPageProps) => {
             isCentered={true}
             transitionDuration={600}
           >
-            <Container>
+            <React.Fragment>
               <Row>
-                <Col>
+                <Col xs='12'>
                   <h1>Blog - {displayTag}</h1>
                 </Col>
               </Row>
               <Row className='mt-5'>
-                <Col>
+                <Col className='align-self-center'>
                   <Link to='/blog'>
                     <Button variant='primary'>Remove Filter</Button>
                   </Link>
                 </Col>
                 {technology !== undefined && (
-                  <Col>
+                  <Col className='align-self-center'>
                     <Link
                       to={`/technologies/${technology.type}/${technology.id}`}
                     >
-                      <Button size='sm' variant='info'>
-                        More Info About This Tech
-                      </Button>
+                      <Button variant='info'>Info On This Tech</Button>
                     </Link>
                   </Col>
                 )}
               </Row>
-            </Container>
+            </React.Fragment>
           </LazyHero>
           <Container className='mt-5'>
             <BlogRoll data={props.data} />
