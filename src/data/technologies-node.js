@@ -125,15 +125,34 @@ export const dataTechnologies = [
 ];
 
 export const clouds = [
-  { id: 'azure', label: 'Azure', type: 'cloud', familiarity: 5 },
+  {
+    id: 'azure',
+    label: 'Azure',
+    type: 'cloud',
+    familiarity: 5,
+    link: 'https://azure.microsoft.com',
+  },
   {
     id: 'googlefirebase',
     label: 'Google Firebase',
     type: 'cloud',
     familiarity: 4,
+    link: 'https://firebase.google.com',
   },
-  { id: 'googlecloud', label: 'Google Cloud', type: 'cloud', familiarity: 3 },
-  { id: 'aws', label: 'AWS', type: 'cloud', familiarity: 2 },
+  {
+    id: 'googlecloud',
+    label: 'Google Cloud',
+    type: 'cloud',
+    familiarity: 3,
+    link: 'https://cloud.google.com',
+  },
+  {
+    id: 'aws',
+    label: 'AWS',
+    type: 'cloud',
+    familiarity: 2,
+    link: 'https://aws.amazon.com/',
+  },
 ];
 
 function sortFamiliarityDescending(a, b) {

@@ -8,6 +8,7 @@ import Layout from './Layout';
 import BlogRoll, { BlogRollProps } from './BlogRoll';
 import BlogPostTag from './BlogPostTag';
 import HelmetHead from './Seo';
+import { getTechnologyById } from '../classes/Technology';
 
 interface BlogListPageProps extends BlogRollProps {
   tag?: string;
@@ -63,6 +64,7 @@ const BlogListPage = (props: BlogListPageProps) => {
     );
   } else {
     const { tag } = props;
+    const technology = getTechnologyById(tag);
     const displayTag = startCase(tag.toLowerCase());
     return (
       <React.Fragment>
@@ -87,6 +89,17 @@ const BlogListPage = (props: BlogListPageProps) => {
                     <Button variant='primary'>Remove Filter</Button>
                   </Link>
                 </Col>
+                {technology !== undefined && (
+                  <Col>
+                    <Link
+                      to={`/technologies/${technology.type}/${technology.id}`}
+                    >
+                      <Button size='sm' variant='info'>
+                        More Info About This Tech
+                      </Button>
+                    </Link>
+                  </Col>
+                )}
               </Row>
             </Container>
           </LazyHero>
