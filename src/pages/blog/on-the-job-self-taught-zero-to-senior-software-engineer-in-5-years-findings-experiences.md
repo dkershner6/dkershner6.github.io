@@ -1,8 +1,8 @@
 ---
 templateKey: blog-post
 title: >-
-  On-the-job, Self-taught, Zero to Senior Software Engineer in 5 Years: Findings
-  & Experiences
+  On-the-job, Self-taught, Zero to Senior Software Engineer in 5 Years:
+  Experiences & Findings
 date: 2019-08-23T19:30:15.648Z
 description: What I learned and was surrounded by at each stage of the process
 featuredpost: true
@@ -36,4 +36,9 @@ Outside consultants doing the programming, me project managing
 
 Outside consultants doing the programming, me project managing
 
-*
+* The "Cloud Architect" style learning about Azure starts to bleed over into basic application design knowledge.  "Serverless" (Azure Functions) is the rage in terms of deployment.
+  * I realize at this point we are using continuously running Console applications for our app, and in a single monolith, and on a VM.
+  * I push for a transition to functions, and progress is slow for two reasons:
+    * It was written as a monolith, to be a monolith.
+    * Functions are in their infancy, and things like Pre-Compiled functions are new and in beta.
+  * I start to look into the code itself to see if I can speed up the transition.
