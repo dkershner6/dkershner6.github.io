@@ -19,7 +19,7 @@ I definitely don't know everything (in fact, each stage of the process continual
 * The 2 replacement 'CIO/CTO' partners also quit.
 * Off we go.
 
-# Year 1 (2014)
+# Year 1 (2015)
 
 Outside consultants doing the programming, me project managing
 
@@ -32,7 +32,7 @@ Outside consultants doing the programming, me project managing
 * Anything that needs to be accomplished in Azure is learning in a minimal, one-off manner, just to get the job done.
 * Later in the year, I learn what version control is, and insist that it be used and adhered to (GitHub).
 
-# Year 2 (2015)
+# Year 2 (2016)
 
 Outside consultants doing the programming, me project managing
 
@@ -43,3 +43,5 @@ Outside consultants doing the programming, me project managing
     * It was written as a monolith, to be a monolith.
     * Functions are in their infancy, and things like Pre-Compiled functions are new and in beta.
   * I start to look into the code itself to see if I can speed up the transition.  Everything I learn is either based on the code itself (holding the consultants as the expert to learn from) or from one-off concepts from articles promoting best practices (some from Microsoft themselves).
+
+# Year 3 (2017)
