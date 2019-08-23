@@ -36,9 +36,10 @@ Outside consultants doing the programming, me project managing
 
 Outside consultants doing the programming, me project managing
 
+* ETL becomes very important to me as I seek more data to build intelligence reporting around.  I work with Stitch Data and Power BI to create what I need.
 * The "Cloud Architect" style learning about Azure starts to bleed over into basic application design knowledge.  "Serverless" (Azure Functions) is the rage in terms of deployment.
   * I realize at this point we are using continuously running Console applications for our app, and in a single monolith, and on a VM.
   * I push for a transition to functions, and progress is slow for two reasons:
     * It was written as a monolith, to be a monolith.
     * Functions are in their infancy, and things like Pre-Compiled functions are new and in beta.
-  * I start to look into the code itself to see if I can speed up the transition.
+  * I start to look into the code itself to see if I can speed up the transition.  Everything I learn is either based on the code itself (holding the consultants as the expert to learn from) or from one-off concepts from articles promoting best practices (some from Microsoft themselves).
