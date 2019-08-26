@@ -1,17 +1,16 @@
-import React from "react";
+import React from 'react';
 import {
-  Container,
   Row,
   Col,
   Card,
   ListGroup,
   ListGroupItem,
-  Collapse
-} from "react-bootstrap";
+  Collapse,
+} from 'react-bootstrap';
 
-import PortfolioDesignSectionProps from "../../interfaces/PortfolioDesignProps";
-import TechnologyBadge from "../../components/TechnologyBadge";
-import { getTechnologiesFromAttributes } from "../../classes/ProjectAttribute";
+import PortfolioDesignSectionProps from '../../interfaces/PortfolioDesignProps';
+import TechnologyBadge from '../../components/TechnologyBadge';
+import { getTechnologiesFromAttributes } from '../../classes/ProjectAttribute';
 
 const PortfolioDesignSection = (props: PortfolioDesignSectionProps) => {
   const {
@@ -21,14 +20,14 @@ const PortfolioDesignSection = (props: PortfolioDesignSectionProps) => {
     headerBg,
     headerText,
     getOpen,
-    toggleOpen
+    toggleOpen,
   } = props;
   return (
-    <Row id={props.sectionId} className="mt-3">
+    <Row id={props.sectionId} className='mt-3'>
       <Col>
         <Card bg={headerBg} text={headerText}>
           <Card.Header
-            style={{ cursor: "pointer" }}
+            style={{ cursor: 'pointer' }}
             onClick={() => toggleOpen(sectionId)}
           >
             <h3>{sectionName}</h3>
@@ -39,13 +38,13 @@ const PortfolioDesignSection = (props: PortfolioDesignSectionProps) => {
                 {project[sectionId].map((dataSection, index) => (
                   <Col
                     key={index}
-                    className="mt-3"
-                    xs="12"
-                    xl={project[sectionId].length > 1 ? "6" : "12"}
+                    className='mt-3'
+                    xs='12'
+                    xl={project[sectionId].length > 1 ? '6' : '12'}
                   >
-                    <Card id={dataSection.id} bg="secondary" text="dark">
+                    <Card id={dataSection.id} bg='secondary' text='dark'>
                       <Card.Header
-                        style={{ cursor: "pointer" }}
+                        style={{ cursor: 'pointer' }}
                         onClick={() => toggleOpen(dataSection.id)}
                       >
                         <Row>
@@ -54,7 +53,7 @@ const PortfolioDesignSection = (props: PortfolioDesignSectionProps) => {
                           </Col>
                           <Col>
                             {getTechnologiesFromAttributes(
-                              dataSection.attributes
+                              dataSection.attributes,
                             ).map((technology, iindex) => (
                               <TechnologyBadge
                                 key={iindex}
@@ -72,26 +71,26 @@ const PortfolioDesignSection = (props: PortfolioDesignSectionProps) => {
                                 key={iindex}
                                 action={dataSectionAttribute.link !== undefined}
                                 href={dataSectionAttribute.link}
-                                target="_blank"
+                                target='_blank'
                               >
                                 <Row>
-                                  <Col xs="12" md="3">
+                                  <Col xs='12' md='3'>
                                     <strong
                                       className={
-                                        dataSectionAttribute.name === "Example"
-                                          ? "text-info"
-                                          : ""
+                                        dataSectionAttribute.name === 'Example'
+                                          ? 'text-info'
+                                          : ''
                                       }
                                     >
                                       {dataSectionAttribute.name}:
                                     </strong>
                                   </Col>
-                                  <Col xs="12" md="9">
+                                  <Col xs='12' md='9'>
                                     <p
                                       className={
-                                        dataSectionAttribute.name === "Example"
-                                          ? "text-info"
-                                          : ""
+                                        dataSectionAttribute.name === 'Example'
+                                          ? 'text-info'
+                                          : ''
                                       }
                                     >
                                       {dataSectionAttribute.value}
@@ -99,7 +98,7 @@ const PortfolioDesignSection = (props: PortfolioDesignSectionProps) => {
                                   </Col>
                                 </Row>
                               </ListGroupItem>
-                            )
+                            ),
                           )}
                         </ListGroup>
                       </Collapse>
@@ -117,7 +116,7 @@ const PortfolioDesignSection = (props: PortfolioDesignSectionProps) => {
                                     {dataSection.reasons.map(
                                       (reason, iiindex) => (
                                         <li key={iiindex}>{reason}</li>
-                                      )
+                                      ),
                                     )}
                                   </ul>
                                 </Col>

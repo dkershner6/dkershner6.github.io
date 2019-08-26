@@ -1,14 +1,13 @@
-import Project from "../classes/Project";
-import Technology from "../classes/Technology";
+import Project from '../classes/Project';
 
-import enterpriseMarketplaceProject from "./projects/EnterpriseMarketplace";
-import shopifySearchEngineProject from "./projects/ShopifySearchEngine";
-import codeChallengesProject from "./projects/CodeChallenges";
+import enterpriseMarketplaceProject from './projects/EnterpriseMarketplace';
+import shopifySearchEngineProject from './projects/ShopifySearchEngine';
+import codeChallengesProject from './projects/CodeChallenges';
 
 const projects: Project[] = [
   codeChallengesProject,
   enterpriseMarketplaceProject,
-  shopifySearchEngineProject
+  shopifySearchEngineProject,
 ];
 
 const getProject = projectId => {
@@ -20,7 +19,5 @@ const getProject = projectId => {
   }
 };
 
-const getProjectsWithTechnology = (technology: Technology) => {};
-
 export default getProject;
-export { projects, getProjectsWithTechnology };
+export { projects };

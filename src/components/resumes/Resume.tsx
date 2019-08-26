@@ -1,13 +1,5 @@
 import React from 'react';
-import {
-  Container,
-  Row,
-  Col,
-  Tabs,
-  Tab,
-  ButtonGroup,
-  Button,
-} from 'react-bootstrap';
+import { Container, Row, Col, ButtonGroup, Button } from 'react-bootstrap';
 import HelmetHead from '../../components/Seo';
 
 import CoverLetterTab from './CoverLetterTab';

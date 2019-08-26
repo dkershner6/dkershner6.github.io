@@ -8,7 +8,7 @@ interface IndexPagePreviewProps {
   getAsset: (any) => any;
 }
 
-const IndexPagePreview = ({ entry, getAsset }: IndexPagePreviewProps) => {
+const IndexPagePreview = ({ entry }: IndexPagePreviewProps) => {
   const data = entry.getIn(['data']).toJS();
 
   if (data) {

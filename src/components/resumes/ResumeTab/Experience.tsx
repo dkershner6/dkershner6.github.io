@@ -1,24 +1,23 @@
-import React from "react";
-import { Row, Col, Card, ListGroupItem, ListGroup } from "react-bootstrap";
-import { ResumeTabProps } from "../ResumeTab";
+import React from 'react';
+import { Row, Col, Card, ListGroupItem, ListGroup } from 'react-bootstrap';
 
-const Experience = (props: ResumeTabProps) => {
+const Experience = () => {
   return (
-    <Row className="mt-3">
+    <Row className='mt-3'>
       <Col>
-        <Card border="secondary">
+        <Card border='secondary'>
           <Card.Header>
             <h3>Experience</h3>
           </Card.Header>
           <Card.Body>
             <Row>
-              <Col className="mt-2" md="12" lg="6">
-                <Card border="secondary">
+              <Col className='mt-2' md='12' lg='6'>
+                <Card border='secondary'>
                   <Card.Header>
                     <h4>Owner - Kershner Endeavors LLC</h4>
                   </Card.Header>
-                  <ListGroup className="list-group-flush">
-                    <ListGroupItem className="text-success">
+                  <ListGroup className='list-group-flush'>
+                    <ListGroupItem className='text-success'>
                       2014-Present
                     </ListGroupItem>
                     <ListGroupItem>
@@ -27,14 +26,14 @@ const Experience = (props: ResumeTabProps) => {
                       Management.
                     </ListGroupItem>
                     <ListGroupItem>
-                      A principal partner in{" "}
+                      A principal partner in{' '}
                       <a
-                        href="https://eformedpartners.com"
-                        target="_blank"
-                        rel="noopener noreferrer"
+                        href='https://eformedpartners.com'
+                        target='_blank'
+                        rel='noopener noreferrer'
                       >
                         eFormed Partners
-                      </a>{" "}
+                      </a>{' '}
                       as well, a group of e-commerce professionals who incubate
                       small businesses with enterprise level marketplace
                       software. As part of this group, worked on several
@@ -57,25 +56,25 @@ const Experience = (props: ResumeTabProps) => {
                     </ListGroupItem>
                   </ListGroup>
                   <Card.Footer>
-                    Testimonials can be found on my{" "}
+                    Testimonials can be found on my{' '}
                     <a
-                      href="https://www.linkedin.com/in/derek-kershner-54b3392/"
-                      target="_blank"
-                      rel="noopener noreferrer"
+                      href='https://www.linkedin.com/in/derek-kershner-54b3392/'
+                      target='_blank'
+                      rel='noopener noreferrer'
                     >
                       LinkedIn
-                    </a>{" "}
+                    </a>{' '}
                     under recommendations.
                   </Card.Footer>
                 </Card>
               </Col>
-              <Col className="mt-2" md="12" lg="6">
-                <Card border="secondary">
+              <Col className='mt-2' md='12' lg='6'>
+                <Card border='secondary'>
                   <Card.Header>
                     <h4>Director of Business Analytics - Altrec, Inc.</h4>
                   </Card.Header>
-                  <ListGroup className="list-group-flush">
-                    <ListGroupItem className="text-success">
+                  <ListGroup className='list-group-flush'>
+                    <ListGroupItem className='text-success'>
                       2006-2014
                     </ListGroupItem>
                     <ListGroupItem>
@@ -101,11 +100,11 @@ const Experience = (props: ResumeTabProps) => {
                   </ListGroup>
                   <Card.Footer>
                     Won awards for major business impact. Several
-                    recommendations can be found on my{" "}
+                    recommendations can be found on my{' '}
                     <a
-                      href="https://www.linkedin.com/in/derek-kershner-54b3392/"
-                      target="_blank"
-                      rel="noopener noreferrer"
+                      href='https://www.linkedin.com/in/derek-kershner-54b3392/'
+                      target='_blank'
+                      rel='noopener noreferrer'
                     >
                       LinkedIn
                     </a>

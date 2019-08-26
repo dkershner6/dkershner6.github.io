@@ -57,7 +57,8 @@
     "develop": "npm run clean && gatsby develop",
     "serve": "gatsby serve",
     "format": "prettier --trailing-comma es5 --no-semi --single-quote --write \"{gatsby-*.js,src/**/*.js}\"",
-    "test": "jest"
+    "test": "jest",
+    "lint": "eslint ./src --ext .tsx --ext .js"
   },
   "devDependencies": {
     "@testing-library/jest-dom": "^4.0.0",

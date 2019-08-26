@@ -1,7 +1,7 @@
 import React from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import Helmet from 'react-helmet';
-import { Link, graphql } from 'gatsby';
+import { graphql } from 'gatsby';
 import Layout from '../components/Layout';
 
 import properCase from '../utils/ProperCase';
@@ -10,7 +10,7 @@ import { technologies } from '../data/Technologies';
 import TechnologyBadge from '../components/TechnologyBadge';
 import SkillDisplay from '../components/SkillDisplay';
 
-import Technology, { getProjectsForTechnology } from '../classes/Technology';
+import { getProjectsForTechnology } from '../classes/Technology';
 
 interface TagRouteProps {
   data: any;
@@ -33,7 +33,6 @@ class TagRoute extends React.Component<TagRouteProps> {
       technology => technology.id === technologyId,
     )[0];
     const title = this.props.data.site.siteMetadata.title;
-    const totalCount = this.props.data.allMarkdownRemark.totalCount;
     let projects = getProjectsForTechnology(technology);
     return (
       <Layout siteMetadata={this.props.data}>

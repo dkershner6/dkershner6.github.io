@@ -1,10 +1,10 @@
-import React from "react";
+import React from 'react';
 
-const InseegoCoverLetter = props => {
+const DevotedHealthCoverLetter = () => {
   return (
     <React.Fragment>
       <h3>To Devoted Health Hiring Manager:</h3>
-      <p className="mt-3">
+      <p className='mt-3'>
         My wife is a Hospice Nurse (RN), so I am very familiar with medicare and
         the systems that come along with it. I have always been interested in
         healthcare in general as well, so Devoted Health is a great fit.
@@ -12,11 +12,11 @@ const InseegoCoverLetter = props => {
       <div>
         I think you will find my skillset and experience to be quite
         well-rounded and a solid match for many of the job requirements you have
-        laid out in the{" "}
+        laid out in the{' '}
         <a
-          href="https://jobs.lever.co/devoted/9f37ee15-e6b7-47b5-858a-e437869c0112"
-          target="_blank"
-          rel="noopener noreferrer"
+          href='https://jobs.lever.co/devoted/9f37ee15-e6b7-47b5-858a-e437869c0112'
+          target='_blank'
+          rel='noopener noreferrer'
         >
           Senior Full-Stack Engineer position
         </a>
@@ -42,11 +42,11 @@ const InseegoCoverLetter = props => {
           </li>
           <li>
             I love to learn new things, and spend my free time watching courses
-            on{" "}
+            on{' '}
             <a
-              href="https://app.pluralsight.com/profile/dkershner"
-              target="_blank"
-              rel="noopener noreferrer"
+              href='https://app.pluralsight.com/profile/dkershner'
+              target='_blank'
+              rel='noopener noreferrer'
             >
               Pluralsight
             </a>
@@ -56,11 +56,11 @@ const InseegoCoverLetter = props => {
       </div>
       <p>
         If you want more information than I have provided in either my resume or
-        this cover letter, please see my{" "}
+        this cover letter, please see my{' '}
         <a
-          href="https://www.linkedin.com/in/derek-kershner-54b3392/"
-          target="_blank"
-          rel="noopener noreferrer"
+          href='https://www.linkedin.com/in/derek-kershner-54b3392/'
+          target='_blank'
+          rel='noopener noreferrer'
         >
           LinkedIn
         </a>
@@ -70,4 +70,4 @@ const InseegoCoverLetter = props => {
   );
 };
 
-export default InseegoCoverLetter;
+export default DevotedHealthCoverLetter;

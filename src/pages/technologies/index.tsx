@@ -8,7 +8,7 @@ import { technologies } from '../../data/Technologies';
 
 const TechnologiesPage = ({
   data: {
-    allMarkdownRemark: { group },
+    allMarkdownRemark: {},
     site: {
       siteMetadata: { title },
     },

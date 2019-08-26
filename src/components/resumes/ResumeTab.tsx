@@ -1,12 +1,5 @@
 import React from 'react';
-import {
-  Container,
-  Row,
-  Col,
-  Card,
-  ListGroup,
-  ListGroupItem,
-} from 'react-bootstrap';
+import { Container } from 'react-bootstrap';
 
 import ResumeHeader from './ResumeTab/ResumeHeader';
 import Objective from './ResumeTab/Objective';
@@ -36,8 +29,8 @@ const ResumeTab = (props: ResumeTabProps) => {
       <Container className='mt-5'>
         <ResumeHeader {...props} />
         <p>Loading...</p>
-        <Experience {...props} />
-        <Education {...props} />
+        <Experience />
+        <Education />
         <p>Loading...</p>>
       </Container>
     );
@@ -50,8 +43,8 @@ const ResumeTab = (props: ResumeTabProps) => {
         {format === 'print' ||
           (format === 'printCombined' &&
             resume.spaces.map((space, index) => <br key={index} />))}
-        <Experience {...props} />
-        <Education {...props} />
+        <Experience />
+        <Education />
         <References {...props} resume={resume} />
       </Container>
     );

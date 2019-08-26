@@ -1,20 +1,19 @@
-import React from "react";
-import { Row, Col, Card, ListGroup, ListGroupItem } from "react-bootstrap";
-import { ResumeTabProps } from "../ResumeTab";
+import React from 'react';
+import { Row, Col, Card, ListGroup, ListGroupItem } from 'react-bootstrap';
 
-const Education = (props: ResumeTabProps) => {
+const Education = () => {
   return (
-    <Row className="mt-3">
+    <Row className='mt-3'>
       <Col>
-        <Card border="secondary">
+        <Card border='secondary'>
           <Card.Header>
             <h3>Education</h3>
           </Card.Header>
-          <ListGroup className="list-group-flush">
+          <ListGroup className='list-group-flush'>
             <ListGroupItem>
               <Row>
-                <Col xs="auto">
-                  <p className="text-success">2002-2005</p>
+                <Col xs='auto'>
+                  <p className='text-success'>2002-2005</p>
                 </Col>
                 <Col>
                   <p>

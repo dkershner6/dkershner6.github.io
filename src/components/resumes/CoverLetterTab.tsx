@@ -1,8 +1,8 @@
-import React from "react";
-import { Container, Col, Row } from "react-bootstrap";
+import React from 'react';
+import { Container } from 'react-bootstrap';
 
-import ResumeHeader from "./ResumeTab/ResumeHeader";
-import CoverLetter from "./CoverLetterTab/CoverLetter";
+import ResumeHeader from './ResumeTab/ResumeHeader';
+import CoverLetter from './CoverLetterTab/CoverLetter';
 
 interface CoverLetterTabProps {
   company: string;
@@ -10,7 +10,7 @@ interface CoverLetterTabProps {
 
 const CoverLetterTab = (props: CoverLetterTabProps) => {
   return (
-    <Container className="mt-5">
+    <Container className='mt-5'>
       <ResumeHeader {...props} />
       <CoverLetter {...props} />
     </Container>

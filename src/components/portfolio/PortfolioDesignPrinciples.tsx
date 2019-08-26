@@ -1,21 +1,21 @@
-import React from "react";
-import { Row, Col, Card, ListGroup, ListGroupItem } from "react-bootstrap";
+import React from 'react';
+import { Row, Col, Card, ListGroup, ListGroupItem } from 'react-bootstrap';
 
-const PortfolioDesignPrinciples = props => {
+const PortfolioDesignPrinciples = () => {
   return (
-    <Row className="mt-3">
+    <Row className='mt-3'>
       <Col>
-        <Card bg="primary">
+        <Card bg='primary'>
           <Card.Header>
-            <h2 className="text-light">
+            <h2 className='text-light'>
               General Application Design Principles
             </h2>
           </Card.Header>
           <ListGroup>
             <ListGroupItem>
               Microservices...to a point. Never a monolith, but let scale
-              justify a new application service. I don't necessarily agree with{" "}
-              <a href="https://buttercms.com/books/microservices-for-startups/should-you-always-start-with-a-monolith">
+              justify a new application service. I don't necessarily agree with{' '}
+              <a href='https://buttercms.com/books/microservices-for-startups/should-you-always-start-with-a-monolith'>
                 the argument that monoliths should be the initial design for
                 startup apps
               </a>

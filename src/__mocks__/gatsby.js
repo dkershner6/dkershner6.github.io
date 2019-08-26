@@ -1,4 +1,4 @@
-const React = require('react');
+const React = require('react'); // eslint-disable-line @typescript-eslint/no-var-requires
 const gatsby = jest.requireActual('gatsby');
 
 module.exports = {
@@ -7,13 +7,13 @@ module.exports = {
   Link: jest.fn().mockImplementation(
     // these props are invalid for an `a` tag
     ({
-      activeClassName,
-      activeStyle,
-      getProps,
-      innerRef,
-      partiallyActive,
-      ref,
-      replace,
+      activeClassName, // eslint-disable-line @typescript-eslint/no-unused-vars
+      activeStyle, // eslint-disable-line @typescript-eslint/no-unused-vars
+      getProps, // eslint-disable-line @typescript-eslint/no-unused-vars
+      innerRef, // eslint-disable-line @typescript-eslint/no-unused-vars
+      partiallyActive, // eslint-disable-line @typescript-eslint/no-unused-vars
+      ref, // eslint-disable-line @typescript-eslint/no-unused-vars
+      replace, // eslint-disable-line @typescript-eslint/no-unused-vars
       to,
       ...rest
     }) =>

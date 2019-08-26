@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, graphql } from 'gatsby';
+import { graphql } from 'gatsby';
 import LazyHero from 'react-lazy-hero';
 import { Container, Row, Col, Button } from 'react-bootstrap';
 import Arrow from 'react-arrow';

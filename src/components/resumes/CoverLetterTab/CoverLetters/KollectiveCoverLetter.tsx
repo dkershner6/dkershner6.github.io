@@ -1,10 +1,10 @@
-import React from "react";
+import React from 'react';
 
-const KollectiveCoverLetter = props => {
+const KollectiveCoverLetter = () => {
   return (
     <React.Fragment>
       <h3>To Kollective Hiring Manager:</h3>
-      <p className="mt-3">
+      <p className='mt-3'>
         I recently came into some additional time availability, and am looking
         to utilize it to experience something new. While my skills may tend
         towards the web, Kollective seems to have some interesting technologies
@@ -44,10 +44,11 @@ const KollectiveCoverLetter = props => {
           </li>
           <li>
             I love to learn new things, and spend my free time watching courses
-            on{" "}
+            on{' '}
             <a
-              href="https://app.pluralsight.com/profile/dkershner"
-              target="_blank"
+              href='https://app.pluralsight.com/profile/dkershner'
+              target='_blank'
+              rel='noopener noreferrer'
             >
               Pluralsight
             </a>
@@ -57,10 +58,11 @@ const KollectiveCoverLetter = props => {
       </div>
       <p>
         If you want more information than I have provided in either my resume or
-        this cover letter, please see my{" "}
+        this cover letter, please see my{' '}
         <a
-          href="https://www.linkedin.com/in/derek-kershner-54b3392/"
-          target="_blank"
+          href='https://www.linkedin.com/in/derek-kershner-54b3392/'
+          target='_blank'
+          rel='noopener noreferrer'
         >
           LinkedIn
         </a>
