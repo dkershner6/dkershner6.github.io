@@ -76,7 +76,7 @@ export class Venue {
   }
 
   main() {
-    var View = new VenueViews(this.setDataHere);
+    const View = new VenueViews(this.setDataHere);
   }
 }
 ```
