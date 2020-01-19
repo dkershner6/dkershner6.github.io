@@ -3,7 +3,7 @@ templateKey: blog-post
 title: Why TypeScript?
 date: 2020-01-19T20:31:45.757Z
 description: An exploration into why someone would bother to use TypeScript over JavaScript
-featuredpost: 'false'
+featuredpost: false
 featuredimage: /img/classic-car-1209334_1280.jpg
 tags:
   - node
