@@ -1,12 +1,13 @@
-import React from 'react';
-import { Container, Row, Col } from 'react-bootstrap';
-import LazyHero from 'react-lazy-hero';
-import { graphql } from 'gatsby';
-import Layout from '../components/Layout';
-import Content, { HTMLContent } from '../components/Content';
-import HelmetHead from '../components/Seo';
+import React from "react";
+import { Container, Row, Col } from "react-bootstrap";
+import LazyHero from "react-lazy-hero";
+import { graphql } from "gatsby";
+import Layout from "../components/Layout";
+import Content, { HTMLContent } from "../components/Content";
+import HelmetHead from "../components/Seo";
+import "../css/github-markdown.css";
 
-import BlogPostTag from '../components/BlogPostTag';
+import BlogPostTag from "../components/BlogPostTag";
 
 interface BlogPostTemplateProps {
   content?: React.ReactNode;
@@ -25,7 +26,7 @@ export const BlogPostTemplate = ({
   tags,
   title,
   helmet,
-  featuredimage,
+  featuredimage
 }: BlogPostTemplateProps) => {
   const PostContent = contentComponent || Content;
 
@@ -35,11 +36,11 @@ export const BlogPostTemplate = ({
         imageSrc={
           featuredimage !== undefined && featuredimage.publicURL !== undefined
             ? featuredimage.publicURL
-            : ''
+            : ""
         }
-        color='#FFFFFF'
+        color="#FFFFFF"
         opacity={0.8}
-        minHeight='25vh'
+        minHeight="25vh"
         parallaxOffset={0.5}
         isCentered={true}
         transitionDuration={600}
@@ -62,10 +63,10 @@ export const BlogPostTemplate = ({
           </Col>
         </Row>
       </LazyHero>
-      <Container className='mt-5'>
-        {helmet || ''}
-        <Row className='mt-5'>
-          <Col>
+      <Container className="mt-5">
+        {helmet || ""}
+        <Row className="mt-5">
+          <Col className="markdown-body">
             <PostContent content={content} />
           </Col>
         </Row>
