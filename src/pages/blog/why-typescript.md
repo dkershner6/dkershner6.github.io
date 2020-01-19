@@ -6,7 +6,8 @@ description: An exploration into why someone would bother to use TypeScript over
 featuredpost: 'false'
 featuredimage: /img/classic-car-1209334_1280.jpg
 tags:
-  - TypeScript
+  - node
+  - react
 ---
 # Downsides to Typescript
 
