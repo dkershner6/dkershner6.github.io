@@ -3,10 +3,11 @@ templateKey: blog-post
 title: Why TypeScript?
 date: 2020-01-19T20:31:45.757Z
 description: An exploration into why someone would bother to use TypeScript over JavaScript
-featuredpost: 'false'
+featuredpost: false
 featuredimage: /img/classic-car-1209334_1280.jpg
 tags:
-  - TypeScript
+  - node
+  - react
 ---
 # Downsides to Typescript
 
@@ -115,8 +116,6 @@ TypeScript allows you to communicate significantly more information to the next 
 
 > “Truth can only be found in one place: the code.”
 >
-> \
->
 > _Robert C. Martin, Clean Code: A Handbook of Agile Software Craftsmanship_
 
 ## Refactoring simplicity
@@ -130,3 +129,19 @@ The benefit of TypeScript's additional type information is no more readily appar
 > _Myself, 3 seconds ago_
 
 Testing is still crucial, but they say an average of 15% of runtime errors would be caught by static typing.  That's an additional 15% of protection from your users becoming guinea pigs.
+
+# Summary
+
+Pros:
+
+* Understandability AKA the most important aspect of programming.
+* Refactoring speed.
+* Potentially less runtime errors.
+
+Cons:
+
+* Compile step exists.
+* Configuration exists.
+* Circular dependencies may crop up.
+
+All in all, I hope it is obvious that the pros vastly outweigh the cons in nearly every circumstance of Software Development.
