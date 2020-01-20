@@ -1,5 +1,5 @@
-import React from 'react';
-import Img from 'gatsby-image';
+import React from "react";
+import Img from "gatsby-image";
 
 interface ImageInfo {
   alt?: string;
@@ -13,8 +13,8 @@ interface PreviewCompatibleImageProps {
 }
 
 const PreviewCompatibleImage = ({ imageInfo }: PreviewCompatibleImageProps) => {
-  const imageStyle = { borderRadius: '5px' };
-  const { alt = '', childImageSharp, image } = imageInfo;
+  const imageStyle = { borderRadius: "5px", maxHeight: "175px" };
+  const { alt = "", childImageSharp, image } = imageInfo;
 
   if (!!image && !!image.childImageSharp) {
     return (
@@ -26,7 +26,7 @@ const PreviewCompatibleImage = ({ imageInfo }: PreviewCompatibleImageProps) => {
     return <Img style={imageStyle} fluid={childImageSharp.fluid} alt={alt} />;
   }
 
-  if (!!image && typeof image === 'string')
+  if (!!image && typeof image === "string")
     return <img style={imageStyle} src={image} alt={alt} />;
 
   return null;
