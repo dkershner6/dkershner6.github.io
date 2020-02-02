@@ -1,17 +1,17 @@
-import React from 'react';
-import { graphql } from 'gatsby';
-import LazyHero from 'react-lazy-hero';
-import { Container, Row, Col, Button } from 'react-bootstrap';
-import Arrow from 'react-arrow';
-import { Link as ScrollLink } from 'react-scroll';
-import HelmetHead from '../components/Seo';
+import React from "react";
+import { graphql } from "gatsby";
+import LazyHero from "react-lazy-hero";
+import { Container, Row, Col, Button } from "react-bootstrap";
+import Arrow from "react-arrow";
+import { Link as ScrollLink } from "react-scroll";
+import HelmetHead from "../components/Seo";
 
-import Layout from '../components/Layout';
-import MarkdownRemarkProps from '../interfaces/MarkdownRemarkProps';
+import Layout from "../components/Layout";
+import MarkdownRemarkProps from "../interfaces/MarkdownRemarkProps";
 
-import About from '../components/About';
-import PortfolioMenu from '../components/PortfolioMenu';
-import Social from '../components/Social';
+import About from "../components/About";
+import PortfolioMenu from "../components/PortfolioMenu";
+import Social from "../components/Social";
 
 interface IndexPageTemplateProps {
   image: any;
@@ -24,7 +24,7 @@ export const IndexPageTemplate = ({
   image,
   title,
   heading,
-  subheading,
+  subheading
 }: IndexPageTemplateProps) => (
   <React.Fragment>
     <HelmetHead title={title} />
@@ -32,9 +32,9 @@ export const IndexPageTemplate = ({
       imageSrc={
         !!image.childImageSharp ? image.childImageSharp.fluid.src : image
       }
-      color='#000000'
+      color="#000000"
       opacity={0.2}
-      minHeight='100vh'
+      minHeight="100vh"
       parallaxOffset={0.5}
       isCentered={true}
       transitionDuration={600}
@@ -44,30 +44,38 @@ export const IndexPageTemplate = ({
           <Col>
             <h1>
               <strong>
-                <span className='display-4 text-primary'>{'>'}</span>
-                <span className='display-4 text-white'>{heading}</span>
-                <span className='display-4 text-primary'>{'<'}</span>
+                <span className="display-4 text-primary">{">"}</span>
+                <span
+                  id="heading"
+                  data-testid="heading"
+                  className="display-4 text-white"
+                >
+                  {heading}
+                </span>
+                <span className="display-4 text-primary">{"<"}</span>
               </strong>
             </h1>
           </Col>
         </Row>
         <Row>
           <Col>
-            <h4 className='text-white'>{subheading}</h4>
+            <h4 data-testid="subheading" className="text-white">
+              {subheading}
+            </h4>
           </Col>
         </Row>
-        <Row className='mt-4'>
+        <Row className="mt-4">
           <Col>
-            <ScrollLink to='about' smooth={true}>
-              <Button variant='primary'>
+            <ScrollLink to="about" smooth={true}>
+              <Button variant="primary">
                 <Arrow
-                  direction='down'
+                  direction="down"
                   shaftWidth={25}
                   shaftLength={25}
                   headWidth={50}
                   headLength={25}
-                  fill='white'
-                  stroke='white'
+                  fill="white"
+                  stroke="white"
                   strokeWidth={1}
                 />
               </Button>
