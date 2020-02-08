@@ -13,7 +13,7 @@ interface PortfolioProps {
 const Portfolio = (props: PortfolioProps) => {
   const project = getProject(props.projectName || "enterpriseMarketplace");
   return (
-    <React.Fragment>
+    <>
       <HelmetHead title={`Portfolio - ${project.name} | DKershner.com`} />
       <PortfolioHeader project={project} menu={false} />
       {project.id === "codeChallenges" ? (
@@ -21,7 +21,7 @@ const Portfolio = (props: PortfolioProps) => {
       ) : (
         <PortfolioDesign project={project} menu={false} />
       )}
-    </React.Fragment>
+    </>
   );
 };
 

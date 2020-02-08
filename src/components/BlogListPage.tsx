@@ -16,27 +16,25 @@ interface BlogListPageProps extends BlogRollProps {
 
 const BlogListPage = (props: BlogListPageProps) => {
     const { data } = props;
-    const { allMarkdownRemark } = data;
-    const { group: tags } = allMarkdownRemark;
     if (props.tag === undefined) {
         return (
-            <React.Fragment>
+            <>
                 <HelmetHead title="Blog" />
                 <Layout>
                     <BlogListInnerPage {...props} />
                 </Layout>
-            </React.Fragment>
+            </>
         );
     } else {
         const { tag } = props;
         const technology = getTechnologyById(tag);
         const displayTag = technology === undefined ? startCase(tag.toLowerCase()) : technology.label;
         return (
-            <React.Fragment>
+            <>
                 <HelmetHead title={`Blog - ${displayTag}`} />
                 <Layout>
                     <LazyHero imageSrc="/img/blog-index.jpg" minHeight={'30vh'} isFixed={true} isCentered={true} transitionDuration={600}>
-                        <React.Fragment>
+                        <>
                             <Row>
                                 <Col xs="12">
                                     <h1>Blog - {displayTag}</h1>
@@ -56,13 +54,13 @@ const BlogListPage = (props: BlogListPageProps) => {
                                     </Col>
                                 )}
                             </Row>
-                        </React.Fragment>
+                        </>
                     </LazyHero>
                     <Container className="mt-5">
                         <BlogRoll data={props.data} />
                     </Container>
                 </Layout>
-            </React.Fragment>
+            </>
         );
     }
 };
@@ -73,7 +71,7 @@ const BlogListInnerPage = (props: BlogListPageProps) => {
     const { group: tags } = allMarkdownRemark;
 
     return (
-        <React.Fragment>
+        <>
             <LazyHero imageSrc="/img/blog-index.jpg" minHeight={'30vh'} isFixed={true} isCentered={true} transitionDuration={600}>
                 <Container>
                     <h1>Blog</h1>
@@ -99,7 +97,7 @@ const BlogListInnerPage = (props: BlogListPageProps) => {
             <Container className="mt-5">
                 <BlogRoll data={props.data} />
             </Container>
-        </React.Fragment>
+        </>
     );
 };
 

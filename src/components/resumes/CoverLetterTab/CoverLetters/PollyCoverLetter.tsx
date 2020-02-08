@@ -2,7 +2,7 @@ import React from "react";
 
 const PollyCoverLetter = () => {
   return (
-    <React.Fragment>
+    <>
       <h3>To Polly Hiring Manager:</h3>
       <p className="mt-3">
         I have been a firm supporter and user of Slack for several years now. In
@@ -112,7 +112,7 @@ const PollyCoverLetter = () => {
         P.S. I think your LinkedIn job posting is connected to a Spanish food
         company, not you guys.
       </p>
-    </React.Fragment>
+    </>
   );
 };
 

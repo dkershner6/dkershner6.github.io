@@ -1,5 +1,5 @@
 import React from 'react';
-import { render } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 
 import { BlogListInnerPage } from '../BlogListPage';
 
@@ -16,5 +16,7 @@ const data = {
 };
 
 it('Should render BlogListPage', () => {
-    render(<BlogListInnerPage data={data} />);
+    const { container } = render(<BlogListInnerPage data={data} />);
+
+    expect(container.querySelector('h1')).toBeTruthy();
 });

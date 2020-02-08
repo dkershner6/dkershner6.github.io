@@ -2,7 +2,7 @@ import React from "react";
 
 const FiveTalentCoverLetter = () => {
   return (
-    <React.Fragment>
+    <>
       <h3>To Five Talent Hiring Manager:</h3>
       <p className="mt-3">
         Meg Chun, local CEO and interpersonal guru, has recommended your
@@ -127,7 +127,7 @@ const FiveTalentCoverLetter = () => {
         </a>
         . You may also ask Meg Chun about me, we worked together for years.
       </p>
-    </React.Fragment>
+    </>
   );
 };
 

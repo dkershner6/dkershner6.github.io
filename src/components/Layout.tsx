@@ -73,11 +73,11 @@ const PageLayout = props => {
     return <div>{children}</div>;
   } else {
     return (
-      <React.Fragment>
+      <>
         <Navigation />
         <div>{children}</div>
         <Footer />
-      </React.Fragment>
+      </>
     );
   }
 };

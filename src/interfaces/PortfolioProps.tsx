@@ -1,6 +1,7 @@
-import Project from "../classes/Project";
+import Project from '../classes/Project';
 
 export default interface PortfolioProps {
-  menu: boolean;
-  project: Project;
+    key?: number;
+    menu: boolean;
+    project: Project;
 }

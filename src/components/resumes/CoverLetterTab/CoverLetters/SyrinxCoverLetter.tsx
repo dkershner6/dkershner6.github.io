@@ -2,7 +2,7 @@ import React from "react";
 
 const SyrinxCoverLetter = () => {
   return (
-    <React.Fragment>
+    <>
       <h3>To Syrinx Hiring Manager:</h3>
       <p className="mt-3">
         My education is in finance and my recent experience is both in software
@@ -82,7 +82,7 @@ const SyrinxCoverLetter = () => {
         </a>
         .
       </p>
-    </React.Fragment>
+    </>
   );
 };
 

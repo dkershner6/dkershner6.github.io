@@ -26,7 +26,7 @@ export const IndexPageTemplate = ({
   heading,
   subheading
 }: IndexPageTemplateProps) => (
-  <React.Fragment>
+  <>
     <HelmetHead title={title} />
     <LazyHero
       imageSrc={
@@ -87,7 +87,7 @@ export const IndexPageTemplate = ({
     <About />
     <PortfolioMenu />
     <Social />
-  </React.Fragment>
+  </>
 );
 
 interface IndexPageProps {

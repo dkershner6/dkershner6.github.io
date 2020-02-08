@@ -15,13 +15,11 @@ export interface BlogRollProps {
     };
 }
 
-class BlogRoll extends React.Component<BlogRollProps> {
-    render() {
-        const { data } = this.props;
-        const { nodes: posts } = data.allMarkdownRemark;
+const BlogRoll = (props: BlogRollProps) => {
+    const { data } = props;
+    const { nodes: posts } = data.allMarkdownRemark;
 
-        return <Row className="mt-3">{posts && posts.map(post => <BlogRollPost key={post.id} post={post} />)}</Row>;
-    }
-}
+    return <Row className="mt-3">{posts && posts.map(post => <BlogRollPost key={post.id} post={post} />)}</Row>;
+};
 
 export default BlogRoll;

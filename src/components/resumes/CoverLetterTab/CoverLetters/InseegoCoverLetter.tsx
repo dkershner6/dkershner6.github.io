@@ -2,7 +2,7 @@ import React from 'react';
 
 const InseegoCoverLetter = () => {
   return (
-    <React.Fragment>
+    <>
       <h3>To Inseego Hiring Manager:</h3>
       <p className='mt-3'>
         I recently came into some additional time availability, and am looking
@@ -66,7 +66,7 @@ const InseegoCoverLetter = () => {
         . You may also ask DelRay Davis, a current employee of yours, as he
         knows me very well.
       </p>
-    </React.Fragment>
+    </>
   );
 };
 

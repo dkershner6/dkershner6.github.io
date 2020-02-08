@@ -18,5 +18,5 @@ module.exports = {
     setupFiles: ['<rootDir>/loadershim.js'],
     collectCoverage: true,
     collectCoverageFrom: ['src/**/*.{ts,tsx}'],
-    coveragePathIgnorePatterns: ['node_modules', 'resume', '/r/', 'Resume', 'cms', 'classes'],
+    coveragePathIgnorePatterns: ['node_modules', 'resume', '/r/', 'Resume', 'cms', 'classes', 'pages'],
 };

@@ -2,7 +2,7 @@ import React from 'react';
 
 const G5CoverLetter = () => {
   return (
-    <React.Fragment>
+    <>
       <h3>To G5 Hiring Manager:</h3>
       <p className='mt-3'>
         As a Bend resident and technology enthusiast for the past 13 years, I
@@ -69,7 +69,7 @@ const G5CoverLetter = () => {
         . You may also ask Andy Warren, a current employee of yours, as we
         worked together for several years.
       </p>
-    </React.Fragment>
+    </>
   );
 };
 

@@ -2,7 +2,7 @@ import React from 'react';
 
 const KollectiveCoverLetter = () => {
   return (
-    <React.Fragment>
+    <>
       <h3>To Kollective Hiring Manager:</h3>
       <p className='mt-3'>
         I recently came into some additional time availability, and am looking
@@ -68,7 +68,7 @@ const KollectiveCoverLetter = () => {
         </a>
         .
       </p>
-    </React.Fragment>
+    </>
   );
 };
 

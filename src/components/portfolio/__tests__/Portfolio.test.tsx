@@ -4,6 +4,12 @@ import { render, screen, fireEvent, waitForDomChange } from '@testing-library/re
 
 import Portfolio from '../Portfolio';
 
+it('Should render', async () => {
+    const { container } = render(<Portfolio projectName="enterpriseMarketplace" />);
+
+    expect(container.querySelector('h1')).toBeTruthy();
+});
+
 it('Should open card on header click', async () => {
     render(<Portfolio projectName="enterpriseMarketplace" />);
 

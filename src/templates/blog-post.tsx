@@ -23,7 +23,7 @@ export const BlogPostTemplate = ({ content, contentComponent, description, tags,
     const PostContent = contentComponent || Content;
 
     return (
-        <React.Fragment>
+        <>
             <LazyHero
                 imageSrc={featuredimage !== undefined && featuredimage.publicURL !== undefined ? featuredimage.publicURL : ''}
                 color="#FFFFFF"
@@ -54,7 +54,7 @@ export const BlogPostTemplate = ({ content, contentComponent, description, tags,
                     </Col>
                 </Row>
             </Container>
-        </React.Fragment>
+        </>
     );
 };
 

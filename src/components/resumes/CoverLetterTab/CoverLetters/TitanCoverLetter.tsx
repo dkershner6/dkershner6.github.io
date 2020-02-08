@@ -2,7 +2,7 @@ import React from "react";
 
 const TitanCoverLetter = () => {
   return (
-    <React.Fragment>
+    <>
       <h3>To Titan School Solutions Hiring Manager:</h3>
       <p className="mt-3">
         I have always had a passion for the educational system and for learning
@@ -100,7 +100,7 @@ const TitanCoverLetter = () => {
         </a>
         .
       </p>
-    </React.Fragment>
+    </>
   );
 };
 

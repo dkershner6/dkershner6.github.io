@@ -2,7 +2,7 @@ import React from "react";
 
 const CBTNuggetsCoverLetter = () => {
   return (
-    <React.Fragment>
+    <>
       <h3>To CBT Nuggets Hiring Manager:</h3>
       <p className="mt-3">
         The more I look into your company, the more there is to like about it. I
@@ -126,7 +126,7 @@ const CBTNuggetsCoverLetter = () => {
         </a>
         .
       </p>
-    </React.Fragment>
+    </>
   );
 };
 

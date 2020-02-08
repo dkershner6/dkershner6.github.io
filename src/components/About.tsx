@@ -1,13 +1,14 @@
-import React from 'react';
+/* eslint-disable react/no-unescaped-entities */
+import React, { ReactElement } from 'react';
 import { Container, Row, Col, Jumbotron } from 'react-bootstrap';
 
 import TechnologyBadge from './TechnologyBadge';
 
 import { technologies } from '../data/Technologies';
 
-const About = () => {
+const About = (): ReactElement => {
     return (
-        <React.Fragment>
+        <>
             {/*<HelmetHead title='About | DKershner.com' />*/}
             <Jumbotron fluid className="bg-dark text-light">
                 <Container className="mt-5">
@@ -75,7 +76,7 @@ const About = () => {
                     </Row>
                 </Container>
             </Jumbotron>
-        </React.Fragment>
+        </>
     );
 };
 

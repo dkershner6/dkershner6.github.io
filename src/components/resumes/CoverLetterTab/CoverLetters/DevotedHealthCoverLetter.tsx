@@ -2,7 +2,7 @@ import React from 'react';
 
 const DevotedHealthCoverLetter = () => {
   return (
-    <React.Fragment>
+    <>
       <h3>To Devoted Health Hiring Manager:</h3>
       <p className='mt-3'>
         My wife is a Hospice Nurse (RN), so I am very familiar with medicare and
@@ -66,7 +66,7 @@ const DevotedHealthCoverLetter = () => {
         </a>
         .
       </p>
-    </React.Fragment>
+    </>
   );
 };
 
