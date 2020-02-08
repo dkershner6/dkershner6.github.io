@@ -1,6 +1,6 @@
 module.exports = {
     parser: '@typescript-eslint/parser',
-    plugins: ['@typescript-eslint'],
+    plugins: ['@typescript-eslint', 'react-hooks'],
     extends: [
         'plugin:@typescript-eslint/recommended',
         'prettier/@typescript-eslint',
@@ -17,7 +17,10 @@ module.exports = {
     rules: {
         '@typescript-eslint/explicit-function-return-type': 'off',
         '@typescript-eslint/explicit-member-accessibility': 'off',
+        'react/no-unescaped-entities': 'off',
         'react/prop-types': 'off',
+        'react-hooks/rules-of-hooks': 'error',
+        'react-hooks/exhaustive-deps': 'warn',
     },
     settings: {
         react: {

@@ -30,7 +30,7 @@ const TagRoute = (props: TagRouteProps) => {
     const technologyId = this.props.pageContext.techId;
     const technology = technologies.filter(technology => technology.id === technologyId)[0];
     const title = this.props.data.site.siteMetadata.title;
-    let projects = getProjectsForTechnology(technology);
+    const projects = getProjectsForTechnology(technology);
     return (
         <Layout siteMetadata={this.props.data}>
             <Helmet title={`${technology.label} | ${title}`} />

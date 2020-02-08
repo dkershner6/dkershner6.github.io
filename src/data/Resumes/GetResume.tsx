@@ -11,25 +11,25 @@ import pollyResume from './PollyResume';
 import syrinxResume from './SyrinxResume';
 
 export const resumes: Resume[] = [
-  inseegoResume,
-  kollectiveResume,
-  g5Resume,
-  devotedHealthResume,
-  fiveTalentResume,
-  cbtNuggetsResume,
-  titanResume,
-  pollyResume,
-  syrinxResume,
+    inseegoResume,
+    kollectiveResume,
+    g5Resume,
+    devotedHealthResume,
+    fiveTalentResume,
+    cbtNuggetsResume,
+    titanResume,
+    pollyResume,
+    syrinxResume,
 ];
 
 const getResume = (company: string) => {
-  let returnResume = resumes.filter(resume => resume.company === company);
-  console.log(returnResume);
-  if (returnResume.length === 1) {
-    return returnResume[0];
-  } else {
-    return null;
-  }
+    const returnResume = resumes.filter(resume => resume.company === company);
+    console.log(returnResume);
+    if (returnResume.length === 1) {
+        return returnResume[0];
+    } else {
+        return null;
+    }
 };
 
 export default getResume;
