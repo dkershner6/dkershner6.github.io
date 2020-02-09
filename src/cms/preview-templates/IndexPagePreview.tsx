@@ -1,28 +1,21 @@
 import React from 'react';
-import { IndexPageTemplate } from '../../templates/index-page';
+import { HomePageTemplate } from '../../components/home/HomePageTemplate';
 
-interface IndexPagePreviewProps {
-  entry: {
-    getIn: (any) => any;
-  };
-  getAsset: (any) => any;
+interface IIndexPagePreview {
+    entry: {
+        getIn: (any) => any;
+    };
+    getAsset: (any) => any;
 }
 
-const IndexPagePreview = ({ entry }: IndexPagePreviewProps) => {
-  const data = entry.getIn(['data']).toJS();
+const IndexPagePreview = ({ entry }: IIndexPagePreview) => {
+    const data = entry.getIn(['data']).toJS();
 
-  if (data) {
-    return (
-      <IndexPageTemplate
-        image={data.image}
-        title={data.title}
-        heading={data.heading}
-        subheading={data.subheading}
-      />
-    );
-  } else {
-    return <div>Loading...</div>;
-  }
+    if (data) {
+        return <HomePageTemplate image={data.image} title={data.title} heading={data.heading} subheading={data.subheading} />;
+    } else {
+        return <div>Loading...</div>;
+    }
 };
 
 export default IndexPagePreview;

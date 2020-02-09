@@ -1,18 +1,18 @@
 import React, { useState, ReactElement } from 'react';
 import { Col, Card, Row, Collapse, ListGroup, ListGroupItem } from 'react-bootstrap';
-import TechnologyBadge from '../../components/TechnologyBadge';
-import { getTechnologiesFromAttributes } from '../../classes/ProjectAttribute';
-import Project from '../../classes/Project';
-import ProjectSection from '../../classes/ProjectSection';
+import TechnologyBadge from '../technology/TechnologyBadge';
+import { getTechnologiesFromAttributes } from './IProjectAttribute';
+import IProject from './IProject';
+import IProjectSection from './IProjectSection';
 
-interface PortfolioDesignServiceProps {
+interface IPortfolioDesignService {
     key?: number;
-    project: Project;
-    dataSection: ProjectSection;
+    project: IProject;
+    dataSection: IProjectSection;
     sectionId: string;
 }
 
-export const PortfolioDesignService = (props: PortfolioDesignServiceProps): ReactElement => {
+export const PortfolioDesignService = (props: IPortfolioDesignService): ReactElement => {
     const [open, setOpen] = useState(false);
 
     const { project, dataSection, sectionId } = props;

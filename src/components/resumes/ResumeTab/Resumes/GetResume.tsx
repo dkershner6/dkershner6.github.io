@@ -1,4 +1,4 @@
-import Resume from '../../../../classes/Resume';
+import IResume from '../../IResume';
 
 import inseegoResume from './InseegoResume';
 import kollectiveResume from './KollectiveResume';
@@ -10,7 +10,7 @@ import titanResume from './TitanResume';
 import pollyResume from './PollyResume';
 import syrinxResume from './SyrinxResume';
 
-export const resumes: Resume[] = [
+export const resumes: IResume[] = [
     inseegoResume,
     kollectiveResume,
     g5Resume,

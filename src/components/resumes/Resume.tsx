@@ -1,17 +1,17 @@
 import React, { useState } from 'react';
 import { Container, Row, Col, ButtonGroup, Button } from 'react-bootstrap';
-import HelmetHead from '../../components/Seo';
+import HelmetHead from '../common/Seo';
 
 import CoverLetterTab from './CoverLetterTab';
 import ResumeTab from './ResumeTab';
 import makeRange from '../../utils/MakeRange';
 import properCase from '../../utils/ProperCase';
 
-interface ResumeProps {
+interface IResume {
     company: string;
 }
 
-const Resume = (props: ResumeProps) => {
+const Resume = (props: IResume) => {
     const [activeTab, setActiveTab] = useState('cover');
 
     const { company } = props;
@@ -47,18 +47,16 @@ const Resume = (props: ResumeProps) => {
                 <Row className="justify-content-center">
                     <Col xs="auto">
                         <ButtonGroup>
-                            <Button variant={this.state.activeTab === 'cover' ? 'primary' : 'secondary'} onClick={() => this.setState({ activeTab: 'cover' })}>
+                            <Button variant={activeTab === 'cover' ? 'primary' : 'secondary'} onClick={() => setActiveTab('cover')}>
                                 Cover Letter
                             </Button>
-                            <Button
-                                variant={this.state.activeTab === 'resume' ? 'primary' : 'secondary'}
-                                onClick={() => this.setState({ activeTab: 'resume' })}>
+                            <Button variant={activeTab === 'resume' ? 'primary' : 'secondary'} onClick={() => setActiveTab('resume')}>
                                 Resume
                             </Button>
                         </ButtonGroup>
                     </Col>
                 </Row>
-                <TabChooser company={company} activeTab={this.state.activeTab} />
+                <TabChooser company={company} activeTab={activeTab} />
             </Container>
         );
     }

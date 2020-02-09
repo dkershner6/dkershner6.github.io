@@ -1,14 +1,14 @@
-import React from "react";
+import React from 'react';
 
-import Portfolio from "../../../components/portfolio/Portfolio";
-import Layout from "../../../components/Layout";
+import Portfolio from '../../../components/portfolio/Portfolio';
+import Layout from '../../../components/common/Layout';
 
 const EnterpriseMarketplace = () => {
-  return (
-    <Layout>
-      <Portfolio projectName="enterpriseMarketplace" />
-    </Layout>
-  );
+    return (
+        <Layout>
+            <Portfolio projectName="enterpriseMarketplace" />
+        </Layout>
+    );
 };
 
 export default EnterpriseMarketplace;

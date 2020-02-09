@@ -1,10 +1,10 @@
 import React, { useState, ReactElement } from 'react';
 import { Row, Col, Card, Collapse } from 'react-bootstrap';
 
-import PortfolioDesignSectionProps from '../../interfaces/PortfolioDesignProps';
+import IPortfolioDesignSection from './IPortfolioDesign';
 import { PortfolioDesignService } from './PortfolioDesignService';
 
-const PortfolioDesignSection = (props: PortfolioDesignSectionProps): JSX.Element => {
+const PortfolioDesignSection = (props: IPortfolioDesignSection): JSX.Element => {
     const [open, setOpen] = useState(true);
 
     const { project, sectionId, sectionName, headerBg, headerText } = props;

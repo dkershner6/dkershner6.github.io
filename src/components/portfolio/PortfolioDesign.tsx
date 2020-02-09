@@ -6,9 +6,9 @@ import { Link as ScrollLink } from 'react-scroll';
 import PortfolioDesignPrinciples from './PortfolioDesignPrinciples';
 import PortfoilioDesignSection from './PortfolioDesignSection';
 
-import PortfolioProps from '../../interfaces/PortfolioProps';
+import IPortfolio from './IPortfolio';
 
-const PortfolioDesign = (props: PortfolioProps): ReactElement => {
+const PortfolioDesign = (props: IPortfolio): ReactElement => {
     const { project } = props;
     return (
         <>
