@@ -1,5 +1,5 @@
 import React from 'react';
-import { BlogPostTemplate } from '../../components/blog/BlogPostTemplate';
+import { BlogPostTemplate } from '../../components/blog/post/BlogPostTemplate';
 
 interface IBlogPostPreview {
     entry: {

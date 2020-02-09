@@ -1,6 +1,6 @@
-import IProject from '../../components/portfolio/IProject';
+import IProject from '../../components/portfolio/Project/IProject';
 
-import ICodeChallenge from '../../components/portfolio/ICodeChallenge';
+import ICodeChallenge from '../../components/portfolio/codeChallenges/ICodeChallenge';
 import { technologies } from '../Technologies';
 
 const codeChallengesProject: IProject = {

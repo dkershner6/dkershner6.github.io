@@ -3,10 +3,10 @@ import { Container } from 'react-bootstrap';
 import { startCase } from 'lodash';
 import LazyHero from 'react-lazy-hero';
 
-import SiteWrapper from '../common/SiteWrapper';
+import SiteWrapper from '../../common/SiteWrapper';
 import BlogRoll, { IBlogRoll } from './BlogRoll';
-import HelmetHead from '../common/Seo';
-import { getTechnologyById } from '../technology/ITechnology';
+import HelmetHead from '../../common/Seo';
+import { getTechnologyById } from '../../technology/ITechnology';
 import { BlogListTagFilter } from './BlogListTagFilter';
 
 export interface IBlogListPage extends IBlogRoll {

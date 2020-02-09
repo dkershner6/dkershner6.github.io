@@ -3,8 +3,8 @@ import { Container, Row, Col, Card } from 'react-bootstrap';
 
 import ICodeChallenge from './ICodeChallenge';
 
-import { codeChallenges } from '../../data/projects/CodeChallenges';
-import TechnologyBadge from '../technology/TechnologyBadge';
+import { codeChallenges } from '../../../data/projects/CodeChallenges';
+import TechnologyBadge from '../../technology/TechnologyBadge';
 
 interface ICodeChallengeDisplay {
     challenge: ICodeChallenge;

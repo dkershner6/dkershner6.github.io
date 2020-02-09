@@ -5,7 +5,7 @@ import Layout from '../common/Layout';
 
 import GlobalContext from './GlobalContext';
 
-const globalContext = { siteMetadata: { title: 'TestTitle', description: 'TestDescription' } };
+const globalContext = { siteMetadata: { siteUrl: 'https://dkershner.com', title: 'TestTitle', description: 'TestDescription' } };
 
 describe('Layout', () => {
     it('renders a simple page', () => {

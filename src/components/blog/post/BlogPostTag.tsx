@@ -3,8 +3,8 @@ import { Link } from 'gatsby';
 import { Badge } from 'react-bootstrap';
 import { startCase } from 'lodash';
 
-import TechnologyBadge, { CountBadge } from '../technology/TechnologyBadge';
-import { getTechnologyById } from '../technology/ITechnology';
+import TechnologyBadge, { CountBadge } from '../../technology/TechnologyBadge';
+import { getTechnologyById } from '../../technology/ITechnology';
 
 interface IBlogPostTag {
     key?: number;

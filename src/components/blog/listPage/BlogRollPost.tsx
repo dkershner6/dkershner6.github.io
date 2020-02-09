@@ -2,8 +2,8 @@ import React from 'react';
 import { Link } from 'gatsby';
 import { Row, Col } from 'react-bootstrap';
 
-import PreviewCompatibleImage from '../common/PreviewCompatibleImage';
-import BlogPostTag from './BlogPostTag';
+import PreviewCompatibleImage from '../../common/PreviewCompatibleImage';
+import BlogPostTag from '../post/BlogPostTag';
 
 const BlogRollPost = props => {
     const { post } = props;

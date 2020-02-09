@@ -1,6 +1,6 @@
 import React from 'react';
 import { graphql } from 'gatsby';
-import BlogListPage from '../../components/blog/BlogListPage';
+import BlogListPage from '../../components/blog/listPage/BlogListPage';
 
 const BlogIndexPage = props => {
     const { data } = props;

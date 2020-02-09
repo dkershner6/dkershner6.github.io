@@ -1,5 +1,5 @@
-import { technologies } from '../../data/technologies-node';
-import ITechnology from '../technology/ITechnology';
+import { technologies } from '../../../data/technologies-node';
+import ITechnology from '../../technology/ITechnology';
 
 export default interface IProjectAttribute {
     name: string;

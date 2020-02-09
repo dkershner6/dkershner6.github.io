@@ -1,4 +1,4 @@
-import ITechnology from '../technology/ITechnology';
+import ITechnology from '../../technology/ITechnology';
 
 export default interface ICodeChallenge {
     name: string;

@@ -2,8 +2,8 @@ import React from 'react';
 import HelmetHead from '../common/Seo';
 
 import PortfolioHeader from './PortfolioHeader';
-import PortfolioDesign from './PortfolioDesign';
-import CodeChallenges from './CodeChallenges';
+import PortfolioDesign from './PortfolioDesign/PortfolioDesign';
+import CodeChallenges from './codeChallenges/CodeChallenges';
 import getProject from '../../data/Projects';
 
 interface IPortfolio {

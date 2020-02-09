@@ -1,5 +1,5 @@
-import IProject from '../../components/portfolio/IProject';
-import { createAttributeFromTechnology } from '../../components/portfolio/IProjectAttribute';
+import IProject from '../../components/portfolio/Project/IProject';
+import { createAttributeFromTechnology } from '../../components/portfolio/Project/IProjectAttribute';
 
 const shopifySearchEngineProject: IProject = {
     id: 'shopifySearchEngine',

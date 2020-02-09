@@ -1,9 +1,9 @@
 import React, { useState, ReactElement } from 'react';
 import { Col, Card, Row, Collapse, ListGroup, ListGroupItem } from 'react-bootstrap';
-import TechnologyBadge from '../technology/TechnologyBadge';
-import { getTechnologiesFromAttributes } from './IProjectAttribute';
-import IProject from './IProject';
-import IProjectSection from './IProjectSection';
+import TechnologyBadge from '../../technology/TechnologyBadge';
+import { getTechnologiesFromAttributes } from '../Project/IProjectAttribute';
+import IProject from '../Project/IProject';
+import IProjectSection from '../Project/IProjectSection';
 
 interface IPortfolioDesignService {
     key?: number;

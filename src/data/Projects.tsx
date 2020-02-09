@@ -1,4 +1,4 @@
-import IProject from '../components/portfolio/IProject';
+import IProject from '../components/portfolio/Project/IProject';
 
 import enterpriseMarketplaceProject from './projects/EnterpriseMarketplace';
 import shopifySearchEngineProject from './projects/ShopifySearchEngine';

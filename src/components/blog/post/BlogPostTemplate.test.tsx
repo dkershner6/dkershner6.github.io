@@ -3,8 +3,8 @@ import '@testing-library/jest-dom/extend-expect';
 import { render, screen } from '@testing-library/react';
 
 import { BlogPostTemplate } from './BlogPostTemplate';
-import { HTMLContent } from '../common/Content';
-import HelmetHead from '../common/Seo';
+import { HTMLContent } from '../../common/Content';
+import HelmetHead from '../../common/Seo';
 
 const post = {
     html: '<p></p>',

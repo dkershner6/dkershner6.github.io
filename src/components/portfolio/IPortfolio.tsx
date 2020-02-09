@@ -1,4 +1,4 @@
-import IProject from './IProject';
+import IProject from './Project/IProject';
 
 export default interface IPortfolio {
     key?: number;

@@ -1,8 +1,8 @@
 import React from 'react';
 import { Link } from 'gatsby';
 import { Row, Col, Button } from 'react-bootstrap';
-import BlogPostTag from './BlogPostTag';
-import ITechnology from '../technology/ITechnology';
+import BlogPostTag from '../post/BlogPostTag';
+import ITechnology from '../../technology/ITechnology';
 import { IBlogListPage } from './BlogListPage';
 
 interface IBlogListTagFilter extends IBlogListPage {

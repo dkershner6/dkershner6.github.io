@@ -5,7 +5,7 @@ interface IGlobalContext {
     siteMetadata: ISiteMetadata;
 }
 
-const initialSiteMetadata = getSiteMetadata() || { title: undefined, description: undefined };
+const initialSiteMetadata = getSiteMetadata() || { siteUrl: undefined, title: undefined, description: undefined };
 
 export const initializeGlobalContext = (): IGlobalContext => ({
     siteMetadata: initialSiteMetadata,

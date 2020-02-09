@@ -1,6 +1,6 @@
-import IProject from '../portfolio/IProject';
-import IProjectAttribute from '../portfolio/IProjectAttribute';
-import IProjectSection from '../portfolio/IProjectSection';
+import IProject from '../portfolio/Project/IProject';
+import IProjectAttribute from '../portfolio/Project/IProjectAttribute';
+import IProjectSection from '../portfolio/Project/IProjectSection';
 import { projects } from '../../data/Projects';
 //import posts from "../pages/blog/Posts";
 import technologies from '../../data/Technologies';
