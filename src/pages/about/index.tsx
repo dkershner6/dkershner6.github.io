@@ -1,13 +1,13 @@
 import React from 'react';
 
-import Layout from '../../components/common/Layout';
+import SiteWrapper from '../../components/common/SiteWrapper';
 import About from '../../components/home/About';
 
 const AboutPage = () => {
     return (
-        <Layout>
+        <SiteWrapper>
             <About />
-        </Layout>
+        </SiteWrapper>
     );
 };
 

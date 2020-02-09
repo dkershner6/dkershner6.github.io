@@ -2,18 +2,11 @@ import React from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import Helmet from 'react-helmet';
 import { Link, graphql } from 'gatsby';
-import Layout from '../../components/common/Layout';
+import SiteWrapper from '../../components/common/SiteWrapper';
 
 import { technologies } from '../../data/Technologies';
 
-const TechnologiesPage = ({
-    data: {
-        allMarkdownRemark: {},
-        site: {
-            siteMetadata: { title },
-        },
-    },
-}) => {
+const TechnologiesPage = props => {
     const sortByAlpha = (a, b) => {
         if (a.label > b.label) {
             return 1;
@@ -23,8 +16,8 @@ const TechnologiesPage = ({
     };
 
     return (
-        <Layout>
-            <Helmet title={`Technologies | ${title}`} />
+        <SiteWrapper>
+            <Helmet title={`Technologies | DKershner.com`} />
             <Container className="mt-5">
                 <Row className="mt-3">
                     <Col>
@@ -43,7 +36,7 @@ const TechnologiesPage = ({
                     </Col>
                 </Row>
             </Container>
-        </Layout>
+        </SiteWrapper>
     );
 };
 
@@ -51,11 +44,6 @@ export default TechnologiesPage;
 
 export const tagPageQuery = graphql`
     query TagsQuery {
-        site {
-            siteMetadata {
-                title
-            }
-        }
         allMarkdownRemark(limit: 1000) {
             group(field: frontmatter___tags) {
                 fieldValue

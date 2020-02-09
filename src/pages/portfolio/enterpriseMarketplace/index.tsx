@@ -1,13 +1,13 @@
 import React from 'react';
 
 import Portfolio from '../../../components/portfolio/Portfolio';
-import Layout from '../../../components/common/Layout';
+import SiteWrapper from '../../../components/common/SiteWrapper';
 
 const EnterpriseMarketplace = () => {
     return (
-        <Layout>
+        <SiteWrapper>
             <Portfolio projectName="enterpriseMarketplace" />
-        </Layout>
+        </SiteWrapper>
     );
 };
 

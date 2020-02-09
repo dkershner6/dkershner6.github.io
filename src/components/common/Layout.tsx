@@ -1,27 +1,29 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Helmet } from 'react-helmet';
 import Footer from './Footer';
 import Navigation from './Navigation';
 import '../../css/bootstrap.css';
-import useSiteMetadata from './SiteMetadata';
+import getSiteMetadata, { ISiteMetadata } from './SiteMetadata';
 import { withPrefix } from 'gatsby';
+import GlobalContext from './GlobalContext';
 
 interface ILayout {
-    siteMetadata?: any;
+    siteMetadata?: ISiteMetadata;
     children: any;
 }
 
 const Layout = (props: ILayout) => {
-    const { siteMetadata, children } = props;
-    // eslint-disable-next-line react-hooks/rules-of-hooks
-    const { title, description } = siteMetadata || useSiteMetadata();
+    const { children } = props;
+    const { siteMetadata } = useContext(GlobalContext);
+    const { title, description } = siteMetadata;
     const urlParams = typeof window !== 'undefined' ? new URLSearchParams(window.location.search) : undefined;
     const format = urlParams === undefined ? '' : urlParams.get('format');
+
     return (
         <div>
             <Helmet>
                 <html lang="en" />
-                <title>{title}</title>
+                <title data-testid="pageTitle">{title}</title>
                 <meta name="description" content={description} />
 
                 <link rel="apple-touch-icon" sizes="180x180" href={`${withPrefix('/')}img/apple-touch-icon.png`} />

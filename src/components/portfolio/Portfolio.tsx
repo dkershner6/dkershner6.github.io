@@ -14,7 +14,7 @@ const Portfolio = (props: IPortfolio) => {
     const project = getProject(props.projectName || 'enterpriseMarketplace');
     return (
         <>
-            <HelmetHead title={`Portfolio - ${project.name} | DKershner.com`} />
+            <HelmetHead title={`Portfolio - ${project.name}`} />
             <PortfolioHeader project={project} menu={false} />
             {project.id === 'codeChallenges' ? <CodeChallenges /> : <PortfolioDesign project={project} menu={false} />}
         </>

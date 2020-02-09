@@ -3,7 +3,7 @@ import { Container } from 'react-bootstrap';
 import { startCase } from 'lodash';
 import LazyHero from 'react-lazy-hero';
 
-import Layout from '../common/Layout';
+import SiteWrapper from '../common/SiteWrapper';
 import BlogRoll, { IBlogRoll } from './BlogRoll';
 import HelmetHead from '../common/Seo';
 import { getTechnologyById } from '../technology/ITechnology';
@@ -17,9 +17,9 @@ const BlogListPage = (props: IBlogListPage) => {
     return (
         <>
             <HelmetHead title={props.tag !== undefined ? `Blog - ${startCase(props.tag.toLowerCase())}` : 'Blog'} />
-            <Layout>
+            <SiteWrapper>
                 <BlogListTemplate {...props} />
-            </Layout>
+            </SiteWrapper>
         </>
     );
 };

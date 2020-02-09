@@ -1,17 +1,26 @@
 import React from 'react';
-import { render } from '@testing-library/react';
+import '@testing-library/jest-dom/extend-expect';
+import { render, screen } from '@testing-library/react';
 import Layout from '../common/Layout';
 
-import data from '../../__mocks__/siteMetadata';
+import GlobalContext from './GlobalContext';
+
+const globalContext = { siteMetadata: { title: 'TestTitle', description: 'TestDescription' } };
 
 describe('Layout', () => {
     it('renders a simple page', () => {
         const { container } = render(
-            <Layout siteMetadata={data.site.siteMetaData}>
-                <h1>Title</h1>
-            </Layout>
+            <GlobalContext.Provider value={globalContext}>
+                <Layout>
+                    <h1>Title</h1>
+                </Layout>
+            </GlobalContext.Provider>
         );
 
-        expect(container.querySelector('h1')).toBeTruthy();
+        const h1 = container.querySelector('h1');
+        expect(h1).toBeTruthy();
+
+        const title = screen.getByTestId('pageTitleTest');
+        expect(title).toHaveTextContent('Page Title: TestTitle');
     });
 });

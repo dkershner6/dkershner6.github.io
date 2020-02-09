@@ -1,11 +1,6 @@
 const proxy = require('http-proxy-middleware'); // eslint-disable-line @typescript-eslint/no-var-requires
 
 module.exports = {
-    siteMetadata: {
-        siteUrl: 'https://dkershner.com',
-        title: 'DKershner.com',
-        description: 'Full-stack Software Engineer, DevOps Practitioner, & Cloud Architect',
-    },
     plugins: [
         'gatsby-plugin-typescript',
         {

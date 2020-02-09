@@ -1,5 +1,5 @@
 import React from 'react';
-import Layout from '../../components/common/Layout';
+import SiteWrapper from '../../components/common/SiteWrapper';
 import { Container, Row, Col } from 'react-bootstrap';
 
 import { resumes } from '../../components/resumes/ResumeTab/Resumes/GetResume';
@@ -7,7 +7,7 @@ import properCase from '../../utils/ProperCase';
 
 const ResumesPage = () => {
     return (
-        <Layout>
+        <SiteWrapper>
             <Container className="mt-5">
                 <Row className="mt-5">
                     <Col>
@@ -26,7 +26,7 @@ const ResumesPage = () => {
                     </Col>
                 </Row>
             </Container>
-        </Layout>
+        </SiteWrapper>
     );
 };
 

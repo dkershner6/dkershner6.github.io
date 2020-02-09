@@ -2,7 +2,7 @@ import React from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import Helmet from 'react-helmet';
 import { graphql } from 'gatsby';
-import Layout from '../common/Layout';
+import SiteWrapper from '../common/SiteWrapper';
 
 import properCase from '../../utils/ProperCase';
 
@@ -18,7 +18,8 @@ interface ITechnology {
 }
 
 const TechnologyTemplate = (props: ITechnology) => {
-    const posts = props.data.allMarkdownRemark.edges;
+    const { data, pageContext } = props;
+    const posts = data?.allMarkdownRemark?.edges;
     const postLinks = posts.map(post => (
         <li key={post.node.fields.slug}>
             <h5>
@@ -27,13 +28,12 @@ const TechnologyTemplate = (props: ITechnology) => {
         </li>
     ));
 
-    const technologyId = props.pageContext.techId;
+    const technologyId = pageContext.techId;
     const technology = technologies.filter(technology => technology.id === technologyId)[0];
-    const title = props.data.site.siteMetadata.title;
     const projects = getProjectsForTechnology(technology);
     return (
-        <Layout siteMetadata={props.data}>
-            <Helmet title={`${technology.label} | ${title}`} />
+        <SiteWrapper>
+            <Helmet title={`${technology.label}`} />
             <Container className="mt-5">
                 <Row>
                     <Col>
@@ -115,7 +115,7 @@ const TechnologyTemplate = (props: ITechnology) => {
                     </>
                 )}
             </Container>
-        </Layout>
+        </SiteWrapper>
     );
 };
 
@@ -123,11 +123,6 @@ export default TechnologyTemplate;
 
 export const techPageQuery = graphql`
     query TechPage($techId: String) {
-        site {
-            siteMetadata {
-                title
-            }
-        }
         allMarkdownRemark(limit: 1000, sort: { fields: [frontmatter___date], order: DESC }, filter: { frontmatter: { tags: { in: [$techId] } } }) {
             totalCount
             edges {

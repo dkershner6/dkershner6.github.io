@@ -1,13 +1,13 @@
 import React from 'react';
 
-import Layout from '../../../components/common/Layout';
+import SiteWrapper from '../../../components/common/SiteWrapper';
 import Resume from '../../../components/resumes/Resume';
 
 const ResumeDisplay = () => {
     return (
-        <Layout>
+        <SiteWrapper>
             <Resume company="inseego" />
-        </Layout>
+        </SiteWrapper>
     );
 };
 

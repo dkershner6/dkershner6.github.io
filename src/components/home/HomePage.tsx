@@ -1,5 +1,5 @@
 import React from 'react';
-import Layout from '../common/Layout';
+import SiteWrapper from '../common/SiteWrapper';
 import { IHomePageTemplate, HomePageTemplate } from './HomePageTemplate';
 
 interface IHomePage {
@@ -8,9 +8,9 @@ interface IHomePage {
 
 const HomePage = ({ data }: IHomePage) => {
     return (
-        <Layout>
+        <SiteWrapper>
             <HomePageTemplate image={data.image} title={data.title} heading={data.heading} subheading={data.subheading} />
-        </Layout>
+        </SiteWrapper>
     );
 };
 

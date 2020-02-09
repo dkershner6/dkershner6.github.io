@@ -2,7 +2,7 @@ import React from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import LazyHero from 'react-lazy-hero';
 import { graphql } from 'gatsby';
-import Layout from '../common/Layout';
+import SiteWrapper from '../common/SiteWrapper';
 import Content, { HTMLContent } from '../common/Content';
 import HelmetHead from '../common/Seo';
 import '../../css/github-markdown.css';
@@ -70,7 +70,7 @@ const BlogPost = ({ data }: IBlogPost) => {
     const { markdownRemark: post } = data;
 
     return (
-        <Layout>
+        <SiteWrapper>
             <BlogPostTemplate
                 content={post.html}
                 contentComponent={HTMLContent}
@@ -80,7 +80,7 @@ const BlogPost = ({ data }: IBlogPost) => {
                 title={post.frontmatter.title}
                 featuredimage={post.frontmatter.featuredimage}
             />
-        </Layout>
+        </SiteWrapper>
     );
 };
 
