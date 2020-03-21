@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'gatsby';
+import Link from 'next/link';
 import { Badge } from 'react-bootstrap';
 import { startCase } from 'lodash';
 
@@ -19,7 +19,7 @@ const BlogPostTag = (props: IBlogPostTag) => {
         return <InnerBlogPostTag {...props} />;
     } else {
         return (
-            <Link to={`/blog/tags/${tag}`}>
+            <Link href={`/blog/tags/${tag}`}>
                 <InnerBlogPostTag {...props} />
             </Link>
         );

@@ -1,4 +1,4 @@
-import { technologies } from '../../../data/technologies-node';
+import { technologies } from '../../../data/technologiesData';
 import ITechnology from '../../technology/ITechnology';
 
 export default interface IProjectAttribute {
@@ -8,13 +8,13 @@ export default interface IProjectAttribute {
 }
 
 export const createAttributeFromTechnology = (technologyId: string): IProjectAttribute => {
-    const tempTechnologies = technologies.filter(technology => technology.id === technologyId);
+    const tempTechnologies = technologies.filter((technology) => technology.id === technologyId);
     if (tempTechnologies.length > 0) {
         const technology = tempTechnologies[0];
         const attribute: IProjectAttribute = {
             name: technology.type === 'deployment' ? 'Deployment' : 'Technology',
             value: technology.label,
-            link: `/technologies/${technology.type}/${technology.id}`,
+            link: `/technologies/${technology.type}/${technology.id}`
         };
 
         return attribute;
@@ -27,8 +27,8 @@ export const createAttributeFromTechnology = (technologyId: string): IProjectAtt
 export const getTechnologiesFromAttributes = (attributes: IProjectAttribute[]): ITechnology[] => {
     const returnTechnologies = [];
 
-    attributes.forEach(attribute => {
-        const tempTechs = technologies.filter(technology => technology.label === attribute.value);
+    attributes.forEach((attribute) => {
+        const tempTechs = technologies.filter((technology) => technology.label === attribute.value);
         if (tempTechs.length > 0) {
             returnTechnologies.push(...tempTechs);
         }

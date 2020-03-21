@@ -1,7 +1,6 @@
 import React from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import Helmet from 'react-helmet';
-import { graphql } from 'gatsby';
 import SiteWrapper from '../common/SiteWrapper';
 
 import properCase from '../../utils/ProperCase';
@@ -120,21 +119,3 @@ const TechnologyTemplate = (props: ITechnology) => {
 };
 
 export default TechnologyTemplate;
-
-export const techPageQuery = graphql`
-    query TechPage($techId: String) {
-        allMarkdownRemark(limit: 1000, sort: { fields: [frontmatter___date], order: DESC }, filter: { frontmatter: { tags: { in: [$techId] } } }) {
-            totalCount
-            edges {
-                node {
-                    fields {
-                        slug
-                    }
-                    frontmatter {
-                        title
-                    }
-                }
-            }
-        }
-    }
-`;

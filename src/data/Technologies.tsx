@@ -4,8 +4,8 @@ import technologiesJs, {
     frontendTechnologies as frontendTechnologiesJs,
     deploymentTechnologies as deploymentTechnologiesJs,
     dataTechnologies as dataTechnologiesJs,
-    clouds as cloudsJs,
-} from './technologies-node';
+    clouds as cloudsJs
+} from './technologiesData';
 
 export const backendTechnologies: ITechnology[] = backendTechnologiesJs;
 export const frontendTechnologies: ITechnology[] = frontendTechnologiesJs;

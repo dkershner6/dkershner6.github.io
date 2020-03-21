@@ -1,5 +1,3 @@
-import { graphql, useStaticQuery as gatsbyStaticQuery } from 'gatsby';
-
 export interface ISiteMetadata {
     siteUrl: string;
     title: string;

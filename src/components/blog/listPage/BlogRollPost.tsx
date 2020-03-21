@@ -1,8 +1,7 @@
 import React from 'react';
-import { Link } from 'gatsby';
+import Link from 'next/link';
 import { Row, Col } from 'react-bootstrap';
 
-import PreviewCompatibleImage from '../../common/PreviewCompatibleImage';
 import BlogPostTag from '../post/BlogPostTag';
 
 const BlogRollPost = props => {
@@ -11,17 +10,12 @@ const BlogRollPost = props => {
         <Col key={post.id} xs="12" lg="6" className="mt-3">
             <Row>
                 <Col xs="6">
-                    <Link to={post.fields.slug}>
-                        <PreviewCompatibleImage
-                            imageInfo={{
-                                image: post.frontmatter.featuredimage,
-                                alt: `featured image thumbnail for post ${post.title}`,
-                            }}
-                        />
+                    <Link href={post.fields.slug}>
+                        <img alt={`featured image thumbnail for post ${post.title}`} />
                     </Link>
                 </Col>
                 <Col xs="6">
-                    <Link to={post.fields.slug}>
+                    <Link href={post.fields.slug}>
                         <h5>{post.frontmatter.title}</h5>
                     </Link>
                     <p>{post.frontmatter.date}</p>

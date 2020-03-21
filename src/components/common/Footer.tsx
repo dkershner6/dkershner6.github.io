@@ -14,8 +14,8 @@ const Footer = () => {
                     </p>
                     <p className="text-muted">
                         This site was built using{' '}
-                        <a href="https://www.gatsbyjs.org/" target="_blank" rel="noopener noreferrer">
-                            GatsbyJS
+                        <a href="https://www.nextjs.org/" target="_blank" rel="noopener noreferrer">
+                            Next.JS
                         </a>{' '}
                         with{' '}
                         <a href="https://jamstack.org/" target="_blank" rel="noopener noreferrer">
