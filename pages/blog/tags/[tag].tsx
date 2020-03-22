@@ -7,9 +7,11 @@ import HelmetHead from '../../../src/components/common/Seo';
 import SiteWrapper from '../../../src/components/common/SiteWrapper';
 import { IBlogRollPost } from '../../../src/components/blog/listPage/IBlogRollPost';
 
-const BlogIndexPage = () => {
-    const router = useRouter();
-    const tag = router.query.tag as string;
+interface IBlogIndexPage {
+    tag: string;
+}
+
+const BlogIndexPage = ({ tag }: IBlogIndexPage) => {
     const filePaths = Object.keys(blogRoll.fileMap);
     const posts = filePaths.map((filePath) => {
         const id = filePath.replace('public/blog/', '').replace('.json', '');
@@ -26,6 +28,11 @@ const BlogIndexPage = () => {
             </SiteWrapper>
         </>
     );
+};
+
+export const getStaticProps = async (ctx) => {
+    const { tag } = ctx.params;
+    return { props: { tag } };
 };
 
 export const getStaticPaths = async () => {
