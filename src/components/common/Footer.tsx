@@ -49,7 +49,7 @@ const Footer = () => {
                         <a href="https://www.gatsbyjs.org/" target="_blank" rel="noopener noreferrer">
                             GatsbyJS
                         </a>
-                        ,
+                        ,{' '}
                         <a href="https://github.com/facebook/create-react-app" target="_blank" rel="noopener noreferrer">
                             Create React App
                         </a>
