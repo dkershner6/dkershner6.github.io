@@ -7,6 +7,7 @@ coverage
 .next
 content-build
 out
+package-lock.json
 
 # Build directory
 .DS_Store

@@ -38,8 +38,8 @@ const Footer = () => {
                             React Bootstrap
                         </a>{' '}
                         to skin it. It's hosted on{' '}
-                        <a href="https://www.netlify.com/" target="_blank" rel="noopener noreferrer">
-                            Netlify
+                        <a href="https://github.com/" target="_blank" rel="noopener noreferrer">
+                            GitHub Pages
                         </a>
                         , feel free to have a look at the{' '}
                         <a href="https://github.com/dkershner6/dkershner.com/" target="_blank" rel="noopener noreferrer">
