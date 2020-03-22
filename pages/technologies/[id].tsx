@@ -1,6 +1,5 @@
 import React from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
-import Helmet from 'react-helmet';
 import SiteWrapper from '../../src/components/common/SiteWrapper';
 
 import properCase from '../../src/utils/ProperCase';
@@ -10,26 +9,36 @@ import TechnologyBadge from '../../src/components/technology/TechnologyBadge';
 import SkillDisplay from '../../src/components/common/SkillDisplay';
 
 import ITechnology, { getProjectsForTechnology } from '../../src/components/technology/ITechnology';
+import blogRoll from '../../public/blog/summary.json';
+import { IBlogRollPost } from '../../src/components/blog/listPage/IBlogRollPost';
 
 interface ITechnologyPage {
     technology: ITechnology;
 }
 
 const TechnologyPage = ({ technology }: ITechnologyPage) => {
-    /* const postLinks = posts.map(post => (
-        <li key={post.node.fields.slug}>
+    const filePaths = Object.keys(blogRoll.fileMap);
+    const posts = filePaths
+        .map((filePath) => {
+            const id = filePath.replace('public/blog/', '').replace('.json', '');
+            const blogRollPost = blogRoll.fileMap[filePath];
+            blogRollPost.id = id;
+            return blogRollPost as IBlogRollPost;
+        })
+        .filter((post) => post.tags.includes(technology.id));
+    const postLinks = posts.map((post) => (
+        <li key={post.id}>
             <h5>
-                <a href={`${post.node.fields.slug}`}>{post.node.frontmatter.title}</a>
+                <a href={`/blog/${post.id}`}>{post.title}</a>
             </h5>
         </li>
-    )); */
+    ));
 
     const projects = getProjectsForTechnology(technology);
 
     if (technology) {
         return (
-            <SiteWrapper>
-                <Helmet title={`${technology.label}`} />
+            <SiteWrapper title={`${technology.label}`}>
                 <Container className="mt-5">
                     <Row>
                         <Col>
@@ -99,17 +108,17 @@ const TechnologyPage = ({ technology }: ITechnologyPage) => {
                             </Row>
                         </>
                     )}
-                    {/* {postLinks.length > 0 && (
-                    <>
-                        <Row className="mt-5">
-                            <Col>
-                                <h4>Posts written about this technology:</h4>
+                    {postLinks.length > 0 && (
+                        <>
+                            <Row className="mt-5">
+                                <Col>
+                                    <h4>Posts written about this technology:</h4>
 
-                                <ul>{postLinks}</ul>
-                            </Col>
-                        </Row>
-                    </>
-                )} */}
+                                    <ul>{postLinks}</ul>
+                                </Col>
+                            </Row>
+                        </>
+                    )}
                 </Container>
             </SiteWrapper>
         );

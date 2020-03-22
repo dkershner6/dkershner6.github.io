@@ -48,7 +48,7 @@ export const BlogListTagFilter = (props: IBlogListTagFilter) => {
                 </Col>
                 {technology !== undefined && (
                     <Col className="align-self-center">
-                        <a href={`/technologies/${technology.type}/${technology.id}`}>
+                        <a href={`/technologies/${technology.id}`}>
                             <Button variant="info">Info On This Tech</Button>
                         </a>
                     </Col>

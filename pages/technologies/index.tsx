@@ -1,6 +1,5 @@
 import React from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
-import Helmet from 'react-helmet';
 import SiteWrapper from '../../src/components/common/SiteWrapper';
 
 import { technologies } from '../../src/data/Technologies';
@@ -15,8 +14,7 @@ const TechnologiesPage = () => {
     };
 
     return (
-        <SiteWrapper>
-            <Helmet title={`Technologies | DKershner.com`} />
+        <SiteWrapper title="Technologies">
             <Container className="mt-5">
                 <Row className="mt-3">
                     <Col>
