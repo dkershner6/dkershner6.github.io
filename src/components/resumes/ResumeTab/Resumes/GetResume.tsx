@@ -19,12 +19,11 @@ export const resumes: IResume[] = [
     cbtNuggetsResume,
     titanResume,
     pollyResume,
-    syrinxResume,
+    syrinxResume
 ];
 
 const getResume = (company: string) => {
-    const returnResume = resumes.filter(resume => resume.company === company);
-    console.log(returnResume);
+    const returnResume = resumes.filter((resume) => resume.company === company);
     if (returnResume.length === 1) {
         return returnResume[0];
     } else {

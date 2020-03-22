@@ -8,7 +8,7 @@ import GlobalContext from './GlobalContext';
 
 interface ILayout {
     siteMetadata?: ISiteMetadata;
-    children: any;
+    children: unknown;
 }
 
 const Layout = (props: ILayout) => {
@@ -42,7 +42,7 @@ const Layout = (props: ILayout) => {
     );
 };
 
-const PageLayout = props => {
+const PageLayout = (props) => {
     const { format, children } = props;
     if (format === 'print' || format === 'printCover' || format === 'printCombined') {
         return <div>{children}</div>;

@@ -3,9 +3,10 @@ import { BlogPostTemplate } from '../../components/blog/post/BlogPostTemplate';
 
 interface IBlogPostPreview {
     entry: {
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
         getIn: (any) => any;
     };
-    widgetFor: (any) => any;
+    widgetFor: (any) => unknown;
 }
 
 const BlogPostPreview = ({ entry, widgetFor }: IBlogPostPreview) => (

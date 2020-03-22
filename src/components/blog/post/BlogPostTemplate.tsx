@@ -5,12 +5,13 @@ import { BlogPostHeader } from './BlogPostHeader';
 
 export interface IBlogPostTemplate {
     content?: React.ReactNode;
-    contentComponent?: (any) => any;
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    contentComponent?: any;
     description: string;
     tags: string[];
     title: string;
-    helmet?: any;
-    featuredimage?: any;
+    helmet?: unknown;
+    featuredimage?: string;
 }
 
 export const BlogPostTemplate = (props: IBlogPostTemplate) => {

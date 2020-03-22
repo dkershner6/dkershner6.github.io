@@ -4,7 +4,7 @@ import GlobalContext, { initializeGlobalContext } from './GlobalContext';
 import Layout from './Layout';
 
 interface ISiteWrapper {
-    children?: any;
+    children?: unknown;
 }
 
 const SiteWrapper = (props: ISiteWrapper) => {
