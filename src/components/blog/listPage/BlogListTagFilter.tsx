@@ -18,7 +18,7 @@ export const BlogListTagFilter = (props: IBlogListTagFilter) => {
         const allTagsUsed = [...new Set(_.flatten(posts.map((post) => post.tags)))] as string[];
         const tagsWithCount = allTagsUsed.map((tag) => ({
             tag,
-            count: _.flatten(posts.map((post) => post.tags)).filter((tag) => tag === tag).length
+            count: posts.filter((post) => post === post.tags.includes(tag)).length
         }));
 
         return (

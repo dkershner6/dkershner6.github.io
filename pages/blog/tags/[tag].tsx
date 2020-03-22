@@ -13,12 +13,14 @@ interface IBlogIndexPage {
 
 const BlogIndexPage = ({ tag }: IBlogIndexPage) => {
     const filePaths = Object.keys(blogRoll.fileMap);
-    const posts = filePaths.map((filePath) => {
-        const id = filePath.replace('public/blog/', '').replace('.json', '');
-        const blogRollPost = blogRoll.fileMap[filePath];
-        blogRollPost.id = id;
-        return blogRollPost as IBlogRollPost;
-    });
+    const posts = filePaths
+        .map((filePath) => {
+            const id = filePath.replace('public/blog/', '').replace('.json', '');
+            const blogRollPost = blogRoll.fileMap[filePath];
+            blogRollPost.id = id;
+            return blogRollPost as IBlogRollPost;
+        })
+        .filter((post) => post.tags.includes(tag));
 
     return (
         <>
