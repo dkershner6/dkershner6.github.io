@@ -6,6 +6,7 @@ node_modules
 coverage
 .next
 content-build
+out
 
 # Build directory
 .DS_Store

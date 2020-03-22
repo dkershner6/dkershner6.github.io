@@ -36,8 +36,10 @@
         "build": "npm run build:content && npm run build:next",
         "build:next": "next build",
         "build:content": "processmd content/**/*.md --outputDir public/blog --preview 110 --summaryOutput public/blog/summary.json",
+        "export": "next export",
+        "build-export": "npm run build && npm run export",
         "start": "next start",
-        "format": "prettier --trailing-comma es5 --no-semi --single-quote --write \"{gatsby-*.js,src/**/*.js}\"",
+        "format": "prettier --write \"{pages/**/*.ts,src/**/*.ts}\"",
         "test": "jest --coverage",
         "lint": "eslint ./src --ext .tsx --ext .js",
         "type-check": "tsc --noEmit"

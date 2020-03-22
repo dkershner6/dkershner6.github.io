@@ -37,40 +37,6 @@
       "sourceBase": "azure-functions-limits-how-to-overcome.md",
       "sourceExt": ".md"
     },
-    "public/blog/react-jamstack-gatsby-vs-react-snap.json": {
-      "templateKey": "BlogPostTemplate",
-      "title": "React JAMStack: Gatsby & Netlify CMS vs React-Snap & CRA",
-      "date": "2019-08-20T16:46:07.871Z",
-      "description": "A comparison based on the experience of building the same site in both frameworks",
-      "featuredpost": false,
-      "featuredimage": "/img/products-grid2.jpg",
-      "tags": [
-        "react"
-      ],
-      "preview": "Why?\n\nI had an idea for a potential client that would involve a static site with lots of various types of",
-      "dir": "public/blog",
-      "base": "react-jamstack-gatsby-vs-react-snap.json",
-      "ext": ".json",
-      "sourceBase": "react-jamstack-gatsby-vs-react-snap.md",
-      "sourceExt": ".md"
-    },
-    "public/blog/software-developer-contractor-vs-in-house.json": {
-      "templateKey": "BlogPostTemplate",
-      "title": "Software Developer: Freelance Contractor vs In-House",
-      "date": "2019-08-21T20:38:50.502Z",
-      "description": "Findings from when I tried to create both paths at the same time",
-      "featuredpost": false,
-      "featuredimage": "/img/home-jumbotron.jpg",
-      "tags": [
-        "career"
-      ],
-      "preview": "Contractor\n\nPros:\n\nYou are likely to make more money as a contractor if you do well, even after you factor in",
-      "dir": "public/blog",
-      "base": "software-developer-contractor-vs-in-house.json",
-      "ext": ".json",
-      "sourceBase": "software-developer-contractor-vs-in-house.md",
-      "sourceExt": ".md"
-    },
     "public/blog/azure-functions-when-to-use-app-service-plan.json": {
       "templateKey": "BlogPostTemplate",
       "title": "Azure Functions: When to use App Service Plan",
@@ -89,6 +55,23 @@
       "sourceBase": "azure-functions-when-to-use-app-service-plan.md",
       "sourceExt": ".md"
     },
+    "public/blog/react-jamstack-gatsby-vs-react-snap.json": {
+      "templateKey": "BlogPostTemplate",
+      "title": "React JAMStack: Gatsby & Netlify CMS vs React-Snap & CRA",
+      "date": "2019-08-20T16:46:07.871Z",
+      "description": "A comparison based on the experience of building the same site in both frameworks",
+      "featuredpost": false,
+      "featuredimage": "/img/products-grid2.jpg",
+      "tags": [
+        "react"
+      ],
+      "preview": "Why?\n\nI had an idea for a potential client that would involve a static site with lots of various types of",
+      "dir": "public/blog",
+      "base": "react-jamstack-gatsby-vs-react-snap.json",
+      "ext": ".json",
+      "sourceBase": "react-jamstack-gatsby-vs-react-snap.md",
+      "sourceExt": ".md"
+    },
     "public/blog/azure-functions-serilog-gotchas.json": {
       "templateKey": "BlogPostTemplate",
       "title": "Azure Functions: Serilog Gotchas",
@@ -105,6 +88,23 @@
       "base": "azure-functions-serilog-gotchas.json",
       "ext": ".json",
       "sourceBase": "azure-functions-serilog-gotchas.md",
+      "sourceExt": ".md"
+    },
+    "public/blog/software-developer-contractor-vs-in-house.json": {
+      "templateKey": "BlogPostTemplate",
+      "title": "Software Developer: Freelance Contractor vs In-House",
+      "date": "2019-08-21T20:38:50.502Z",
+      "description": "Findings from when I tried to create both paths at the same time",
+      "featuredpost": false,
+      "featuredimage": "/img/home-jumbotron.jpg",
+      "tags": [
+        "career"
+      ],
+      "preview": "Contractor\n\nPros:\n\nYou are likely to make more money as a contractor if you do well, even after you factor in",
+      "dir": "public/blog",
+      "base": "software-developer-contractor-vs-in-house.json",
+      "ext": ".json",
+      "sourceBase": "software-developer-contractor-vs-in-house.md",
       "sourceExt": ".md"
     },
     "public/blog/review-clean-code-by-robert-martin.json": {
