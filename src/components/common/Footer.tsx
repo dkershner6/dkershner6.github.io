@@ -42,7 +42,7 @@ const Footer = () => {
                             Netlify
                         </a>
                         , feel free to have a look at the{' '}
-                        <a href="https://github.com/dkershner6/dkershner6.github.io/" target="_blank" rel="noopener noreferrer">
+                        <a href="https://github.com/dkershner6/dkershner.com/" target="_blank" rel="noopener noreferrer">
                             open source code
                         </a>
                         . This site is used for testing and changes very frequently, and items are often broken. In the past, it has been built with{' '}
