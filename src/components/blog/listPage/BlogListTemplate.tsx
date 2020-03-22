@@ -3,29 +3,18 @@ import { Container } from 'react-bootstrap';
 import { startCase } from 'lodash';
 import LazyHero from 'react-lazy-hero';
 
-import SiteWrapper from '../../common/SiteWrapper';
-import BlogRoll, { IBlogRoll } from './BlogRoll';
-import HelmetHead from '../../common/Seo';
+import BlogRoll from './BlogRoll';
 import { getTechnologyById } from '../../technology/ITechnology';
 import { BlogListTagFilter } from './BlogListTagFilter';
+import { IBlogRollPost } from './IBlogRollPost';
 
-export interface IBlogListPage extends IBlogRoll {
+export interface IBlogListTemplate {
+    posts: IBlogRollPost[];
     tag?: string;
 }
 
-const BlogListPage = (props: IBlogListPage) => {
-    return (
-        <>
-            <HelmetHead title={props.tag !== undefined ? `Blog - ${startCase(props.tag.toLowerCase())}` : 'Blog'} />
-            <SiteWrapper>
-                <BlogListTemplate {...props} />
-            </SiteWrapper>
-        </>
-    );
-};
-
-const BlogListTemplate = (props: IBlogListPage) => {
-    const { tag } = props;
+const BlogListTemplate = (props: IBlogListTemplate) => {
+    const { tag, posts } = props;
     const hasTag = tag !== undefined;
     const technology = hasTag ? getTechnologyById(tag) : undefined;
     const displayTag = technology === undefined ? (hasTag ? startCase(tag.toLowerCase()) : undefined) : technology.label;
@@ -41,11 +30,10 @@ const BlogListTemplate = (props: IBlogListPage) => {
             </LazyHero>
 
             <Container className="mt-5">
-                <BlogRoll data={props.data} />
+                <BlogRoll posts={posts} />
             </Container>
         </>
     );
 };
 
-export default BlogListPage;
-export { BlogListTemplate as BlogListInnerPage };
+export default BlogListTemplate;

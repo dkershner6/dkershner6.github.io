@@ -5,6 +5,7 @@ node_modules
 .VSCodeCounter
 coverage
 .next
+content-build
 
 # Build directory
 .DS_Store

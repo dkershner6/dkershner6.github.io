@@ -12,8 +12,8 @@ const post = {
         description: 'Test description',
         tags: ['testtag1', 'testtag2'],
         title: 'Test Title',
-        featuredimage: 'test',
-    },
+        featuredimage: 'test'
+    }
 };
 
 it('Should render blog post', () => {

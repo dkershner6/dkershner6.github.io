@@ -35,14 +35,16 @@ const TechnologyBadge = (props: ITechnologyBadge) => {
         return <InnerBadge technology={technology} count={count} />;
     } else {
         return (
-            <Link href={`/technologies/${technology.type}/${technology.id}`}>
-                <InnerBadge style={{ cursor: 'pointer' }} technology={technology} count={count} />
+            <Link href={`/technologies/${technology.id}`}>
+                <a href={`/technologies/${technology.id}`}>
+                    <InnerBadge style={{ cursor: 'pointer' }} technology={technology} count={count} />
+                </a>
             </Link>
         );
     }
 };
 
-const InnerBadge = props => {
+const InnerBadge = (props) => {
     const { technology, count } = props;
     return (
         <Badge variant={getBootstrapVariant(technology.type)} pill>
@@ -51,7 +53,7 @@ const InnerBadge = props => {
     );
 };
 
-export const CountBadge = props => {
+export const CountBadge = (props) => {
     const { count } = props;
     if (count === undefined) {
         return null;

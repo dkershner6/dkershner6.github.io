@@ -1,20 +1,26 @@
 import React from 'react';
+import _ from 'lodash';
 import Link from 'next/link';
 import { Row, Col, Button } from 'react-bootstrap';
 import BlogPostTag from '../post/BlogPostTag';
 import ITechnology from '../../technology/ITechnology';
-import { IBlogListPage } from './BlogListPage';
+import { IBlogListTemplate } from './BlogListTemplate';
 
-interface IBlogListTagFilter extends IBlogListPage {
+interface IBlogListTagFilter extends IBlogListTemplate {
     technology: ITechnology;
 }
 
 export const BlogListTagFilter = (props: IBlogListTagFilter) => {
-    const { tag, data, technology } = props;
+    const { tag, posts, technology } = props;
     const hasTag = tag !== undefined;
-    const { allMarkdownRemark } = data;
-    const { group: tags } = allMarkdownRemark;
+
     if (!hasTag) {
+        const allTagsUsed = [...new Set(_.flatten(posts.map((post) => post.tags)))] as string[];
+        const tagsWithCount = allTagsUsed.map((tag) => ({
+            tag,
+            count: _.flatten(posts.map((post) => post.tags)).filter((tag) => tag === tag).length
+        }));
+
         return (
             <Row className="mt-5">
                 <Col>
@@ -25,8 +31,8 @@ export const BlogListTagFilter = (props: IBlogListTagFilter) => {
                     </Row>
                     <Row>
                         <Col>
-                            {tags.map((tag, index) => (
-                                <BlogPostTag key={index} tag={tag.fieldValue} count={tag.totalCount} tagLink={true} />
+                            {tagsWithCount.map((tagWithCount, index) => (
+                                <BlogPostTag key={index} tag={tagWithCount.tag} count={tagWithCount.count} tagLink={true} />
                             ))}
                         </Col>
                     </Row>

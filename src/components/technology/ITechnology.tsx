@@ -21,7 +21,7 @@ export default class ITechnology {
 }
 
 export const getTechnologyById = (technologyId: string) => {
-    const tempTechs = technologies.filter(technology => technology.id === technologyId);
+    const tempTechs = technologies.filter((technology) => technology.id === technologyId);
     if (tempTechs.length > 0) {
         return tempTechs[0];
     } else {
@@ -33,7 +33,7 @@ export const getProjectsForTechnology = (technology: ITechnology): IProjectSumma
     const searchProjectSection = (projectSectionName: string, project: IProject): number => {
         let projectSectionUses = 0;
         project[projectSectionName].forEach((projectSection: IProjectSection) => {
-            const attributes = projectSection.attributes.filter((attribute: IProjectAttribute) => attribute.value === technology.label);
+            const attributes = projectSection.attributes.filter((attribute: IProjectAttribute) => attribute.value === technology?.label);
 
             if (attributes.length > 0) {
                 projectSectionUses = projectSectionUses + attributes.length;
@@ -45,18 +45,18 @@ export const getProjectsForTechnology = (technology: ITechnology): IProjectSumma
     const returnObj = [];
     projects.forEach((project: IProject) => {
         let projectUses = 0;
-        if (project[technology.type] !== undefined) {
+        if (project[technology?.type] !== undefined) {
             projectUses = projectUses + searchProjectSection(technology.type, project);
         } else {
             const projectSections = ['backend', 'frontend'];
-            projectSections.forEach(projectSection => (projectUses = projectUses + searchProjectSection(projectSection, project)));
+            projectSections.forEach((projectSection) => (projectUses = projectUses + searchProjectSection(projectSection, project)));
         }
 
         if (projectUses > 0) {
             returnObj.push({
                 id: project.id,
                 name: project.name,
-                uses: projectUses,
+                uses: projectUses
             });
         }
     });

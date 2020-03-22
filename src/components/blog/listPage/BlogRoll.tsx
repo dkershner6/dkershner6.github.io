@@ -2,25 +2,14 @@ import React from 'react';
 import { Row } from 'react-bootstrap';
 
 import BlogRollPost from './BlogRollPost';
+import { IBlogRollPost } from './IBlogRollPost';
 
-export interface IBlogRoll {
-    data: {
-        allMarkdownRemark: {
-            group: {
-                fieldValue: string;
-                totalCount: number;
-            }[];
-            nodes: any[];
-        };
-    };
+interface IBlogRoll {
+    posts: IBlogRollPost[];
 }
 
-const BlogRoll = (props: IBlogRoll) => {
-    console.log(props);
-    const { data } = props;
-    const { nodes: posts } = data.allMarkdownRemark;
-
-    return <Row className="mt-3">{posts && posts.map(post => <BlogRollPost key={post.id} post={post} />)}</Row>;
+const BlogRoll = ({ posts }: IBlogRoll) => {
+    return <Row className="mt-3">{posts && posts.map((post) => <BlogRollPost key={post.id} post={post} />)}</Row>;
 };
 
 export default BlogRoll;

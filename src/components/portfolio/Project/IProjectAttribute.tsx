@@ -19,7 +19,6 @@ export const createAttributeFromTechnology = (technologyId: string): IProjectAtt
 
         return attribute;
     } else {
-        console.warn(technologyId + ' undefined?');
         return undefined;
     }
 };

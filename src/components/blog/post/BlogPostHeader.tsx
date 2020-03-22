@@ -7,14 +7,7 @@ import { IBlogPostTemplate } from './BlogPostTemplate';
 export const BlogPostHeader = (props: IBlogPostTemplate) => {
     const { featuredimage, description, tags, title } = props;
     return (
-        <LazyHero
-            imageSrc={featuredimage !== undefined && featuredimage.publicURL !== undefined ? featuredimage.publicURL : ''}
-            color="#FFFFFF"
-            opacity={0.8}
-            minHeight="25vh"
-            parallaxOffset={0.5}
-            isCentered={true}
-            transitionDuration={600}>
+        <LazyHero imageSrc={featuredimage} color="#FFFFFF" opacity={0.8} minHeight="25vh" parallaxOffset={0.5} isCentered={true} transitionDuration={600}>
             <Row>
                 <Col>
                     <h1 data-testid="title">{title}</h1>

@@ -20,7 +20,9 @@ const BlogPostTag = (props: IBlogPostTag) => {
     } else {
         return (
             <Link href={`/blog/tags/${tag}`}>
-                <InnerBlogPostTag {...props} />
+                <a href={`/blog/tags/${tag}`}>
+                    <InnerBlogPostTag {...props} />
+                </a>
             </Link>
         );
     }

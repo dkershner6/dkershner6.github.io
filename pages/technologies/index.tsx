@@ -6,7 +6,7 @@ import SiteWrapper from '../../src/components/common/SiteWrapper';
 
 import { technologies } from '../../src/data/Technologies';
 
-const TechnologiesPage = props => {
+const TechnologiesPage = () => {
     const sortByAlpha = (a, b) => {
         if (a.label > b.label) {
             return 1;
@@ -27,9 +27,11 @@ const TechnologiesPage = props => {
                 <Row className="mt-3">
                     <Col>
                         <ul>
-                            {technologies.sort(sortByAlpha).map(technology => (
+                            {technologies.sort(sortByAlpha).map((technology) => (
                                 <li key={technology.id}>
-                                    <Link href={`/technologies/${technology.type}/${technology.id}/`}>{technology.label}</Link>
+                                    <Link href={`/technologies/${technology.id}`}>
+                                        <a href={`/technologies/${technology.id}`}>{technology.label}</a>
+                                    </Link>
                                 </li>
                             ))}
                         </ul>
