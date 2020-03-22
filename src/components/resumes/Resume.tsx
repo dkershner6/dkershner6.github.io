@@ -4,7 +4,6 @@ import { Container, Row, Col, ButtonGroup, Button } from 'react-bootstrap';
 import CoverLetterTab from './CoverLetterTab';
 import ResumeTab from './ResumeTab';
 import makeRange from '../../utils/MakeRange';
-import properCase from '../../utils/ProperCase';
 
 interface IResume {
     company: string;
