@@ -33,7 +33,8 @@
     "main": "n/a",
     "scripts": {
         "dev": "next dev",
-        "build": "next build",
+        "build": "npm run build:content && npm run build:next",
+        "build:next": "next build",
         "build:content": "processmd content/**/*.md --outputDir public/blog --preview 110 --summaryOutput public/blog/summary.json",
         "start": "next start",
         "format": "prettier --trailing-comma es5 --no-semi --single-quote --write \"{gatsby-*.js,src/**/*.js}\"",
