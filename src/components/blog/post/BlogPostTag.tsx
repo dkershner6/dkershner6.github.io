@@ -1,5 +1,4 @@
 import React from 'react';
-import Link from 'next/link';
 import { Badge } from 'react-bootstrap';
 import { startCase } from 'lodash';
 
@@ -19,11 +18,9 @@ const BlogPostTag = (props: IBlogPostTag) => {
         return <InnerBlogPostTag {...props} />;
     } else {
         return (
-            <Link href={`/blog/tags/${tag}`}>
-                <a href={`/blog/tags/${tag}`}>
-                    <InnerBlogPostTag {...props} />
-                </a>
-            </Link>
+            <a href={`/blog/tags/${tag}`}>
+                <InnerBlogPostTag {...props} />
+            </a>
         );
     }
 };

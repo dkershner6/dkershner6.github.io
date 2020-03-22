@@ -1,7 +1,6 @@
 import React from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import Helmet from 'react-helmet';
-import Link from 'next/link';
 import SiteWrapper from '../../src/components/common/SiteWrapper';
 
 import { technologies } from '../../src/data/Technologies';
@@ -29,9 +28,7 @@ const TechnologiesPage = () => {
                         <ul>
                             {technologies.sort(sortByAlpha).map((technology) => (
                                 <li key={technology.id}>
-                                    <Link href={`/technologies/${technology.id}`}>
-                                        <a href={`/technologies/${technology.id}`}>{technology.label}</a>
-                                    </Link>
+                                    <a href={`/technologies/${technology.id}`}>{technology.label}</a>
                                 </li>
                             ))}
                         </ul>

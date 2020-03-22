@@ -1,13 +1,10 @@
 import React from 'react';
-import Link from 'next/link';
 import { Nav, Navbar, NavDropdown } from 'react-bootstrap';
 
 const Navigation = () => {
     return (
         <Navbar bg="dark" variant="dark" collapseOnSelect expand="lg">
-            <Link href="/">
-                <Navbar.Brand>Derek Kershner</Navbar.Brand>
-            </Link>
+            <Navbar.Brand href="/">Derek Kershner</Navbar.Brand>
             <Navbar.Toggle id="navbar-toggle" aria-controls="responsive-navbar-nav" />
             <Navbar.Collapse id="navbar-collapse">
                 <Nav className="mr-auto">

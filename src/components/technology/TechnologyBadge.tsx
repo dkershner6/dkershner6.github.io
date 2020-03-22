@@ -2,7 +2,6 @@ import React from 'react';
 import { Badge } from 'react-bootstrap';
 
 import ITechnology from './ITechnology';
-import Link from 'next/link';
 
 interface ITechnologyBadge {
     key?: number;
@@ -35,11 +34,9 @@ const TechnologyBadge = (props: ITechnologyBadge) => {
         return <InnerBadge technology={technology} count={count} />;
     } else {
         return (
-            <Link href={`/technologies/${technology.id}`}>
-                <a href={`/technologies/${technology.id}`}>
-                    <InnerBadge style={{ cursor: 'pointer' }} technology={technology} count={count} />
-                </a>
-            </Link>
+            <a href={`/technologies/${technology.id}`}>
+                <InnerBadge style={{ cursor: 'pointer' }} technology={technology} count={count} />
+            </a>
         );
     }
 };
