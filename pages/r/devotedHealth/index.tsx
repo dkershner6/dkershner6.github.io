@@ -2,11 +2,14 @@ import React from 'react';
 
 import SiteWrapper from '../../../src/components/common/SiteWrapper';
 import Resume from '../../../src/components/resumes/Resume';
+import properCase from '../../../src/utils/ProperCase';
+
+const company = 'devotedHealth';
 
 const ResumeDisplay = () => {
     return (
-        <SiteWrapper>
-            <Resume company="devotedHealth" />
+        <SiteWrapper title={`Resume for ${properCase(company)} | DKershner.com`}>
+            <Resume company={company} />
         </SiteWrapper>
     );
 };

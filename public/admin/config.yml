@@ -2,7 +2,6 @@ backend:
   name: github
   repo: dkershner6/dkershner6.github.io
   branch: master
-  site_domain: cms.netlify.com
 
 site_url: https://dkershner.com
 display_url: https://dkershner.com

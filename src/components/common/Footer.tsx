@@ -29,11 +29,7 @@ const Footer = () => {
                         <a href="https://www.netlifycms.org/" target="_blank" rel="noopener noreferrer">
                             Netlify CMS
                         </a>{' '}
-                        for content management,{' '}
-                        <a href="https://github.com/nfl/react-helmet" target="_blank" rel="noopener noreferrer">
-                            React Helmet
-                        </a>{' '}
-                        for SEO, and{' '}
+                        for content management and{' '}
                         <a href="https://react-bootstrap.github.io/" target="_blank" rel="noopener noreferrer">
                             React Bootstrap
                         </a>{' '}

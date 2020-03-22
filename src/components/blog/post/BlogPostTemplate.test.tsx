@@ -4,7 +4,6 @@ import { render, screen } from '@testing-library/react';
 
 import { BlogPostTemplate } from './BlogPostTemplate';
 import { HTMLContent } from '../../common/Content';
-import HelmetHead from '../../common/Seo';
 
 const post = {
     html: '<p></p>',
@@ -22,7 +21,6 @@ it('Should render blog post', () => {
             content={post.html}
             contentComponent={HTMLContent}
             description={post.frontmatter.description}
-            helmet={<HelmetHead title={post.frontmatter.title} />}
             tags={post.frontmatter.tags}
             title={post.frontmatter.title}
             featuredimage={post.frontmatter.featuredimage}

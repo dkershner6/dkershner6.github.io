@@ -4,14 +4,15 @@ import GlobalContext, { initializeGlobalContext } from './GlobalContext';
 import Layout from './Layout';
 
 interface ISiteWrapper {
+    title?: string;
     children?: unknown;
 }
 
 const SiteWrapper = (props: ISiteWrapper) => {
-    const { children } = props;
+    const { children, title } = props;
     return (
         <GlobalContext.Provider value={initializeGlobalContext()}>
-            <Layout>{children}</Layout>
+            <Layout title={title}>{children}</Layout>
         </GlobalContext.Provider>
     );
 };

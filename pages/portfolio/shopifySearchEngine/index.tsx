@@ -5,7 +5,7 @@ import SiteWrapper from '../../../src/components/common/SiteWrapper';
 
 const ShopifySearchEngine = () => {
     return (
-        <SiteWrapper>
+        <SiteWrapper title="Shopify Search Engine">
             <Portfolio projectName="shopifySearchEngine" />
         </SiteWrapper>
     );

@@ -5,7 +5,7 @@ import SiteWrapper from '../../../src/components/common/SiteWrapper';
 
 const EnterpriseMarketplace = () => {
     return (
-        <SiteWrapper>
+        <SiteWrapper title={'Enterprise Marketplace'}>
             <Portfolio projectName="enterpriseMarketplace" />
         </SiteWrapper>
     );

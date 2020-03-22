@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { Container, Row, Col, ButtonGroup, Button } from 'react-bootstrap';
-import HelmetHead from '../common/Seo';
 
 import CoverLetterTab from './CoverLetterTab';
 import ResumeTab from './ResumeTab';
@@ -43,7 +42,6 @@ const Resume = (props: IResume) => {
     } else {
         return (
             <Container className="mt-5">
-                <HelmetHead title={`Resume for ${properCase(company)} | DKershner.com`} />
                 <Row className="justify-content-center">
                     <Col xs="auto">
                         <ButtonGroup>
@@ -62,7 +60,7 @@ const Resume = (props: IResume) => {
     }
 };
 
-const TabChooser = props => {
+const TabChooser = (props) => {
     if (props.activeTab === 'cover') {
         return <CoverLetterTab company={props.company} />;
     } else {

@@ -5,7 +5,7 @@ import SiteWrapper from '../../../src/components/common/SiteWrapper';
 
 const CodeChallenges = () => {
     return (
-        <SiteWrapper>
+        <SiteWrapper title="Code Challenges">
             <Portfolio projectName="codeChallenges" />
         </SiteWrapper>
     );

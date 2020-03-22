@@ -1,9 +1,7 @@
 import React from 'react';
 import _, { startCase } from 'lodash';
-import { useRouter } from 'next/router';
 import blogRoll from '../../../public/blog/summary.json';
 import BlogListPage from '../../../src/components/blog/listPage/BlogListTemplate';
-import HelmetHead from '../../../src/components/common/Seo';
 import SiteWrapper from '../../../src/components/common/SiteWrapper';
 import { IBlogRollPost } from '../../../src/components/blog/listPage/IBlogRollPost';
 
@@ -23,12 +21,9 @@ const BlogIndexPage = ({ tag }: IBlogIndexPage) => {
         .filter((post) => post.tags.includes(tag));
 
     return (
-        <>
-            <HelmetHead title={tag !== undefined ? `Blog - ${startCase(tag.toLowerCase())}` : 'Blog'} />
-            <SiteWrapper>
-                <BlogListPage posts={posts} tag={tag} />
-            </SiteWrapper>
-        </>
+        <SiteWrapper title={tag !== undefined ? `Blog - ${startCase(tag.toLowerCase())}` : 'Blog'}>
+            <BlogListPage posts={posts} tag={tag} />
+        </SiteWrapper>
     );
 };
 

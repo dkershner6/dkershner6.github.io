@@ -10,18 +10,16 @@ export interface IBlogPostTemplate {
     description: string;
     tags: string[];
     title: string;
-    helmet?: unknown;
     featuredimage?: string;
 }
 
 export const BlogPostTemplate = (props: IBlogPostTemplate) => {
-    const { content, contentComponent, helmet } = props;
+    const { content, contentComponent } = props;
     const PostContent = contentComponent || Content;
     return (
         <>
             <BlogPostHeader {...props} />
             <Container className="mt-5">
-                {helmet || ''}
                 <Row className="mt-5">
                     <Col className="markdown-body">
                         <PostContent content={content} />

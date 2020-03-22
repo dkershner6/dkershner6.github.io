@@ -9,7 +9,7 @@ interface IHomePage {
 const HomePage = ({ data }: IHomePage) => {
     return (
         <SiteWrapper>
-            <HomePageTemplate image={data.image} title={data.title} heading={data.heading} subheading={data.subheading} />
+            <HomePageTemplate image={data.image} heading={data.heading} subheading={data.subheading} />
         </SiteWrapper>
     );
 };

@@ -1,28 +1,29 @@
 import React, { useContext } from 'react';
-import { Helmet } from 'react-helmet';
+import Head from 'next/head';
 import Footer from './Footer';
 import Navigation from './Navigation';
 
-import { ISiteMetadata } from './SiteMetadata';
 import GlobalContext from './GlobalContext';
 
 interface ILayout {
-    siteMetadata?: ISiteMetadata;
+    title?: string;
     children: unknown;
 }
 
 const Layout = (props: ILayout) => {
-    const { children } = props;
+    const { children, title } = props;
     const { siteMetadata } = useContext(GlobalContext);
-    const { title, description } = siteMetadata;
+    const { description } = siteMetadata;
     const urlParams = typeof window !== 'undefined' ? new URLSearchParams(window.location.search) : undefined;
     const format = urlParams === undefined ? '' : urlParams.get('format');
 
     return (
         <div>
-            <Helmet>
+            <Head>
                 <html lang="en" />
-                <title data-testid="pageTitle">{title}</title>
+                <title data-testid="pageTitle">
+                    {(title ?? siteMetadata.title) === siteMetadata.title ? siteMetadata.title : `${title} | ${siteMetadata.title}`}
+                </title>
                 <meta name="description" content={description} />
 
                 <link rel="apple-touch-icon" sizes="180x180" href={`/img/apple-touch-icon.png`} />
@@ -36,7 +37,7 @@ const Layout = (props: ILayout) => {
                 <meta property="og:title" content={title} />
                 <meta property="og:url" content="/" />
                 <meta property="og:image" content={`/img/og-image.jpg`} />
-            </Helmet>
+            </Head>
             <PageLayout format={format}>{children}</PageLayout>
         </div>
     );
