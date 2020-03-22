@@ -1,9 +1,9 @@
 backend:
   name: github
   repo: dkershner6/dkershner6.github.io
-  branch: next
+  branch: master
 
-site_url: https://dkershner.com
+site_url: https://clever-darwin-afe6e0.netlify.com
 display_url: https://dkershner.com
 publish_mode: editorial_workflow
 media_folder: public/img
