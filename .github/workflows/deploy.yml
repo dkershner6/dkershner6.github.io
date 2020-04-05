@@ -5,7 +5,7 @@ on:
     branches: [master]
 
 jobs:
-  build-deploy:
+  build:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -16,13 +16,27 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: 12.x
-      - run: npm i
+      - run: npm ci
       - run: npm run lint
       - run: npm test
-      - run: npm run build-export
+      - run: npm run build
+      - run: npm run export
         env:
           CI: true
-      - name: Build and Deploy 🚀
+      - name: Upload build artifact
+        uses: actions/upload-artifact@v1
+        with:
+          name: export
+          path: out
+  deploy:
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Download build artifact
+        uses: actions/download-artifact@v1
+        with:
+          name: export
+      - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@releases/v3
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
