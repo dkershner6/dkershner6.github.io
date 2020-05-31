@@ -4,6 +4,7 @@ import path from 'path';
 import { NextPageContext } from 'next';
 import technologies from '../data/technologiesData';
 import blogRoll from '../../public/blog/summary.json';
+import pageList from '../../public/pagelist.json';
 
 const createSitemap = (paths: string[]): string => {
     return `<?xml version="1.0" encoding="UTF-8"?>
@@ -22,16 +23,14 @@ const Sitemap = (): ReactElement => {
 };
 
 export const getServerSideProps = async ({ res }: NextPageContext): Promise<{ props: Record<string, unknown> }> => {
-    const contentBasePath = path.join(process.cwd(), 'content');
-    const posts = await globby([`${contentBasePath}/**/*.md`]);
+    const postFilePaths = Object.keys(blogRoll.fileMap);
 
-    const mappedPosts = posts.map((post) => {
-        const path = post.replace(contentBasePath, '').replace('.md', '');
-        return `/blog${path}`;
+    const mappedPosts = postFilePaths.map((post) => {
+        const slug = post.replace('public/blog/', '').replace('.json', '');
+        return `/blog/${slug}`;
     });
 
-    const filePaths = Object.keys(blogRoll.fileMap);
-    const allTagsUsed = filePaths.flatMap((filePath) => {
+    const allTagsUsed = postFilePaths.flatMap((filePath) => {
         const blogRollPost = blogRoll.fileMap[filePath];
         return blogRollPost.tags;
     });
@@ -40,8 +39,7 @@ export const getServerSideProps = async ({ res }: NextPageContext): Promise<{ pr
 
     const mappedTechnologies = technologies.map((technology) => `/technology/${technology.id}`);
 
-    const pagesBasePath = path.join(process.cwd(), 'src', 'pages');
-    const pages = await globby([`${pagesBasePath}/**/*{.tsx,.mdx}`, `!${pagesBasePath}/*.xml.tsx`, `!${pagesBasePath}/_*.tsx`, `!${pagesBasePath}/api`]);
+    const pages = pageList;
 
     pages.push(...mappedPosts);
     pages.push(...mappedTags);
@@ -51,7 +49,6 @@ export const getServerSideProps = async ({ res }: NextPageContext): Promise<{ pr
         .filter((page) => !page.endsWith('404.tsx') && !page.endsWith('].tsx'))
         .map((page) => {
             return page
-                .replace(pagesBasePath, '')
                 .replace('.tsx', '')
                 .replace('.mdx', '')
                 .replace('/index', '');
