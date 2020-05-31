@@ -1,5 +1,6 @@
 import React, { ReactElement } from 'react';
 import globby from 'globby';
+import path from 'path';
 import { NextPageContext } from 'next';
 import technologies from '../data/technologiesData';
 import blogRoll from '../../public/blog/summary.json';
@@ -21,10 +22,11 @@ const Sitemap = (): ReactElement => {
 };
 
 export const getServerSideProps = async ({ res }: NextPageContext): Promise<{ props: Record<string, unknown> }> => {
-    const posts = await globby(['content/**/*.md']);
+    const contentBasePath = path.join(process.cwd(), 'content');
+    const posts = await globby([`${contentBasePath}/**/*.md`]);
 
     const mappedPosts = posts.map((post) => {
-        const path = post.replace('content', '').replace('.md', '');
+        const path = post.replace(contentBasePath, '').replace('.md', '');
         return `/blog${path}`;
     });
 
@@ -38,7 +40,9 @@ export const getServerSideProps = async ({ res }: NextPageContext): Promise<{ pr
 
     const mappedTechnologies = technologies.map((technology) => `/technology/${technology.id}`);
 
-    const pages = await globby(['pages/**/*{.tsx,.mdx}', '!pages/_*.tsx', '!pages/api']);
+    const pagesBasePath = path.join(process.cwd(), 'src', 'pages');
+    const pages = await globby([`${pagesBasePath}/**/*{.tsx,.mdx}`, `!${pagesBasePath}/*.xml.tsx`, `!${pagesBasePath}/_*.tsx`, `!${pagesBasePath}/api`]);
+
     pages.push(...mappedPosts);
     pages.push(...mappedTags);
     pages.push(...mappedTechnologies);
@@ -47,7 +51,7 @@ export const getServerSideProps = async ({ res }: NextPageContext): Promise<{ pr
         .filter((page) => !page.endsWith('404.tsx') && !page.endsWith('].tsx'))
         .map((page) => {
             return page
-                .replace('pages', '')
+                .replace(pagesBasePath, '')
                 .replace('.tsx', '')
                 .replace('.mdx', '')
                 .replace('/index', '');
