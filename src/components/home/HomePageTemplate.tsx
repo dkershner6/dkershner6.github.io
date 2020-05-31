@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { ReactElement } from 'react';
 
 import About from './About';
 import PortfolioMenu from '../portfolio/PortfolioMenu';
@@ -11,11 +11,9 @@ export interface IHomePageTemplate {
     subheading: string;
 }
 
-export const HomePageTemplate = (props: IHomePageTemplate) => (
+export const HomePageTemplate = (props: IHomePageTemplate): ReactElement => (
     <>
         <Hero {...props} />
-        <About />
-        <PortfolioMenu />
         <Social />
     </>
 );
