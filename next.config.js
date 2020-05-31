@@ -1,5 +1,3 @@
-const webpack = require('webpack');
-require('dotenv').config();
 const generatePageList = require('./scripts/generatePageList');
 
 module.exports = {
