@@ -43,17 +43,4 @@ describe('Home', () => {
             data.subheading
         );
     });
-
-    it('has other components', async () => {
-        render(
-            <HomePageTemplate
-                image={data.image}
-                heading={data.heading}
-                subheading={data.subheading}
-            />
-        );
-
-        expect(screen.getByTestId('about')).toBeDefined();
-        expect(screen.getByTestId('portfolio-menu')).toBeDefined();
-    });
 });

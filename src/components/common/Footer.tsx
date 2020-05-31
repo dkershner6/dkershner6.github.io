@@ -1,17 +1,12 @@
-import React, { useContext } from 'react';
+import React, { useContext, ReactElement } from 'react';
 import { Container } from 'react-bootstrap';
 import { Jumbotron } from 'react-bootstrap';
-import GlobalContext from './GlobalContext';
 
-const Footer = () => {
-    const { siteMetadata } = useContext(GlobalContext);
+const Footer = (): ReactElement => {
     return (
         <footer>
             <Jumbotron fluid className="mt-5">
                 <Container>
-                    <p className="text-muted" data-testid="pageTitleTest">
-                        Page Title: {siteMetadata.title}
-                    </p>
                     <p className="text-muted">
                         This site was built using{' '}
                         <a

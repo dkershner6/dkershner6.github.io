@@ -1,15 +1,14 @@
-import React from 'react';
+import React, { ReactElement } from 'react';
 import HomePage from '../components/home/HomePage';
 
 const homePageData = {
     title: 'Derek Kershner',
     image: '/img/hero-background.jpg',
     heading: 'Derek Kershner',
-    subheading:
-        'Full-stack Software Engineer, DevOps Practitioner, & Cloud Architect'
+    subheading: 'Senior Cloud Architect - AWS / Azure / Firebase'
 };
 
-const IndexPage = () => {
+const IndexPage = (): ReactElement => {
     return <HomePage data={homePageData} />;
 };
 

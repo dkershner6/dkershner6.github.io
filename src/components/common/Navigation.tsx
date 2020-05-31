@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { ReactElement } from 'react';
 import { Nav, Navbar, NavDropdown } from 'react-bootstrap';
 
-const Navigation = () => {
+const Navigation = (): ReactElement => {
     return (
         <Navbar bg="dark" variant="dark" collapseOnSelect expand="lg">
             <Navbar.Brand href="/">Derek Kershner</Navbar.Brand>
@@ -12,21 +12,15 @@ const Navigation = () => {
             <Navbar.Collapse id="navbar-collapse">
                 <Nav className="mr-auto">
                     <Nav.Link href="/">Home</Nav.Link>
-                    <Nav.Link href="/#about">About</Nav.Link>
+                    <Nav.Link href="https://github.dkershner.com">
+                        Manual GitHub Actions
+                    </Nav.Link>
                     <NavDropdown
-                        id="portfolio"
-                        title="Portfolio"
-                        href="/portfolio"
+                        id="githubActions"
+                        title="Custom GitHub Actions"
                     >
-                        <NavDropdown.Item href="/portfolio/codeChallenges">
-                            Code Challenges
-                        </NavDropdown.Item>
-                        <NavDropdown.Divider />
-                        <NavDropdown.Item href="/portfolio/enterpriseMarketplace">
-                            Enterprise Marketplace
-                        </NavDropdown.Item>
-                        <NavDropdown.Item href="/portfolio/shopifySearchEngine">
-                            Shopify Search Engine
+                        <NavDropdown.Item href="https://github.com/marketplace/actions/gitignore-parser">
+                            GitIgnore Parser
                         </NavDropdown.Item>
                     </NavDropdown>
                     <Nav.Link href="/blog">Blog</Nav.Link>

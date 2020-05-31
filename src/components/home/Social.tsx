@@ -1,9 +1,9 @@
-import React from 'react';
+import React, { ReactElement } from 'react';
 import { Container, Row, Col, Jumbotron, Button } from 'react-bootstrap';
 
-const Social = () => {
+const Social = (): ReactElement => {
     return (
-        <Jumbotron className="bg-secondary">
+        <Jumbotron id="social" className="bg-secondary">
             <Container className="mt-3">
                 <Row className="mt-3 text-center">
                     <Col>
