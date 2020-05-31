@@ -1,6 +1,4 @@
 import React, { ReactElement } from 'react';
-import globby from 'globby';
-import path from 'path';
 import { NextPageContext } from 'next';
 import technologies from '../data/technologiesData';
 import blogRoll from '../../public/blog/summary.json';
