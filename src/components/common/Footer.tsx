@@ -33,11 +33,11 @@ const Footer = () => {
                         <a href="https://react-bootstrap.github.io/" target="_blank" rel="noopener noreferrer">
                             React Bootstrap
                         </a>{' '}
-                        to skin it. It's hosted on{' '}
+                        to skin it. It's hosted and Server Side Rendered on{' '}
                         <a href="https://github.com/" target="_blank" rel="noopener noreferrer">
-                            GitHub Pages
+                            Vercel
                         </a>
-                        , feel free to have a look at the{' '}
+                        , and uses GitHub actions for CI/CD, feel free to have a look at the{' '}
                         <a href="https://github.com/dkershner6/dkershner.com/" target="_blank" rel="noopener noreferrer">
                             open source code
                         </a>
