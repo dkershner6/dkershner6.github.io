@@ -12,20 +12,20 @@ const inseegoResume: IResume = {
                 {
                     name: 'React / JS',
                     score: 5,
-                    link: 'https://reactjs.org/',
+                    link: 'https://reactjs.org/'
                 },
                 {
                     name: 'TypeScript / JS',
                     bolded: true,
                     score: 5,
-                    link: 'https://www.typescriptlang.org/',
+                    link: 'https://www.typescriptlang.org/'
                 },
                 {
                     name: 'Shopify / Liquid',
                     score: 4,
-                    link: 'https://shopify.github.io/liquid/',
-                },
-            ],
+                    link: 'https://shopify.github.io/liquid/'
+                }
+            ]
         },
         {
             name: 'Back-End',
@@ -33,19 +33,19 @@ const inseegoResume: IResume = {
                 {
                     name: 'ASP.Net Core / C#',
                     score: 5,
-                    link: 'https://dotnet.microsoft.com/apps/aspnet',
+                    link: 'https://dotnet.microsoft.com/apps/aspnet'
                 },
                 {
                     name: 'Node / JS',
                     score: 4,
-                    link: 'https://nodejs.org/en/',
+                    link: 'https://nodejs.org/en/'
                 },
                 {
                     name: 'Flask / Python',
                     score: 3,
-                    link: 'https://www.python.org/',
-                },
-            ],
+                    link: 'https://www.python.org/'
+                }
+            ]
         },
         {
             name: 'Clouds',
@@ -53,21 +53,21 @@ const inseegoResume: IResume = {
                 {
                     name: 'Azure',
                     score: 5,
-                    link: 'https://azure.microsoft.com/en-us/',
+                    link: 'https://azure.microsoft.com/en-us/'
                 },
                 {
                     name: 'Google',
                     bolded: true,
                     score: 3,
-                    link: 'https://cloud.google.com/',
+                    link: 'https://cloud.google.com/'
                 },
                 {
                     name: 'AWS',
                     bolded: true,
                     score: 2,
-                    link: 'https://aws.amazon.com/',
-                },
-            ],
+                    link: 'https://aws.amazon.com/'
+                }
+            ]
         },
         {
             name: 'Deployment / DevOps',
@@ -76,72 +76,72 @@ const inseegoResume: IResume = {
                 {
                     name: 'Azure DevOps / VSTS',
                     score: 5,
-                    link: 'https://azure.microsoft.com/en-us/services/devops/',
+                    link: 'https://azure.microsoft.com/en-us/services/devops/'
                 },
                 {
                     name: 'Kubernetes / Docker',
                     score: 4,
-                    link: 'https://kubernetes.io/',
-                },
-            ],
-        },
+                    link: 'https://kubernetes.io/'
+                }
+            ]
+        }
     ],
     otherSkills: [
         {
-            name: 'Application Design / Microservices',
+            name: 'Application Design / Microservices'
         },
         {
-            name: 'Serverless Functions',
+            name: 'Serverless Functions'
         },
         {
             name: 'RESTful APIs - Build / Consume',
-            bolded: true,
+            bolded: true
         },
         {
             name: 'Project Planning & Management / Agile',
-            bolded: true,
+            bolded: true
         },
         {
             name: 'Entity Framework / SQL / RDBMS',
-            bolded: false,
+            bolded: false
         },
         {
             name: 'NoSQL / JSON',
-            bolded: false,
+            bolded: false
         },
         {
             name: 'Continuous Integration / Continuous Deployment',
-            bolded: false,
+            bolded: false
         },
         {
             name: 'Search Engine Optimization',
-            bolded: false,
+            bolded: false
         },
         {
             name: 'Data Analysis / Big Data',
-            bolded: false,
+            bolded: false
         },
         {
             name: 'User Interface Design',
-            bolded: true,
+            bolded: true
         },
         {
             name: 'Git / Version Control',
-            bolded: true,
+            bolded: true
         },
         {
             name: 'Server Administration',
-            bolded: true,
-        },
+            bolded: true
+        }
     ],
     spaces: makeRange(0, 11),
     references: [
         {
             name: 'DelRay Davis',
             link: 'https://www.linkedin.com/in/delraydavis/',
-            description: 'DMS Engineer at Inseego',
-        },
-    ],
+            description: 'DMS Engineer at Inseego'
+        }
+    ]
 };
 
 export default inseegoResume;

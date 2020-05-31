@@ -5,10 +5,14 @@ interface IGlobalContext {
     siteMetadata: ISiteMetadata;
 }
 
-const initialSiteMetadata = getSiteMetadata() || { siteUrl: undefined, title: undefined, description: undefined };
+const initialSiteMetadata = getSiteMetadata() || {
+    siteUrl: undefined,
+    title: undefined,
+    description: undefined
+};
 
 export const initializeGlobalContext = (): IGlobalContext => ({
-    siteMetadata: initialSiteMetadata,
+    siteMetadata: initialSiteMetadata
 });
 
 const GlobalContext = React.createContext(initializeGlobalContext());

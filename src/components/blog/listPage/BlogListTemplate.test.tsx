@@ -14,11 +14,13 @@ const posts = [
         featuredimage: '/img/servers.jpg',
         tags: ['azureFunctions', 'azure', 'kubernetes'],
 
-        preview: 'Note\n\nThis comparison applies to functions on v2 (.Net Core). There is a large difference in performance',
+        preview:
+            'Note\n\nThis comparison applies to functions on v2 (.Net Core). There is a large difference in performance',
         dir: 'public/blog',
         base: 'azure-functions-consumption-vs-app-service-vs-kubernetes.json',
         ext: '.json',
-        sourceBase: 'azure-functions-consumption-vs-app-service-vs-kubernetes.md',
+        sourceBase:
+            'azure-functions-consumption-vs-app-service-vs-kubernetes.md',
         sourceExt: '.md'
     }
 ];

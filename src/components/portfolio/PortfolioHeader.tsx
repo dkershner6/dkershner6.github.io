@@ -16,8 +16,17 @@ const PortfolioHeader = (props: IPortfolio) => {
             minHeight={menu || project.short ? '500px' : '900px'}
             isFixed={true}
             isCentered={true}
-            transitionDuration={600}>
-            <h1 className={menu ? 'text-center text-white' : 'display-4 text-center text-white'}>{project.name}</h1>
+            transitionDuration={600}
+        >
+            <h1
+                className={
+                    menu
+                        ? 'text-center text-white'
+                        : 'display-4 text-center text-white'
+                }
+            >
+                {project.name}
+            </h1>
             <Container>
                 <Row className="justify-content-center">
                     <Col className="text-left text-white" xl="9">
@@ -29,7 +38,13 @@ const PortfolioHeader = (props: IPortfolio) => {
                         </ul>
                     </Col>
                 </Row>
-                <Row className={menu ? 'justify-content-center' : 'justify-content-center mt-5'}>
+                <Row
+                    className={
+                        menu
+                            ? 'justify-content-center'
+                            : 'justify-content-center mt-5'
+                    }
+                >
                     <Col className="text-center">
                         <PortfolioHeaderButton {...props} />
                     </Col>
@@ -43,15 +58,29 @@ const PortfolioHeaderButton = (props: IPortfolio) => {
     const { project, menu } = props;
     if (menu) {
         return (
-            <Button variant={project.bootstrapVariant} href={`/portfolio/${project.id}`}>
-                {project.id === 'codeChallenges' ? 'See the List' : 'See Complete Application Design'}
+            <Button
+                variant={project.bootstrapVariant}
+                href={`/portfolio/${project.id}`}
+            >
+                {project.id === 'codeChallenges'
+                    ? 'See the List'
+                    : 'See Complete Application Design'}
             </Button>
         );
     } else {
         return (
             <ScrollLink to="design" smooth={true}>
                 <Button variant={project.bootstrapVariant}>
-                    <Arrow direction="down" shaftWidth={25} shaftLength={25} headWidth={50} headLength={25} fill="white" stroke="white" strokeWidth={1} />
+                    <Arrow
+                        direction="down"
+                        shaftWidth={25}
+                        shaftLength={25}
+                        headWidth={50}
+                        headLength={25}
+                        fill="white"
+                        stroke="white"
+                        strokeWidth={1}
+                    />
                 </Button>
             </ScrollLink>
         );

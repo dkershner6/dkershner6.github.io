@@ -7,7 +7,12 @@ import { projects } from '../../data/Projects';
 const PortfolioMenu = (): ReactElement => {
     return (
         <>
-            <Jumbotron id="portfolio" data-testid="portfolio-menu" fluid className="bg-primary text-white">
+            <Jumbotron
+                id="portfolio"
+                data-testid="portfolio-menu"
+                fluid
+                className="bg-primary text-white"
+            >
                 <h3 className="display-4 text-center">
                     <a className="text-light" href="/portfolio">
                         Portfolio

@@ -17,11 +17,22 @@ const BlogListTemplate = (props: IBlogListTemplate) => {
     const { tag, posts } = props;
     const hasTag = tag !== undefined;
     const technology = hasTag ? getTechnologyById(tag) : undefined;
-    const displayTag = technology === undefined ? (hasTag ? startCase(tag.toLowerCase()) : undefined) : technology.label;
+    const displayTag =
+        technology === undefined
+            ? hasTag
+                ? startCase(tag.toLowerCase())
+                : undefined
+            : technology.label;
 
     return (
         <>
-            <LazyHero imageSrc="/img/blog-index.jpg" minHeight={'30vh'} isFixed={true} isCentered={true} transitionDuration={600}>
+            <LazyHero
+                imageSrc="/img/blog-index.jpg"
+                minHeight={'30vh'}
+                isFixed={true}
+                isCentered={true}
+                transitionDuration={600}
+            >
                 <Container>
                     <h1>{hasTag ? `Blog - ${displayTag}` : 'Blog'}</h1>
 

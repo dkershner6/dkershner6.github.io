@@ -16,7 +16,11 @@ const CodeChallenges = () => {
         <Container id="design" className="mt-5">
             <Row>
                 {codeChallenges.map((challenge, index) => (
-                    <CodeChallengeDisplay key={index} challenge={challenge} count={codeChallenges.length} />
+                    <CodeChallengeDisplay
+                        key={index}
+                        challenge={challenge}
+                        count={codeChallenges.length}
+                    />
                 ))}
             </Row>
         </Container>
@@ -29,8 +33,13 @@ const CodeChallengeDisplay = (props: ICodeChallengeDisplay) => {
         <Col className="mt-4" xs="12" lg={count === 1 ? '12' : '6'}>
             <Card>
                 <Card.Header as="h3">
-                    <a href={challenge.link} target="_blank" rel="noopener noreferrer">
-                        {challenge.name} <TechnologyBadge technology={challenge.technology} />
+                    <a
+                        href={challenge.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        {challenge.name}{' '}
+                        <TechnologyBadge technology={challenge.technology} />
                     </a>
                 </Card.Header>
                 <Card.Body>

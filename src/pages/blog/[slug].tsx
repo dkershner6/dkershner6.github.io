@@ -32,7 +32,11 @@ export const getStaticPaths = async () => {
 
     return {
         fallback: false,
-        paths: filePaths.map((filePath) => ({ params: { slug: filePath.replace('public/blog/', '').replace('.json', '') } }))
+        paths: filePaths.map((filePath) => ({
+            params: {
+                slug: filePath.replace('public/blog/', '').replace('.json', '')
+            }
+        }))
     };
 };
 

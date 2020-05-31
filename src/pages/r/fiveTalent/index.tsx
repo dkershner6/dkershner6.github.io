@@ -8,7 +8,9 @@ const company = 'fiveTalent';
 
 const ResumeDisplay = () => {
     return (
-        <SiteWrapper title={`Resume for ${properCase(company)} | DKershner.com`}>
+        <SiteWrapper
+            title={`Resume for ${properCase(company)} | DKershner.com`}
+        >
             <Resume company={company} />
         </SiteWrapper>
     );

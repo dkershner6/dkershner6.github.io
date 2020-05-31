@@ -27,5 +27,7 @@ it('Should render blog post', () => {
         />
     );
 
-    expect(screen.getByTestId('title')).toHaveTextContent(post.frontmatter.title);
+    expect(screen.getByTestId('title')).toHaveTextContent(
+        post.frontmatter.title
+    );
 });

@@ -22,8 +22,14 @@ export const PortfolioDesignHeader = (props: IPortfolio) => {
             {project.liveExampleService !== undefined && (
                 <Row className="text-center">
                     <Col>
-                        <ScrollLink to={project.liveExampleService.id} smooth={true}>
-                            <Button variant="info">See Live Examples in {project.liveExampleService.name}</Button>
+                        <ScrollLink
+                            to={project.liveExampleService.id}
+                            smooth={true}
+                        >
+                            <Button variant="info">
+                                See Live Examples in{' '}
+                                {project.liveExampleService.name}
+                            </Button>
                         </ScrollLink>
                     </Col>
                 </Row>

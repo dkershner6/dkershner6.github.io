@@ -21,7 +21,10 @@ const CoverLetter = (props: ICoverLetter) => {
             <Col>
                 <hr />
                 <GetCoverLetter {...props} />
-                <p>I look forward to the challenge. Thank you for your consideration.</p>
+                <p>
+                    I look forward to the challenge. Thank you for your
+                    consideration.
+                </p>
                 <h5>Sincerely,</h5>
                 <h4 className="mt-2">Derek Kershner</h4>
                 <hr />

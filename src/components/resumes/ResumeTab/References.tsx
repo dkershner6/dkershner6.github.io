@@ -21,17 +21,28 @@ const References = (props: IReferences) => {
                     <ListGroup className="list-group-flush">
                         {resume.references.map((reference, index) => (
                             <ListGroupItem key={index}>
-                                <a href={reference.link} target="_blank" rel="noopener noreferrer">
+                                <a
+                                    href={reference.link}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                >
                                     {reference.name}
                                 </a>{' '}
                                 - {reference.description}
                             </ListGroupItem>
                         ))}
-                        <ListGroupItem>{resume.references.length > 0 ? 'More r' : 'R'}eferences available upon request.</ListGroupItem>
+                        <ListGroupItem>
+                            {resume.references.length > 0 ? 'More r' : 'R'}
+                            eferences available upon request.
+                        </ListGroupItem>
                     </ListGroup>
                     <Card.Footer>
                         Recommendations can be found on{' '}
-                        <a href="https://www.linkedin.com/in/derek-kershner-54b3392/" target="_blank" rel="noopener noreferrer">
+                        <a
+                            href="https://www.linkedin.com/in/derek-kershner-54b3392/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
                             LinkedIn
                         </a>
                         .

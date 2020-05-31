@@ -14,7 +14,11 @@ const Portfolio = (props: IPortfolio) => {
     return (
         <>
             <PortfolioHeader project={project} menu={false} />
-            {project.id === 'codeChallenges' ? <CodeChallenges /> : <PortfolioDesign project={project} menu={false} />}
+            {project.id === 'codeChallenges' ? (
+                <CodeChallenges />
+            ) : (
+                <PortfolioDesign project={project} menu={false} />
+            )}
         </>
     );
 };

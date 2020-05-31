@@ -11,7 +11,11 @@ const BlogRollPost = (props) => {
             <Row>
                 <Col xs="6">
                     <a href={`/blog/${post.id}`}>
-                        <img width="100%" src={post.featuredimage} alt={`featured image thumbnail for post ${post.title}`} />
+                        <img
+                            width="100%"
+                            src={post.featuredimage}
+                            alt={`featured image thumbnail for post ${post.title}`}
+                        />
                     </a>
                 </Col>
                 <Col xs="6">
@@ -20,7 +24,13 @@ const BlogRollPost = (props) => {
                     </a>
                     <p>{post.date}</p>
                     <p className="small">{post.description}</p>
-                    <p>{post?.tags?.length ? post.tags.map((tag, index) => <BlogPostTag key={index} tag={tag} />) : ''}</p>
+                    <p>
+                        {post?.tags?.length
+                            ? post.tags.map((tag, index) => (
+                                  <BlogPostTag key={index} tag={tag} />
+                              ))
+                            : ''}
+                    </p>
                 </Col>
             </Row>
         </Col>

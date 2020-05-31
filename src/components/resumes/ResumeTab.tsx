@@ -18,7 +18,10 @@ export interface IResumeTab {
 
 const ResumeTab = (props: IResumeTab) => {
     const resume: IResume = getResume(props.company);
-    const urlParams = typeof window !== 'undefined' ? new URLSearchParams(window.location.search) : undefined;
+    const urlParams =
+        typeof window !== 'undefined'
+            ? new URLSearchParams(window.location.search)
+            : undefined;
     const format = urlParams === undefined ? '' : urlParams.get('format');
 
     if (resume === undefined) {
@@ -37,7 +40,11 @@ const ResumeTab = (props: IResumeTab) => {
                 <ResumeHeader {...props} />
                 <Objective {...props} resume={resume} />
                 <Skills {...props} resume={resume} format={format} />
-                {format === 'print' || (format === 'printCombined' && resume.spaces.map((space, index) => <br key={index} />))}
+                {format === 'print' ||
+                    (format === 'printCombined' &&
+                        resume.spaces.map((space, index) => (
+                            <br key={index} />
+                        )))}
                 <Experience />
                 <Education />
                 <References {...props} resume={resume} />

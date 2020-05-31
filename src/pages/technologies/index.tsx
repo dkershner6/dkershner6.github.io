@@ -24,11 +24,17 @@ const TechnologiesPage = () => {
                 <Row className="mt-3">
                     <Col>
                         <ul>
-                            {technologies.sort(sortByAlpha).map((technology) => (
-                                <li key={technology.id}>
-                                    <a href={`/technologies/${technology.id}`}>{technology.label}</a>
-                                </li>
-                            ))}
+                            {technologies
+                                .sort(sortByAlpha)
+                                .map((technology) => (
+                                    <li key={technology.id}>
+                                        <a
+                                            href={`/technologies/${technology.id}`}
+                                        >
+                                            {technology.label}
+                                        </a>
+                                    </li>
+                                ))}
                         </ul>
                     </Col>
                 </Row>

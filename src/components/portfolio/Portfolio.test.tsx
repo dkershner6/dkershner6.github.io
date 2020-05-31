@@ -1,11 +1,18 @@
 import React from 'react';
 import '@testing-library/jest-dom/extend-expect';
-import { render, screen, fireEvent, waitForDomChange } from '@testing-library/react';
+import {
+    render,
+    screen,
+    fireEvent,
+    waitForDomChange
+} from '@testing-library/react';
 
 import Portfolio from './Portfolio';
 
 it('Should render', async () => {
-    const { container } = render(<Portfolio projectName="enterpriseMarketplace" />);
+    const { container } = render(
+        <Portfolio projectName="enterpriseMarketplace" />
+    );
 
     expect(container.querySelector('h1')).toBeTruthy();
 });

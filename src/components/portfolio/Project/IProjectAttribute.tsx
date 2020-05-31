@@ -7,12 +7,17 @@ export default interface IProjectAttribute {
     link?: string;
 }
 
-export const createAttributeFromTechnology = (technologyId: string): IProjectAttribute => {
-    const tempTechnologies = technologies.filter((technology) => technology.id === technologyId);
+export const createAttributeFromTechnology = (
+    technologyId: string
+): IProjectAttribute => {
+    const tempTechnologies = technologies.filter(
+        (technology) => technology.id === technologyId
+    );
     if (tempTechnologies.length > 0) {
         const technology = tempTechnologies[0];
         const attribute: IProjectAttribute = {
-            name: technology.type === 'deployment' ? 'Deployment' : 'Technology',
+            name:
+                technology.type === 'deployment' ? 'Deployment' : 'Technology',
             value: technology.label,
             link: `/technologies/${technology.type}/${technology.id}`
         };
@@ -23,11 +28,15 @@ export const createAttributeFromTechnology = (technologyId: string): IProjectAtt
     }
 };
 
-export const getTechnologiesFromAttributes = (attributes: IProjectAttribute[]): ITechnology[] => {
+export const getTechnologiesFromAttributes = (
+    attributes: IProjectAttribute[]
+): ITechnology[] => {
     const returnTechnologies = [];
 
     attributes.forEach((attribute) => {
-        const tempTechs = technologies.filter((technology) => technology.label === attribute.value);
+        const tempTechs = technologies.filter(
+            (technology) => technology.label === attribute.value
+        );
         if (tempTechs.length > 0) {
             returnTechnologies.push(...tempTechs);
         }
