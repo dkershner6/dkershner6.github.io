@@ -1,0 +1,2 @@
+User-agent: *
+Sitemap: https://dkershner.com/sitemap.xml

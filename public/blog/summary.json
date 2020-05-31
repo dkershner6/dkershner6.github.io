@@ -1,5 +1,23 @@
 {
   "fileMap": {
+    "public/blog/azure-functions-serilog-gotchas.json": {
+      "templateKey": "BlogPostTemplate",
+      "title": "Azure Functions: Serilog Gotchas",
+      "date": "2019-07-01T23:59:00.000Z",
+      "description": "Serilog appears easy to use in Azure Functions, but apperances can be deceiving",
+      "featuredpost": false,
+      "featuredimage": "/img/logs.jpg",
+      "tags": [
+        "azure",
+        "azureFunctions"
+      ],
+      "preview": "Some Background\n\nAzure Functions have great struggles when it comes to clients not being created statically.",
+      "dir": "public/blog",
+      "base": "azure-functions-serilog-gotchas.json",
+      "ext": ".json",
+      "sourceBase": "azure-functions-serilog-gotchas.md",
+      "sourceExt": ".md"
+    },
     "public/blog/azure-functions-when-to-use-app-service-plan.json": {
       "templateKey": "BlogPostTemplate",
       "title": "Azure Functions: When to use App Service Plan",
@@ -18,41 +36,21 @@
       "sourceBase": "azure-functions-when-to-use-app-service-plan.md",
       "sourceExt": ".md"
     },
-    "public/blog/azure-functions-consumption-vs-app-service-vs-kubernetes.json": {
+    "public/blog/review-clean-code-by-robert-martin.json": {
       "templateKey": "BlogPostTemplate",
-      "title": "Azure Functions: Consumption vs App Service Plan vs Kubernetes",
-      "date": "2019-02-26T15:04:00.000Z",
-      "description": "When to choose which for optimal cost",
+      "title": "Review: Clean Code by Robert Martin",
+      "date": "2019-08-26T20:03:59.133Z",
+      "description": "A Handbook of Agile Software Craftsmanship",
       "featuredpost": false,
-      "featuredimage": "/img/servers.jpg",
+      "featuredimage": "/img/sky-space-milky-way-stars-110854.jpg",
       "tags": [
-        "azureFunctions",
-        "azure",
-        "kubernetes"
+        "learning"
       ],
-      "preview": "Note\n\nThis comparison applies to functions on v2 (.Net Core). There is a large difference in performance",
+      "preview": "Clean Code by Robert Martin\n\nThis book is broken down into 3 very, very distinct parts (not just my opinion,",
       "dir": "public/blog",
-      "base": "azure-functions-consumption-vs-app-service-vs-kubernetes.json",
+      "base": "review-clean-code-by-robert-martin.json",
       "ext": ".json",
-      "sourceBase": "azure-functions-consumption-vs-app-service-vs-kubernetes.md",
-      "sourceExt": ".md"
-    },
-    "public/blog/azure-functions-serilog-gotchas.json": {
-      "templateKey": "BlogPostTemplate",
-      "title": "Azure Functions: Serilog Gotchas",
-      "date": "2019-07-01T23:59:00.000Z",
-      "description": "Serilog appears easy to use in Azure Functions, but apperances can be deceiving",
-      "featuredpost": false,
-      "featuredimage": "/img/logs.jpg",
-      "tags": [
-        "azure",
-        "azureFunctions"
-      ],
-      "preview": "Some Background\n\nAzure Functions have great struggles when it comes to clients not being created statically.",
-      "dir": "public/blog",
-      "base": "azure-functions-serilog-gotchas.json",
-      "ext": ".json",
-      "sourceBase": "azure-functions-serilog-gotchas.md",
+      "sourceBase": "review-clean-code-by-robert-martin.md",
       "sourceExt": ".md"
     },
     "public/blog/azure-functions-limits-how-to-overcome.json": {
@@ -107,23 +105,6 @@
       "sourceBase": "software-developer-contractor-vs-in-house.md",
       "sourceExt": ".md"
     },
-    "public/blog/review-clean-code-by-robert-martin.json": {
-      "templateKey": "BlogPostTemplate",
-      "title": "Review: Clean Code by Robert Martin",
-      "date": "2019-08-26T20:03:59.133Z",
-      "description": "A Handbook of Agile Software Craftsmanship",
-      "featuredpost": false,
-      "featuredimage": "/img/sky-space-milky-way-stars-110854.jpg",
-      "tags": [
-        "learning"
-      ],
-      "preview": "Clean Code by Robert Martin\n\nThis book is broken down into 3 very, very distinct parts (not just my opinion,",
-      "dir": "public/blog",
-      "base": "review-clean-code-by-robert-martin.json",
-      "ext": ".json",
-      "sourceBase": "review-clean-code-by-robert-martin.md",
-      "sourceExt": ".md"
-    },
     "public/blog/why-typescript.json": {
       "templateKey": "BlogPostTemplate",
       "title": "Why TypeScript?",
@@ -140,6 +121,25 @@
       "base": "why-typescript.json",
       "ext": ".json",
       "sourceBase": "why-typescript.md",
+      "sourceExt": ".md"
+    },
+    "public/blog/azure-functions-consumption-vs-app-service-vs-kubernetes.json": {
+      "templateKey": "BlogPostTemplate",
+      "title": "Azure Functions: Consumption vs App Service Plan vs Kubernetes",
+      "date": "2019-02-26T15:04:00.000Z",
+      "description": "When to choose which for optimal cost",
+      "featuredpost": false,
+      "featuredimage": "/img/servers.jpg",
+      "tags": [
+        "azureFunctions",
+        "azure",
+        "kubernetes"
+      ],
+      "preview": "Note\n\nThis comparison applies to functions on v2 (.Net Core). There is a large difference in performance",
+      "dir": "public/blog",
+      "base": "azure-functions-consumption-vs-app-service-vs-kubernetes.json",
+      "ext": ".json",
+      "sourceBase": "azure-functions-consumption-vs-app-service-vs-kubernetes.md",
       "sourceExt": ".md"
     }
   },

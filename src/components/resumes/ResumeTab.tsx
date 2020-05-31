@@ -28,7 +28,7 @@ const ResumeTab = (props: IResumeTab) => {
                 <p>Loading...</p>
                 <Experience />
                 <Education />
-                <p>Loading...</p>>
+                <p>Loading...</p>
             </Container>
         );
     } else {
