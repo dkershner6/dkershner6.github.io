@@ -13,7 +13,10 @@ const Resume = (props: IResume) => {
     const [activeTab, setActiveTab] = useState('cover');
 
     const { company } = props;
-    const urlParams = typeof window !== 'undefined' ? new URLSearchParams(window.location.search) : undefined;
+    const urlParams =
+        typeof window !== 'undefined'
+            ? new URLSearchParams(window.location.search)
+            : undefined;
     const format = urlParams === undefined ? '' : urlParams.get('format');
 
     if (format === 'print') {
@@ -44,10 +47,24 @@ const Resume = (props: IResume) => {
                 <Row className="justify-content-center">
                     <Col xs="auto">
                         <ButtonGroup>
-                            <Button variant={activeTab === 'cover' ? 'primary' : 'secondary'} onClick={() => setActiveTab('cover')}>
+                            <Button
+                                variant={
+                                    activeTab === 'cover'
+                                        ? 'primary'
+                                        : 'secondary'
+                                }
+                                onClick={() => setActiveTab('cover')}
+                            >
                                 Cover Letter
                             </Button>
-                            <Button variant={activeTab === 'resume' ? 'primary' : 'secondary'} onClick={() => setActiveTab('resume')}>
+                            <Button
+                                variant={
+                                    activeTab === 'resume'
+                                        ? 'primary'
+                                        : 'secondary'
+                                }
+                                onClick={() => setActiveTab('resume')}
+                            >
                                 Resume
                             </Button>
                         </ButtonGroup>

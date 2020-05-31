@@ -8,17 +8,33 @@ import { IHomePageTemplate } from './HomePageTemplate';
 export const Hero = (props: IHomePageTemplate) => {
     const { image, heading, subheading } = props;
     return (
-        <LazyHero imageSrc={image} color="#000000" opacity={0.2} minHeight="100vh" parallaxOffset={0.5} isCentered={true} transitionDuration={600}>
+        <LazyHero
+            imageSrc={image}
+            color="#000000"
+            opacity={0.2}
+            minHeight="100vh"
+            parallaxOffset={0.5}
+            isCentered={true}
+            transitionDuration={600}
+        >
             <Container>
                 <Row>
                     <Col>
                         <h1>
                             <strong>
-                                <span className="display-4 text-primary">{'>'}</span>
-                                <span id="heading" data-testid="heading" className="display-4 text-white">
+                                <span className="display-4 text-primary">
+                                    {'>'}
+                                </span>
+                                <span
+                                    id="heading"
+                                    data-testid="heading"
+                                    className="display-4 text-white"
+                                >
                                     {heading}
                                 </span>
-                                <span className="display-4 text-primary">{'<'}</span>
+                                <span className="display-4 text-primary">
+                                    {'<'}
+                                </span>
                             </strong>
                         </h1>
                     </Col>

@@ -8,7 +8,9 @@ import { technologies } from '../../data/Technologies';
 import TechnologyBadge from '../../components/technology/TechnologyBadge';
 import SkillDisplay from '../../components/common/SkillDisplay';
 
-import ITechnology, { getProjectsForTechnology } from '../../components/technology/ITechnology';
+import ITechnology, {
+    getProjectsForTechnology
+} from '../../components/technology/ITechnology';
 import blogRoll from '../../../public/blog/summary.json';
 import { IBlogRollPost } from '../../components/blog/listPage/IBlogRollPost';
 
@@ -20,7 +22,9 @@ const TechnologyPage = ({ technology }: ITechnologyPage) => {
     const filePaths = Object.keys(blogRoll.fileMap);
     const posts = filePaths
         .map((filePath) => {
-            const id = filePath.replace('public/blog/', '').replace('.json', '');
+            const id = filePath
+                .replace('public/blog/', '')
+                .replace('.json', '');
             const blogRollPost = blogRoll.fileMap[filePath];
             blogRollPost.id = id;
             return blogRollPost as IBlogRollPost;
@@ -53,7 +57,11 @@ const TechnologyPage = ({ technology }: ITechnologyPage) => {
                     {technology.link !== undefined && (
                         <Row className="mt-3">
                             <Col>
-                                <a href={technology.link} target="_blank" rel="noopener noreferrer">
+                                <a
+                                    href={technology.link}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                >
                                     <h4>{technology.label} Documentation</h4>
                                 </a>
                             </Col>
@@ -84,7 +92,9 @@ const TechnologyPage = ({ technology }: ITechnologyPage) => {
                                     <strong>Personal Familiarity:</strong>
                                 </Col>
                                 <Col>
-                                    <SkillDisplay filled={technology.familiarity} />
+                                    <SkillDisplay
+                                        filled={technology.familiarity}
+                                    />
                                 </Col>
                             </Row>
                         </Col>
@@ -93,12 +103,21 @@ const TechnologyPage = ({ technology }: ITechnologyPage) => {
                         <>
                             <Row className="mt-5">
                                 <Col>
-                                    <h4>Portfolio Projects that use this technology:</h4>
+                                    <h4>
+                                        Portfolio Projects that use this
+                                        technology:
+                                    </h4>
                                     <ul>
                                         {projects.map((project, index) => (
                                             <li key={index}>
                                                 <h5>
-                                                    <a href={`/portfolio/${project.id}`}>{project.name}</a> uses this technology in {project.uses} service
+                                                    <a
+                                                        href={`/portfolio/${project.id}`}
+                                                    >
+                                                        {project.name}
+                                                    </a>{' '}
+                                                    uses this technology in{' '}
+                                                    {project.uses} service
                                                     {project.uses > 1 && 's'}
                                                 </h5>
                                             </li>
@@ -112,7 +131,9 @@ const TechnologyPage = ({ technology }: ITechnologyPage) => {
                         <>
                             <Row className="mt-5">
                                 <Col>
-                                    <h4>Posts written about this technology:</h4>
+                                    <h4>
+                                        Posts written about this technology:
+                                    </h4>
 
                                     <ul>{postLinks}</ul>
                                 </Col>

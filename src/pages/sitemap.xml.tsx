@@ -20,7 +20,9 @@ const Sitemap = (): ReactElement => {
     return <p />;
 };
 
-export const getServerSideProps = async ({ res }: NextPageContext): Promise<{ props: Record<string, unknown> }> => {
+export const getServerSideProps = async ({
+    res
+}: NextPageContext): Promise<{ props: Record<string, unknown> }> => {
     const postFilePaths = Object.keys(blogRoll.fileMap);
 
     const mappedPosts = postFilePaths.map((post) => {
@@ -35,7 +37,9 @@ export const getServerSideProps = async ({ res }: NextPageContext): Promise<{ pr
     const uniqueTags = [...new Set(allTagsUsed)] as string[];
     const mappedTags = uniqueTags.map((tag) => `/blog/tags/${tag}`);
 
-    const mappedTechnologies = technologies.map((technology) => `/technology/${technology.id}`);
+    const mappedTechnologies = technologies.map(
+        (technology) => `/technology/${technology.id}`
+    );
 
     const pages = pageList;
 

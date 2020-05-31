@@ -14,7 +14,9 @@ export const BlogListTagFilter = (props: IBlogListTagFilter) => {
     const hasTag = tag !== undefined;
 
     if (!hasTag) {
-        const allTagsUsed = [...new Set(_.flatten(posts.map((post) => post.tags)))] as string[];
+        const allTagsUsed = [
+            ...new Set(_.flatten(posts.map((post) => post.tags)))
+        ] as string[];
         const tagsWithCount = allTagsUsed.map((tag) => ({
             tag,
             count: posts.filter((post) => post.tags.includes(tag)).length
@@ -31,7 +33,12 @@ export const BlogListTagFilter = (props: IBlogListTagFilter) => {
                     <Row>
                         <Col>
                             {tagsWithCount.map((tagWithCount, index) => (
-                                <BlogPostTag key={index} tag={tagWithCount.tag} count={tagWithCount.count} tagLink={true} />
+                                <BlogPostTag
+                                    key={index}
+                                    tag={tagWithCount.tag}
+                                    count={tagWithCount.count}
+                                    tagLink={true}
+                                />
                             ))}
                         </Col>
                     </Row>

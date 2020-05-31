@@ -8,7 +8,8 @@ const getSiteMetadata = (): ISiteMetadata => {
     return {
         siteUrl: 'https://dkershner.com',
         title: 'DKershner.com',
-        description: 'Full-stack Software Engineer, DevOps Practitioner, & Cloud Architect',
+        description:
+            'Full-stack Software Engineer, DevOps Practitioner, & Cloud Architect'
     };
 };
 

@@ -4,10 +4,14 @@ import enterpriseMarketplaceProject from './projects/EnterpriseMarketplace';
 import shopifySearchEngineProject from './projects/ShopifySearchEngine';
 import codeChallengesProject from './projects/CodeChallenges';
 
-const projects: IProject[] = [codeChallengesProject, enterpriseMarketplaceProject, shopifySearchEngineProject];
+const projects: IProject[] = [
+    codeChallengesProject,
+    enterpriseMarketplaceProject,
+    shopifySearchEngineProject
+];
 
-const getProject = projectId => {
-    const projArray = projects.filter(p => p.id === projectId);
+const getProject = (projectId) => {
+    const projArray = projects.filter((p) => p.id === projectId);
     if (projArray !== undefined && projArray.length > 0) {
         return projArray[0];
     } else {

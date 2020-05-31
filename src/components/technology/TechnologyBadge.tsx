@@ -30,12 +30,20 @@ const TechnologyBadge = (props: ITechnologyBadge) => {
     const { technology, pageLink, count } = props;
     if (technology === undefined || technology === null) {
         return null;
-    } else if (pageLink === undefined || pageLink === false || technology.type === undefined) {
+    } else if (
+        pageLink === undefined ||
+        pageLink === false ||
+        technology.type === undefined
+    ) {
         return <InnerBadge technology={technology} count={count} />;
     } else {
         return (
             <a href={`/technologies/${technology.id}`}>
-                <InnerBadge style={{ cursor: 'pointer' }} technology={technology} count={count} />
+                <InnerBadge
+                    style={{ cursor: 'pointer' }}
+                    technology={technology}
+                    count={count}
+                />
             </a>
         );
     }

@@ -188,8 +188,12 @@ function sortFamiliarityDescending(a, b) {
     return 0;
 }
 
-export const technologies = [...backendTechnologies, ...frontendTechnologies, ...deploymentTechnologies, ...dataTechnologies, ...clouds].sort(
-    sortFamiliarityDescending
-);
+export const technologies = [
+    ...backendTechnologies,
+    ...frontendTechnologies,
+    ...deploymentTechnologies,
+    ...dataTechnologies,
+    ...clouds
+].sort(sortFamiliarityDescending);
 
 export default technologies;

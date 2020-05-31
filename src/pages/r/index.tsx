@@ -19,7 +19,9 @@ const ResumesPage = () => {
                         {resumes.map((resume, index) => (
                             <Row key={index}>
                                 <Col>
-                                    <a href={`/r/${resume.company}`}>{properCase(resume.company)}</a>
+                                    <a href={`/r/${resume.company}`}>
+                                        {properCase(resume.company)}
+                                    </a>
                                 </Col>
                             </Row>
                         ))}

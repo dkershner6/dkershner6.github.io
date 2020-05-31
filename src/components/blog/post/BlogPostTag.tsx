@@ -28,7 +28,13 @@ const BlogPostTag = (props: IBlogPostTag) => {
 const InnerBlogPostTag = ({ tag, count, tagLink }: IBlogPostTag) => {
     const technology = getTechnologyById(tag);
     if (technology !== undefined) {
-        return <TechnologyBadge pageLink={!(tagLink === true)} technology={technology} count={count} />;
+        return (
+            <TechnologyBadge
+                pageLink={!(tagLink === true)}
+                technology={technology}
+                count={count}
+            />
+        );
     } else {
         return (
             <Badge pill variant="dark">

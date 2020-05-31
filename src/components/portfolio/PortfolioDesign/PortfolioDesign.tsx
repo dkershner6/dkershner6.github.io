@@ -15,7 +15,13 @@ const PortfolioDesign = (props: IPortfolio): ReactElement => {
             <PortfolioDesignHeader {...props} />
             <Container className="mt-2">
                 <PortfolioDesignPrinciples />
-                <PortfoilioDesignSection {...props} sectionId="data" sectionName="Data" headerBg="danger" headerText="light" />
+                <PortfoilioDesignSection
+                    {...props}
+                    sectionId="data"
+                    sectionName="Data"
+                    headerBg="danger"
+                    headerText="light"
+                />
                 <Row className="mt-3 text-center">
                     <Col>
                         <Arrow
@@ -30,7 +36,13 @@ const PortfolioDesign = (props: IPortfolio): ReactElement => {
                         />
                     </Col>
                 </Row>
-                <PortfoilioDesignSection {...props} sectionId="backend" sectionName="Back-End" headerBg="warning" headerText="light" />
+                <PortfoilioDesignSection
+                    {...props}
+                    sectionId="backend"
+                    sectionName="Back-End"
+                    headerBg="warning"
+                    headerText="light"
+                />
                 <Row className="mt-3 text-center">
                     <Col>
                         <Arrow
@@ -45,7 +57,13 @@ const PortfolioDesign = (props: IPortfolio): ReactElement => {
                         />
                     </Col>
                 </Row>
-                <PortfoilioDesignSection {...props} sectionId="frontend" sectionName="Front-End" headerBg="success" headerText="light" />
+                <PortfoilioDesignSection
+                    {...props}
+                    sectionId="frontend"
+                    sectionName="Front-End"
+                    headerBg="success"
+                    headerText="light"
+                />
             </Container>
         </>
     );
