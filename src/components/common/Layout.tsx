@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, ReactElement } from 'react';
 import Head from 'next/head';
 import Footer from './Footer';
 import Navigation from './Navigation';
@@ -10,7 +10,7 @@ interface ILayout {
     children: unknown;
 }
 
-const Layout = (props: ILayout) => {
+const Layout = (props: ILayout): ReactElement => {
     const { children, title } = props;
     const { siteMetadata } = useContext(GlobalContext);
     const { description } = siteMetadata;
@@ -21,7 +21,7 @@ const Layout = (props: ILayout) => {
     const format = urlParams === undefined ? '' : urlParams.get('format');
 
     return (
-        <div>
+        <>
             <Head>
                 <html lang="en" />
                 <title data-testid="pageTitle">
@@ -62,11 +62,11 @@ const Layout = (props: ILayout) => {
                 <meta property="og:image" content={`/img/og-image.jpg`} />
             </Head>
             <PageLayout format={format}>{children}</PageLayout>
-        </div>
+        </>
     );
 };
 
-const PageLayout = (props) => {
+const PageLayout = (props): ReactElement => {
     const { format, children } = props;
     if (
         format === 'print' ||
