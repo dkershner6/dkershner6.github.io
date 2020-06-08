@@ -1,7 +1,19 @@
-import React from 'react';
+import React, { useEffect, ReactElement } from 'react';
+import ReactGA from 'react-ga';
+
 import '../styles/css/bootstrap.css';
 
-// This default export is required in a new `pages/_app.js` file.
-export default function MyApp({ Component, pageProps }) {
-    return <Component {...pageProps} />;
+interface IApp {
+    Component: () => ReactElement;
+    pageProps: unknown;
 }
+
+const MyApp = ({ Component, pageProps }: IApp): ReactElement => {
+    useEffect(() => {
+        ReactGA.initialize('UA-10014066-1');
+        ReactGA.pageview(window.location.pathname + window.location.search);
+    }, []);
+    return <Component {...pageProps} />;
+};
+
+export default MyApp;
