@@ -1,7 +1,7 @@
 {
   "name": "DKershner.com",
   "description": "Derek Kershner's website.",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "author": "Derek Kershner",
   "private": true,
   "license": "MIT",
@@ -32,6 +32,7 @@
     "react-arrow": "^2.0.4",
     "react-bootstrap": "^1.0.1",
     "react-dom": "^16.13.1",
+    "react-ga": "^3.0.0",
     "react-icons": "^3.10.0",
     "react-lazy-hero": "^2.0.0",
     "react-scroll": "^1.7.16",
