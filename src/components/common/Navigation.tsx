@@ -11,18 +11,7 @@ const Navigation = (): ReactElement => {
             />
             <Navbar.Collapse id="navbar-collapse">
                 <Nav className="mr-auto">
-                    <Nav.Link href="/">Home</Nav.Link>
-                    <Nav.Link href="https://github.dkershner.com">
-                        Manual GitHub Actions
-                    </Nav.Link>
-                    <NavDropdown
-                        id="githubActions"
-                        title="Custom GitHub Actions"
-                    >
-                        <NavDropdown.Item href="https://github.com/marketplace/actions/gitignore-parser">
-                            GitIgnore Parser
-                        </NavDropdown.Item>
-                    </NavDropdown>
+                    <Nav.Link href="/#projects">Projects</Nav.Link>
                     <Nav.Link href="/blog">Blog</Nav.Link>
                 </Nav>
             </Navbar.Collapse>
