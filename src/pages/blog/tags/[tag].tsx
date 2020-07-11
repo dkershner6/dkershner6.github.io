@@ -1,5 +1,5 @@
 import React from 'react';
-import _, { startCase } from 'lodash';
+import startCase from 'lodash.startcase';
 import blogRoll from '../../../../public/blog/summary.json';
 import BlogListPage from '../../../components/blog/listPage/BlogListTemplate';
 import SiteWrapper from '../../../components/common/SiteWrapper';
@@ -49,7 +49,7 @@ export const getStaticPaths = async () => {
         return blogRollPost as IBlogRollPost;
     });
     const allTagsUsed = [
-        ...new Set(_.flatten(posts.map((post) => post.tags)))
+        ...new Set(posts.map((post) => post.tags).flat())
     ] as string[];
 
     return {

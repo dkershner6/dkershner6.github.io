@@ -1,6 +1,5 @@
 import React, { ReactElement } from 'react';
 import { NextPageContext } from 'next';
-import technologies from '../data/technologiesData';
 import blogRoll from '../../public/blog/summary.json';
 import pageList from '../../public/pagelist.json';
 
@@ -37,15 +36,10 @@ export const getServerSideProps = async ({
     const uniqueTags = [...new Set(allTagsUsed)] as string[];
     const mappedTags = uniqueTags.map((tag) => `/blog/tags/${tag}`);
 
-    const mappedTechnologies = technologies.map(
-        (technology) => `/technology/${technology.id}`
-    );
-
     const pages = pageList;
 
     pages.push(...mappedPosts);
     pages.push(...mappedTags);
-    pages.push(...mappedTechnologies);
 
     const mappedPages = pages
         .filter((page) => !page.endsWith('404.tsx') && !page.endsWith('].tsx'))

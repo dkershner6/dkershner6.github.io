@@ -1,21 +1,15 @@
 import React from 'react';
-import _ from 'lodash';
 import { Row, Col, Button } from 'react-bootstrap';
 import BlogPostTag from '../post/BlogPostTag';
-import ITechnology from '../../technology/ITechnology';
 import { IBlogListTemplate } from './BlogListTemplate';
 
-interface IBlogListTagFilter extends IBlogListTemplate {
-    technology: ITechnology;
-}
-
-export const BlogListTagFilter = (props: IBlogListTagFilter) => {
-    const { tag, posts, technology } = props;
+const BlogListTagFilter = (props: IBlogListTemplate) => {
+    const { tag, posts } = props;
     const hasTag = tag !== undefined;
 
     if (!hasTag) {
         const allTagsUsed = [
-            ...new Set(_.flatten(posts.map((post) => post.tags)))
+            ...new Set(posts.map((post) => post.tags).flat())
         ] as string[];
         const tagsWithCount = allTagsUsed.map((tag) => ({
             tag,
@@ -37,7 +31,6 @@ export const BlogListTagFilter = (props: IBlogListTagFilter) => {
                                     key={index}
                                     tag={tagWithCount.tag}
                                     count={tagWithCount.count}
-                                    tagLink={true}
                                 />
                             ))}
                         </Col>
@@ -53,13 +46,6 @@ export const BlogListTagFilter = (props: IBlogListTagFilter) => {
                         <Button variant="primary">Remove Filter</Button>
                     </a>
                 </Col>
-                {technology !== undefined && (
-                    <Col className="align-self-center">
-                        <a href={`/technologies/${technology.id}`}>
-                            <Button variant="info">Info On This Tech</Button>
-                        </a>
-                    </Col>
-                )}
             </Row>
         );
     }
