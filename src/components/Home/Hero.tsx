@@ -2,7 +2,6 @@ import React, { ReactElement } from 'react';
 import LazyHero from 'react-lazy-hero';
 import { Container, Row, Col, Button } from 'react-bootstrap';
 import Arrow from 'react-arrow';
-import { Link as ScrollLink } from 'react-scroll';
 
 export interface IHero {
     image: string;

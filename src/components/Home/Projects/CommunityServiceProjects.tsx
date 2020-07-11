@@ -1,5 +1,5 @@
 import { Table } from 'react-bootstrap';
-import { ReactElement } from 'react';
+import React, { ReactElement } from 'react';
 import ProjectTableHead from './ProjectTableHead';
 import ProjectTableRow from './ProjectTableRow';
 
