@@ -4,7 +4,10 @@ const ProjectTableHead = (): ReactElement => {
     return (
         <thead>
             <tr>
-                <th>Project</th>
+                <th>Category</th>
+                <th>Tech</th>
+                <th>Language</th>
+                <th>Name</th>
                 <th>Description</th>
             </tr>
         </thead>
