@@ -22,6 +22,16 @@ const communityServiceProjects: Omit<IProject, 'category'>[] = [
     }
 ];
 
+const openSourceContributorProjects: Omit<IProject, 'category'>[] = [
+    {
+        topics: [],
+        name: 'ShopifySharp',
+        description:
+            '(Contributor) ShopifySharp is a .NET library that helps developers easily authenticate with and manage Shopify stores.',
+        language: ProjectLanguage.NET
+    }
+];
+
 const projects: IProject[] = [
     ...saasProjects.map((project) => ({
         ...project,
@@ -30,6 +40,10 @@ const projects: IProject[] = [
     ...communityServiceProjects.map((project) => ({
         ...project,
         category: ProjectCategory.COMMUNITY_SERVICE
+    })),
+    ...openSourceContributorProjects.map((project) => ({
+        ...project,
+        category: ProjectCategory.OPEN_SOURCE
     }))
 ];
 
