@@ -1,35 +1,72 @@
-import React, { ReactElement, useState } from 'react';
-import { Jumbotron, Tabs, Tab, Container } from 'react-bootstrap';
-import SaaSProjects from './SaaSProjects';
-import OpenSourceProjects from './OpenSourceProjects';
-import CodeChallenges from './CodeChallenges';
-import CommunityServiceProjects from './CommunityServiceProjects';
+import React, { ReactElement, useMemo, useState } from 'react';
+import { Jumbotron, Container, Table, Spinner } from 'react-bootstrap';
+import { useDebounce } from 'use-debounce';
+import useGitHubProjects from './useGitHubProjects';
+import projectData from './projectsData';
+import ProjectFilters from './ProjectFilters';
+import ProjectTableRow from './ProjectTableRow';
+import ProjectTableHead from './ProjectTableHead';
 
 const Projects = (): ReactElement => {
-    const [activeTab, setActiveTab] = useState('saas');
+    const [inputText, setInputText] = useState('');
+    const [filterText] = useDebounce(inputText, 350);
+    const openSourceProjects = useGitHubProjects();
+
+    const projects = useMemo(() => {
+        return [...openSourceProjects, ...projectData]
+            .filter(
+                (project) =>
+                    !filterText ||
+                    filterText.length === 0 ||
+                    [
+                        project.category,
+                        project.language,
+                        ...project.topics,
+                        project.name,
+                        project.description
+                    ].some((projectData) =>
+                        projectData
+                            .toLowerCase()
+                            .includes(filterText.toLowerCase())
+                    )
+            )
+            .sort((a, b) =>
+                a.name.toLowerCase() > b.name.toLowerCase() ? 1 : -1
+            );
+    }, [openSourceProjects, filterText]);
+
+    const renderTableRows = (): ReactElement => {
+        if (openSourceProjects.length === 0) {
+            return (
+                <tr>
+                    <td colSpan={5}>
+                        <Spinner animation="border" />
+                    </td>
+                </tr>
+            );
+        }
+
+        return (
+            <>
+                {projects.map((project) => (
+                    <ProjectTableRow key={project.name} {...project} />
+                ))}
+            </>
+        );
+    };
 
     return (
         <Jumbotron id="projects" className="bg-secondary">
-            <Container style={{ minHeight: '25rem' }}>
-                <h2 className="display-4 text-center">Projects</h2>
-                <Tabs
-                    id="controlled-tab-example"
-                    activeKey={activeTab}
-                    onSelect={(tabName) => setActiveTab(tabName)}
-                >
-                    <Tab eventKey="saas" title="SaaS Tools">
-                        <SaaSProjects />
-                    </Tab>
-                    <Tab eventKey="opensource" title="Open Source Software">
-                        <OpenSourceProjects />
-                    </Tab>
-                    <Tab eventKey="codechallenges" title="Code Challenges">
-                        <CodeChallenges />
-                    </Tab>
-                    <Tab eventKey="communityservice" title="Community Service">
-                        <CommunityServiceProjects />
-                    </Tab>
-                </Tabs>
+            <Container style={{ minHeight: '50rem' }}>
+                <h2 className="display-4 text-center mb-5">Projects</h2>
+                <ProjectFilters
+                    inputText={inputText}
+                    setInputText={setInputText}
+                />
+                <Table>
+                    <ProjectTableHead />
+                    <tbody>{renderTableRows()}</tbody>
+                </Table>
             </Container>
         </Jumbotron>
     );

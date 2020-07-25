@@ -1,16 +1,15 @@
 import React, { ReactElement } from 'react';
-
-export interface IProjectTableRow {
-    link?: string;
-    name: string;
-    description: string;
-}
+import IProject from './IProject';
+import { Badge } from 'react-bootstrap';
 
 const ProjectTableRow = ({
+    category,
+    topics,
     link,
     name,
-    description
-}: IProjectTableRow): ReactElement => {
+    description,
+    language
+}: IProject): ReactElement => {
     const renderName = (): ReactElement => {
         if (link) {
             return (
@@ -24,6 +23,23 @@ const ProjectTableRow = ({
 
     return (
         <tr>
+            <td>
+                <Badge pill variant="success">
+                    {category}
+                </Badge>
+            </td>
+            <td>
+                {topics.map((topic) => (
+                    <Badge key={topic} pill variant="info">
+                        {topic}
+                    </Badge>
+                ))}
+            </td>
+            <td>
+                <Badge pill variant="primary">
+                    {language}
+                </Badge>
+            </td>
             <td>{renderName()}</td>
             <td>{description}</td>
         </tr>
