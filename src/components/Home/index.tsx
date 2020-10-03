@@ -6,7 +6,7 @@ import Social from './Social';
 
 export const HOME_PAGE_DATA = {
     title: 'Derek Kershner',
-    image: '/img/hero-background.jpg',
+    image: '/img/hero-background.webp',
     heading: 'Derek Kershner',
     subheading: 'Senior Software Architect - AWS / Azure'
 };

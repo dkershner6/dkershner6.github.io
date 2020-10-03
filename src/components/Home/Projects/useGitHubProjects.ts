@@ -26,7 +26,7 @@ const useGitHubProjects = (): IProject[] => {
                 accept: 'application/vnd.github.mercy-preview+json' // topics
             }
         });
-        setRepos(repos.data);
+        setRepos(repos.data.filter((repo) => !repo.archived));
     };
 
     useEffect(() => {

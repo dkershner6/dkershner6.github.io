@@ -17,6 +17,7 @@ const Hero = (props: IHero): ReactElement => {
             color="#000000"
             opacity={0.2}
             minHeight="75vh"
+            minWidth="100%"
             parallaxOffset={0.5}
             isCentered={true}
             transitionDuration={600}
