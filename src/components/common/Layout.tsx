@@ -78,7 +78,7 @@ const PageLayout = (props): ReactElement => {
         return (
             <>
                 <Navigation />
-                <div>{children}</div>
+                <main>{children}</main>
                 <Footer />
             </>
         );
