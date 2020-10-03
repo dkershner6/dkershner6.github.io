@@ -56,14 +56,18 @@ const Projects = (): ReactElement => {
     };
 
     return (
-        <Jumbotron id="projects" className="bg-secondary">
-            <Container style={{ minHeight: '50rem' }}>
+        <Jumbotron fluid id="projects" className="bg-secondary">
+            <Container
+                fluid
+                style={{ minHeight: '50rem', overflowX: 'auto' }}
+                className="bg-secondary"
+            >
                 <h2 className="display-4 text-center mb-5">Projects</h2>
                 <ProjectFilters
                     inputText={inputText}
                     setInputText={setInputText}
                 />
-                <Table>
+                <Table hover striped responsive size="sm">
                     <ProjectTableHead />
                     <tbody>{renderTableRows()}</tbody>
                 </Table>
