@@ -1,4 +1,4 @@
-import React, { ReactElement, useMemo, useState } from 'react';
+import React, { ReactElement, useCallback, useMemo, useState } from 'react';
 import { Jumbotron, Container, Table, Spinner } from 'react-bootstrap';
 import { useDebounce } from 'use-debounce';
 import useGitHubProjects from './useGitHubProjects';
@@ -6,34 +6,56 @@ import projectData from './projectsData';
 import ProjectFilters from './ProjectFilters';
 import ProjectTableRow from './ProjectTableRow';
 import ProjectTableHead from './ProjectTableHead';
+import IProject, { ProjectCategory } from './IProject';
 
 const Projects = (): ReactElement => {
     const [inputText, setInputText] = useState('');
     const [filterText] = useDebounce(inputText, 350);
+    const [categoryFilter, setCategoryFilter] = useState(ProjectCategory.ALL);
     const openSourceProjects = useGitHubProjects();
 
+    const allProjects = useMemo(() => [...openSourceProjects, ...projectData], [
+        openSourceProjects
+    ]);
+
+    const isInCategory = useCallback(
+        (project: IProject) => {
+            return (
+                categoryFilter === ProjectCategory.ALL ||
+                project.category === categoryFilter
+            );
+        },
+        [categoryFilter]
+    );
+
+    const hasFilterText = useCallback(
+        (project: IProject) => {
+            return (
+                !filterText ||
+                filterText.length === 0 ||
+                [
+                    project.category,
+                    project.language,
+                    ...project.topics,
+                    project.name,
+                    project.description
+                ].some((projectData) =>
+                    projectData.toLowerCase().includes(filterText.toLowerCase())
+                )
+            );
+        },
+        [filterText]
+    );
+
     const projects = useMemo(() => {
-        return [...openSourceProjects, ...projectData]
+        return allProjects
             .filter(
-                (project) =>
-                    !filterText ||
-                    filterText.length === 0 ||
-                    [
-                        project.category,
-                        project.language,
-                        ...project.topics,
-                        project.name,
-                        project.description
-                    ].some((projectData) =>
-                        projectData
-                            .toLowerCase()
-                            .includes(filterText.toLowerCase())
-                    )
+                (project) => isInCategory(project) && hasFilterText(project)
             )
             .sort((a, b) =>
                 a.name.toLowerCase() > b.name.toLowerCase() ? 1 : -1
             );
-    }, [openSourceProjects, filterText]);
+    }, [allProjects, isInCategory, hasFilterText]);
 
     const renderTableRows = (): ReactElement => {
         if (openSourceProjects.length === 0) {
@@ -64,6 +86,8 @@ const Projects = (): ReactElement => {
             >
                 <h2 className="display-4 text-center mb-5">Projects</h2>
                 <ProjectFilters
+                    categoryFilter={categoryFilter}
+                    setCategoryFilter={setCategoryFilter}
                     inputText={inputText}
                     setInputText={setInputText}
                 />

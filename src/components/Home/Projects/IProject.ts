@@ -1,7 +1,9 @@
 import { GitHubTopic } from './useGitHubProjects';
 
 export enum ProjectCategory {
-    SaaS = 'SaaS',
+    ALL = 'All',
+    MOBILE_APP = 'Mobile App',
+    TOOL = 'Tool',
     OPEN_SOURCE = 'Open Source',
     CODE_CHALLENGE = 'Code Challenge',
     COMMUNITY_SERVICE = 'Community Service'
@@ -12,11 +14,13 @@ export enum ProjectLanguage {
     TS = 'TypeScript'
 }
 
+export type MobileLink = { ios?: string; android?: string };
+
 export default interface IProject {
     category: ProjectCategory;
     topics: GitHubTopic[];
     name: string;
     description: string;
-    link?: string;
+    link?: string | MobileLink;
     language: ProjectLanguage;
 }

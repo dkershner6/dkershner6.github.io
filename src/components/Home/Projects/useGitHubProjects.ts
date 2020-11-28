@@ -4,6 +4,7 @@ import IProject, { ProjectCategory } from './IProject';
 
 export enum GitHubTopic {
     REACT = 'react',
+    REACT_NATIVE = 'react-native',
     REACT_HOOKS = 'react-hooks',
     NEXT = 'nextjs',
     NODE = 'nodejs',
