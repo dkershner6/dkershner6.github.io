@@ -18,7 +18,6 @@ jobs:
           node-version: 12.x
       - run: npm ci
       - run: npm run type-check
-      - run: npm run format-check
       - run: npm run lint
       - run: npm test
       - name: Check if version has been updated

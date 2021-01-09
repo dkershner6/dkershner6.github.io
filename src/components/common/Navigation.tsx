@@ -13,7 +13,6 @@ const Navigation = (): ReactElement => {
             <Navbar.Collapse id="navbar-collapse">
                 <Nav className="mr-auto">
                     <Nav.Link href="/#projects">Projects</Nav.Link>
-                    <Nav.Link href="/blog">Blog</Nav.Link>
                 </Nav>
             </Navbar.Collapse>
         </Navbar>
