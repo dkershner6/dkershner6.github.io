@@ -8,9 +8,8 @@
   "main": "n/a",
   "scripts": {
     "dev": "next dev",
-    "build": "npm run build:content && npm run build:next",
+    "build": "npm run build:next",
     "build:next": "next build",
-    "build:content": "processmd content/**/*.md --outputDir public/blog --preview 110 --summaryOutput public/blog/summary.json",
     "build:analyze": "cross-env ANALYZE=true npm run build",
     "export": "next export",
     "build-export": "npm run build && npm run export",
