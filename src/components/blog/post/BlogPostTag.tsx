@@ -1,6 +1,7 @@
-import React from 'react';
-import { Badge } from 'react-bootstrap';
+import React, { ReactElement } from 'react';
+
 import startCase from 'lodash.startcase';
+import { Badge } from 'react-bootstrap';
 
 interface IBlogPostTag {
     key?: number;
@@ -8,7 +9,7 @@ interface IBlogPostTag {
     count?: number;
 }
 
-const BlogPostTag = (props: IBlogPostTag) => {
+const BlogPostTag = (props: IBlogPostTag): ReactElement => {
     const { tag } = props;
     return (
         <a href={`/blog/tags/${tag}`}>
@@ -25,7 +26,7 @@ const InnerBlogPostTag = ({ tag, count }: IBlogPostTag) => {
     );
 };
 
-export const CountBadge = (props) => {
+export const CountBadge = (props: { count?: number }): ReactElement => {
     const { count } = props;
     if (count === undefined) {
         return null;

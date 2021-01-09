@@ -1,10 +1,12 @@
-import React from 'react';
+import React, { ReactElement } from 'react';
+
 import { Row, Col } from 'react-bootstrap';
 import LazyHero from 'react-lazy-hero';
+
 import BlogPostTag from './BlogPostTag';
 import { IBlogPostTemplate } from './BlogPostTemplate';
 
-export const BlogPostHeader = (props: IBlogPostTemplate) => {
+export const BlogPostHeader = (props: IBlogPostTemplate): ReactElement => {
     const { featuredimage, description, tags, title } = props;
     return (
         <LazyHero

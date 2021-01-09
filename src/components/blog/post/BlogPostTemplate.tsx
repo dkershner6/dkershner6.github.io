@@ -1,6 +1,9 @@
-import React from 'react';
+import React, { ReactElement } from 'react';
+
 import { Container, Row, Col } from 'react-bootstrap';
+
 import Content from '../../common/Content';
+
 import { BlogPostHeader } from './BlogPostHeader';
 
 export interface IBlogPostTemplate {
@@ -13,7 +16,7 @@ export interface IBlogPostTemplate {
     featuredimage?: string;
 }
 
-export const BlogPostTemplate = (props: IBlogPostTemplate) => {
+export const BlogPostTemplate = (props: IBlogPostTemplate): ReactElement => {
     const { content, contentComponent } = props;
     const PostContent = contentComponent || Content;
     return (

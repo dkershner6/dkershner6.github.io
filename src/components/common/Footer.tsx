@@ -1,6 +1,6 @@
-import React, { useContext, ReactElement } from 'react';
-import { Container } from 'react-bootstrap';
-import { Jumbotron } from 'react-bootstrap';
+import React, { ReactElement } from 'react';
+
+import { Container, Jumbotron } from 'react-bootstrap';
 
 const Footer = (): ReactElement => {
     return (
@@ -48,7 +48,7 @@ const Footer = (): ReactElement => {
                         >
                             React Bootstrap
                         </a>{' '}
-                        to skin it. It's hosted and Server Side Rendered on{' '}
+                        to skin it. It&apos;s hosted and Server Side Rendered on{' '}
                         <a
                             href="https://github.com/"
                             target="_blank"

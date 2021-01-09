@@ -1,10 +1,11 @@
-import React from 'react';
+import React, { ReactElement } from 'react';
+
 import blogRoll from '../../../public/blog/summary.json';
 import BlogListPage from '../../components/blog/listPage/BlogListTemplate';
-import SiteWrapper from '../../components/common/SiteWrapper';
 import { IBlogRollPost } from '../../components/blog/listPage/IBlogRollPost';
+import SiteWrapper from '../../components/common/SiteWrapper';
 
-const BlogIndexPage = () => {
+const BlogIndexPage = (): ReactElement => {
     const filePaths = Object.keys(blogRoll.fileMap);
     const posts = filePaths.map((filePath) => {
         const id = filePath.replace('public/blog/', '').replace('.json', '');

@@ -1,9 +1,12 @@
-import React from 'react';
+import React, { ReactElement } from 'react';
+
 import { Row, Col, Button } from 'react-bootstrap';
+
 import BlogPostTag from '../post/BlogPostTag';
+
 import { IBlogListTemplate } from './BlogListTemplate';
 
-const BlogListTagFilter = (props: IBlogListTemplate) => {
+const BlogListTagFilter = (props: IBlogListTemplate): ReactElement => {
     const { tag, posts } = props;
     const hasTag = tag !== undefined;
 

@@ -1,9 +1,11 @@
 import React from 'react';
+
 import '@testing-library/jest-dom/extend-expect';
 import { render, screen } from '@testing-library/react';
 
-import { BlogPostTemplate } from './BlogPostTemplate';
 import { HTMLContent } from '../../common/Content';
+
+import { BlogPostTemplate } from './BlogPostTemplate';
 
 const post = {
     html: '<p></p>',

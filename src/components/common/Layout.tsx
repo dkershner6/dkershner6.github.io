@@ -1,9 +1,10 @@
 import React, { useContext, ReactElement } from 'react';
-import Head from 'next/head';
-import Footer from './Footer';
-import Navigation from './Navigation';
 
+import Head from 'next/head';
+
+import Footer from './Footer';
 import GlobalContext from './GlobalContext';
+import Navigation from './Navigation';
 
 interface ILayout {
     title?: string;

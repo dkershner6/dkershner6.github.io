@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { ReactElement } from 'react';
+
 import { Row } from 'react-bootstrap';
 
 import BlogRollPost from './BlogRollPost';
@@ -8,7 +9,7 @@ interface IBlogRoll {
     posts: IBlogRollPost[];
 }
 
-const BlogRoll = ({ posts }: IBlogRoll) => {
+const BlogRoll = ({ posts }: IBlogRoll): ReactElement => {
     return (
         <Row className="mt-3">
             {posts &&

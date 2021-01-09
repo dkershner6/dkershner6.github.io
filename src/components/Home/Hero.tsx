@@ -1,7 +1,8 @@
 import React, { ReactElement } from 'react';
-import LazyHero from 'react-lazy-hero';
-import { Container, Row, Col, Button } from 'react-bootstrap';
+
 import Arrow from 'react-arrow';
+import { Container, Row, Col, Button } from 'react-bootstrap';
+import LazyHero from 'react-lazy-hero';
 
 export interface IHero {
     image: string;

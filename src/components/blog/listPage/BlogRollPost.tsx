@@ -1,11 +1,13 @@
-import React from 'react';
+import React, { ReactElement } from 'react';
+
 import { Row, Col } from 'react-bootstrap';
 
 import BlogPostTag from '../post/BlogPostTag';
+
 import { IBlogRollPost } from './IBlogRollPost';
 
-const BlogRollPost = (props) => {
-    const { post }: { post: IBlogRollPost } = props;
+const BlogRollPost = (props: { post: IBlogRollPost }): ReactElement => {
+    const { post } = props;
     return (
         <Col key={post.id} xs="12" lg="6" className="mt-3">
             <Row>
@@ -14,7 +16,7 @@ const BlogRollPost = (props) => {
                         <img
                             width="100%"
                             src={post.featuredimage}
-                            alt={`featured image thumbnail for post ${post.title}`}
+                            alt={`featured thumbnail for post ${post.title}`}
                         />
                     </a>
                 </Col>

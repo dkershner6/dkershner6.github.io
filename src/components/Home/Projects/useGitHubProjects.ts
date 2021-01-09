@@ -1,5 +1,7 @@
-import { Octokit } from '@octokit/rest';
 import { useEffect, useState, useMemo } from 'react';
+
+import { Octokit } from '@octokit/rest';
+
 import IProject, { ProjectCategory } from './IProject';
 
 export enum GitHubTopic {
@@ -34,7 +36,7 @@ const useGitHubProjects = (): IProject[] => {
         if (repos.length === 0) loadRepos();
     });
 
-    const projects: IProject[] = useMemo(
+    return useMemo(
         () =>
             repos
                 .filter((repo) =>
@@ -52,8 +54,6 @@ const useGitHubProjects = (): IProject[] => {
                 })),
         [repos]
     );
-
-    return projects;
 };
 
 export default useGitHubProjects;

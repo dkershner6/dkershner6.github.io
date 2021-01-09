@@ -1,7 +1,9 @@
 import React, { ReactElement } from 'react';
-import IProject from './IProject';
-import { Badge, Button, Col, Row } from 'react-bootstrap';
+
+import { Badge, Col, Row } from 'react-bootstrap';
 import { DiApple, DiAndroid } from 'react-icons/di';
+
+import IProject from './IProject';
 
 const ProjectTableRow = ({
     category,
