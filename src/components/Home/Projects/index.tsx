@@ -86,7 +86,7 @@ const Projects = (): ReactElement => {
                 style={{ minHeight: '50rem', overflowX: 'auto' }}
                 className="bg-secondary"
             >
-                <h2 className="display-4 text-center mb-5">Projects</h2>
+                <h2 className="display-4 text-center mb-5">Public Projects</h2>
                 <ProjectFilters
                     categoryFilter={categoryFilter}
                     setCategoryFilter={setCategoryFilter}
