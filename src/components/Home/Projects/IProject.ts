@@ -1,4 +1,4 @@
-import { GitHubTopic } from './useGitHubProjects';
+import GitHubTopic from './GitHubTopic';
 
 export enum ProjectCategory {
     ALL = 'All',
