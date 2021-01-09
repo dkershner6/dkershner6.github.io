@@ -1,7 +1,16 @@
 {
     "root": true,
     "parser": "@typescript-eslint/parser",
-    "plugins": ["@typescript-eslint", "react", "react-hooks", "prettier", "jest", "jsx-a11y", "sonarjs", "import"],
+    "plugins": [
+        "@typescript-eslint",
+        "react",
+        "react-hooks",
+        "prettier",
+        "jest",
+        "jsx-a11y",
+        "sonarjs",
+        "import"
+    ],
     "extends": [
         "eslint:recommended",
         "plugin:@typescript-eslint/eslint-recommended",
@@ -36,13 +45,7 @@
         "import/order": [
             "error",
             {
-                "groups": [
-                    "builtin",
-                    "external",
-                    "parent",
-                    "sibling",
-                    "index"
-                ],
+                "groups": ["builtin", "external", "parent", "sibling", "index"],
                 "newlines-between": "always",
                 "pathGroups": [
                     {
@@ -51,14 +54,12 @@
                         "position": "before"
                     }
                 ],
-                "pathGroupsExcludedImportTypes": [
-                    "react"
-                ],
+                "pathGroupsExcludedImportTypes": ["react"],
                 "alphabetize": {
                     "order": "asc",
                     "caseInsensitive": true
                 }
             }
-        ],
+        ]
     }
 }
