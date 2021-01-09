@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { ReactElement } from 'react';
+
 import { Container } from 'react-bootstrap';
 import LazyHero from 'react-lazy-hero';
 
-import BlogRoll from './BlogRoll';
 import BlogListTagFilter from './BlogListTagFilter';
+import BlogRoll from './BlogRoll';
 import { IBlogRollPost } from './IBlogRollPost';
 
 export interface IBlogListTemplate {
@@ -11,7 +12,7 @@ export interface IBlogListTemplate {
     tag?: string;
 }
 
-const BlogListTemplate = (props: IBlogListTemplate) => {
+const BlogListTemplate = (props: IBlogListTemplate): ReactElement => {
     const { tag, posts } = props;
     const hasTag = tag !== undefined;
 

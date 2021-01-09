@@ -1,5 +1,5 @@
-const camelCaseToProperCase = (text: string) => {
-    let result = text.replace(/([A-Z])/g, ' $1');
+const camelCaseToProperCase = (text: string): string => {
+    const result = text.replace(/([A-Z])/g, ' $1');
     return result.charAt(0).toUpperCase() + result.slice(1);
 };
 

@@ -1,7 +1,9 @@
 import React from 'react';
+
+import { render, screen } from '@testing-library/react';
 import ReactDOM from 'react-dom';
 import '@testing-library/jest-dom/extend-expect';
-import { render, screen } from '@testing-library/react';
+
 import Home, { HOME_PAGE_DATA } from '.';
 
 describe('Home', () => {
@@ -9,6 +11,8 @@ describe('Home', () => {
         const div = document.createElement('div');
         ReactDOM.render(<Home />, div);
         ReactDOM.unmountComponentAtNode(div);
+
+        expect(true).toBeTruthy();
     });
 
     it('has correct heading and suheading', async () => {

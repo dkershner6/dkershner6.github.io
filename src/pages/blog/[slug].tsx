@@ -1,11 +1,14 @@
-import React from 'react';
-import SiteWrapper from '../../components/common/SiteWrapper';
-import { BlogPostTemplate } from '../../components/blog/post/BlogPostTemplate';
-import { HTMLContent } from '../../components/common/Content';
+import React, { ReactElement } from 'react';
+
+import { GetStaticPaths, GetStaticProps } from 'next';
 
 import blogRoll from '../../../public/blog/summary.json';
+import { IBlogRollPost } from '../../components/blog/listPage/IBlogRollPost';
+import { BlogPostTemplate } from '../../components/blog/post/BlogPostTemplate';
+import { HTMLContent } from '../../components/common/Content';
+import SiteWrapper from '../../components/common/SiteWrapper';
 
-const BlogPostPage = ({ post }) => {
+const BlogPostPage = ({ post }: { post: IBlogRollPost }): ReactElement => {
     return (
         <SiteWrapper title={post.title}>
             <BlogPostTemplate
@@ -20,14 +23,14 @@ const BlogPostPage = ({ post }) => {
     );
 };
 
-export const getStaticProps = async (ctx) => {
+export const getStaticProps: GetStaticProps = async (ctx) => {
     const { slug } = ctx.params;
 
     const { default: post } = await import(`../../../public/blog/${slug}.json`);
     return { props: { post } };
 };
 
-export const getStaticPaths = async () => {
+export const getStaticPaths: GetStaticPaths = async () => {
     const filePaths = Object.keys(blogRoll.fileMap);
 
     return {

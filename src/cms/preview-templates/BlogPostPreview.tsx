@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { ReactElement } from 'react';
+
 import { BlogPostTemplate } from '../../components/blog/post/BlogPostTemplate';
 
 interface IBlogPostPreview {
@@ -9,7 +10,10 @@ interface IBlogPostPreview {
     widgetFor: (any) => unknown;
 }
 
-const BlogPostPreview = ({ entry, widgetFor }: IBlogPostPreview) => (
+const BlogPostPreview = ({
+    entry,
+    widgetFor
+}: IBlogPostPreview): ReactElement => (
     <BlogPostTemplate
         content={widgetFor('body')}
         description={entry.getIn(['data', 'description'])}

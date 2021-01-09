@@ -1,5 +1,6 @@
 import React, { ReactElement } from 'react';
-import { Nav, Navbar, NavDropdown } from 'react-bootstrap';
+
+import { Nav, Navbar } from 'react-bootstrap';
 
 const Navigation = (): ReactElement => {
     return (

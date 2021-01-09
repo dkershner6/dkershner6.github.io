@@ -1,5 +1,7 @@
 import React, { ReactElement } from 'react';
+
 import { NextPageContext } from 'next';
+
 import blogRoll from '../../public/blog/summary.json';
 import pageList from '../../public/pagelist.json';
 

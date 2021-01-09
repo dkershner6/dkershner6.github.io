@@ -2,6 +2,7 @@ export interface IBlogRollPost {
     id: string;
     templateKey: string;
     title: string;
+    bodyHtml?: string;
     date: string;
     description: string;
     featuredpost: boolean;

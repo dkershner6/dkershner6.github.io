@@ -1,4 +1,6 @@
 import React, { useEffect, ReactElement } from 'react';
+
+// eslint-disable-next-line import/default
 import ReactGA from 'react-ga';
 
 import '../styles/css/bootstrap.css';

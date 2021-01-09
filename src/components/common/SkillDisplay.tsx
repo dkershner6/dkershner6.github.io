@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { ReactElement } from 'react';
+
 import { MdCloud, MdCloudQueue } from 'react-icons/md';
 
 const fiveNumbers = [1, 2, 3, 4, 5];
@@ -7,7 +8,7 @@ interface ISkillDisplay {
     filled: number;
 }
 
-const SkillDisplay = (props: ISkillDisplay) => {
+const SkillDisplay = (props: ISkillDisplay): ReactElement => {
     return (
         <>
             {fiveNumbers.map((number, index) => (
@@ -22,7 +23,7 @@ interface ISkillBubble {
     yes: boolean;
 }
 
-const SkillBubble = (props: ISkillBubble) => {
+const SkillBubble = (props: ISkillBubble): ReactElement => {
     if (props.yes) {
         return <MdCloud />;
     } else {

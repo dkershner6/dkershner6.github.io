@@ -1,12 +1,14 @@
 import React, { ReactElement, useCallback, useMemo, useState } from 'react';
+
 import { Jumbotron, Container, Table, Spinner } from 'react-bootstrap';
 import { useDebounce } from 'use-debounce';
-import useGitHubProjects from './useGitHubProjects';
-import projectData from './projectsData';
-import ProjectFilters from './ProjectFilters';
-import ProjectTableRow from './ProjectTableRow';
-import ProjectTableHead from './ProjectTableHead';
+
 import IProject, { ProjectCategory } from './IProject';
+import ProjectFilters from './ProjectFilters';
+import projectData from './projectsData';
+import ProjectTableHead from './ProjectTableHead';
+import ProjectTableRow from './ProjectTableRow';
+import useGitHubProjects from './useGitHubProjects';
 
 const Projects = (): ReactElement => {
     const [inputText, setInputText] = useState('');

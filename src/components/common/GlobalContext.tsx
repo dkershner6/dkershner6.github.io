@@ -1,4 +1,5 @@
 import React from 'react';
+
 import getSiteMetadata, { ISiteMetadata } from './SiteMetadata';
 
 interface IGlobalContext {

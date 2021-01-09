@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { ReactElement } from 'react';
 
 import GlobalContext, { initializeGlobalContext } from './GlobalContext';
 import Layout from './Layout';
@@ -8,7 +8,7 @@ interface ISiteWrapper {
     children?: unknown;
 }
 
-const SiteWrapper = (props: ISiteWrapper) => {
+const SiteWrapper = (props: ISiteWrapper): ReactElement => {
     const { children, title } = props;
     return (
         <GlobalContext.Provider value={initializeGlobalContext()}>

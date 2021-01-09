@@ -1,26 +1,30 @@
-import React from 'react';
+import React, { ReactElement } from 'react';
+
 import startCase from 'lodash.startcase';
+import { GetStaticPaths, GetStaticProps } from 'next';
+
 import blogRoll from '../../../../public/blog/summary.json';
 import BlogListPage from '../../../components/blog/listPage/BlogListTemplate';
-import SiteWrapper from '../../../components/common/SiteWrapper';
 import { IBlogRollPost } from '../../../components/blog/listPage/IBlogRollPost';
+import SiteWrapper from '../../../components/common/SiteWrapper';
 
 interface IBlogIndexPage {
     tag: string;
 }
 
-const BlogIndexPage = ({ tag }: IBlogIndexPage) => {
+const mapFilePathsToBlogPost = (filePaths: string[]): IBlogRollPost[] =>
+    filePaths.map((filePath) => {
+        const id = filePath.replace('public/blog/', '').replace('.json', '');
+        const blogRollPost = blogRoll.fileMap[filePath];
+        blogRollPost.id = id;
+        return blogRollPost as IBlogRollPost;
+    });
+
+const BlogIndexPage = ({ tag }: IBlogIndexPage): ReactElement => {
     const filePaths = Object.keys(blogRoll.fileMap);
-    const posts = filePaths
-        .map((filePath) => {
-            const id = filePath
-                .replace('public/blog/', '')
-                .replace('.json', '');
-            const blogRollPost = blogRoll.fileMap[filePath];
-            blogRollPost.id = id;
-            return blogRollPost as IBlogRollPost;
-        })
-        .filter((post) => post.tags.includes(tag));
+    const posts = mapFilePathsToBlogPost(filePaths).filter((post) =>
+        post.tags.includes(tag)
+    );
 
     return (
         <SiteWrapper
@@ -35,19 +39,15 @@ const BlogIndexPage = ({ tag }: IBlogIndexPage) => {
     );
 };
 
-export const getStaticProps = async (ctx) => {
+export const getStaticProps: GetStaticProps = async (ctx) => {
     const { tag } = ctx.params;
     return { props: { tag } };
 };
 
-export const getStaticPaths = async () => {
+export const getStaticPaths: GetStaticPaths = async () => {
     const filePaths = Object.keys(blogRoll.fileMap);
-    const posts = filePaths.map((filePath) => {
-        const id = filePath.replace('public/blog/', '').replace('.json', '');
-        const blogRollPost = blogRoll.fileMap[filePath];
-        blogRollPost.id = id;
-        return blogRollPost as IBlogRollPost;
-    });
+    const posts = mapFilePathsToBlogPost(filePaths);
+
     const allTagsUsed = [
         ...new Set(posts.map((post) => post.tags).flat())
     ] as string[];

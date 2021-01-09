@@ -1,5 +1,7 @@
 import React, { ReactElement } from 'react';
+
 import SiteWrapper from '../common/SiteWrapper';
+
 import Hero from './Hero';
 import Projects from './Projects';
 import Social from './Social';

@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { ReactElement } from 'react';
+
 import Layout from '../components/common/Layout';
 
-const NotFoundPage = () => (
+const NotFoundPage = (): ReactElement => (
     <Layout>
         <div>
             <h1>NOT FOUND</h1>
