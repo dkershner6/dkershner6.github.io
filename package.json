@@ -63,7 +63,6 @@
     "eslint-plugin-sonarjs": "^0.5.0",
     "jest": "^26.0.1",
     "prettier": "^2.0.5",
-    "processmd": "^4.5.0",
     "ts-jest": "^26.1.0",
     "typescript": "^3.9.3"
   }
