@@ -5,7 +5,6 @@ module.exports = {
         '^.+\\.(ts|tsx)$': 'ts-jest'
     },
     testPathIgnorePatterns: ['./.next/', './node_modules/', './aws'],
-    collectCoverage: true,
     collectCoverageFrom: ['src/**/*.{ts,tsx}'],
     coveragePathIgnorePatterns: ['node_modules', 'resume', '/r/', 'Resume', 'cms', 'classes', 'pages', '.next'],
     globals: {

@@ -1,5 +1,5 @@
+import GitHubTopic from './GitHubTopic';
 import IProject, { ProjectCategory, ProjectLanguage } from './IProject';
-import { GitHubTopic } from './useGitHubProjects';
 
 const mobileApps: Omit<IProject, 'category'>[] = [
     {

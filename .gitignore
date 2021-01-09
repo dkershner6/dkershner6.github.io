@@ -17,3 +17,6 @@ content-build
 .DS_Store
 yarn-error.log
 .vercel
+
+.env
+.npmrc
