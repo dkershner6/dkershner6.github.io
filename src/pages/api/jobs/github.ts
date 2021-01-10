@@ -12,42 +12,6 @@ handler.post(
             userAgent: 'DKershner.com'
         });
 
-        const results = await graphql(
-            `
-                query getContributions($start: DateTime!, $end: DateTime!) {
-                    viewer {
-                        contributionsCollection(from: $start, to: $end) {
-                            startedAt
-                            endedAt
-                            restrictedContributionsCount
-                            totalCommitContributions
-                            totalIssueContributions
-                            totalRepositoryContributions
-                            totalPullRequestContributions
-                            totalPullRequestReviewContributions
-                        }
-                    }
-                    rateLimit {
-                        cost
-                        used
-                        remaining
-                    }
-                }
-            `,
-            {
-                headers: {
-                    authorization: `token ${process.env.GITHUB_PERSONAL_TOKEN}`
-                },
-
-                start: '2018-01-01T00:00:00Z',
-                end: '2019-01-01T00:00:00Z'
-            }
-        );
-        console.log(
-            results,
-            results?.viewer?.contributionsCollection?.contributionCalendar
-        );
-
         // const results = await octokit.search.issuesAndPullRequests({
         //     q:
         //         'is:closed is:pr author:dkershner6 archived:false sort:updated-desc'
