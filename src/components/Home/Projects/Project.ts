@@ -16,7 +16,7 @@ export enum ProjectLanguage {
 
 export type MobileLink = { ios?: string; android?: string };
 
-export default interface IProject {
+export default interface Project {
     category: ProjectCategory;
     topics: GitHubTopic[];
     name: string;

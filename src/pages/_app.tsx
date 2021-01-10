@@ -5,12 +5,12 @@ import ReactGA from 'react-ga';
 
 import '../styles/css/bootstrap.css';
 
-interface IApp {
+interface AppProps {
     Component: () => ReactElement;
     pageProps: unknown;
 }
 
-const MyApp = ({ Component, pageProps }: IApp): ReactElement => {
+const MyApp = ({ Component, pageProps }: AppProps): ReactElement => {
     useEffect(() => {
         ReactGA.initialize('UA-10014066-1');
         ReactGA.pageview(window.location.pathname + window.location.search);

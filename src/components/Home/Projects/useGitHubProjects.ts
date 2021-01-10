@@ -3,11 +3,11 @@ import { useEffect, useState, useMemo } from 'react';
 import { Octokit } from '@octokit/rest';
 
 import GitHubTopic from './GitHubTopic';
-import IProject, { ProjectCategory } from './IProject';
+import Project, { ProjectCategory } from './Project';
 
 const APPLICABLE_TOPICS = Object.values(GitHubTopic);
 
-const useGitHubProjects = (): IProject[] => {
+const useGitHubProjects = (): Project[] => {
     const [repos, setRepos] = useState([]);
     const octokit = new Octokit();
 
