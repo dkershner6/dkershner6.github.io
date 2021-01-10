@@ -2,6 +2,7 @@ export interface GithubContributions {
     startedAt: string;
     endedAt: string;
 
+    totalRepositoriesWithContributedCommits: number;
     /** Private contributions */
     restrictedContributionsCount: number;
     totalCommitContributions: number;

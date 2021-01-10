@@ -16,7 +16,10 @@ const HomePage = (props: HomePageProps): ReactElement => {
 
 export const getStaticProps: GetStaticProps<HomePageProps> = async () => {
     const codingStats = await getCodingStats();
-    return { props: { codingStats } };
+    return {
+        props: { codingStats },
+        revalidate: 60 * 30 // In seconds
+    };
 };
 
 export default HomePage;

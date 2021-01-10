@@ -1,7 +1,7 @@
 import React, { ReactElement } from 'react';
 
 import CodingStats from '../../lib/common/CodingStats';
-import SiteWrapper from '../common/SiteWrapper';
+import Layout from '../common/Layout';
 
 import Hero from './Hero';
 import Projects from './Projects';
@@ -15,18 +15,23 @@ export const HOME_PAGE_DATA = {
     title: 'Derek Kershner',
     image: '/img/hero-background.webp',
     heading: 'Derek Kershner',
-    subheading: 'Software Architect - AWS / Azure'
+    subheading: 'Prolific Software Architect - AWS / Azure'
 };
 
 const Home = (props: HomeProps): ReactElement => {
-    console.log(props);
+    const { codingStats } = props;
     const { image, heading, subheading } = HOME_PAGE_DATA;
     return (
-        <SiteWrapper>
-            <Hero image={image} heading={heading} subheading={subheading} />
+        <Layout>
+            <Hero
+                image={image}
+                heading={heading}
+                subheading={subheading}
+                codingStats={codingStats}
+            />
             <Projects />
             <Social />
-        </SiteWrapper>
+        </Layout>
     );
 };
 
