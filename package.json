@@ -1,7 +1,7 @@
 {
   "name": "DKershner.com",
   "description": "Derek Kershner's website.",
-  "version": "1.4.1",
+  "version": "1.5.0",
   "author": "Derek Kershner",
   "private": true,
   "license": "MIT",
@@ -23,11 +23,15 @@
     "type-check": "tsc --noEmit"
   },
   "dependencies": {
+    "@octokit/graphql": "^4.5.8",
     "@octokit/rest": "^18.0.3",
+    "aws-sdk": "^2.824.0",
     "bootstrap": "^4.5.0",
+    "date-fns": "^2.16.1",
     "globby": "^11.0.0",
     "lodash.startcase": "^4.4.0",
     "next": "^9.4.4",
+    "next-connect": "^0.9.1",
     "react": "^16.13.1",
     "react-arrow": "^2.0.4",
     "react-bootstrap": "^1.0.1",

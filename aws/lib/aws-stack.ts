@@ -7,7 +7,7 @@ export class DKershnerStack extends cdk.Stack {
         super(scope, id, props);
 
         new dynamodb.Table(this, 'DKershnerTable', {
-            tableName: 'DKershnerTable',
+            tableName: 'dkershner-prod',
             billingMode: dynamodb.BillingMode.PAY_PER_REQUEST,
             partitionKey: {
                 name: 'pk',

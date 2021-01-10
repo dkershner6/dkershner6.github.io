@@ -1,4 +1,4 @@
-import makeRange from '../MakeRange';
+import makeRange from '../makeRange';
 
 describe('makeRange', () => {
     it('Should make a range of numbers in an array', () => {
