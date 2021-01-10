@@ -1,7 +1,7 @@
 import GitHubTopic from './GitHubTopic';
-import IProject, { ProjectCategory, ProjectLanguage } from './IProject';
+import Project, { ProjectCategory, ProjectLanguage } from './Project';
 
-const mobileApps: Omit<IProject, 'category'>[] = [
+const mobileApps: Omit<Project, 'category'>[] = [
     {
         topics: [GitHubTopic.REACT_NATIVE],
         name: 'Picky Club',
@@ -27,7 +27,7 @@ const mobileApps: Omit<IProject, 'category'>[] = [
     }
 ];
 
-const tools: Omit<IProject, 'category'>[] = [
+const tools: Omit<Project, 'category'>[] = [
     {
         topics: [GitHubTopic.REACT, GitHubTopic.NEXT],
         link: 'https://githubactions.com',
@@ -38,7 +38,7 @@ const tools: Omit<IProject, 'category'>[] = [
     }
 ];
 
-const communityServiceProjects: Omit<IProject, 'category'>[] = [
+const communityServiceProjects: Omit<Project, 'category'>[] = [
     {
         topics: [GitHubTopic.REACT, GitHubTopic.NEXT],
         name: 'Partners In Care',
@@ -48,7 +48,7 @@ const communityServiceProjects: Omit<IProject, 'category'>[] = [
     }
 ];
 
-const openSourceContributorProjects: Omit<IProject, 'category'>[] = [
+const openSourceContributorProjects: Omit<Project, 'category'>[] = [
     {
         topics: [],
         name: 'ShopifySharp',
@@ -58,7 +58,7 @@ const openSourceContributorProjects: Omit<IProject, 'category'>[] = [
     }
 ];
 
-const projects: IProject[] = [
+const projects: Project[] = [
     ...mobileApps.map((project) => ({
         ...project,
         category: ProjectCategory.MOBILE_APP

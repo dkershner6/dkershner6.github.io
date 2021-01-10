@@ -2,7 +2,7 @@ import React, { ReactElement } from 'react';
 
 import { Row, Col, Form, Tabs, Tab } from 'react-bootstrap';
 
-import { ProjectCategory } from '../IProject';
+import { ProjectCategory } from '../Project';
 
 export interface IProjectFilters {
     categoryFilter: string;

@@ -3,7 +3,7 @@ import React, { ReactElement, useCallback, useMemo, useState } from 'react';
 import { Jumbotron, Container, Table, Spinner } from 'react-bootstrap';
 import { useDebounce } from 'use-debounce';
 
-import IProject, { ProjectCategory } from './IProject';
+import Project, { ProjectCategory } from './Project';
 import ProjectFilters from './ProjectFilters';
 import projectData from './projectsData';
 import ProjectTableHead from './ProjectTableHead';
@@ -21,7 +21,7 @@ const Projects = (): ReactElement => {
     ]);
 
     const isInCategory = useCallback(
-        (project: IProject) => {
+        (project: Project) => {
             return (
                 categoryFilter === ProjectCategory.ALL ||
                 project.category === categoryFilter
@@ -31,7 +31,7 @@ const Projects = (): ReactElement => {
     );
 
     const hasFilterText = useCallback(
-        (project: IProject) => {
+        (project: Project) => {
             return (
                 !filterText ||
                 filterText.length === 0 ||

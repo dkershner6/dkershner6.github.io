@@ -1,21 +1,31 @@
 import React, { useEffect, ReactElement } from 'react';
 
-// eslint-disable-next-line import/default
+import Head from 'next/head';
 import ReactGA from 'react-ga';
+
+import { siteMetadata } from './_document';
 
 import '../styles/css/bootstrap.css';
 
-interface IApp {
+interface AppProps {
     Component: () => ReactElement;
     pageProps: unknown;
 }
 
-const MyApp = ({ Component, pageProps }: IApp): ReactElement => {
+const MyApp = ({ Component, pageProps }: AppProps): ReactElement => {
     useEffect(() => {
         ReactGA.initialize('UA-10014066-1');
         ReactGA.pageview(window.location.pathname + window.location.search);
     }, []);
-    return <Component {...pageProps} />;
+
+    return (
+        <>
+            <Head>
+                <title data-testid="pageTitle">{siteMetadata.title}</title>
+            </Head>
+            <Component {...pageProps} />
+        </>
+    );
 };
 
 export default MyApp;

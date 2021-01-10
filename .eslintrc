@@ -41,7 +41,7 @@
     },
     "rules": {
         "no-console": "warn",
-        "react/prop-types": 0, // Disabled to prefer use of Typescript<Props>
+        "react/prop-types": 0, // Disabled to prefer use of Typescript<Props>,
         "import/order": [
             "error",
             {

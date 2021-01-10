@@ -19,14 +19,31 @@ describe('Home', () => {
 
     it('renders without crashing', () => {
         const div = document.createElement('div');
-        ReactDOM.render(<Home />, div);
+        ReactDOM.render(
+            <Home
+                codingStats={{
+                    userName: 'test',
+                    githubContributions: {},
+                    updatedAt: null
+                }}
+            />,
+            div
+        );
         ReactDOM.unmountComponentAtNode(div);
 
         expect(true).toBeTruthy();
     });
 
     it('has correct heading and suheading', async () => {
-        render(<Home />);
+        render(
+            <Home
+                codingStats={{
+                    userName: 'test',
+                    githubContributions: {},
+                    updatedAt: null
+                }}
+            />
+        );
 
         expect(screen.getByTestId('heading')).toHaveTextContent(
             HOME_PAGE_DATA.heading

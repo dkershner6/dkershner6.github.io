@@ -3,7 +3,7 @@ import React, { ReactElement } from 'react';
 import { Badge, Col, Row } from 'react-bootstrap';
 import { DiApple, DiAndroid } from 'react-icons/di';
 
-import IProject from './IProject';
+import Project from './Project';
 
 const ProjectTableRow = ({
     category,
@@ -12,7 +12,7 @@ const ProjectTableRow = ({
     name,
     description,
     language
-}: IProject): ReactElement => {
+}: Project): ReactElement => {
     const renderMobileButton = (
         type: 'ios' | 'android',
         link?: string
