@@ -7,7 +7,7 @@ const Footer = (): ReactElement => {
         <footer>
             <Jumbotron fluid className="mt-5">
                 <Container>
-                    <p className="text-muted">
+                    <div className="text-muted">
                         This site was built using:
                         <ul>
                             <li>
@@ -122,7 +122,7 @@ const Footer = (): ReactElement => {
                                 , WordPress, and Raw HTML<a href="/r">.</a>
                             </li>
                         </ul>
-                    </p>
+                    </div>
                 </Container>
             </Jumbotron>
         </footer>

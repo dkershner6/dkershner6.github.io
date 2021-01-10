@@ -4,7 +4,7 @@ import { GetStaticProps } from 'next';
 
 import Home from '../components/Home';
 import CodingStats from '../lib/common/CodingStats';
-import getCodingStats from '../lib/server/handlers/getCodingStats';
+import getCodingStats from '../lib/server/github/getCodingStats';
 
 interface HomePageProps {
     codingStats: CodingStats;
