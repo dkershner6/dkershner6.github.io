@@ -9,7 +9,7 @@ import Document, {
     DocumentContext
 } from 'next/document';
 
-const siteMetadata = {
+export const siteMetadata = {
     siteUrl: 'https://dkershner.com',
     title: 'DKershner.com',
     description:
@@ -29,7 +29,7 @@ class MyDocument extends Document {
             <Html>
                 <Head>
                     <html lang="en" />
-                    <title data-testid="pageTitle">{siteMetadata.title}</title>
+
                     <meta
                         name="description"
                         content={siteMetadata.description}
