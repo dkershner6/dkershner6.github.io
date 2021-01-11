@@ -1,0 +1,21 @@
+name: GitHub - Asana Job CRON 1 # The copies are just because GH Actions sucks at CRON-ing
+
+on:
+  schedule:
+    - cron: "0,15,30,45 * * * *"
+
+jobs:
+  run-jobs:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Call API
+      id: githubAsana
+      uses: fjogeleit/http-request-action@master
+      with:
+        url: 'https://dkershner.com/api/jobs/github-asana'
+        method: 'POST'
+        timeout: 60000
+    
+    - name: Log it out
+      run: echo ${{ steps.githubAsana.outputs }}
+                  

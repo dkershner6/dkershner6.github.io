@@ -1,8 +1,8 @@
-name: GitHub - Asana Job CRON
+name: GitHub - Asana Job CRON 3 # The copies are just because GH Actions sucks at CRON-ing
 
 on:
   schedule:
-    - cron: "*/5 * * * *"
+    - cron: "10,25,40,55 * * * *"
 
 jobs:
   run-jobs:
@@ -17,5 +17,5 @@ jobs:
         timeout: 60000
     
     - name: Log it out
-      run: echo ${{ steps.output.githubAsana }}
+      run: echo ${{ steps.githubAsana.outputs }}
                   
