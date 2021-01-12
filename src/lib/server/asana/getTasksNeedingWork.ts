@@ -22,10 +22,6 @@ const getTasksNeedingWork = async (): Promise<Asana.resources.Tasks.Type[]> => {
         }
     );
 
-    const task = tasks.find((task) => task.gid === '1199529358652631');
-
-    console.log(task);
-
     return tasks;
 };
 

@@ -29,19 +29,29 @@ const postGithubJobHandler = async (
         if (openTasks && mergedPRs && mergedPRs.length > 0) {
             const mergedPRUrls = mergedPRs.map((pr) => pr.url);
             for (const openTask of openTasks) {
-                changes = changes + (await addToCombinedProject(openTask));
-                changes =
-                    changes +
-                    (await markCompleteWhenPRClose(mergedPRUrls, openTask));
+                try {
+                    changes = changes + (await addToCombinedProject(openTask));
+                    changes =
+                        changes +
+                        (await markCompleteWhenPRClose(mergedPRUrls, openTask));
+                } catch (error) {
+                    // eslint-disable-next-line no-console
+                    console.error(error);
+                }
             }
         }
 
         const tasksNeedingWork = await getTasksNeedingWork();
-        // if (tasksNeedingWork && tasksNeedingWork.length > 0) {
-        //     for (const task of tasksNeedingWork) {
-        //         changes = changes + (await addToCombinedProject(task));
-        //     }
-        // }
+        if (tasksNeedingWork && tasksNeedingWork.length > 0) {
+            for (const task of tasksNeedingWork) {
+                try {
+                    changes = changes + (await addToCombinedProject(task));
+                } catch (error) {
+                    // eslint-disable-next-line no-console
+                    console.error(error);
+                }
+            }
+        }
 
         // eslint-disable-next-line no-console
         console.log(`GitHub/Asana Job Ran with ${changes} changes.`);
@@ -65,6 +75,7 @@ const markCompleteWhenPRClose = async (
         );
 
         if (
+            pullRequestCustomField &&
             mergedPRUrls.includes(
                 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
                 // @ts-expect-error - Again, asana?
