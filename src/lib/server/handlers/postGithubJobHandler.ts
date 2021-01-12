@@ -37,11 +37,11 @@ const postGithubJobHandler = async (
         }
 
         const tasksNeedingWork = await getTasksNeedingWork();
-        if (tasksNeedingWork && tasksNeedingWork.length > 0) {
-            for (const task of tasksNeedingWork) {
-                changes = changes + (await addToCombinedProject(task));
-            }
-        }
+        // if (tasksNeedingWork && tasksNeedingWork.length > 0) {
+        //     for (const task of tasksNeedingWork) {
+        //         changes = changes + (await addToCombinedProject(task));
+        //     }
+        // }
 
         // eslint-disable-next-line no-console
         console.log(`GitHub/Asana Job Ran with ${changes} changes.`);

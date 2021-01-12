@@ -17,10 +17,14 @@ const getTasksNeedingWork = async (): Promise<Asana.resources.Tasks.Type[]> => {
             // eslint-disable-next-line @typescript-eslint/ban-ts-comment
             // @ts-expect-error - Nope, Asana
             'created_by.any': ME_GID,
-            'projects.not': ALL_ADEPT_PROJECT_GID,
-            opt_fields: 'name,assignee,projects,custom_fields'
+            // 'projects.not': ALL_ADEPT_PROJECT_GID,
+            opt_fields: 'name,assignee,projects,memberships,custom_fields'
         }
     );
+
+    const task = tasks.find((task) => task.gid === '1199529358652631');
+
+    console.log(task);
 
     return tasks;
 };
