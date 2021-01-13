@@ -1,5 +1,6 @@
 import React, { ReactElement, useCallback, useMemo, useState } from 'react';
 
+import { RestEndpointMethodTypes } from '@octokit/rest';
 import { Jumbotron, Container, Table, Spinner } from 'react-bootstrap';
 import { useDebounce } from 'use-debounce';
 
@@ -10,11 +11,15 @@ import ProjectTableHead from './ProjectTableHead';
 import ProjectTableRow from './ProjectTableRow';
 import useGitHubProjects from './useGitHubProjects';
 
-const Projects = (): ReactElement => {
+const Projects = ({
+    repos
+}: {
+    repos: RestEndpointMethodTypes['repos']['listForUser']['response']['data'];
+}): ReactElement => {
     const [inputText, setInputText] = useState('');
     const [filterText] = useDebounce(inputText, 350);
     const [categoryFilter, setCategoryFilter] = useState(ProjectCategory.ALL);
-    const openSourceProjects = useGitHubProjects();
+    const openSourceProjects = useGitHubProjects(repos);
 
     const allProjects = useMemo(() => [...openSourceProjects, ...projectData], [
         openSourceProjects
