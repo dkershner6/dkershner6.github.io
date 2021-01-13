@@ -7,6 +7,9 @@ on:
 jobs:
   pr-checks:
     runs-on: ubuntu-latest
+    env:
+      workingDirectory: ./webapp
+
     steps:
       - name: Checkout 🛎️
         uses: actions/checkout@v2
@@ -23,22 +26,27 @@ jobs:
         with:
             must_deny: '.npmrc,.env'
 
-      - run: npm ci
-      - run: npm run type-check
-      - run: npm run lint
-      - run: npm test
+      - name: Install, Types, Lint, Test
+        run: |
+          | npm ci
+          | npm run type-check
+          | npm run lint
+          | npm test
+        working-directory: ${{ env.workingDirectory }}
+
       - name: Check if version has been updated
         id: versioncheck
         uses: EndBug/version-check@v1
         with:
           diff-search: true
           token: ${{ secrets.GITHUB_TOKEN }}
+          file-name: ./${{ env.workingDirectory }}/package.json
 
       - name: Comment with Test Coverage
         uses: dkershner6/jest-coverage-commenter-action@v1
         with:
           github_token: "${{ secrets.GITHUB_TOKEN }}"
-          test_command: "npm run test:coverage"
+          test_command: "cd webapp && npm run test:coverage"
 
       - name: Fail on no version updated
         if: steps.versioncheck.outputs.changed != 'true'
