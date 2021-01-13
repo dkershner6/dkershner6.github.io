@@ -7,11 +7,11 @@ coverage
 content-build
 
 # next.js
-/.next/
-/out/
+*/.next/
+*/out/
 
 # production
-/build
+*/build
 
 # Build directory
 .DS_Store

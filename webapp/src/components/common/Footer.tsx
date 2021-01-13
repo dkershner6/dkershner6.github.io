@@ -90,6 +90,16 @@ const Footer = (): ReactElement => {
                                 </strong>
                             </li>
                             <li>
+                                Hero image background from{' '}
+                                <a
+                                    href="https://svgbackgrounds.com/"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                >
+                                    SVGBackgrounds.com
+                                </a>
+                            </li>
+                            <li>
                                 This site is used for testing and various
                                 automated tasks, and changes very frequently,
                                 therefore items are often broken.

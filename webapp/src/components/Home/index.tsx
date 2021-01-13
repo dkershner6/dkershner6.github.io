@@ -1,5 +1,7 @@
 import React, { ReactElement } from 'react';
 
+import { RestEndpointMethodTypes } from '@octokit/rest';
+
 import CodingStats from '../../lib/common/CodingStats';
 import Layout from '../common/Layout';
 
@@ -9,27 +11,26 @@ import Social from './Social';
 
 interface HomeProps {
     codingStats: CodingStats;
+    repos: RestEndpointMethodTypes['repos']['listForUser']['response']['data'];
 }
 
 export const HOME_PAGE_DATA = {
     title: 'Derek Kershner',
-    image: '/img/hero-background.webp',
     heading: 'Derek Kershner',
     subheading: 'Prolific Software Architect - AWS / Azure'
 };
 
 const Home = (props: HomeProps): ReactElement => {
-    const { codingStats } = props;
-    const { image, heading, subheading } = HOME_PAGE_DATA;
+    const { codingStats, repos } = props;
+    const { heading, subheading } = HOME_PAGE_DATA;
     return (
         <Layout>
             <Hero
-                image={image}
                 heading={heading}
                 subheading={subheading}
                 codingStats={codingStats}
             />
-            <Projects />
+            <Projects repos={repos} />
             <Social />
         </Layout>
     );
