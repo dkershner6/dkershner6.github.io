@@ -1,7 +1,7 @@
 import React, { ReactElement } from 'react';
 
+import { Container, Button, Typography } from '@material-ui/core';
 import Arrow from 'react-arrow';
-import { Container, Row, Col, Button } from 'react-bootstrap';
 import styled from 'styled-components';
 
 import CodingStats from '../../../lib/common/CodingStats';
@@ -26,64 +26,58 @@ const Hero = (props: HeroProps): ReactElement => {
     const { heading, subheading, codingStats } = props;
 
     const renderHeading = (): ReactElement => (
-        <Row>
-            <Col>
-                <h1>
-                    <strong>
-                        <span className="display-4 text-primary">{'>'}</span>
-                        <span
-                            id="heading"
-                            data-testid="heading"
-                            className="display-4 text-white"
-                        >
-                            {heading}
-                        </span>
-                        <span className="display-4 text-primary">{'<'}</span>
-                    </strong>
-                </h1>
-            </Col>
-        </Row>
+        <div>
+            <h1>
+                <strong>
+                    <Typography component="span" variant="h2" color="primary">
+                        {'>'}
+                    </Typography>
+                    <Typography
+                        component="span"
+                        variant="h2"
+                        color="textSecondary"
+                    >
+                        {heading}
+                    </Typography>
+                    <span className="display-4 text-primary">{'<'}</span>
+                </strong>
+            </h1>
+        </div>
     );
 
     const renderSubheading = (): ReactElement => (
-        <Row>
-            <Col>
-                <h4 data-testid="subheading" className="text-white">
-                    {subheading}
-                </h4>
-            </Col>
-        </Row>
+        <div>
+            <h4 data-testid="subheading" className="text-white">
+                {subheading}
+            </h4>
+        </div>
     );
 
     const renderArrowButton = (): ReactElement => (
-        <Row className="mt-5">
-            <Col>
-                <a href="#projects">
-                    <Button variant="primary">
-                        <Arrow
-                            direction="down"
-                            shaftWidth={25}
-                            shaftLength={25}
-                            headWidth={50}
-                            headLength={25}
-                            fill="white"
-                            stroke="white"
-                            strokeWidth={1}
-                        />
-                    </Button>
-                </a>
-            </Col>
-        </Row>
+        <div>
+            <a href="#projects">
+                <Button variant="contained" color="primary">
+                    <Arrow
+                        direction="down"
+                        shaftWidth={25}
+                        shaftLength={25}
+                        headWidth={50}
+                        headLength={25}
+                        fill="white"
+                        stroke="white"
+                        strokeWidth={1}
+                    />
+                </Button>
+            </a>
+        </div>
     );
 
     return (
         <HeroContainer>
-            <Container>
-                {renderHeading()}
-                {renderSubheading()}
-                <HeroStats codingStats={codingStats} />
-                {renderArrowButton()}
-            </Container>
+            {renderHeading()}
+            {renderSubheading()}
+            <HeroStats codingStats={codingStats} />
+            {renderArrowButton()}
         </HeroContainer>
     );
 };

@@ -1,13 +1,18 @@
 import React, { ReactElement } from 'react';
 
-import { Container, Jumbotron } from 'react-bootstrap';
+import { Container, Paper, Typography } from '@material-ui/core';
+import styled from 'styled-components';
+
+const PaddedPaper = styled(Paper)`
+    padding: 3rem;
+`;
 
 const Footer = (): ReactElement => {
     return (
         <footer>
-            <Jumbotron fluid className="mt-5">
-                <Container>
-                    <div className="text-muted">
+            <Container>
+                <PaddedPaper elevation={3}>
+                    <Typography variant="caption">
                         This site was built using:
                         <ul>
                             <li>
@@ -132,9 +137,9 @@ const Footer = (): ReactElement => {
                                 , WordPress, and Raw HTML<a href="/r">.</a>
                             </li>
                         </ul>
-                    </div>
-                </Container>
-            </Jumbotron>
+                    </Typography>
+                </PaddedPaper>
+            </Container>
         </footer>
     );
 };

@@ -6,7 +6,6 @@ import {
     differenceInBusinessDays,
     startOfYear
 } from 'date-fns';
-import { Col, Row } from 'react-bootstrap';
 import useInterval from 'react-useinterval';
 
 import CodingStats from '../../../lib/common/CodingStats';
@@ -74,31 +73,19 @@ const HeroStats = ({ codingStats }: HeroStatsProps): ReactElement => {
 
     return (
         <>
-            <Row className="mt-3">
-                <Col className=" display-4 text-success">
-                    {totalContributions.toLocaleString()}
-                </Col>
-            </Row>
-            <Row>
-                <Col className="text-white">
-                    <a
-                        href="https://github.com/dkershner6"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
-                        contributions
-                    </a>{' '}
-                    over
-                </Col>
-            </Row>
-            <Row>
-                <Col className="text-white">{codingDuration}</Col>
-            </Row>
-            <Row>
-                <Col className="text-white">
-                    (Averaging about {averagePerWorkingDay} per working day)
-                </Col>
-            </Row>
+            <div>{totalContributions.toLocaleString()}</div>
+            <div>
+                <a
+                    href="https://github.com/dkershner6"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    contributions
+                </a>{' '}
+                over
+            </div>
+            <div>{codingDuration}</div>
+            <div>(Averaging about {averagePerWorkingDay} per working day)</div>
         </>
     );
 };
