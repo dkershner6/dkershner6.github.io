@@ -7,8 +7,9 @@ on:
 jobs:
   pr-checks:
     runs-on: ubuntu-latest
-    env:
-      workingDirectory: ./webapp
+    defaults:
+      run:
+        working-directory: ./webapp
 
     steps:
       - name: Checkout 🛎️
@@ -26,13 +27,10 @@ jobs:
         with:
             must_deny: '.npmrc,.env'
 
-      - name: Install, Types, Lint, Test
-        run: |
-          | npm ci
-          | npm run type-check
-          | npm run lint
-          | npm test
-        working-directory: ${{ env.workingDirectory }}
+      - run: npm ci
+      - run: npm run type-check
+      - run: npm run lint
+      - run: npm test
 
       - name: Check if version has been updated
         id: versioncheck
@@ -40,7 +38,7 @@ jobs:
         with:
           diff-search: true
           token: ${{ secrets.GITHUB_TOKEN }}
-          file-name: ./${{ env.workingDirectory }}/package.json
+          file-name: ./webapp/package.json
 
       - name: Comment with Test Coverage
         uses: dkershner6/jest-coverage-commenter-action@v1
