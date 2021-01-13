@@ -26,6 +26,7 @@ describe('Home', () => {
                     githubContributions: {},
                     updatedAt: null
                 }}
+                repos={[]}
             />,
             div
         );
@@ -42,6 +43,7 @@ describe('Home', () => {
                     githubContributions: {},
                     updatedAt: null
                 }}
+                repos={[]}
             />
         );
 
