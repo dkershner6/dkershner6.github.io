@@ -1,6 +1,6 @@
-import { Box, Chip, Link, TableCell, TableRow } from '@material-ui/core';
 import React, { ReactElement } from 'react';
 
+import { Box, Chip, Link, TableCell, TableRow } from '@material-ui/core';
 import { DiApple, DiAndroid } from 'react-icons/di';
 import styled from 'styled-components';
 

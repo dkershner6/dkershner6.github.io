@@ -1,6 +1,6 @@
 import React, { ReactElement, useMemo, useState } from 'react';
-import styled from 'styled-components';
 
+import { Link, Typography } from '@material-ui/core';
 import {
     formatDuration,
     intervalToDuration,
@@ -8,10 +8,10 @@ import {
     startOfYear
 } from 'date-fns';
 import useInterval from 'react-useinterval';
+import styled from 'styled-components';
 
 import CodingStats from '../../../lib/common/CodingStats';
 import { CODING_START_DATE } from '../../../lib/common/gitHubStats';
-import { Link, Typography } from '@material-ui/core';
 
 const HeroStatsContainer = styled.div``;
 

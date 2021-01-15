@@ -1,5 +1,6 @@
-import { TableCell, TableHead, TableRow } from '@material-ui/core';
 import React, { ReactElement } from 'react';
+
+import { TableCell, TableHead, TableRow } from '@material-ui/core';
 
 const ProjectTableHead = (): ReactElement => {
     return (

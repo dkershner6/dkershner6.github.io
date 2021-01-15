@@ -3,8 +3,9 @@ import React, { useEffect, ReactElement } from 'react';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import Head from 'next/head';
 import ReactGA from 'react-ga';
-import { UIContextProvider } from '../context/UIContext';
+
 import ThemeProviders from '../components/ThemeProviders';
+import { UIContextProvider } from '../context/UIContext';
 
 import { siteMetadata } from './_document';
 

@@ -1,7 +1,9 @@
 import React, { createContext, useMemo, useState } from 'react';
+
 import { PaletteType, Theme } from '@material-ui/core';
-import LightTheme from '../styles/LightTheme';
+
 import DarkTheme from '../styles/DarkTheme';
+import LightTheme from '../styles/LightTheme';
 
 export interface UIContextOutput {
     themeType: PaletteType;

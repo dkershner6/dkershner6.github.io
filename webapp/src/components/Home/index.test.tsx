@@ -4,9 +4,10 @@ import { render, screen } from '@testing-library/react';
 import ReactDOM from 'react-dom';
 import '@testing-library/jest-dom/extend-expect';
 
-import Home, { HOME_PAGE_DATA } from '.';
 import { UIContextProvider } from '../../context/UIContext';
 import ThemeProviders from '../ThemeProviders';
+
+import Home, { HOME_PAGE_DATA } from '.';
 
 jest.mock('./Projects/useGitHubProjects.ts', () => () => []);
 

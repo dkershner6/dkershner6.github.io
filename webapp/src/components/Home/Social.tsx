@@ -1,6 +1,6 @@
-import { Container, Button, Typography } from '@material-ui/core';
 import React, { ReactElement } from 'react';
 
+import { Container, Button, Typography } from '@material-ui/core';
 import styled from 'styled-components';
 
 const SocialContainer = styled.div`

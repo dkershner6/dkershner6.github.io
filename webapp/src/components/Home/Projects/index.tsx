@@ -1,7 +1,8 @@
 import React, { ReactElement, useCallback, useMemo, useState } from 'react';
-import styled from 'styled-components';
 
+import { Table, TableBody, Typography } from '@material-ui/core';
 import { RestEndpointMethodTypes } from '@octokit/rest';
+import styled from 'styled-components';
 import { useDebounce } from 'use-debounce';
 
 import Project, { ProjectCategory } from './Project';
@@ -10,7 +11,6 @@ import projectData from './projectsData';
 import ProjectTableHead from './ProjectTableHead';
 import ProjectTableRow from './ProjectTableRow';
 import useGitHubProjects from './useGitHubProjects';
-import { Table, TableBody, Typography } from '@material-ui/core';
 
 const ProjectsContainer = styled.div`
     padding: 3rem 0;

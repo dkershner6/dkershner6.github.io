@@ -1,6 +1,5 @@
 import React, { ReactElement } from 'react';
 
-import { ServerStyleSheet } from 'styled-components';
 import { ServerStyleSheets } from '@material-ui/core/styles';
 import Document, {
     Html,
@@ -10,6 +9,7 @@ import Document, {
     DocumentInitialProps,
     DocumentContext
 } from 'next/document';
+import { ServerStyleSheet } from 'styled-components';
 
 export const siteMetadata = {
     siteUrl: 'https://dkershner.com',

@@ -1,8 +1,9 @@
 import React, { ReactElement, useContext } from 'react';
 
-import { AppBar, Icon, IconButton, Toolbar } from '@material-ui/core';
+import { AppBar, IconButton, Toolbar } from '@material-ui/core';
 import SunMoonIcon from '@material-ui/icons/Brightness4';
 import styled from 'styled-components';
+
 import UIContext from '../../context/UIContext';
 
 const HeaderLeft = styled.div`

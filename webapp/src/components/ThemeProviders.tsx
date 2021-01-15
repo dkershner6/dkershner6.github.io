@@ -1,6 +1,8 @@
+import React, { useContext } from 'react';
+
 import { MuiThemeProvider } from '@material-ui/core';
 import { ThemeProvider } from 'styled-components';
-import React, { useContext } from 'react';
+
 import UIContext from '../context/UIContext';
 
 const ThemeProviders: React.FC = ({ children }) => {

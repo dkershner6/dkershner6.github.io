@@ -1,10 +1,6 @@
 import Asana from 'asana';
 
-import {
-    ADEPT_WORKSPACE_GID,
-    ALL_ADEPT_PROJECT_GID,
-    ME_GID
-} from '../../common/asanaConstants';
+import { ADEPT_WORKSPACE_GID, ME_GID } from '../../common/asanaConstants';
 
 import buildAsanaClient from './buildAsanaClient';
 
