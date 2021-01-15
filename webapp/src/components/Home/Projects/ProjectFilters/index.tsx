@@ -1,8 +1,14 @@
+import { Container, Tab, Tabs, TextField, AppBar } from '@material-ui/core';
 import React, { ReactElement } from 'react';
 
-import { Row, Col, Form, Tabs, Tab } from 'react-bootstrap';
+import styled from 'styled-components';
 
 import { ProjectCategory } from '../Project';
+
+const CenteredContainer = styled(Container)`
+    justify-content: center;
+    margin: 1rem 0;
+`;
 
 export interface IProjectFilters {
     categoryFilter: string;
@@ -21,37 +27,36 @@ const ProjectFilters = ({
 }: IProjectFilters): ReactElement => {
     return (
         <>
-            <Row className="justify-content-md-center">
-                <Col xs="12" md="9">
-                    <Form.Group controlId="formFilter">
-                        <Form.Control
-                            type="text"
-                            placeholder="Filter"
-                            value={inputText}
-                            onChange={(event) =>
-                                setInputText(event.target.value)
-                            }
-                        />
-                    </Form.Group>
-                </Col>
-            </Row>
-            <Row className="justify-content-md-center">
-                <Col xs="auto">
+            <CenteredContainer>
+                <TextField
+                    type="text"
+                    placeholder="Filter"
+                    value={inputText}
+                    onChange={(event) => setInputText(event.target.value)}
+                />
+            </CenteredContainer>
+            <CenteredContainer>
+                <AppBar position="static">
                     <Tabs
+                        variant="scrollable"
+                        scrollButtons="auto"
                         id="category-tabs"
-                        activeKey={categoryFilter}
-                        onSelect={(key) => setCategoryFilter(key)}
+                        value={categoryFilter}
+                        onChange={(event, newValue) =>
+                            setCategoryFilter(newValue)
+                        }
                     >
                         {projectCategories.map((categoryName) => (
                             <Tab
                                 key={categoryName}
-                                eventKey={categoryName}
-                                title={categoryName}
+                                id={categoryName}
+                                label={categoryName}
+                                value={categoryName}
                             />
                         ))}
                     </Tabs>
-                </Col>
-            </Row>
+                </AppBar>
+            </CenteredContainer>
         </>
     );
 };

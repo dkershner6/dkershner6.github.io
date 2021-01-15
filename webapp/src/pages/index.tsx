@@ -10,10 +10,11 @@ import getCodingStats from '../lib/server/github/getCodingStats';
 interface HomePageProps {
     codingStats: CodingStats;
     repos: RestEndpointMethodTypes['repos']['listForUser']['response']['data'];
+    serverDate: number;
 }
 
 const HomePage = (props: HomePageProps): ReactElement => {
-    return <Home {...props} />;
+    return <Home {...props} serverDate={new Date(props.serverDate)} />;
 };
 
 export const getStaticProps: GetStaticProps<HomePageProps> = async () => {
@@ -30,7 +31,11 @@ export const getStaticProps: GetStaticProps<HomePageProps> = async () => {
     ]);
 
     return {
-        props: { codingStats, repos: data },
+        props: {
+            codingStats,
+            repos: data,
+            serverDate: Number(new Date())
+        },
         revalidate: 60 * 30 // In seconds
     };
 };

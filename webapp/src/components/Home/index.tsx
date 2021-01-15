@@ -12,6 +12,7 @@ import Social from './Social';
 interface HomeProps {
     codingStats: CodingStats;
     repos: RestEndpointMethodTypes['repos']['listForUser']['response']['data'];
+    serverDate: Date;
 }
 
 export const HOME_PAGE_DATA = {
@@ -21,7 +22,7 @@ export const HOME_PAGE_DATA = {
 };
 
 const Home = (props: HomeProps): ReactElement => {
-    const { codingStats, repos } = props;
+    const { codingStats, repos, serverDate } = props;
     const { heading, subheading } = HOME_PAGE_DATA;
     return (
         <Layout>
@@ -29,6 +30,7 @@ const Home = (props: HomeProps): ReactElement => {
                 heading={heading}
                 subheading={subheading}
                 codingStats={codingStats}
+                serverDate={serverDate}
             />
             <Projects repos={repos} />
             <Social />

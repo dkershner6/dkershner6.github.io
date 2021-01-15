@@ -1,4 +1,5 @@
 import React, { ReactElement, useMemo, useState } from 'react';
+import styled from 'styled-components';
 
 import {
     formatDuration,
@@ -10,23 +11,30 @@ import useInterval from 'react-useinterval';
 
 import CodingStats from '../../../lib/common/CodingStats';
 import { CODING_START_DATE } from '../../../lib/common/gitHubStats';
+import { Link, Typography } from '@material-ui/core';
+
+const HeroStatsContainer = styled.div``;
 
 interface HeroStatsProps {
+    serverDate: Date;
     codingStats: CodingStats;
 }
 
-const calculateDuration = (): string => {
+const calculateDuration = (endSeedDate?: Date): string => {
     return formatDuration(
         intervalToDuration({
-            end: new Date(),
+            end: endSeedDate ?? new Date(),
             start: new Date(CODING_START_DATE)
         })
     );
 };
 
-const HeroStats = ({ codingStats }: HeroStatsProps): ReactElement => {
+const HeroStats = ({
+    codingStats,
+    serverDate
+}: HeroStatsProps): ReactElement => {
     const [codingDuration, setCodingDuration] = useState<string>(
-        calculateDuration()
+        calculateDuration(serverDate)
     );
 
     useInterval(() => setCodingDuration(calculateDuration()), 1000);
@@ -72,21 +80,25 @@ const HeroStats = ({ codingStats }: HeroStatsProps): ReactElement => {
     }, [codingStats]);
 
     return (
-        <>
-            <div>{totalContributions.toLocaleString()}</div>
-            <div>
-                <a
+        <HeroStatsContainer>
+            <Typography variant="h3" color="primary">
+                {totalContributions.toLocaleString()}
+            </Typography>
+            <Typography variant="subtitle1">
+                <Link
                     href="https://github.com/dkershner6"
                     target="_blank"
                     rel="noopener noreferrer"
                 >
-                    contributions
-                </a>{' '}
+                    Contributions
+                </Link>{' '}
                 over
-            </div>
-            <div>{codingDuration}</div>
-            <div>(Averaging about {averagePerWorkingDay} per working day)</div>
-        </>
+            </Typography>
+            <Typography variant="subtitle1">{codingDuration}</Typography>
+            <Typography variant="subtitle1">
+                (Averaging about {averagePerWorkingDay} per working day)
+            </Typography>
+        </HeroStatsContainer>
     );
 };
 

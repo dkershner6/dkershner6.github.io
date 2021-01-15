@@ -1,40 +1,52 @@
+import { Container, Button, Typography } from '@material-ui/core';
 import React, { ReactElement } from 'react';
 
-import { Container, Row, Col, Jumbotron, Button } from 'react-bootstrap';
+import styled from 'styled-components';
+
+const SocialContainer = styled.div`
+    width: 100%;
+    text-align: center;
+    padding: 5rem;
+    background-color: ${(props) => props.theme.palette.secondary.light};
+`;
+
+const ButtonContainer = styled(Container)`
+    margin-top: 2rem;
+`;
 
 const Social = (): ReactElement => {
     return (
-        <Jumbotron id="social" className="bg-info text-light">
-            <Container className="mt-3">
-                <Row className="mt-3 text-center">
-                    <Col>
-                        <h3 className="display-4 text-center">
-                            Social / Learning
-                        </h3>
-                        <Button
-                            variant="info"
-                            href="https://www.linkedin.com/in/derek-kershner-54b3392"
-                        >
-                            LinkedIn
-                        </Button>
-
-                        <Button
-                            variant="info"
-                            href="https://github.com/dkershner6"
-                        >
-                            GitHub
-                        </Button>
-
-                        <Button
-                            variant="info"
-                            href="https://app.pluralsight.com/profile/dkershner"
-                        >
-                            Pluralsight
-                        </Button>
-                    </Col>
-                </Row>
+        <SocialContainer>
+            <Container>
+                <Typography variant="h2" component="h3">
+                    Social / Learning
+                </Typography>
             </Container>
-        </Jumbotron>
+            <ButtonContainer>
+                <Button
+                    variant="contained"
+                    color="secondary"
+                    href="https://www.linkedin.com/in/derek-kershner-54b3392"
+                >
+                    LinkedIn
+                </Button>
+                <Button
+                    variant="contained"
+                    color="secondary"
+                    href="https://github.com/dkershner6"
+                >
+                    GitHub
+                </Button>
+
+                <Button
+                    variant="contained"
+                    color="secondary"
+                    href="https://app.pluralsight.com/profile/dkershner"
+                >
+                    Pluralsight
+                </Button>
+            </ButtonContainer>
+        </SocialContainer>
     );
 };
 
