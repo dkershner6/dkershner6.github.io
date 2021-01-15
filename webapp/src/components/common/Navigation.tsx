@@ -1,21 +1,46 @@
-import React, { ReactElement } from 'react';
+import React, { ReactElement, useContext } from 'react';
 
-import { Nav, Navbar } from 'react-bootstrap';
+import { AppBar, IconButton, Toolbar } from '@material-ui/core';
+import SunMoonIcon from '@material-ui/icons/Brightness4';
+import styled from 'styled-components';
+
+import UIContext from '../../context/UIContext';
+
+const HeaderLeft = styled.div`
+    flex: 1;
+`;
+
+const HeaderRight = styled.div`
+    color: #fff;
+`;
+
+const WhiteSunMoonIcon = styled(SunMoonIcon)`
+    color: #fff;
+`;
 
 const Navigation = (): ReactElement => {
+    const { themeType, setThemeType } = useContext(UIContext);
+
     return (
-        <Navbar bg="dark" variant="dark" collapseOnSelect expand="lg">
-            <Navbar.Brand href="/">Derek Kershner</Navbar.Brand>
-            <Navbar.Toggle
-                id="navbar-toggle"
-                aria-controls="responsive-navbar-nav"
-            />
-            <Navbar.Collapse id="navbar-collapse">
-                <Nav className="mr-auto">
-                    <Nav.Link href="/#projects">Projects</Nav.Link>
-                </Nav>
-            </Navbar.Collapse>
-        </Navbar>
+        <AppBar
+            position="static"
+            color={themeType === 'light' ? 'primary' : 'transparent'}
+        >
+            <Toolbar>
+                <HeaderLeft />
+                <HeaderRight>
+                    <IconButton
+                        onClick={() =>
+                            setThemeType((prevThemeType) =>
+                                prevThemeType === 'light' ? 'dark' : 'light'
+                            )
+                        }
+                    >
+                        <WhiteSunMoonIcon />
+                    </IconButton>
+                </HeaderRight>
+            </Toolbar>
+        </AppBar>
     );
 };
 

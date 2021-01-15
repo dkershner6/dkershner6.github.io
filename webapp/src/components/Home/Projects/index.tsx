@@ -1,7 +1,8 @@
 import React, { ReactElement, useCallback, useMemo, useState } from 'react';
 
+import { Table, TableBody, Typography } from '@material-ui/core';
 import { RestEndpointMethodTypes } from '@octokit/rest';
-import { Jumbotron, Container, Table, Spinner } from 'react-bootstrap';
+import styled from 'styled-components';
 import { useDebounce } from 'use-debounce';
 
 import Project, { ProjectCategory } from './Project';
@@ -10,6 +11,16 @@ import projectData from './projectsData';
 import ProjectTableHead from './ProjectTableHead';
 import ProjectTableRow from './ProjectTableRow';
 import useGitHubProjects from './useGitHubProjects';
+
+const ProjectsContainer = styled.div`
+    padding: 3rem 0;
+    text-align: center;
+    background-color: ${(props) => props.theme.palette.background.paper};
+`;
+
+const ProjectsTableContainer = styled.div`
+    overflow-x: auto;
+`;
 
 const Projects = ({
     repos
@@ -65,16 +76,6 @@ const Projects = ({
     }, [allProjects, isInCategory, hasFilterText]);
 
     const renderTableRows = (): ReactElement => {
-        if (openSourceProjects.length === 0) {
-            return (
-                <tr>
-                    <td colSpan={5}>
-                        <Spinner animation="border" />
-                    </td>
-                </tr>
-            );
-        }
-
         return (
             <>
                 {projects.map((project) => (
@@ -85,25 +86,24 @@ const Projects = ({
     };
 
     return (
-        <Jumbotron fluid id="projects" className="bg-secondary">
-            <Container
-                fluid
-                style={{ minHeight: '50rem', overflowX: 'auto' }}
-                className="bg-secondary"
-            >
-                <h2 className="display-4 text-center mb-5">Public Projects</h2>
+        <ProjectsContainer id="projects">
+            <Typography variant="h2" component="h3">
+                Public Projects
+            </Typography>
+            <ProjectsTableContainer>
                 <ProjectFilters
                     categoryFilter={categoryFilter}
                     setCategoryFilter={setCategoryFilter}
                     inputText={inputText}
                     setInputText={setInputText}
                 />
-                <Table hover striped responsive size="sm">
+
+                <Table size="small">
                     <ProjectTableHead />
-                    <tbody>{renderTableRows()}</tbody>
+                    <TableBody>{renderTableRows()}</TableBody>
                 </Table>
-            </Container>
-        </Jumbotron>
+            </ProjectsTableContainer>
+        </ProjectsContainer>
     );
 };
 

@@ -1,33 +1,40 @@
 import React, { ReactElement, useMemo, useState } from 'react';
 
+import { Link, Typography } from '@material-ui/core';
 import {
     formatDuration,
     intervalToDuration,
     differenceInBusinessDays,
     startOfYear
 } from 'date-fns';
-import { Col, Row } from 'react-bootstrap';
 import useInterval from 'react-useinterval';
+import styled from 'styled-components';
 
 import CodingStats from '../../../lib/common/CodingStats';
 import { CODING_START_DATE } from '../../../lib/common/gitHubStats';
 
+const HeroStatsContainer = styled.div``;
+
 interface HeroStatsProps {
+    serverDate: Date;
     codingStats: CodingStats;
 }
 
-const calculateDuration = (): string => {
+const calculateDuration = (endSeedDate?: Date): string => {
     return formatDuration(
         intervalToDuration({
-            end: new Date(),
+            end: endSeedDate ?? new Date(),
             start: new Date(CODING_START_DATE)
         })
     );
 };
 
-const HeroStats = ({ codingStats }: HeroStatsProps): ReactElement => {
+const HeroStats = ({
+    codingStats,
+    serverDate
+}: HeroStatsProps): ReactElement => {
     const [codingDuration, setCodingDuration] = useState<string>(
-        calculateDuration()
+        calculateDuration(serverDate)
     );
 
     useInterval(() => setCodingDuration(calculateDuration()), 1000);
@@ -73,33 +80,25 @@ const HeroStats = ({ codingStats }: HeroStatsProps): ReactElement => {
     }, [codingStats]);
 
     return (
-        <>
-            <Row className="mt-3">
-                <Col className=" display-4 text-success">
-                    {totalContributions.toLocaleString()}
-                </Col>
-            </Row>
-            <Row>
-                <Col className="text-white">
-                    <a
-                        href="https://github.com/dkershner6"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
-                        contributions
-                    </a>{' '}
-                    over
-                </Col>
-            </Row>
-            <Row>
-                <Col className="text-white">{codingDuration}</Col>
-            </Row>
-            <Row>
-                <Col className="text-white">
-                    (Averaging about {averagePerWorkingDay} per working day)
-                </Col>
-            </Row>
-        </>
+        <HeroStatsContainer>
+            <Typography variant="h3" color="primary">
+                {totalContributions.toLocaleString()}
+            </Typography>
+            <Typography variant="subtitle1">
+                <Link
+                    href="https://github.com/dkershner6"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    Contributions
+                </Link>{' '}
+                over
+            </Typography>
+            <Typography variant="subtitle1">{codingDuration}</Typography>
+            <Typography variant="subtitle1">
+                (Averaging about {averagePerWorkingDay} per working day)
+            </Typography>
+        </HeroStatsContainer>
     );
 };
 

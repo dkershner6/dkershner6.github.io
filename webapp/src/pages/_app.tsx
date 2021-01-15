@@ -1,11 +1,13 @@
 import React, { useEffect, ReactElement } from 'react';
 
+import CssBaseline from '@material-ui/core/CssBaseline';
 import Head from 'next/head';
 import ReactGA from 'react-ga';
 
-import { siteMetadata } from './_document';
+import ThemeProviders from '../components/ThemeProviders';
+import { UIContextProvider } from '../context/UIContext';
 
-import '../styles/css/bootstrap.css';
+import { siteMetadata } from './_document';
 
 interface AppProps {
     Component: () => ReactElement;
@@ -18,12 +20,25 @@ const MyApp = ({ Component, pageProps }: AppProps): ReactElement => {
         ReactGA.pageview(window.location.pathname + window.location.search);
     }, []);
 
+    useEffect(() => {
+        // Remove the server-side injected CSS.
+        const jssStyles = document.querySelector('#jss-server-side');
+        if (jssStyles) {
+            jssStyles.parentElement.removeChild(jssStyles);
+        }
+    }, []);
+
     return (
         <>
             <Head>
                 <title data-testid="pageTitle">{siteMetadata.title}</title>
             </Head>
-            <Component {...pageProps} />
+            <UIContextProvider>
+                <ThemeProviders>
+                    <CssBaseline />
+                    <Component {...pageProps} />
+                </ThemeProviders>
+            </UIContextProvider>
         </>
     );
 };

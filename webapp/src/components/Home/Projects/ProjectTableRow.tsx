@@ -1,9 +1,14 @@
 import React, { ReactElement } from 'react';
 
-import { Badge, Col, Row } from 'react-bootstrap';
+import { Box, Chip, Link, TableCell, TableRow } from '@material-ui/core';
 import { DiApple, DiAndroid } from 'react-icons/di';
+import styled from 'styled-components';
 
 import Project from './Project';
+
+const NameContainer = styled.div`
+    display: flex;
+`;
 
 const ProjectTableRow = ({
     category,
@@ -19,9 +24,9 @@ const ProjectTableRow = ({
     ): ReactElement => {
         if (link) {
             return (
-                <a href={link} target="_blank" rel="noopener noreferrer">
+                <Link href={link} target="_blank" rel="noopener noreferrer">
                     {type === 'ios' ? <DiApple /> : <DiAndroid />}
-                </a>
+                </Link>
             );
         }
     };
@@ -29,48 +34,44 @@ const ProjectTableRow = ({
         if (link) {
             if (typeof link === 'string') {
                 return (
-                    <a href={link} target="_blank" rel="noopener noreferrer">
+                    <Link href={link} target="_blank" rel="noopener noreferrer">
                         {name}
-                    </a>
+                    </Link>
                 );
             }
             return (
-                <Row>
-                    <Col className="align-self-center" xs="auto">
+                <NameContainer>
+                    <Box alignSelf="center" flex={1}>
                         {name}
-                    </Col>
-                    <Col xs="auto">{renderMobileButton('ios', link.ios)}</Col>
-                    <Col xs="auto">
+                    </Box>
+                    <Box alignSelf="center">
+                        {renderMobileButton('ios', link.ios)}
+                    </Box>
+                    <Box alignSelf="center">
                         {renderMobileButton('android', link.android)}
-                    </Col>
-                </Row>
+                    </Box>
+                </NameContainer>
             );
         }
         return <p>{name}</p>;
     };
 
     return (
-        <tr>
-            <td>
-                <Badge pill variant="success">
-                    {category}
-                </Badge>
-            </td>
-            <td>
+        <TableRow>
+            <TableCell>
+                <Chip size="small" color="primary" label={category} />
+            </TableCell>
+            <TableCell>
                 {topics.map((topic) => (
-                    <Badge key={topic} pill variant="info">
-                        {topic}
-                    </Badge>
+                    <Chip key={topic} size="small" label={topic} />
                 ))}
-            </td>
-            <td>
-                <Badge pill variant="primary">
-                    {language}
-                </Badge>
-            </td>
-            <td>{renderName()}</td>
-            <td>{description}</td>
-        </tr>
+            </TableCell>
+            <TableCell>
+                <Chip size="small" color="secondary" label={language} />
+            </TableCell>
+            <TableCell>{renderName()}</TableCell>
+            <TableCell>{description}</TableCell>
+        </TableRow>
     );
 };
 

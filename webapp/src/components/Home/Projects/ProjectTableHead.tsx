@@ -1,16 +1,18 @@
 import React, { ReactElement } from 'react';
 
+import { TableCell, TableHead, TableRow } from '@material-ui/core';
+
 const ProjectTableHead = (): ReactElement => {
     return (
-        <thead>
-            <tr>
-                <th>Category</th>
-                <th>Tech</th>
-                <th>Language</th>
-                <th>Name</th>
-                <th>Description</th>
-            </tr>
-        </thead>
+        <TableHead>
+            <TableRow>
+                <TableCell>Category</TableCell>
+                <TableCell>Tech</TableCell>
+                <TableCell>Language</TableCell>
+                <TableCell>Name</TableCell>
+                <TableCell>Description</TableCell>
+            </TableRow>
+        </TableHead>
     );
 };
 
