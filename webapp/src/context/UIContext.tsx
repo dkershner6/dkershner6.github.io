@@ -1,4 +1,4 @@
-import { createContext, useMemo, useState } from 'react';
+import React, { createContext, useMemo, useState } from 'react';
 import { PaletteType, Theme } from '@material-ui/core';
 import LightTheme from '../styles/LightTheme';
 import DarkTheme from '../styles/DarkTheme';
