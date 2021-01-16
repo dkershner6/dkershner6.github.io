@@ -43,7 +43,7 @@ const Hero = (props: HeroProps): ReactElement => {
     const { heading, subheading, codingStats, serverDate } = props;
 
     const renderHeading = (): ReactElement => (
-        <h2>
+        <h1>
             <Typography component="span" variant="h2" color="secondary">
                 {'>'}
             </Typography>
@@ -53,12 +53,12 @@ const Hero = (props: HeroProps): ReactElement => {
             <Typography component="span" variant="h2" color="secondary">
                 {'<'}
             </Typography>
-        </h2>
+        </h1>
     );
 
     const renderSubheading = (): ReactElement => (
         <div>
-            <Typography data-testid="subheading" variant="h5">
+            <Typography data-testid="subheading" variant="h5" component="h2">
                 {subheading}
             </Typography>
         </div>

@@ -84,7 +84,7 @@ const HeroStats = ({
             <Typography variant="h3" color="primary">
                 {totalContributions.toLocaleString()}
             </Typography>
-            <Typography variant="subtitle1">
+            <Typography variant="subtitle1" component="h3">
                 <Link
                     href="https://github.com/dkershner6"
                     target="_blank"
@@ -94,9 +94,19 @@ const HeroStats = ({
                 </Link>{' '}
                 over
             </Typography>
-            <Typography variant="subtitle1">{codingDuration}</Typography>
-            <Typography variant="subtitle1">
-                (Averaging about {averagePerWorkingDay} per working day)
+            <Typography variant="subtitle1" component="h3">
+                {codingDuration}
+            </Typography>
+            <Typography variant="subtitle1" component="h3">
+                (Averaging about{' '}
+                <Typography
+                    variant="subtitle1"
+                    color="primary"
+                    component="span"
+                >
+                    {averagePerWorkingDay}
+                </Typography>{' '}
+                per working day)
             </Typography>
         </HeroStatsContainer>
     );

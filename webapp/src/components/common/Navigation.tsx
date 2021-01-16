@@ -1,6 +1,6 @@
 import React, { ReactElement, useContext } from 'react';
 
-import { AppBar, IconButton, Toolbar } from '@material-ui/core';
+import { AppBar, IconButton, Toolbar, Tooltip } from '@material-ui/core';
 import SunMoonIcon from '@material-ui/icons/Brightness4';
 import styled from 'styled-components';
 
@@ -29,15 +29,18 @@ const Navigation = (): ReactElement => {
             <Toolbar>
                 <HeaderLeft />
                 <HeaderRight>
-                    <IconButton
-                        onClick={() =>
-                            setThemeType((prevThemeType) =>
-                                prevThemeType === 'light' ? 'dark' : 'light'
-                            )
-                        }
-                    >
-                        <WhiteSunMoonIcon />
-                    </IconButton>
+                    <Tooltip title="Light/Dark Mode">
+                        <IconButton
+                            onClick={() =>
+                                setThemeType((prevThemeType) =>
+                                    prevThemeType === 'light' ? 'dark' : 'light'
+                                )
+                            }
+                            aria-label="Toggle Light/Dark Mode"
+                        >
+                            <WhiteSunMoonIcon />
+                        </IconButton>
+                    </Tooltip>
                 </HeaderRight>
             </Toolbar>
         </AppBar>

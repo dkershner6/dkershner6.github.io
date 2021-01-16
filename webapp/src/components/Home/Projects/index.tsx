@@ -20,6 +20,7 @@ const ProjectsContainer = styled.div`
 
 const ProjectsTableContainer = styled.div`
     overflow-x: auto;
+    min-height: 50rem;
 `;
 
 const Projects = ({
