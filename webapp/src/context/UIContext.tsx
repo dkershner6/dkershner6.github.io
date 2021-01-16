@@ -1,4 +1,10 @@
-import React, { createContext, useMemo, useState } from 'react';
+import React, {
+    createContext,
+    useEffect,
+    useMemo,
+    useRef,
+    useState
+} from 'react';
 
 import { PaletteType, Theme } from '@material-ui/core';
 
@@ -13,8 +19,28 @@ export interface UIContextOutput {
 
 const UIContext = createContext<UIContextOutput>(undefined);
 
+const THEME_TYPE_STORAGE_KEY = 'dkershner-theme-type';
+
 export const UIContextProvider: React.FC = ({ children }) => {
+    const initialStorageCheckComplete = useRef(false);
     const [themeType, setThemeType] = useState<PaletteType>('light');
+
+    useEffect(() => {
+        if (typeof window !== 'undefined') {
+            if (!initialStorageCheckComplete.current) {
+                const themeTypefromStorage = localStorage.getItem(
+                    THEME_TYPE_STORAGE_KEY
+                );
+
+                if (themeTypefromStorage) {
+                    setThemeType(themeTypefromStorage as PaletteType);
+                }
+                initialStorageCheckComplete.current = true;
+                return;
+            }
+            localStorage.setItem(THEME_TYPE_STORAGE_KEY, themeType);
+        }
+    }, [themeType]);
 
     const theme = useMemo(
         () => (themeType === 'light' ? LightTheme : DarkTheme),
