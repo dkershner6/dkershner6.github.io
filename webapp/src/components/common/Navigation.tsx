@@ -39,7 +39,8 @@ const LighthouseContainer = styled.div`
 
 const avatarProps = {
     style: {
-        backgroundColor: '#008800'
+        backgroundColor: '#008800',
+        color: '#fff'
     }
 };
 
