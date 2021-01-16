@@ -1,6 +1,13 @@
 import React, { ReactElement } from 'react';
 
-import { Container, Tab, Tabs, TextField, AppBar } from '@material-ui/core';
+import {
+    Container,
+    TextField,
+    Select,
+    InputLabel,
+    Grid,
+    FormControl
+} from '@material-ui/core';
 import styled from 'styled-components';
 
 import { ProjectCategory } from '../Project';
@@ -26,38 +33,42 @@ const ProjectFilters = ({
     setInputText
 }: IProjectFilters): ReactElement => {
     return (
-        <>
-            <CenteredContainer>
-                <TextField
-                    type="text"
-                    placeholder="Filter"
-                    value={inputText}
-                    onChange={(event) => setInputText(event.target.value)}
-                />
-            </CenteredContainer>
-            <CenteredContainer>
-                <AppBar position="static">
-                    <Tabs
-                        variant="scrollable"
-                        scrollButtons="auto"
-                        id="category-tabs"
-                        value={categoryFilter}
-                        onChange={(event, newValue) =>
-                            setCategoryFilter(newValue)
-                        }
-                    >
-                        {projectCategories.map((categoryName) => (
-                            <Tab
-                                key={categoryName}
-                                id={categoryName}
-                                label={categoryName}
-                                value={categoryName}
-                            />
-                        ))}
-                    </Tabs>
-                </AppBar>
-            </CenteredContainer>
-        </>
+        <CenteredContainer>
+            <Grid container spacing={2}>
+                <Grid item xs={12} md={6}>
+                    <TextField
+                        id="search-projects-filter"
+                        type="text"
+                        variant="outlined"
+                        label="Search Projects"
+                        placeholder="Search Projects"
+                        value={inputText}
+                        onChange={(event) => setInputText(event.target.value)}
+                    />
+                </Grid>
+                <Grid item xs={12} md={6}>
+                    <FormControl variant="outlined">
+                        <InputLabel htmlFor="category-filter">
+                            Category
+                        </InputLabel>
+                        <Select
+                            native
+                            value={categoryFilter}
+                            onChange={(event) =>
+                                setCategoryFilter(event.target.value as string)
+                            }
+                            inputProps={{ id: 'category-filter' }}
+                        >
+                            {projectCategories.map((categoryName) => (
+                                <option key={categoryName} value={categoryName}>
+                                    {categoryName}
+                                </option>
+                            ))}
+                        </Select>
+                    </FormControl>
+                </Grid>
+            </Grid>
+        </CenteredContainer>
     );
 };
 

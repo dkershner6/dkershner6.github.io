@@ -24,7 +24,16 @@ const ProjectTableRow = ({
     ): ReactElement => {
         if (link) {
             return (
-                <Link href={link} target="_blank" rel="noopener noreferrer">
+                <Link
+                    href={link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={
+                        type === 'ios'
+                            ? `Download iOS App for ${name}`
+                            : `Download Android App for ${name}`
+                    }
+                >
                     {type === 'ios' ? <DiApple /> : <DiAndroid />}
                 </Link>
             );
