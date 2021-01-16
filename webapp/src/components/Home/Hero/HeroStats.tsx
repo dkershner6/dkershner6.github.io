@@ -99,13 +99,13 @@ const HeroStats = ({
             </Typography>
             <Typography variant="subtitle1" component="h3">
                 (Averaging about{' '}
-                <Typography
-                    variant="subtitle1"
-                    color="primary"
-                    component="span"
+                <Link
+                    href="https://github.com/dkershner6"
+                    target="_blank"
+                    rel="noopener noreferrer"
                 >
                     {averagePerWorkingDay}
-                </Typography>{' '}
+                </Link>{' '}
                 per working day)
             </Typography>
         </HeroStatsContainer>

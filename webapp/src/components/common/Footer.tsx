@@ -1,7 +1,7 @@
 import React, { ReactElement } from 'react';
 import packageJson from '../../../package.json';
 
-import { AppBar } from '@material-ui/core';
+import { AppBar, Link } from '@material-ui/core';
 import styled from 'styled-components';
 
 const FooterContainer = styled.div`
@@ -22,7 +22,17 @@ const Footer = (): ReactElement => {
         <footer>
             <AppBar position="static" color="default">
                 <FooterContainer>
-                    <FooterLeft>&copy; Kershner Endeavors LLC</FooterLeft>
+                    <FooterLeft>
+                        &copy; Kershner Endeavors LLC | Hero image background
+                        from{' '}
+                        <Link
+                            href="https://svgbackgrounds.com/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            SVGBackgrounds.com
+                        </Link>
+                    </FooterLeft>
                     <FooterRight>v{packageJson.version}</FooterRight>
                 </FooterContainer>
             </AppBar>
