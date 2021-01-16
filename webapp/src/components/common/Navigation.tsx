@@ -39,7 +39,7 @@ const LighthouseContainer = styled.div`
 
 const avatarProps = {
     style: {
-        backgroundColor: '#00bb00'
+        backgroundColor: '#008800'
     }
 };
 
@@ -61,7 +61,7 @@ const Navigation = (): ReactElement => {
                                 target="_blank"
                                 rel="noopener noreferrer"
                             >
-                                <Avatar {...avatarProps}>99</Avatar>
+                                <Avatar {...avatarProps}>100</Avatar>
                             </Link>
                         </Tooltip>
                         <Tooltip title="Lighthouse Accessibility">
