@@ -1,8 +1,9 @@
 import React, { ReactElement } from 'react';
-import packageJson from '../../../package.json';
 
 import { AppBar, Link } from '@material-ui/core';
 import styled from 'styled-components';
+
+import packageJson from '../../../package.json';
 
 const FooterContainer = styled.div`
     display: flex;
