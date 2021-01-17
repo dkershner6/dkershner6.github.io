@@ -8,16 +8,46 @@ on:
 
 
 jobs:
-  build-and-deploy:
+  build-and-deploy-aws:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout 🛎️
+        uses: actions/checkout@v2
+        with:
+          persist-credentials: false
+
+      - name: NPM
+        uses: actions/setup-node@v1
+        with:
+          node-version: 12.x
+
+      - run: |
+          cd aws
+          npm ci
+          npm i -g aws-cdk
+          npm run build
+          cdk synth
+          cdk deploy --require-approval never
+        env: 
+          AWS_ACCESS_KEY_ID: ${{ secrets.PROD_AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.PROD_AWS_SECRET_ACCESS_KEY }}
+
+
+  build-and-deploy-azure:
     runs-on: ubuntu-latest
     steps:
 
-    - uses: azure/login@v1
-      with:
-        creds: ${{ secrets.AZURE_CREDENTIALS }}
+      - name: Checkout 🛎️
+        uses: actions/checkout@v2
+        with:
+          persist-credentials: false
 
-    - uses: azure/arm-deploy@v1
-      with:
-        subscriptionId: f06135b5-8b74-4255-b814-fcd06f55ca18
-        resourceGroupName: DKershner.com
-        template: ./azure/arm.json
+      - uses: azure/login@v1
+        with:
+          creds: ${{ secrets.AZURE_CREDENTIALS }}
+
+      - uses: azure/arm-deploy@v1
+        with:
+          subscriptionId: f06135b5-8b74-4255-b814-fcd06f55ca18
+          resourceGroupName: DKershner.com
+          template: ./azure/arm.json
