@@ -10,6 +10,9 @@ on:
 jobs:
   build-and-deploy-aws:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: aws
     steps:
       - name: Checkout 🛎️
         uses: actions/checkout@v2
@@ -22,7 +25,6 @@ jobs:
           node-version: 12.x
 
       - run: |
-          cd aws
           npm ci
           npm i -g aws-cdk
           npm run build
