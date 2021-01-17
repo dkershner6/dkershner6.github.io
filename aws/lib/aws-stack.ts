@@ -37,7 +37,7 @@ export class DKershnerStack extends cdk.Stack {
         );
 
         const rule = new events.Rule(this, 'Rule', {
-            schedule: events.Schedule.expression('cron(*/5 * ? * MON-FRI *)')
+            schedule: events.Schedule.expression('cron(*/5 0-11 ? * MON-FRI *)')
         });
 
         rule.addTarget(new targets.LambdaFunction(githubAsanaCronLambda));
