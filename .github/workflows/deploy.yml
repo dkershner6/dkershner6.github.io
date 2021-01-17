@@ -26,6 +26,8 @@ jobs:
 
       - run: |
           npm ci
+          npm run install-lambda
+          npm run build-lambda
           npm i -g aws-cdk
           npm run build
           cdk synth
