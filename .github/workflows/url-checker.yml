@@ -1,0 +1,13 @@
+name: URL Checker
+
+on:
+  schedule:
+    - cron:  '0 23 * * *'
+
+jobs:
+  url-check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: ScholliYT/Broken-Links-Crawler-Action@v2.1.1
+        with:
+          website_url: 'https://dkershner.com'
