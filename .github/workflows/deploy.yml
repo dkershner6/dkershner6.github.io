@@ -1,0 +1,23 @@
+name: Deploy
+
+on: 
+  push:
+    branches:
+      - main
+
+
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+
+    - uses: azure/login@v1
+      with:
+        creds: ${{ secrets.AZURE_CREDENTIALS }}
+
+    - uses: azure/arm-deploy@v1
+      with:
+        subscriptionId: f06135b5-8b74-4255-b814-fcd06f55ca18
+        resourceGroupName: DKershner.com
+        template: ./azure/arm.json
