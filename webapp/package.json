@@ -28,7 +28,7 @@
     "@octokit/graphql": "^4.5.8",
     "@octokit/rest": "^18.0.12",
     "asana": "^0.18.5",
-    "aws-sdk": "^2.824.0",
+    "aws-sdk": "^2.864.0",
     "date-fns": "^2.16.1",
     "graphql": "^15.4.0",
     "graphql-tag": "^2.11.0",
