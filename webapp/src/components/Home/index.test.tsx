@@ -7,7 +7,7 @@ import '@testing-library/jest-dom/extend-expect';
 import { UIContextProvider } from '../../context/UIContext';
 import ThemeProviders from '../ThemeProviders';
 
-import Home, { HOME_PAGE_DATA } from '.';
+import Home from '.';
 
 jest.mock('./Projects/useGitHubProjects.ts', () => () => []);
 
@@ -64,9 +64,9 @@ describe('Home', () => {
             </TestWrapper>
         );
 
-        expect(queryByText(HOME_PAGE_DATA.heading)).toBeInTheDocument();
+        expect(queryByText('Derek Kershner')).toBeInTheDocument();
         expect(screen.queryByText('Evil Genius')).toBeNull();
 
-        expect(queryByText(HOME_PAGE_DATA.subheading)).toBeInTheDocument();
+        expect(queryByText('Software Architect')).toBeInTheDocument();
     });
 });
