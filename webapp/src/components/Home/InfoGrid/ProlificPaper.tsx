@@ -1,6 +1,6 @@
 import React, { ReactElement, useMemo, useState } from 'react';
 
-import { Link, Typography } from '@material-ui/core';
+import { Typography, Link } from '@material-ui/core';
 import {
     formatDuration,
     intervalToDuration,
@@ -12,12 +12,15 @@ import styled from 'styled-components';
 
 import CodingStats from '../../../lib/common/CodingStats';
 import { CODING_START_DATE } from '../../../lib/common/gitHubStats';
+import HoverPaper from '../../common/HoverPaper';
 
-const HeroStatsContainer = styled.div``;
+const JustifyRightContainer = styled.div`
+    text-align: right;
+`;
 
-interface HeroStatsProps {
-    serverDate: Date;
+export interface ProlificPaperProps {
     codingStats: CodingStats;
+    serverDate: Date;
 }
 
 const calculateDuration = (endSeedDate?: Date): string => {
@@ -29,10 +32,10 @@ const calculateDuration = (endSeedDate?: Date): string => {
     );
 };
 
-const HeroStats = ({
+const ProlificPaper = ({
     codingStats,
     serverDate
-}: HeroStatsProps): ReactElement => {
+}: ProlificPaperProps): ReactElement => {
     const [codingDuration, setCodingDuration] = useState<string>(
         calculateDuration(serverDate)
     );
@@ -80,36 +83,42 @@ const HeroStats = ({
     }, [codingStats]);
 
     return (
-        <HeroStatsContainer>
-            <Typography variant="h3" color="primary">
-                {totalContributions.toLocaleString()}
-            </Typography>
-            <Typography variant="subtitle1" component="h3">
-                <Link
-                    href="https://github.com/dkershner6"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                >
-                    Contributions
-                </Link>{' '}
-                over
-            </Typography>
-            <Typography variant="subtitle1" component="h3">
-                {codingDuration}
-            </Typography>
-            <Typography variant="subtitle1" component="h3">
-                (Averaging about{' '}
-                <Link
-                    href="https://github.com/dkershner6"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                >
-                    {averagePerWorkingDay}
-                </Link>{' '}
-                per working day)
-            </Typography>
-        </HeroStatsContainer>
+        <HoverPaper
+            defaultContent={
+                <Typography color="primary" variant="h4" component="h2">
+                    Prolific
+                </Typography>
+            }
+            hoverContent={
+                <JustifyRightContainer>
+                    <Typography variant="h3" color="primary">
+                        {totalContributions.toLocaleString()}
+                    </Typography>
+                    <Typography variant="subtitle1" component="h3">
+                        <Link
+                            href="https://github.com/dkershner6"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            Contributions
+                        </Link>{' '}
+                        over {codingDuration}
+                    </Typography>
+                    <Typography variant="subtitle1" component="h3">
+                        (Averaging about{' '}
+                        <Link
+                            href="https://github.com/dkershner6"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            {averagePerWorkingDay}
+                        </Link>{' '}
+                        per working day since GitHub started keeping track)
+                    </Typography>
+                </JustifyRightContainer>
+            }
+        />
     );
 };
 
-export default HeroStats;
+export default ProlificPaper;
