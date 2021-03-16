@@ -15,12 +15,6 @@ interface HomeProps {
     serverDate: Date;
 }
 
-export const HOME_PAGE_DATA = {
-    title: 'Derek Kershner',
-    heading: 'Derek Kershner',
-    subheading: 'Prolific Software Architect - AWS / Azure'
-};
-
 const Home = (props: HomeProps): ReactElement => {
     const { codingStats, repos, serverDate } = props;
 
