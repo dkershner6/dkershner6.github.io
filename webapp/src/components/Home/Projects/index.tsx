@@ -5,12 +5,12 @@ import { RestEndpointMethodTypes } from '@octokit/rest';
 import styled from 'styled-components';
 import { useDebounce } from 'use-debounce';
 
+import formatReposAsProjects from './formatReposAsProjects';
 import Project, { ProjectCategory } from './Project';
 import ProjectFilters from './ProjectFilters';
 import projectData from './projectsData';
 import ProjectTableHead from './ProjectTableHead';
 import ProjectTableRow from './ProjectTableRow';
-import useGitHubProjects from './useGitHubProjects';
 
 const ProjectsContainer = styled.div`
     padding: 3rem 0;
@@ -31,7 +31,7 @@ const Projects = ({
     const [inputText, setInputText] = useState('');
     const [filterText] = useDebounce(inputText, 350);
     const [categoryFilter, setCategoryFilter] = useState(ProjectCategory.ALL);
-    const openSourceProjects = useGitHubProjects(repos);
+    const openSourceProjects = formatReposAsProjects(repos);
 
     const allProjects = useMemo(() => [...openSourceProjects, ...projectData], [
         openSourceProjects

@@ -1,6 +1,6 @@
 import React, { ReactElement } from 'react';
 
-import { AppBar, Link } from '@material-ui/core';
+import { AppBar } from '@material-ui/core';
 import styled from 'styled-components';
 
 import packageJson from '../../../package.json';
@@ -18,21 +18,17 @@ const FooterRight = styled.div`
     padding: 1rem;
 `;
 
+const COPYRIGHT = <>&copy;</>;
+export const COPYRIGHT_COMPANY_NAME = 'Kershner Endeavors LLC';
+
 const Footer = (): ReactElement => {
     return (
         <footer>
             <AppBar position="static" color="default">
                 <FooterContainer>
                     <FooterLeft>
-                        &copy; Kershner Endeavors LLC | Hero image background
-                        from{' '}
-                        <Link
-                            href="https://svgbackgrounds.com/"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                        >
-                            SVGBackgrounds.com
-                        </Link>
+                        {COPYRIGHT} {new Date().getFullYear()}{' '}
+                        {COPYRIGHT_COMPANY_NAME}
                     </FooterLeft>
                     <FooterRight>v{packageJson.version}</FooterRight>
                 </FooterContainer>

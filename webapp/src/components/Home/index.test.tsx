@@ -9,8 +9,6 @@ import ThemeProviders from '../ThemeProviders';
 
 import Home from '.';
 
-jest.mock('./Projects/useGitHubProjects.ts', () => () => []);
-
 describe('Home', () => {
     beforeEach(() => {
         jest.useFakeTimers();
