@@ -1,5 +1,5 @@
-import { JsonResume } from '../../common/JsonResume';
 import { GITHUB_URL, LINKEDIN_URL } from '../../common/personalConstants';
+import { JsonResume } from '../../common/resume/JsonResume';
 
 const resumeDefaults: JsonResume = {
     basics: {
