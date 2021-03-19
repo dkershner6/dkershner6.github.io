@@ -29,6 +29,7 @@ const ResumeDisplayPage: NextPage<ResumeDisplayPageProps> = ({ resume }) => {
     if (!resume) {
         return <Error statusCode={404} />;
     }
+    console.log(resume);
 
     return <div />;
 };

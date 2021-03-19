@@ -3,6 +3,7 @@ import React, { useEffect, ReactElement } from 'react';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import Head from 'next/head';
 import ReactGA from 'react-ga';
+import { QueryClient, QueryClientProvider } from 'react-query';
 
 import ThemeProviders from '../components/ThemeProviders';
 import { UIContextProvider } from '../context/UIContext';
@@ -33,12 +34,14 @@ const MyApp = ({ Component, pageProps }: AppProps): ReactElement => {
             <Head>
                 <title data-testid="pageTitle">{siteMetadata.title}</title>
             </Head>
-            <UIContextProvider>
-                <ThemeProviders>
-                    <CssBaseline />
-                    <Component {...pageProps} />
-                </ThemeProviders>
-            </UIContextProvider>
+            <QueryClientProvider client={new QueryClient()}>
+                <UIContextProvider>
+                    <ThemeProviders>
+                        <CssBaseline />
+                        <Component {...pageProps} />
+                    </ThemeProviders>
+                </UIContextProvider>
+            </QueryClientProvider>
         </>
     );
 };
