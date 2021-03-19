@@ -81,7 +81,11 @@ const InfoGrid = ({ codingStats, serverDate }: InfoGridProps): ReactElement => {
                     <Grid item xs={12} md={8}>
                         <HoverPaper
                             defaultContent={
-                                <Typography color="primary" variant="h4">
+                                <Typography
+                                    color="primary"
+                                    variant="h4"
+                                    component="h3"
+                                >
                                     Technical Leader
                                 </Typography>
                             }
