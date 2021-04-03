@@ -1,13 +1,15 @@
 import React, { ReactElement } from 'react';
 
 import {
-    Box,
     Typography,
     Accordion,
     AccordionSummary,
-    AccordionDetails
+    AccordionDetails,
+    Box
 } from '@material-ui/core';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
+
+import { LINKEDIN_URL } from '../../../lib/common/personalConstants';
 
 const ResumeRecommendations = (): ReactElement => {
     return (
@@ -19,11 +21,21 @@ const ResumeRecommendations = (): ReactElement => {
             >
                 <Typography variant="h5">References</Typography>
             </AccordionSummary>
-            <AccordionDetails style={{ display: 'block' }}>
-                <p>References are available upon request.</p>
-                <p>
-                    Many recommendations are available on my LinkedIn profile.
-                </p>
+            <AccordionDetails>
+                <Box>
+                    <p>References are available upon request.</p>
+                    <p>
+                        Many recommendations are available on my{' '}
+                        <a
+                            href={LINKEDIN_URL}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            LinkedIn profile
+                        </a>
+                        .
+                    </p>
+                </Box>
             </AccordionDetails>
         </Accordion>
     );

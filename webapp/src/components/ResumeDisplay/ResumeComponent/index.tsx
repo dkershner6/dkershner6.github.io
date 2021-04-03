@@ -9,6 +9,7 @@ import ResumeEducation from './ResumeEducation';
 import ResumeExperience from './ResumeExperience';
 import ResumeObjective from './ResumeObjective';
 import ResumeRecommendations from './ResumeRecommendations';
+import ResumeSkills from './ResumeSkills';
 
 const ResumeComponent = ({ resume }: { resume: JsonResume }): ReactElement => {
     return (
@@ -16,6 +17,7 @@ const ResumeComponent = ({ resume }: { resume: JsonResume }): ReactElement => {
             <ResumeBasics basics={resume.basics} />
             <Box marginTop="1rem">
                 <ResumeObjective objective={resume.basics.summary} />
+                <ResumeSkills skills={resume.skills} />
                 <ResumeExperience work={resume.work} />
                 <ResumeEducation education={resume.education} />
                 <ResumeRecommendations />

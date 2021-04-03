@@ -1,8 +1,17 @@
 import React, { ReactElement } from 'react';
 
-import { Box, Grid, Paper, Typography } from '@material-ui/core';
+import { Box, Grid, IconButton, Paper, Typography } from '@material-ui/core';
+import GitHubIcon from '@material-ui/icons/GitHub';
+import HomeIcon from '@material-ui/icons/Home';
+import LinkedInIcon from '@material-ui/icons/LinkedIn';
+import { useRouter } from 'next/router';
+import QrCode from 'react-qr-code';
 import styled from 'styled-components';
 
+import {
+    LINKEDIN_URL,
+    GITHUB_URL
+} from '../../../lib/common/personalConstants';
 import { JsonResume } from '../../../lib/common/resume/JsonResume';
 
 const PaddedPaper = styled(Paper)`
@@ -15,6 +24,8 @@ const ResumeBasics = ({
 }: {
     basics: JsonResume['basics'];
 }): ReactElement => {
+    const router = useRouter();
+
     const renderName = () => {
         const nameSplit = basics.name.split(' ');
         const [firstName, ...restOfName] = nameSplit;
@@ -31,29 +42,62 @@ const ResumeBasics = ({
 
     return (
         <PaddedPaper>
-            <Box display="flex">
-                <Box display="flex" flexDirection="column">
-                    {renderName()}
-                    <Box textAlign="center">
-                        <Typography variant="h6">{basics.label}</Typography>
+            <Grid
+                container
+                justify="space-between"
+                alignItems="center"
+                spacing={3}
+            >
+                <Grid item xs={12} md="auto">
+                    <Box display="flex" flexDirection="column">
+                        {renderName()}
+                        <Box textAlign="center">
+                            <Typography variant="h6">{basics.label}</Typography>
+                        </Box>
                     </Box>
-                </Box>
-                <Box textAlign="right" flex="1">
-                    <Typography variant="body2">
-                        {basics?.email ?? 'Retracted for bots'}
-                    </Typography>
-                    <Typography variant="body2">
-                        {basics?.phone ?? 'Retracted for bots'}
-                    </Typography>
-                    <Typography variant="body2">
-                        {basics?.profiles?.[0].url}
-                    </Typography>
-                    <Typography variant="body2">
-                        This resume also available at {window.location.host}
-                        {window.location.pathname}
-                    </Typography>
-                </Box>
-            </Box>
+                </Grid>
+                <Grid item xs={12} md="auto">
+                    <Box display="flex">
+                        <Box textAlign="right" flex="1">
+                            <Typography variant="body2">
+                                {basics?.email ??
+                                    'Email Retracted - Check emailed copy'}
+                            </Typography>
+                            <Typography variant="body2">
+                                {basics?.phone ??
+                                    'Phone Retracted - Check emailed copy'}
+                            </Typography>
+                            <Typography variant="body2">
+                                https://dkershner.com
+                                {window.location.pathname}
+                            </Typography>
+                        </Box>
+                        <Box marginLeft="0.5rem">
+                            <QrCode
+                                value={`https://dkershner.com${window.location.pathname}`}
+                                size={64}
+                            />
+                        </Box>
+                    </Box>
+                    <Box display="flex" justifyContent="flex-end">
+                        <IconButton aria-label="LinkedIn" href={LINKEDIN_URL}>
+                            <LinkedInIcon color="primary" />
+                        </IconButton>
+                        <IconButton
+                            aria-label="GitHub Profile"
+                            href={GITHUB_URL}
+                        >
+                            <GitHubIcon color="primary" />
+                        </IconButton>
+                        <IconButton
+                            aria-label="Homepage"
+                            onClick={() => router.push('/')}
+                        >
+                            <HomeIcon color="primary" />
+                        </IconButton>
+                    </Box>
+                </Grid>
+            </Grid>
         </PaddedPaper>
     );
 };

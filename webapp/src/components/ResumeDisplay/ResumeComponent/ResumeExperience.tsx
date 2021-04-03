@@ -52,14 +52,16 @@ const ResumeExperience = ({
                 id="experience-header"
                 aria-controls="experience-content"
             >
-                <Box flexBasis="33.33%">
-                    <Typography variant="h5">Experience</Typography>
-                </Box>
-                <Box alignSelf="center">
-                    <Typography variant="body1" color="textSecondary">
-                        Leader.
-                    </Typography>
-                </Box>
+                <Grid container justify="flex-start" alignItems="center">
+                    <Grid item xs={6}>
+                        <Typography variant="h5">Experience</Typography>
+                    </Grid>
+                    <Grid item xs={6}>
+                        <Typography variant="body1" color="textSecondary">
+                            Leader.
+                        </Typography>
+                    </Grid>
+                </Grid>
             </AccordionSummary>
             <AccordionDetails style={{ display: 'block' }}>
                 {renderExperience()}

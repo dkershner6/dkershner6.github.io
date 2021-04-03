@@ -14,7 +14,7 @@ const ResumeObjective = ({
     objective: string;
 }): ReactElement => {
     return (
-        <Accordion defaultExpanded={true}>
+        <Accordion>
             <AccordionSummary
                 expandIcon={<ExpandMoreIcon />}
                 id="objective-header"
