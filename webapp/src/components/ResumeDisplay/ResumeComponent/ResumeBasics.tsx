@@ -1,6 +1,6 @@
 import React, { ReactElement } from 'react';
 
-import { Grid, Paper, Typography } from '@material-ui/core';
+import { Box, Grid, Paper, Typography } from '@material-ui/core';
 import styled from 'styled-components';
 
 import { JsonResume } from '../../../lib/common/resume/JsonResume';
@@ -8,10 +8,6 @@ import { JsonResume } from '../../../lib/common/resume/JsonResume';
 const PaddedPaper = styled(Paper)`
     margin-top: 1rem;
     padding: 2rem;
-`;
-
-const RightAlignGrid = styled(Grid)`
-    text-align: right;
 `;
 
 const ResumeBasics = ({
@@ -35,12 +31,14 @@ const ResumeBasics = ({
 
     return (
         <PaddedPaper>
-            <Grid container>
-                <Grid item md={7}>
+            <Box display="flex">
+                <Box display="flex" flexDirection="column">
                     {renderName()}
-                    <Typography variant="subtitle1">{basics.label}</Typography>
-                </Grid>
-                <RightAlignGrid item md={5}>
+                    <Box textAlign="center">
+                        <Typography variant="h6">{basics.label}</Typography>
+                    </Box>
+                </Box>
+                <Box textAlign="right" flex="1">
                     <Typography variant="body2">
                         {basics?.email ?? 'Retracted for bots'}
                     </Typography>
@@ -50,9 +48,12 @@ const ResumeBasics = ({
                     <Typography variant="body2">
                         {basics?.profiles?.[0].url}
                     </Typography>
-                    <Typography variant="body2">{basics?.url}</Typography>
-                </RightAlignGrid>
-            </Grid>
+                    <Typography variant="body2">
+                        This resume also available at {window.location.host}
+                        {window.location.pathname}
+                    </Typography>
+                </Box>
+            </Box>
         </PaddedPaper>
     );
 };
