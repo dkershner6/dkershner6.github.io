@@ -4,23 +4,27 @@ import { buildDynamoClient, DYNAMO_TABLE_NAME } from '../aws/client';
 export interface CodingStatsWithIndexes extends CodingStats {
     pk: string;
     sk: string;
+    type: 'CODINGSTATS';
 }
 
-const INDEXES = ['pk', 'sk'];
+const INDEXES = ['pk', 'sk', 'type'];
 
 export default class CodingStatsModel {
+    static type: 'CODINGSTATS' = 'CODINGSTATS';
+
     public static buildPk = (userName: string): string =>
-        `USER#${userName}#CODINGSTATS`;
+        `USER#${userName}#${CodingStatsModel.type}`;
 
     public static buildSk = (userName: string): string =>
-        `USER#${userName}#CODINGSTATS`;
+        `USER#${userName}#${CodingStatsModel.type}`;
 
     public static addIndexes = (
         codingStats: CodingStats
     ): CodingStatsWithIndexes => ({
         ...codingStats,
         pk: CodingStatsModel.buildPk(codingStats.userName),
-        sk: CodingStatsModel.buildSk(codingStats.userName)
+        sk: CodingStatsModel.buildSk(codingStats.userName),
+        type: CodingStatsModel.type
     });
 
     public static removeIndexes = (

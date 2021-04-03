@@ -11,6 +11,10 @@ import {
 import { LinkedIn, GitHub } from '@material-ui/icons';
 import styled from 'styled-components';
 
+import {
+    LINKEDIN_URL,
+    GITHUB_URL
+} from '../../../lib/common/personalConstants';
 import HoverPaper from '../../common/HoverPaper';
 
 import ProlificPaper, { ProlificPaperProps } from './ProlificPaper';
@@ -54,13 +58,13 @@ const InfoGrid = ({ codingStats, serverDate }: InfoGridProps): ReactElement => {
                                 <>
                                     <IconButton
                                         aria-label="LinkedIn"
-                                        href="https://www.linkedin.com/in/derek-kershner-54b3392"
+                                        href={LINKEDIN_URL}
                                     >
                                         <LinkedIn color="primary" />
                                     </IconButton>
                                     <IconButton
                                         aria-label="GitHub Profile"
-                                        href="https://github.com/dkershner6"
+                                        href={GITHUB_URL}
                                     >
                                         <GitHub color="primary" />
                                     </IconButton>
@@ -77,7 +81,11 @@ const InfoGrid = ({ codingStats, serverDate }: InfoGridProps): ReactElement => {
                     <Grid item xs={12} md={8}>
                         <HoverPaper
                             defaultContent={
-                                <Typography color="primary" variant="h4">
+                                <Typography
+                                    color="primary"
+                                    variant="h4"
+                                    component="h3"
+                                >
                                     Technical Leader
                                 </Typography>
                             }
