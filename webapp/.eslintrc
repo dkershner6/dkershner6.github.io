@@ -15,7 +15,6 @@
         "eslint:recommended",
         "plugin:@typescript-eslint/eslint-recommended",
         "plugin:@typescript-eslint/recommended",
-        "prettier/@typescript-eslint",
         "plugin:prettier/recommended",
         "plugin:react/recommended",
         "plugin:react-hooks/recommended",
@@ -25,8 +24,7 @@
         "plugin:import/errors",
         "plugin:import/warnings",
         "plugin:import/typescript",
-        "prettier",
-        "prettier/react"
+        "prettier"
     ],
     "env": {
         "es6": true,
@@ -40,6 +38,7 @@
         }
     },
     "rules": {
+        "no-undefined": "off", // TS will cover
         "no-console": "warn",
         "react/prop-types": 0, // Disabled to prefer use of Typescript<Props>,
         "import/order": [

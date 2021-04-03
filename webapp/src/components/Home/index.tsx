@@ -1,6 +1,5 @@
 import React, { ReactElement } from 'react';
 
-import { Container, Grid, Paper } from '@material-ui/core';
 import { RestEndpointMethodTypes } from '@octokit/rest';
 
 import CodingStats from '../../lib/common/CodingStats';

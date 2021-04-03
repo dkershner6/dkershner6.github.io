@@ -1,4 +1,4 @@
-import React, { useMemo, useState } from 'react';
+import React, { ReactElement, useMemo, useState } from 'react';
 
 import { Fade, Paper } from '@material-ui/core';
 import styled from 'styled-components';
@@ -11,7 +11,13 @@ const PaddedPaper = styled(Paper)`
     justify-content: center;
 `;
 
-const HoverPaper = ({ hoverContent, defaultContent }) => {
+const HoverPaper = ({
+    hoverContent,
+    defaultContent
+}: {
+    hoverContent: ReactElement;
+    defaultContent: ReactElement;
+}): ReactElement => {
     const [isHovering, setIsHovering] = useState(false);
     const [hoverNeedsToExit, setHoverNeedsToExit] = useState(false);
     const [defaultNeedsToExit, setDefaultNeedsToExit] = useState(true);
