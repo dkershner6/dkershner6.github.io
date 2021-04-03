@@ -5,11 +5,9 @@ const resumeDefaults: JsonResume = {
     basics: {
         name: 'Derek Kershner',
         label: 'Software Architect',
-        email: process.env.RESUME_EMAIL,
-        phone: process.env.RESUME_PHONE,
+
         url: 'https://dkershner.com',
         location: {
-            address: process.env.RESUME_ADDRESS,
             city: 'Bend',
             region: 'Oregon',
             postalCode: '97701',
