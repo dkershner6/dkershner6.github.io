@@ -8,7 +8,8 @@ import {
     ListItemText,
     Typography
 } from '@material-ui/core';
-import { LinkedIn, GitHub } from '@material-ui/icons';
+import GitHubIcon from '@material-ui/icons/GitHub';
+import LinkedInIcon from '@material-ui/icons/LinkedIn';
 import styled from 'styled-components';
 
 import {
@@ -60,13 +61,13 @@ const InfoGrid = ({ codingStats, serverDate }: InfoGridProps): ReactElement => {
                                         aria-label="LinkedIn"
                                         href={LINKEDIN_URL}
                                     >
-                                        <LinkedIn color="primary" />
+                                        <LinkedInIcon color="primary" />
                                     </IconButton>
                                     <IconButton
                                         aria-label="GitHub Profile"
                                         href={GITHUB_URL}
                                     >
-                                        <GitHub color="primary" />
+                                        <GitHubIcon color="primary" />
                                     </IconButton>
                                 </>
                             }

@@ -5,7 +5,8 @@ import {
     Typography,
     Accordion,
     AccordionSummary,
-    AccordionDetails
+    AccordionDetails,
+    Grid
 } from '@material-ui/core';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 
@@ -43,14 +44,17 @@ const ResumeEducation = ({
                 id="education-header"
                 aria-controls="education-content"
             >
-                <Box flexBasis="33.33%">
-                    <Typography variant="h5">Education</Typography>
-                </Box>
-                <Box alignSelf="center">
-                    <Typography variant="body1" color="textSecondary">
-                        Learner.
-                    </Typography>
-                </Box>
+                <Grid container justify="flex-start" alignItems="center">
+                    <Grid item xs={6}>
+                        <Typography variant="h5">Education</Typography>
+                    </Grid>
+                    <Grid item xs={6}>
+                        <Typography
+                            variant="body1"
+                            color="textSecondary"
+                        ></Typography>
+                    </Grid>
+                </Grid>
             </AccordionSummary>
             <AccordionDetails style={{ display: 'block' }}>
                 {renderSchools()}

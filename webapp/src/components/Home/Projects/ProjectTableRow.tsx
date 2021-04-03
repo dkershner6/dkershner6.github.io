@@ -1,7 +1,8 @@
 import React, { ReactElement } from 'react';
 
 import { Box, Chip, Link, TableCell, TableRow } from '@material-ui/core';
-import { DiApple, DiAndroid } from 'react-icons/di';
+import AndroidIcon from '@material-ui/icons/Android';
+import AppleIcon from '@material-ui/icons/Apple';
 import styled from 'styled-components';
 
 import Project from './Project';
@@ -34,7 +35,7 @@ const ProjectTableRow = ({
                             : `Download Android App for ${name}`
                     }
                 >
-                    {type === 'ios' ? <DiApple /> : <DiAndroid />}
+                    {type === 'ios' ? <AppleIcon /> : <AndroidIcon />}
                 </Link>
             );
         }
