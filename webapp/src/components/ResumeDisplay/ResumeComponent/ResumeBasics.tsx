@@ -48,7 +48,7 @@ const ResumeBasics = ({
                 alignItems="center"
                 spacing={3}
             >
-                <Grid item xs={12} md="auto">
+                <Grid item xs={6} sm="auto">
                     <Box display="flex" flexDirection="column">
                         {renderName()}
                         <Box textAlign="center">
@@ -56,7 +56,7 @@ const ResumeBasics = ({
                         </Box>
                     </Box>
                 </Grid>
-                <Grid item xs={12} md="auto">
+                <Grid item xs={6} sm="auto">
                     <Box display="flex">
                         <Box textAlign="right" flex="1">
                             <Typography variant="body2">
@@ -68,13 +68,19 @@ const ResumeBasics = ({
                                     'Phone Retracted - Check emailed copy'}
                             </Typography>
                             <Typography variant="body2">
-                                https://dkershner.com
-                                {window.location.pathname}
+                                dkershner.com
+                                {typeof window !== 'undefined'
+                                    ? window.location.pathname
+                                    : null}
                             </Typography>
                         </Box>
                         <Box marginLeft="0.5rem">
                             <QrCode
-                                value={`https://dkershner.com${window.location.pathname}`}
+                                value={`https://dkershner.com${
+                                    typeof window !== 'undefined'
+                                        ? window.location.pathname
+                                        : null
+                                }`}
                                 size={64}
                             />
                         </Box>

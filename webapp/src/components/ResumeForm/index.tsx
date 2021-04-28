@@ -82,7 +82,10 @@ const ResumeForm = (): ReactElement => {
             return (
                 <Box key={paragraphNumber} marginBottom="2rem">
                     <TextField
-                        inputProps={{ ref: register }}
+                        inputProps={{
+                            // @ts-expect-error - Cant detect the interpolation
+                            ...register(`cover-letter-${paragraphNumber}`)
+                        }}
                         name={`cover-letter-${paragraphNumber}`}
                         label={`Cover Letter Paragraph ${paragraphNumber}`}
                         variant="outlined"
@@ -110,7 +113,7 @@ const ResumeForm = (): ReactElement => {
                 </Box>
                 <Box marginTop="2rem" marginBottom="2rem">
                     <TextField
-                        inputProps={{ ref: register }}
+                        inputProps={{ ...register('slug') }}
                         name="slug"
                         label="Slug"
                         variant="outlined"
@@ -122,7 +125,7 @@ const ResumeForm = (): ReactElement => {
                 <Typography variant="h2">Resume</Typography>
                 <Box marginBottom="2rem">
                     <TextField
-                        inputProps={{ ref: register }}
+                        inputProps={{ ...register('objective') }}
                         name={`objective`}
                         label={`Objective`}
                         variant="outlined"
