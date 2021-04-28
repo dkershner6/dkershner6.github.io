@@ -48,7 +48,7 @@ const ResumeBasics = ({
                 alignItems="center"
                 spacing={3}
             >
-                <Grid item xs={6} sm="auto">
+                <Grid item xs={12} sm="auto">
                     <Box display="flex" flexDirection="column">
                         {renderName()}
                         <Box textAlign="center">
@@ -56,7 +56,7 @@ const ResumeBasics = ({
                         </Box>
                     </Box>
                 </Grid>
-                <Grid item xs={6} sm="auto">
+                <Grid item xs={12} sm="auto">
                     <Box display="flex">
                         <Box textAlign="right" flex="1">
                             <Typography variant="body2">
