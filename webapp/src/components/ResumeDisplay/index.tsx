@@ -16,7 +16,9 @@ interface ResumeDisplayProps {
 
 const ResumeDisplay = ({ resume }: ResumeDisplayProps): ReactElement => {
     const [componentToDisplay, setComponentToDisplay] = useState(
-        ResumeComponentType.CoverLetter
+        resume.coverLetter?.length > 0
+            ? ResumeComponentType.CoverLetter
+            : ResumeComponentType.Resume
     );
 
     const goToResume = () => {
