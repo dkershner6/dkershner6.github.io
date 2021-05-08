@@ -57,6 +57,23 @@ const ResumeBasics = ({
                     </Box>
                 </Grid>
                 <Grid item xs={12} sm="auto">
+                    <Box display="flex" justifyContent="flex-end">
+                        <IconButton aria-label="LinkedIn" href={LINKEDIN_URL}>
+                            <LinkedInIcon color="primary" />
+                        </IconButton>
+                        <IconButton
+                            aria-label="GitHub Profile"
+                            href={GITHUB_URL}
+                        >
+                            <GitHubIcon color="primary" />
+                        </IconButton>
+                        <IconButton
+                            aria-label="Homepage"
+                            onClick={() => router.push('/')}
+                        >
+                            <HomeIcon color="primary" />
+                        </IconButton>
+                    </Box>
                     <Box display="flex">
                         <Box textAlign="right" flex="1">
                             <Typography variant="body2">
@@ -74,33 +91,6 @@ const ResumeBasics = ({
                                     : null}
                             </Typography>
                         </Box>
-                        <Box marginLeft="0.5rem">
-                            <QrCode
-                                value={`https://dkershner.com${
-                                    typeof window !== 'undefined'
-                                        ? window.location.pathname
-                                        : null
-                                }`}
-                                size={64}
-                            />
-                        </Box>
-                    </Box>
-                    <Box display="flex" justifyContent="flex-end">
-                        <IconButton aria-label="LinkedIn" href={LINKEDIN_URL}>
-                            <LinkedInIcon color="primary" />
-                        </IconButton>
-                        <IconButton
-                            aria-label="GitHub Profile"
-                            href={GITHUB_URL}
-                        >
-                            <GitHubIcon color="primary" />
-                        </IconButton>
-                        <IconButton
-                            aria-label="Homepage"
-                            onClick={() => router.push('/')}
-                        >
-                            <HomeIcon color="primary" />
-                        </IconButton>
                     </Box>
                 </Grid>
             </Grid>
