@@ -24,22 +24,22 @@ export class DKershnerStack extends cdk.Stack {
             timeToLiveAttribute: 'expiresAt'
         });
 
-        const githubAsanaCronLambda = new lambda.Function(
-            this,
-            'GitHubAsanaCronLambda',
-            {
-                code: new lambda.AssetCode('./lambda/githubAsanaCron'),
-                runtime: lambda.Runtime.NODEJS_12_X,
-                handler: 'index.handler',
-                memorySize: 128,
-                timeout: Duration.seconds(60)
-            }
-        );
+        // const githubAsanaCronLambda = new lambda.Function(
+        //     this,
+        //     'GitHubAsanaCronLambda',
+        //     {
+        //         code: new lambda.AssetCode('./lambda/githubAsanaCron'),
+        //         runtime: lambda.Runtime.NODEJS_12_X,
+        //         handler: 'index.handler',
+        //         memorySize: 128,
+        //         timeout: Duration.seconds(60)
+        //     }
+        // );
 
-        const rule = new events.Rule(this, 'Rule', {
-            schedule: events.Schedule.expression('cron(*/5 0-2,15-23 ? * MON-FRI *)')
-        });
+        // const rule = new events.Rule(this, 'Rule', {
+        //     schedule: events.Schedule.expression('cron(*/5 0-2,15-23 ? * MON-FRI *)')
+        // });
 
-        rule.addTarget(new targets.LambdaFunction(githubAsanaCronLambda));
+        // rule.addTarget(new targets.LambdaFunction(githubAsanaCronLambda));
     }
 }
